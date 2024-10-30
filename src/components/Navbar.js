@@ -52,11 +52,25 @@ function Navbar() {
               Admission & Courses
             </NavLink>
             <NavLink
-              to="/achievements"
+              to="/achievements-testimonials"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
-              Student's Achievements
+              Student's Achievements & Testimonials
+            </NavLink>
+            <NavLink
+              to="/exclusives"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
+              activeClassName="bg-gray-900"
+            >
+              Exclusives
+            </NavLink>
+            <NavLink
+              to="/events-blogs"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
+              activeClassName="bg-gray-900"
+            >
+              Upcoming Events & Blogs
             </NavLink>
             <NavLink
               to="/gallery"
@@ -66,11 +80,11 @@ function Navbar() {
               Gallery
             </NavLink>
             <NavLink
-              to="/events"
+              to="/collaborate"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
-              Upcoming Events
+              Collaborate with Us
             </NavLink>
             <NavLink
               to="/faqs"
@@ -87,18 +101,11 @@ function Navbar() {
               Contact Us
             </NavLink>
             <NavLink
-              to="/testimonials"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
-            >
-              Testimonials
-            </NavLink>
-            <NavLink
               to="/dashboard"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
-              Student's Dashboard
+              Dashboard
             </NavLink>
           </div>
         </div>
@@ -136,27 +143,37 @@ function Navbar() {
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Courses
+                Admission & Courses
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/admission"
+                to="/achievements-testimonials"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Admission
+                Student's Achievements & Testimonials
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/achievements"
+                to="/exclusives"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Student's Achievements
+                Exclusives
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/events-blogs"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                activeClassName="bg-gray-900"
+                onClick={() => setIsOpen(false)}
+              >
+                Upcoming Events & Blogs
               </NavLink>
             </li>
             <li>
@@ -171,12 +188,12 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/events"
+                to="/collaborate"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Upcoming Events
+                Collaborate with Us
               </NavLink>
             </li>
             <li>
@@ -201,22 +218,12 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/testimonials"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
-                onClick={() => setIsOpen(false)}
-              >
-                Testimonials
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
                 to="/dashboard"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Student's Dashboard
+                Dashboard
               </NavLink>
             </li>
           </ul>
