@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper';
+import CTA from '../components/CTA';
 
 const testimonials = [
   {
@@ -28,6 +29,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
+    <div>
     <section className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">What Our Students Say</h2>
@@ -79,7 +81,10 @@ const Testimonials = () => {
           ))}
         </Swiper>
       </div>
-    </section>
+      </section>
+      <CTA/>
+      </div>
+    
   );
 };
 

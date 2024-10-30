@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaChessKing, FaTrophy, FaUsers } from 'react-icons/fa';
+import CTA from '../components/CTA';
 
 const About = () => {
   // State to manage the visibility of coach details
@@ -111,6 +112,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <CTA/>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import CTA from '../components/CTA';
 
 // Sample data for achievements
 const achievementsData = [
@@ -89,6 +90,7 @@ const Achievements = () => {
           </a>
         </div>
       </section>
+      <CTA/>
     </div>
   );
 };

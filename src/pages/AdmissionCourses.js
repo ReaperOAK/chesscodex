@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CTA from '../components/CTA';
 
 const coursesData = [
   {
@@ -155,6 +156,7 @@ const AdmissionCourses = () => {
           </div>
         </div>
       </section>
+      <CTA/>
     </div>
   );
 };

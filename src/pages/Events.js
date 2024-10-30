@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CTA from '../components/CTA';
 
 // Sample data for events
 const eventsData = [
@@ -97,6 +98,7 @@ const Events = () => {
           </a>
         </div>
       </section>
+      <CTA/>
     </div>
   );
 };

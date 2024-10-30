@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import CTA from '../components/CTA';
 
 const images = [
   { src: 'image1.jpg', alt: 'Chess Event 1' },
@@ -23,6 +24,7 @@ function Gallery() {
   }));
 
   return (
+    <div>
     <div className="min-h-screen bg-gray-100 p-10">
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-gray-800">Gallery</h1>
@@ -54,6 +56,8 @@ function Gallery() {
         close={() => setIndex(-1)} // Close lightbox
         slides={slides} // Array of images for lightbox
       />
+      </div>
+      <CTA/>
     </div>
   );
 }
