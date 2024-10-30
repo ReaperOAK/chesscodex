@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Maintenance from './pages/Maintenance';
 import AdmissionCourses from './pages/AdmissionCourses';
+import RefundPolicy from './pages/RefundPolicy';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/dashboard" element={<Maintenance/>} />
+        <Route path="/refundpolicy" element={<RefundPolicy/>} />
       </Routes>
       <Footer/>
     </Router>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -10,7 +10,9 @@ function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-4">About ChessCodex</h4>
             <p className="text-gray-400">
-              ChessCodex is dedicated to providing students with the highest level of chess education, fostering strategic thinking and a passion for the game.
+              <b><u>Striving to Help All Players Achieve and Improve Their Chess Rating.
+              </u></b><br/>
+              ChessCodex is dedicated to build a community packed with rated players through it structured methodology and constant guidance.
             </p>
           </div>
 
@@ -18,11 +20,11 @@ function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="/about" className="text-gray-400 hover:text-white">About Us</a></li>
-              <li><a href="/courses" className="text-gray-400 hover:text-white">Courses</a></li>
-              <li><a href="/admission" className="text-gray-400 hover:text-white">Admission</a></li>
-              <li><a href="/contact" className="text-gray-400 hover:text-white">Contact Us</a></li>
+              <li><a href="/exclusives" className="text-gray-400 hover:text-white">Pro Members</a></li>
+              <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Latest Games</a></li>
+              <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">FIDE Ratings</a></li>
+              <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Play Online</a></li>
+              <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Solve Puzzles</a></li>
             </ul>
           </div>
 
@@ -30,10 +32,11 @@ function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">123 Chess St, Checkmate City, CH 54321</li>
               <li className="text-gray-400">Email: info@chesscodex.com</li>
               <li className="text-gray-400">Phone: +123 456 7890</li>
             </ul>
+            <br/>
+            <a href="/refund-policy" className="text-xl font-semibold mb-4">Refund Policy</a>
           </div>
 
           {/* Column 4: Follow Us */}
@@ -52,16 +55,11 @@ function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
                 <FaLinkedin />
               </a>
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+                <FaWhatsapp />
+              </a>
             </div>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <h4 className="text-xl font-semibold mb-2">Contact Us Today</h4>
-          <p className="text-gray-400">
-            Start your journey with Aspire Chess Academy / ChessCodex and unlock your chess potential!
-          </p>
         </div>
 
         {/* Footer Bottom: Copyright */}
