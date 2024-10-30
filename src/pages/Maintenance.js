@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 const Maintenance = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   
-  // Set the target maintenance end time (e.g., 24 hours from now)
-  const maintenanceEndTime = new Date(Date.now() + 1000 * 60 * 60 * 1000); 
+  // Memoize the target maintenance end time (e.g., 24 hours from now)
+  const maintenanceEndTime = useMemo(() => new Date(Date.now() + 1000 * 60 * 60 * 1000), []);
 
   // Function to update countdown timer
   useEffect(() => {
@@ -26,7 +26,7 @@ const Maintenance = () => {
     }, 1000);
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [maintenanceEndTime]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-center">

@@ -7,7 +7,6 @@ import Events from './pages/Events';
 import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
 import Testimonials from './pages/Testimonials';
-import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Maintenance from './pages/Maintenance';

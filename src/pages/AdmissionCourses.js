@@ -78,7 +78,7 @@ const AdmissionCourses = () => {
                   {expandedCourse === index ? 'Read Less' : 'Read More'}
                 </button>
                 <a
-                  href="#"
+                  href="/"
                   className="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors duration-300 ml-2"
                 >
                   Enroll Now
