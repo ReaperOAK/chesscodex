@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CTA from '../components/CTA';
+import Team from '../components/Team';
 
 const coursesData = [
   {
@@ -59,6 +60,9 @@ const AdmissionCourses = () => {
           <p className="text-lg">Unlock your potential and elevate your chess skills with our expertly designed courses. Join our chess academy and take the first step toward mastering the game!</p>
         </div>
       </section>
+
+      {/* Meet the Team Section */}
+      <Team/>
 
       {/* Courses Listings */}
       <section className="py-16 bg-gray-100">
