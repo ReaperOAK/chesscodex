@@ -10,7 +10,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Maintenance from './pages/Maintenance';
 import AdmissionCourses from './pages/AdmissionCourses';
-import RefundPolicy from './pages/RefundPolicy'; // Import the RefundPolicy component
+import RefundPolicy from './pages/RefundPolicy';
+import Exclusives from './pages/Exclusives';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dashboard" element={<Maintenance />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} /> {/* Add the route for RefundPolicy */}
+        <Route path="/exclusives" element={<Exclusives />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
       <Footer />
     </Router>

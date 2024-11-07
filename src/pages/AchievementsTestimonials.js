@@ -58,7 +58,7 @@ const AchievementsTestimonials = () => {
       <section className="bg-gradient-to-r from-purple-600 to-purple-400 text-white py-24 text-center">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">Student Achievements & Testimonials</h1>
-          <p className="text-lg">Celebrating the accomplishments and experiences of our talented students!</p>
+          <p className="text-lg">Celebrating the accomplishments and experiences of our aspirations!</p>
         </div>
       </section>
 

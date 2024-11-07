@@ -1,29 +1,7 @@
 import React, { useState } from 'react';
 import CTA from '../components/CTA';
 import Team from '../components/Team';
-
-const coursesData = [
-  {
-    title: 'Beginner Course',
-    description: 'This course is for those with little to no knowledge of chess. Emphasizing the importance of regular practice, we provide ample opportunities for play, puzzle-solving, and training matches to reinforce learning and improve decision-making. At ChessCodex, our qualified trainers understand the challenges beginners face and teach the game in a simple, friendly way. We provide customized study materials and assignments to spark interest and build a solid foundation. No matter the age, we help students progress confidently to the next level. With our guidance and their passion, the possibilities are endless.',
-    duration: '12 months',
-  },
-  {
-    title: 'Intermediate Course',
-    description: 'Our Intermediate Course is tailored for players who have grasped the basics and now ready to fight their guts out in actual tournaments! At ChessCodex, our experienced trainers focus on refining strategies and enhancing overall gameplay through personalized instruction. Recognizing the importance of regular practice, we provide opportunities for engaging play, tactical exercises, and analysis of games to deepen understanding. With our guidance and structured practice, students can further develop their chess abilities and confidently advance to the next level, unlocking new possibilities in their chess journey.',
-    duration: '18 months',
-  },
-  {
-    title: 'Advanced Course',
-    description: 'The Advanced Course at ChessCodex is designed for experienced players seeking to refine their skills and enhance their competitive edge. At this level, there is no room for complacency; mental resilience plays a critical role in overcoming challenges and performing under pressure. Understanding the importance we offer personalized coaching that focuses on advanced strategies, complex tactics, and thorough game analysis making them sharper for competitive play and review high-level games to sharpen decision-making. With our guidance and dedicated practice, students can elevate their chess mastery and prepare for success at the highest levels of competition.',
-    duration: '24 months',
-  },
-  {
-    title: 'Expert Course',
-    description: 'The Expert Course at ChessCodex is tailored for high-level tournament players aiming for mastery in chess. Our distinguished trainers provide advanced coaching that emphasizes high-level strategies, deep opening preparation, unique calculation techniques, and in-depth analysis of grandmaster games.',
-    duration: 'Ongoing',
-  },
-];
+import CoursesList from '../components/CoursesList';
 
 const admissionSteps = [
   {
@@ -83,34 +61,7 @@ const AdmissionCourses = () => {
       <Team/>
 
       {/* Courses Listings */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Explore Our Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coursesData.map((course, index) => (
-              <div key={index} className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-200">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">{course.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {expandedCourse === index + 1 ? course.description : `${course.description.substring(0, 100)}...`}
-                </p>
-                <p className="text-gray-800 font-semibold">Duration: {course.duration}</p>
-                <button
-                  onClick={() => toggleReadMore(index + 1)}
-                  className="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-                >
-                  {expandedCourse === index + 1 ? 'Read Less' : 'Read More'}
-                </button>
-                <a
-                  href="/"
-                  className="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors duration-300 ml-2"
-                >
-                  Enroll Now
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CoursesList/>
 
       {/* Admission Steps */}
       <section className="py-16 bg-gray-100">
@@ -124,19 +75,6 @@ const AdmissionCourses = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Eligibility Criteria */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12">Eligibility Criteria</h2>
-          <ul className="list-disc list-inside space-y-4 text-left max-w-2xl mx-auto">
-            <li className="text-lg">Age: 6 years and above.</li>
-            <li className="text-lg">No prior chess experience required for beginner courses.</li>
-            <li className="text-lg">For advanced courses, basic knowledge of chess rules is necessary.</li>
-            <li className="text-lg">Commitment to attend classes regularly.</li>
-          </ul>
         </div>
       </section>
 
@@ -174,6 +112,17 @@ const AdmissionCourses = () => {
             <div className="bg-gray-100 p-4 rounded-lg shadow-md">
               <h3 className="font-semibold">How do I pay for the course?</h3>
               <p className="text-gray-600">Payments can be made online through our secure payment gateway.</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              <h3 className="font-semibold">What are the eligibility criteria?</h3>
+              <p className="text-gray-600">
+                <ul className="list-disc list-inside text-left">
+                  <li>Age: 6 years and above.</li>
+                  <li>No prior chess experience required for beginner courses.</li>
+                  <li>For advanced courses, basic knowledge of chess rules is necessary.</li>
+                  <li>Commitment to attend classes regularly.</li>
+                </ul>
+              </p>
             </div>
           </div>
         </div>
