@@ -5,7 +5,7 @@ const coaches = [
     name: 'GM Niaz Murshed',
     role: 'Coach',
     image: '/niaz.jpg',
-    description: `A pioneering figure in chess education and the first Grandmaster of Asia. Detailed biography of Coach 2 goes here.`,
+    description: `A pioneering figure in chess education and the first Grandmaster of Asia.`,
   },
   {
     name: 'GM Sayantan Das',
