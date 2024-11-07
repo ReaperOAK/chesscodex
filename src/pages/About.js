@@ -2,9 +2,9 @@ import React from 'react';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
 import CTA from '../components/CTA';
 import WhyChooseUs from '../components/WhyChooseUs';
+import Newsletter from '../components/Newsletter';
 
 const About = () => {
-
   return (
     <div>
       {/* Hero Section */}
@@ -51,11 +51,12 @@ const About = () => {
         </div>
       </section>
 
-      
-
       {/* Why Choose Us Section */}
       <WhyChooseUs/>
       <CTA/>
+
+      {/* Newsletter Subscription */}
+      <Newsletter/>
     </div>
   );
 };

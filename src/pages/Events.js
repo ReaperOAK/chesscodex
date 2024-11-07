@@ -1,35 +1,19 @@
 import React, { useState } from 'react';
 import CTA from '../components/CTA';
 
-// Sample data for events
+// Original data for events
 const eventsData = [
   {
-    title: "State Chess Championship",
-    date: "November 10, 2024",
-    description: "Join us for the annual State Chess Championship where the best players compete for the title!",
-    image: "https://via.placeholder.com/300",
-    type: "Tournament"
+    title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+    date: "02/10/2024",
+    mode: "Offline",
+    link: null,
   },
   {
-    title: "Chess Workshop for Beginners",
-    date: "October 15, 2024",
-    description: "A hands-on workshop designed for beginners to learn the basics of chess.",
-    image: "https://via.placeholder.com/300",
-    type: "Workshop"
-  },
-  {
-    title: "Grandmaster Lecture Series",
-    date: "December 1, 2024",
-    description: "Attend a special lecture by a Grandmaster and learn advanced strategies.",
-    image: "https://via.placeholder.com/300",
-    type: "Lecture"
-  },
-  {
-    title: "Monthly Chess Tournament",
-    date: "October 30, 2024",
-    description: "Compete in our monthly tournament and showcase your skills!",
-    image: "https://via.placeholder.com/300",
-    type: "Tournament"
+    title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+    date: "15/11/2024",
+    mode: "Offline",
+    link: "https://forms.gle/zBsTohCXppUNCWjU6",
   },
 ];
 
@@ -38,7 +22,7 @@ const Events = () => {
 
   // Function to filter events
   const filteredEvents = eventsData.filter(event => 
-    filter === "All" || event.type === filter
+    filter === "All" || event.mode === filter
   );
 
   return (
@@ -54,16 +38,14 @@ const Events = () => {
       {/* Filter/Search Section */}
       <section className="py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <label className="mr-2 text-lg">Filter by Type:</label>
+          <label className="mr-2 text-lg">Filter by Mode:</label>
           <select 
             value={filter} 
             onChange={(e) => setFilter(e.target.value)} 
             className="p-2 border rounded"
           >
             <option value="All">All</option>
-            <option value="Tournament">Tournament</option>
-            <option value="Workshop">Workshop</option>
-            <option value="Lecture">Lecture</option>
+            <option value="Offline">Offline</option>
           </select>
         </div>
       </section>
@@ -75,13 +57,19 @@ const Events = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEvents.map((event, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <img src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-md mb-4" />
                 <h3 className="text-xl font-semibold text-green-600 mb-2">{event.title}</h3>
                 <p className="text-gray-600 mb-2">{event.date}</p>
-                <p className="text-gray-600">{event.description}</p>
-                <button className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-500 transition-colors duration-300">
-                  Register Now
-                </button>
+                <p className="text-gray-600 mb-2">Mode: {event.mode}</p>
+                {event.link ? (
+                  <a
+                    href={event.link}
+                    className="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-500 transition-colors duration-300"
+                  >
+                    Register Now
+                  </a>
+                ) : (
+                  <p className="text-gray-600">Registration link not available</p>
+                )}
               </div>
             ))}
           </div>
