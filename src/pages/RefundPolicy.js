@@ -15,7 +15,7 @@ const RefundPolicy = () => {
           For any reasons, if you want to get a refund after the first 7 days of your payment, then we will issue you a prorated refund unless specified otherwise in the service agreement.
         </p>
         <p className="text-lg text-gray-700 mb-4">
-          If you have any questions about our refund policy, please contact us at: <a href="mailto:hello@primechess.org" className="text-blue-600 underline">hello@primechess.org</a>
+          If you have any questions about our refund policy, please contact us at: <a href="mailto:hello@chesscodex.com" className="text-blue-600 underline">hello@chesscodex.com</a>
         </p>
       </div>
     </div>

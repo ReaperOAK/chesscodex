@@ -36,7 +36,7 @@ const Home = () => {
           <p className="text-lg mb-8">
             We believe in recognizing talent and hard work. Our scholarship program supports exceptional students who show promise and dedication in chess.
           </p>
-          <a href="/scholarship" className="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-blue-500 transition duration-300">Learn More</a>
+          <a href="/exclusives" className="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-blue-500 transition duration-300">Learn More</a>
         </div>
       </section>
 
