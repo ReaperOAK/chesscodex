@@ -12,7 +12,7 @@ function Navbar() {
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-white">
-              ChessCodex
+              <img src='/kcalogo.jpg' alt="ChessCodex Logo" className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -56,7 +56,7 @@ function Navbar() {
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
-              Student's Achievements & Testimonials
+              Achievements & Testimonials
             </NavLink>
             <NavLink
               to="/exclusives"
@@ -70,7 +70,7 @@ function Navbar() {
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
-              Upcoming Events & Blogs
+              Events & Blogs
             </NavLink>
             <NavLink
               to="/gallery"

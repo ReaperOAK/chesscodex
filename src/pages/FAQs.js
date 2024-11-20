@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import RefundPolicy from '../components/RefundPolicy';
 
 const faqs = [
   {
@@ -120,6 +121,7 @@ const FAQs = () => {
             <p className="text-gray-600">No FAQs match your search.</p>
           )}
         </div>
+        <RefundPolicy/>
       </div>
     </section>
   );

@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 
 const coaches = [
   {
-    name: 'GM Niaz Murshed',
-    role: 'Coach',
-    image: '/niaz.jpg',
-    description: `A pioneering figure in chess education and the first Grandmaster of Asia.`,
-  },
-  {
     name: 'GM Sayantan Das',
     role: 'Guest Coach & Opening Expert',
     image: 'https://cbin.b-cdn.net/img/SA/Sayantan_1TKRS_667x1000.jpeg',
@@ -46,6 +40,10 @@ const Team = () => {
     setExpandedCoach(expandedCoach === index ? null : index);
   };
 
+  const highlightTitles = (name) => {
+    return name.replace(/(GM|IM|FM)/g, '<span class="text-blue-500 font-bold">$1</span>');
+  };
+
   return (
     <section className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 text-center">
@@ -58,7 +56,10 @@ const Team = () => {
                 src={coach.image}
                 alt={coach.name}
               />
-              <h3 className="text-xl font-bold text-gray-800">{coach.name}</h3>
+              <h3
+                className="text-xl font-bold text-gray-800"
+                dangerouslySetInnerHTML={{ __html: highlightTitles(coach.name) }}
+              ></h3>
               <p className="text-gray-600 mb-4">{coach.role}</p>
               <p className="text-gray-600">
                 {expandedCoach === index ? coach.description : `${coach.description.substring(0, 100)}...`}

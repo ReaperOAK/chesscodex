@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CTA from '../components/CTA';
 import Team from '../components/Team';
 import CoursesList from '../components/CoursesList';
@@ -23,36 +23,26 @@ const admissionSteps = [
 ];
 
 const AdmissionCourses = () => {
-  const [expandedCourse, setExpandedCourse] = useState(null);
-
-  const toggleReadMore = (index) => {
-    setExpandedCourse(expandedCourse === index ? null : index);
-  };
-
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-24 text-center relative">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-24 text-center">
         <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Our Courses & Admission Process</h1>
-          <p className="text-lg mb-8">Unlock your potential and elevate your chess skills with our expertly curated course by Grandmaster Niaz Murshed, a pioneering figure and Asia's first Grandmaster.</p>
-          <div className="bg-white p-6 shadow-lg rounded-lg inline-block transform transition-transform hover:scale-105">
-            <img
-              className="w-24 h-24 rounded-full mx-auto mb-4"
-              src="/niaz.jpg"
-              alt="GM Niaz Murshed"
-            />
-            <h3 className="text-xl font-bold text-gray-800">GM Niaz Murshed</h3>
-            <p className="text-gray-600 mb-4">Coach</p>
-            <p className="text-gray-600">
-              {expandedCourse === 0 ? "A pioneering figure in chess education and the first Grandmaster of Asia." : `${"A pioneering figure in chess education and the first Grandmaster of Asia.".substring(0, 100)}...`}
-            </p>
-            <button
-              className="text-blue-500 mt-2"
-              onClick={() => toggleReadMore(0)}
-            >
-              {expandedCourse === 0 ? "Read Less" : "Read More"}
-            </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-5xl font-bold mb-4">Our Courses & Admission Process</h1>
+              <p className="text-lg mb-8">Unlock your potential and elevate your chess skills with our expertly curated course by Grandmaster Niaz Murshed, a pioneering figure and Asia's first Grandmaster.</p>
+            </div>
+            <div className="bg-white p-6 shadow-lg rounded-lg transform transition-transform hover:scale-105">
+              <img
+                className="w-24 h-24 rounded-full mx-auto mb-4"
+                src="/niaz.jpg"
+                alt="GM Niaz Murshed"
+              />
+              <h3 className="text-xl font-bold text-gray-800">GM Niaz Murshed</h3>
+              <p className="text-gray-600 mb-4">Coach</p>
+              <p className="text-gray-600">A pioneering figure in chess education and the first Grandmaster of Asia.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -2,7 +2,6 @@ import React from 'react';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
 import CTA from '../components/CTA';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Newsletter from '../components/Newsletter';
 
 const About = () => {
   return (
@@ -40,12 +39,16 @@ const About = () => {
             <div className="flex-1 bg-white p-8 shadow-lg rounded-lg text-center">
               <FaChessKing className="mx-auto text-5xl text-blue-500 mb-4" />
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Mission</h3>
-              <p className="text-gray-600">To make chess a Habit! Foster an environment to develop a passion for the game through a structured and goal-oriented course of action, and squeeze the best potential out of the young minds.</p>
+              <p className="text-gray-600">
+                <span className="font-bold text-blue-600">To make chess a Habit!</span> Foster an environment to develop a passion for the game through a structured and goal-oriented course of action, and squeeze the best potential out of the young minds.
+              </p>
             </div>
             <div className="flex-1 bg-white p-8 shadow-lg rounded-lg text-center">
               <FaTrophy className="mx-auto text-5xl text-indigo-500 mb-4" />
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Vision</h3>
-              <p className="text-gray-600">Striving for 100% Rated Players. Striving to Help All Players Achieve and Improve Their Chess Rating.</p>
+              <p className="text-gray-600">
+                <span className="font-bold text-indigo-600">Striving for 100% Rated Players.</span> Striving to Help All Players Achieve and Improve Their Chess Rating.
+              </p>
             </div>
           </div>
         </div>
@@ -54,9 +57,6 @@ const About = () => {
       {/* Why Choose Us Section */}
       <WhyChooseUs/>
       <CTA/>
-
-      {/* Newsletter Subscription */}
-      <Newsletter/>
     </div>
   );
 };
