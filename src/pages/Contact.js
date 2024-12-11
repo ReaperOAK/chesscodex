@@ -2,9 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-import markerRetina from 'leaflet/dist/images/marker-icon-2x.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,9 +29,7 @@ const Contact = () => {
 
     // Create a custom icon
     const customIcon = new L.Icon({
-      iconUrl: markerIcon,
-      iconRetinaUrl: markerRetina,
-      shadowUrl: markerShadow,
+      iconUrl: '/marker-icon.png',
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
