@@ -51,8 +51,13 @@ const coursesData = [
   {
     title: 'Private Classes',
     description: [
-      'Contact us: as that would be tailored to your needs.',
-      'The pricing and timings will vary according to your needs and wants.',
+      'Comprehensive Support on behalf of our Academy:',
+      '1. Structured methodology and curriculum (designed by GM Niaz Murshed)',
+      '2. Expertly curated customized openings (by IMs/GMs)',
+      '3. Bi-monthly Parent-Teacher Meetings (PTMs)',
+      '4. Customized routines and study materials by one of our dedicated coaches.',
+      '5. In-depth classical game analysis with PDF explanations of all World Champions',
+      'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
     ],
     duration: 'Flexible',
   },
@@ -78,12 +83,25 @@ const CoursesList = () => {
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  <a
-                    href="/"
-                    className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-                  >
-                    Enroll Now
-                  </a>
+                  {course.title === 'Private Classes' ? (
+                    <a
+                      href="mailto:info@chesscodex.com" // Replace with your email link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+                    >
+                      Contact Us
+                    </a>
+                  ) : (
+                    <a
+                      href="https://wa.me/1234567890" // Replace with your WhatsApp number or email link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+                    >
+                      Enroll Now
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

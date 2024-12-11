@@ -29,12 +29,13 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/events-blogs" element={<Events />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/refund-policy" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Maintenance />} />
           <Route path="/exclusives" element={<Exclusives />} />
           <Route path="/collaborate-with-us" element={<CollaborateWithUs />} />
         </Routes>
-        <WhatsAppButton /> {/* Include the WhatsAppButton component */}
+        <WhatsAppButton />
       </div>
       <Footer />
     </Router>

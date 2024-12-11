@@ -102,7 +102,7 @@ const Contact = () => {
             <iframe
               title="Map"
               className="w-full h-60"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156035.1539932667!2d88.1638737223712!3d22.56945719313841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027b98c89e5c75%3A0xf59bd00b4de19334!2sKolkata%2C%20India!5e0!3m2!1sen!2sus!4v1624472688601!5m2!1sen!2sus"
+              src="https://maps.app.goo.gl/1k69mFs8MPTJDDy8A"
               allowFullScreen=""
               loading="lazy"
             ></iframe>

@@ -81,7 +81,7 @@ const AchievementsTestimonials = () => {
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">What Our Students Say</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Testimonials</h2>
           
           {/* Responsive Grid for larger screens */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -132,16 +132,6 @@ const AchievementsTestimonials = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="bg-purple-600 text-white py-16 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4">Ready to Start Your Chess Journey?</h2>
-          <p className="mb-6">Join our academy today and become the next chess champion!</p>
-          <a href="/admission" className="bg-white text-purple-600 py-2 px-4 rounded hover:bg-gray-200 transition-colors duration-300">
-            Apply Now
-          </a>
-        </div>
-      </section>
       <CTA/>
     </div>
   );

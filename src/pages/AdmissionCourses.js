@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CTA from '../components/CTA';
 import Team from '../components/Team';
 import CoursesList from '../components/CoursesList';
@@ -22,7 +22,49 @@ const admissionSteps = [
   },
 ];
 
+const FAQs = [
+  {
+    question: 'What is the age limit for joining?',
+    answer: 'Students aged 6 years and above can join our courses.',
+  },
+  {
+    question: 'Do I need prior experience in chess?',
+    answer: 'No, beginners are welcome to join our introductory courses.',
+  },
+  {
+    question: 'How do I pay for the course?',
+    answer: 'Payments can be made online through our secure payment gateway.',
+  },
+  {
+    question: 'What are the eligibility criteria?',
+    answer: (
+      <ul className="list-disc list-inside text-left">
+        <li>Age: 6 years and above.</li>
+        <li>No prior chess experience required for beginner courses.</li>
+        <li>For advanced courses, basic knowledge of chess rules is necessary.</li>
+        <li>Commitment to attend classes regularly.</li>
+      </ul>
+    ),
+  },
+  {
+    question: 'How to Apply?',
+    answer: (
+      <ul className="list-disc list-inside text-left">
+        {admissionSteps.map((item, index) => (
+          <li key={index}>{item.step}: {item.description}</li>
+        ))}
+      </ul>
+    ),
+  },
+];
+
 const AdmissionCourses = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -39,7 +81,7 @@ const AdmissionCourses = () => {
                 src="/niaz.jpg"
                 alt="GM Niaz Murshed"
               />
-              <h3 className="text-xl font-bold text-gray-800">GM Niaz Murshed</h3>
+              <h3 className="text-xl font-bold text-gray-800"><span className="text-blue-500 font-bold">GM</span> Niaz Murshed</h3>
               <p className="text-gray-600 mb-4">Coach</p>
               <p className="text-gray-600">A pioneering figure in chess education and the first Grandmaster of Asia.</p>
             </div>
@@ -52,21 +94,6 @@ const AdmissionCourses = () => {
 
       {/* Courses Listings */}
       <CoursesList/>
-
-      {/* Admission Steps */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">How to Apply</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {admissionSteps.map((item, index) => (
-              <div key={index} className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-200">
-                <h3 className="text-xl font-semibold text-green-600 mb-2">{item.step}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Google Form Section */}
       <section className="py-16 bg-gray-100">
@@ -91,29 +118,22 @@ const AdmissionCourses = () => {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
-            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">What is the age limit for joining?</h3>
-              <p className="text-gray-600">Students aged 6 years and above can join our courses.</p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">Do I need prior experience in chess?</h3>
-              <p className="text-gray-600">No, beginners are welcome to join our introductory courses.</p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">How do I pay for the course?</h3>
-              <p className="text-gray-600">Payments can be made online through our secure payment gateway.</p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">What are the eligibility criteria?</h3>
-              <p className="text-gray-600">
-                <ul className="list-disc list-inside text-left">
-                  <li>Age: 6 years and above.</li>
-                  <li>No prior chess experience required for beginner courses.</li>
-                  <li>For advanced courses, basic knowledge of chess rules is necessary.</li>
-                  <li>Commitment to attend classes regularly.</li>
-                </ul>
-              </p>
-            </div>
+            {FAQs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 p-4 rounded-lg shadow-md cursor-pointer"
+                onClick={() => toggleFAQ(index)}
+              >
+                <h3 className="font-semibold">{faq.question}</h3>
+                <div
+                  className={`text-gray-600 mt-2 overflow-hidden transition-max-height duration-300 ease-in-out ${
+                    expandedIndex === index ? 'max-h-screen' : 'max-h-0'
+                  }`}
+                >
+                  {faq.answer}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
