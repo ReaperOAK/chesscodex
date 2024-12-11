@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const coursesData = [
   {
@@ -64,6 +64,16 @@ const coursesData = [
 ];
 
 const CoursesList = () => {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+
+  const openModal = (course) => {
+    setSelectedCourse(course);
+  };
+
+  const closeModal = () => {
+    setSelectedCourse(null);
+  };
+
   return (
     <section id="courses" className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4">
@@ -72,7 +82,8 @@ const CoursesList = () => {
           {coursesData.map((course, index) => (
             <div
               key={index}
-              className="bg-white p-4 shadow-lg rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 relative group"
+              className="bg-white p-6 shadow-lg rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 relative group cursor-pointer"
+              onClick={() => openModal(course)}
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{course.title}</h3>
@@ -85,7 +96,7 @@ const CoursesList = () => {
                 <div className="mt-auto">
                   {course.title === 'Private Classes' ? (
                     <a
-                      href="mailto:info@chesscodex.com" // Replace with your email link
+                      href="https://wa.me/1234567890" // Replace with your email link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
@@ -94,7 +105,7 @@ const CoursesList = () => {
                     </a>
                   ) : (
                     <a
-                      href="https://wa.me/1234567890" // Replace with your WhatsApp number or email link
+                      href="https://forms.gle/4CaSH9r9sWJ2BZpy8" // Replace with your WhatsApp number or email link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
@@ -107,6 +118,29 @@ const CoursesList = () => {
             </div>
           ))}
         </div>
+
+        {/* Modal */}
+        {selectedCourse && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">{selectedCourse.title}</h3>
+              <p className="text-gray-800 font-semibold mb-2">Duration: {selectedCourse.duration}</p>
+              <ul className="list-disc list-inside text-left text-gray-600 mb-4">
+                {selectedCourse.description.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+              <div className="text-right">
+                <button
+                  onClick={closeModal}
+                  className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors duration-300"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

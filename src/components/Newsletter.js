@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import axios from 'axios';
 
 const Newsletter = ({ position }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    setSubmitted(true);
+    try {
+      await axios.post('/api/newsletter.php', { email });
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting email:', error);
+    }
   };
 
   const handleClose = () => {

@@ -75,17 +75,6 @@ const Events = () => {
           </div>
         </div>
       </section>
-
-      {/* Call to Action Section */}
-      <section className="bg-green-600 text-white py-16 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4">Want to Stay Updated?</h2>
-          <p className="mb-6">Sign up for our newsletter to get the latest news on upcoming events and more!</p>
-          <a href="/subscribe" className="bg-white text-green-600 py-2 px-4 rounded hover:bg-gray-200 transition-colors duration-300">
-            Subscribe Now
-          </a>
-        </div>
-      </section>
       <CTA/>
     </div>
   );

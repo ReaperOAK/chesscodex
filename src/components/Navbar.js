@@ -101,7 +101,7 @@ function Navbar() {
               Contact Us
             </NavLink>
             <NavLink
-              to="/dashboard"
+              to="https://dashboard.kolkatachessacademy.in/"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
             >
@@ -218,7 +218,7 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/dashboard"
+                to="https://dashboard.kolkatachessacademy.in/"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
