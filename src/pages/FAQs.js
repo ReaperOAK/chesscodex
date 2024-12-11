@@ -89,6 +89,10 @@ const FAQs = () => {
     faq.question.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="bg-gray-100 py-12">
       <div className="max-w-4xl mx-auto px-4">
@@ -114,7 +118,7 @@ const FAQs = () => {
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openIndex === index}
-                toggle={() => setOpenIndex(openIndex === index ? null : index)}
+                toggle={() => toggleFAQ(index)}
               />
             ))
           ) : (
