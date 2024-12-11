@@ -121,9 +121,10 @@ const Contact = () => {
             <iframe
               title="Map"
               className="w-full h-60"
-              src="https://maps.app.goo.gl/1k69mFs8MPTJDDy8A"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d547.454419596324!2d88.39940496106996!3d22.623208162430974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDM3JzI0LjIiTiA4OMKwMjMnNTcuOSJF!5e0!3m2!1sen!2sin!4v1733941745467!5m2!1sen!2sin"
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
