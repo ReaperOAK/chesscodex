@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import axios from 'axios';
 
 const Newsletter = ({ position }) => {
   const [email, setEmail] = useState('');
@@ -10,11 +9,18 @@ const Newsletter = ({ position }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/php/newsletter.php', { email });
-      if (response.data.success) {
+      const response = await fetch('/php/newsletter.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (data.success) {
         setSubmitted(true);
       } else {
-        console.error('Error:', response.data.message);
+        console.error('Error:', data.message);
       }
     } catch (error) {
       console.error('Error submitting email:', error);
