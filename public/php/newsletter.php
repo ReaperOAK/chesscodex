@@ -4,8 +4,12 @@ include 'config.php';
 // Set the Content-Type header to application/json
 header('Content-Type: application/json');
 
-// Get the email from the POST request
-$email = $_POST['email'] ?? '';
+// Get the raw POST data
+$rawData = file_get_contents("php://input");
+$data = json_decode($rawData, true);
+
+// Get the email from the decoded data
+$email = $data['email'] ?? '';
 
 // Validate the email
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
