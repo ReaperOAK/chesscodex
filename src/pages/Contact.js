@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import markerRetina from 'leaflet/dist/images/marker-icon-2x.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +13,39 @@ const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if (mapRef.current) {
+      // If the map is already initialized, do nothing
+      return;
+    }
+
+    // Initialize the map
+    const map = L.map('map').setView([22.623208, 88.399405], 15);
+    mapRef.current = map;
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Create a custom icon
+    const customIcon = new L.Icon({
+      iconUrl: markerIcon,
+      iconRetinaUrl: markerRetina,
+      shadowUrl: markerShadow,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // Add a marker with the custom icon
+    L.marker([22.623208, 88.399405], { icon: customIcon }).addTo(map)
+      .bindPopup('123 Chess Lane, Kolkata, India')
+      .openPopup();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -118,14 +156,7 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Find Us Here</h2>
           <div className="overflow-hidden rounded-lg shadow-lg">
-            <iframe
-              title="Map"
-              className="w-full h-60"
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d547.454419596324!2d88.39940496106996!3d22.623208162430974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDM3JzI0LjIiTiA4OMKwMjMnNTcuOSJF!5e0!3m2!1sen!2sin!4v1733941745467!5m2!1sen!2sin"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <div id="map" className="w-full h-60"></div>
           </div>
         </div>
       </section>
