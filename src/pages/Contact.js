@@ -7,18 +7,33 @@ const Contact = () => {
     email: '',
     message: ''
   });
-  
+  const [submitted, setSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted: ", formData);
-    // Reset the form
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('/php/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.error('Error:', data.message);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -35,52 +50,56 @@ const Contact = () => {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Get in Touch</h2>
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-              <div>
-                <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  required 
-                  className="w-full p-3 border rounded" 
-                />
+          {submitted ? (
+            <p className="text-green-600 text-center">Thank you for your message! We will get back to you soon.</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
+                  <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    value={formData.name} 
+                    onChange={handleChange} 
+                    required 
+                    className="w-full p-3 border rounded" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    required 
+                    className="w-full p-3 border rounded" 
+                  />
+                </div>
               </div>
               <div>
-                <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="email" 
-                  value={formData.email} 
+                <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
+                <textarea 
+                  name="message" 
+                  id="message" 
+                  value={formData.message} 
                   onChange={handleChange} 
                   required 
+                  rows="5" 
                   className="w-full p-3 border rounded" 
-                />
+                ></textarea>
               </div>
-            </div>
-            <div>
-              <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
-              <textarea 
-                name="message" 
-                id="message" 
-                value={formData.message} 
-                onChange={handleChange} 
-                required 
-                rows="5" 
-                className="w-full p-3 border rounded" 
-              ></textarea>
-            </div>
-            <button 
-              type="submit" 
-              className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition-colors duration-300"
-            >
-              Send Message
-            </button>
-          </form>
+              <button 
+                type="submit" 
+                className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition-colors duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
