@@ -11,13 +11,17 @@ $email = $_POST['email'] ?? '';
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     // Prepare the SQL statement
     $stmt = $conn->prepare("INSERT INTO newsletters (email) VALUES (?)");
+    if ($stmt === false) {
+        echo json_encode(['success' => false, 'message' => 'Prepare failed: ' . $conn->error]);
+        exit;
+    }
     $stmt->bind_param("s", $email);
 
     // Execute the statement
     if ($stmt->execute()) {
         echo json_encode(['success' => true, 'message' => 'Email subscribed successfully.']);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Failed to subscribe email.']);
+        echo json_encode(['success' => false, 'message' => 'Execute failed: ' . $stmt->error]);
     }
 
     // Close the statement

@@ -10,8 +10,12 @@ const Newsletter = ({ position }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/newsletter.php', { email });
-      setSubmitted(true);
+      const response = await axios.post('/php/newsletter.php', { email });
+      if (response.data.success) {
+        setSubmitted(true);
+      } else {
+        console.error('Error:', response.data.message);
+      }
     } catch (error) {
       console.error('Error submitting email:', error);
     }
