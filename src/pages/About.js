@@ -2,6 +2,7 @@ import React from 'react';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
 import CTA from '../components/CTA';
 import WhyChooseUs from '../components/WhyChooseUs';
+import Team from '../components/Team';
 
 const About = () => {
   return (
@@ -53,6 +54,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Meet the Team Section */}
+      <Team/>
 
       {/* Why Choose Us Section */}
       <WhyChooseUs/>

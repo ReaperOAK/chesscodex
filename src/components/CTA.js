@@ -9,7 +9,6 @@ const CTA = () => {
           <p className="text-lg mb-8">Ready to take your chess skills to the next level? Enroll in our programs and start your journey with ChessCodex.</p>
           <div className="flex justify-center space-x-4">
             <a href="/admission" className="bg-yellow-500 text-gray-800 font-semibold py-3 px-6 rounded-lg shadow hover:bg-yellow-400 transition duration-300">Enroll Now</a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-green-400 transition duration-300">Contact Us on WhatsApp</a>
           </div>
         </div>
       </section>

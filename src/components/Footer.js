@@ -76,7 +76,7 @@ function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
                 <FaLinkedin />
               </a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+              <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
                 <FaWhatsapp />
               </a>
             </div>

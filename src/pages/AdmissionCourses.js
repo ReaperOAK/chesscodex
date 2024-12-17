@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import CTA from '../components/CTA';
-import Team from '../components/Team';
 import CoursesList from '../components/CoursesList';
 
 const admissionSteps = [
@@ -88,9 +87,6 @@ const AdmissionCourses = () => {
           </div>
         </div>
       </section>
-
-      {/* Meet the Team Section */}
-      <Team/>
 
       {/* Courses Listings */}
       <CoursesList/>

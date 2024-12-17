@@ -140,7 +140,7 @@ const Contact = () => {
       <section className="py-16 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-12">Contact Information</h2>
-          <p className="text-lg mb-2">Phone: <a href="tel:+1234567890" className="text-blue-600">+1 234 567 890</a></p>
+          <p className="text-lg mb-2">Phone: <a href="tel:++919830149852" className="text-blue-600">+1 234 567 890</a></p>
           <p className="text-lg mb-2">Email: <a href="mailto:info@chessacademy.com" className="text-blue-600">info@chessacademy.com</a></p>
           <p className="text-lg mb-2">Address: 123 Chess Lane, Kolkata, India</p>
         </div>

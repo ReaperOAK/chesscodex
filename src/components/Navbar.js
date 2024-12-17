@@ -30,14 +30,6 @@ function Navbar() {
           {/* Menu Links */}
           <div className="hidden md:flex space-x-4 items-center">
             <NavLink
-              to="/"
-              exact
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
-            >
-              Home
-            </NavLink>
-            <NavLink
               to="/about"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
               activeClassName="bg-gray-900"
@@ -117,17 +109,6 @@ function Navbar() {
           <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <li>
               <NavLink
-                to="/"
-                exact
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
                 to="/about"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 activeClassName="bg-gray-900"
@@ -153,7 +134,7 @@ function Navbar() {
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Student's Achievements & Testimonials
+                Achievements & Testimonials
               </NavLink>
             </li>
             <li>
@@ -173,7 +154,7 @@ function Navbar() {
                 activeClassName="bg-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                Upcoming Events & Blogs
+                Events & Blogs
               </NavLink>
             </li>
             <li>

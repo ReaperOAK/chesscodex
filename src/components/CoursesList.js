@@ -96,7 +96,7 @@ const CoursesList = () => {
                 <div className="mt-auto">
                   {course.title === 'Private Classes' ? (
                     <a
-                      href="https://wa.me/1234567890" // Replace with your email link
+                      href="https://wa.me/+919830149852" // Replace with your email link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"

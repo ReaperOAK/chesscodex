@@ -51,7 +51,7 @@ const Exclusives = () => {
             <p className="text-lg text-gray-700 mb-8">Half-Yearly Plan: ₹4,999 / $74.99</p>
             <p className="text-lg text-gray-700 mb-8">Yearly Plan: ₹8,999 / $134.99</p>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+919830149852"
               className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
             >
               Subscribe
