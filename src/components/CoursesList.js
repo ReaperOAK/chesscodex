@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// Course data
 const coursesData = [
   {
     title: 'Beginner Course',
@@ -63,85 +64,82 @@ const coursesData = [
   },
 ];
 
+// Modal Component
+const Modal = ({ course, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">
+        <h3 className="text-2xl font-bold mb-4 text-gray-800">{course.title}</h3>
+        <p className="text-gray-700 mb-2 font-medium">Duration: {course.duration}</p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-600">
+          {course.description.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+        <div className="mt-6 text-right">
+          <button
+            onClick={onClose}
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CoursesList = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  const openModal = (course) => {
-    setSelectedCourse(course);
-  };
-
-  const closeModal = () => {
-    setSelectedCourse(null);
-  };
+  const openModal = (course) => setSelectedCourse(course);
+  const closeModal = () => setSelectedCourse(null);
 
   return (
-    <section id="courses" className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Explore Our Courses</h2>
+    <section id="courses" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-10">Explore Our Courses</h2>
+
+        {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {coursesData.map((course, index) => (
             <div
               key={index}
-              className="bg-white p-6 shadow-lg rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 relative group cursor-pointer"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               onClick={() => openModal(course)}
             >
-              <div className="flex flex-col h-full">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{course.title}</h3>
-                <p className="text-gray-800 font-semibold mb-2">Duration: {course.duration}</p>
-                <ul className="list-disc list-inside text-left text-gray-600 mb-2 max-h-0 overflow-hidden group-hover:max-h-full group-hover:opacity-100 transition-all duration-300">
-                  {course.description.map((item, idx) => (
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-600 mb-4">{course.title}</h3>
+                <p className="text-gray-700 font-medium mb-2">Duration: {course.duration}</p>
+                <ul className="list-disc pl-4 text-gray-600 space-y-1 text-sm">
+                  {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
+                  <li className="text-blue-500 italic">...Read more</li>
                 </ul>
-                <div className="mt-auto">
-                  {course.title === 'Private Classes' ? (
-                    <a
-                      href="https://wa.me/+919830149852" // Replace with your email link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-                    >
-                      Contact Us
-                    </a>
-                  ) : (
-                    <a
-                      href="https://forms.gle/4CaSH9r9sWJ2BZpy8" // Replace with your WhatsApp number or email link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-                    >
-                      Enroll Now
-                    </a>
-                  )}
-                </div>
+              </div>
+              <div className="mt-4">
+                <a
+                  href={
+                    course.title === 'Private Classes'
+                      ? 'https://wa.me/+919830149852'
+                      : 'https://forms.gle/4CaSH9r9sWJ2BZpy8'
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+                >
+                  {course.title === 'Private Classes' ? 'Contact Us' : 'Enroll Now'}
+                </a>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Modal */}
-        {selectedCourse && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">{selectedCourse.title}</h3>
-              <p className="text-gray-800 font-semibold mb-2">Duration: {selectedCourse.duration}</p>
-              <ul className="list-disc list-inside text-left text-gray-600 mb-4">
-                {selectedCourse.description.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-              <div className="text-right">
-                <button
-                  onClick={closeModal}
-                  className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors duration-300"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Modal */}
+      {selectedCourse && <Modal course={selectedCourse} onClose={closeModal} />}
     </section>
   );
 };

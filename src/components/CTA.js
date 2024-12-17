@@ -2,19 +2,33 @@ import React from 'react';
 
 const CTA = () => {
   return (
-    <div>
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-20 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4">Join ChessCodex and Become a Champion</h2>
-          <p className="text-lg mb-8">Ready to take your chess skills to the next level? Enroll in our programs and start your journey with ChessCodex.</p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="/admission" className="bg-yellow-500 text-gray-800 font-semibold py-3 px-6 rounded-lg shadow hover:bg-yellow-400 transition duration-300">Enroll Now</a>
-            <a href="/contact" className="bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg shadow hover:bg-gray-200 transition duration-300">Contact Us</a>
-          </div>
+    <section className="bg-gradient-to-br from-blue-700 via-blue-500 to-purple-600 text-white py-16 sm:py-20 px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+          Unleash Your Inner Grandmaster
+        </h2>
+        <p className="text-lg sm:text-xl mb-8 text-gray-200 max-w-3xl mx-auto">
+          Take your chess skills to the next level with <span className="font-semibold">ChessCodex</span>. Join our world-class training programs, designed for all skill levels, and start your journey toward mastery.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+          <a
+            href="/admission"
+            aria-label="Enroll Now"
+            className="inline-flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:bg-yellow-300 hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+          >
+            <span>🎓 Enroll Now</span>
+          </a>
+          <a
+            href="/contact"
+            aria-label="Contact Us"
+            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:bg-gray-200 hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+          >
+            <span>📞 Contact Us</span>
+          </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-}
+};
 
 export default CTA;

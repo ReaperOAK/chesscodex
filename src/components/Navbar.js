@@ -1,211 +1,90 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi'; // For hamburger icon
+import { FiMenu, FiX } from 'react-icons/fi';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navLinks = [
+    { to: "/about", label: "About" },
+    { to: "/courses", label: "Admission/Courses" },
+    { to: "/achievements-testimonials", label: "Achievements/Testimonials" },
+    { to: "/events-blogs", label: "Events/Blogs" },
+    { to: "/gallery", label: "Gallery" },
+    { to: "/collaborate-with-us", label: "Collaboration" },
+    { to: "/faqs", label: "FAQs" },
+    { to: "/contact", label: "Contact Us" },
+  ];
+
   return (
-    <nav className="bg-white text-gray-800 shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white sticky top-0 shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-bold text-gray-800">
-              <img src='/KCA_PNG.png' alt="ChessCodex Logo" className="h-10 w-auto" />
+        <div className="flex justify-between h-16 items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center text-2xl font-bold">
+              <img src="/KCA_PNG.png" alt="Logo" className="h-10 w-auto mr-2" />
+              ChessCodex
             </Link>
           </div>
 
-          {/* Hamburger Menu for Mobile */}
-          <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 hover:bg-gray-200 focus:outline-none"
-            >
-              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
-          </div>
-
-          {/* Menu Links */}
-          <div className="hidden md:flex space-x-4 items-center">
-            <NavLink
-              to="/about"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              About Us
-            </NavLink>
-            <NavLink
-              to="/courses"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Admission & Courses
-            </NavLink>
-            <NavLink
-              to="/achievements-testimonials"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Achievements & Testimonials
-            </NavLink>
-            <NavLink
-              to="/exclusives"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Exclusives
-            </NavLink>
-            <NavLink
-              to="/events-blogs"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Events & Blogs
-            </NavLink>
-            <NavLink
-              to="/gallery"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Gallery
-            </NavLink>
-            <NavLink
-              to="/collaborate-with-us"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Collaborate with Us
-            </NavLink>
-            <NavLink
-              to="/faqs"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              FAQs
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
-            >
-              Contact Us
-            </NavLink>
-            <NavLink
-              to="https://dashboard.kolkatachessacademy.in/"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
-              activeClassName="bg-gray-300"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className="hover:text-gray-200 transition-colors duration-300"
+              >
+                {link.label}
+              </NavLink>
+            ))}
+            <a
+              href="https://dashboard.kolkatachessacademy.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200 transition-colors duration-300"
             >
               Dashboard
-            </NavLink>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-white focus:outline-none">
+              {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
-          <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-blue-700">
+          <ul className="space-y-4 px-4 py-6">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className="block text-white hover:text-gray-200"
+                  onClick={toggleMenu}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
             <li>
-              <NavLink
-                to="/about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/courses"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Admission & Courses
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/achievements-testimonials"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Achievements & Testimonials
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/exclusives"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Exclusives
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/events-blogs"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Events & Blogs
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/gallery"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Gallery
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/collaborate-with-us"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Collaborate with Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/faqs"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                FAQs
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="https://dashboard.kolkatachessacademy.in/"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
-                activeClassName="bg-gray-300"
-                onClick={() => setIsOpen(false)}
+              <a
+                href="https://dashboard.kolkatachessacademy.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white hover:text-gray-200"
+                onClick={toggleMenu}
               >
                 Dashboard
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>
