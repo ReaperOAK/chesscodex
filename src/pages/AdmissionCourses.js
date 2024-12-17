@@ -67,29 +67,48 @@ const AdmissionCourses = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-24 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-4">Our Courses & Admission Process</h1>
-              <p className="text-lg mb-8">Unlock your potential and elevate your chess skills with our expertly curated course by Grandmaster Niaz Murshed, a pioneering figure and Asia's first Grandmaster.</p>
+      <section className="relative bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 text-white py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Text Content */}
+            <div className="lg:col-span-6">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Master Chess with <span className="text-yellow-400">Grandmaster Guidance</span>
+              </h1>
+              <p className="text-lg md:text-xl mb-8">
+                Embark on your journey to chess mastery with expertly curated courses designed by Grandmaster Niaz Murshed, Asia's first Grandmaster and a legend in chess education.
+              </p>
             </div>
-            <div className="bg-white p-6 shadow-lg rounded-lg transform transition-transform hover:scale-105">
-              <img
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-                src="/niaz.jpg"
-                alt="GM Niaz Murshed"
-              />
-              <h3 className="text-xl font-bold text-gray-800"><span className="text-blue-500 font-bold">GM</span> Niaz Murshed</h3>
-              <p className="text-gray-600 mb-4">Coach</p>
-              <p className="text-gray-600">A pioneering figure in chess education and the first Grandmaster of Asia.</p>
+            {/* Image/Coach Info */}
+            <div className="lg:col-span-6 flex justify-center">
+              <div className="relative bg-white text-gray-800 p-8 rounded-xl shadow-2xl max-w-sm transform transition-transform hover:scale-105">
+                <img
+                  className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-yellow-400"
+                  src="/niaz.jpg"
+                  alt="GM Niaz Murshed"
+                />
+                <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">
+                  <span className="text-blue-500">GM</span> Niaz Murshed
+                </h3>
+                <p className="text-center text-gray-600 mb-4">Chess Coach & Mentor</p>
+                <p className="text-center text-gray-600">
+                  A trailblazer in chess, inspiring players across the globe with unparalleled expertise and passion for the game.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-400 rounded-full opacity-30 blur-lg"></div>
+          <div className="absolute bottom-10 left-10 w-64 h-64 bg-indigo-300 rounded-full opacity-20 blur-lg"></div>
         </div>
       </section>
 
       {/* Courses Listings */}
-      <CoursesList/>
+      <section id="courses">
+        <CoursesList/>
+      </section>
 
       {/* Google Form Section */}
       <section className="py-16 bg-gray-100">
@@ -110,7 +129,7 @@ const AdmissionCourses = () => {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-16">
+      <section id="admission" className="py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
