@@ -22,7 +22,7 @@ const coaches = [
   {
     name: 'FM Joydeep Dutta',
     role: 'Coach',
-    image: 'https://s3-ap-southeast-1.amazonaws.com/tv-prod/photo/27349-large.jpg',
+    image: '/joydeep.jpeg',
     description: `A distinguished coach with a wealth of experience in competitive chess and coaching.`,
   },
   {
