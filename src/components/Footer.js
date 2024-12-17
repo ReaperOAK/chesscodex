@@ -54,7 +54,7 @@ function Footer() {
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li className="text-gray-400">Email: info@chesscodex.com</li>
-              <li className="text-gray-400">Phone: +123 456 7890</li>
+              <li className="text-gray-400">Phone: +91 98301 49852</li>
             </ul>
             <br/>
             <a href="/refund-policy" className="text-gray-400 hover:text-white">Refund Policy</a>
