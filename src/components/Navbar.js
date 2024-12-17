@@ -12,7 +12,7 @@ function Navbar() {
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-white">
-              <img src='/kcalogo.jpg' alt="ChessCodex Logo" className="h-10 w-auto" />
+              <img src='/KCA_PNG.png' alt="ChessCodex Logo" className="h-10 w-auto" />
             </Link>
           </div>
 
