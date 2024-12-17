@@ -33,7 +33,7 @@ const Newsletter = ({ position }) => {
 
   if (!visible) return null;
 
-  const positionClasses = position === 'footer' ? 'w-full' : 'fixed bottom-4 left-4';
+  const positionClasses = position === 'footer' ? 'w-full' : 'fixed bottom-4 left-4 md:w-1/3';
 
   return (
     <div className={`${positionClasses} bg-white p-6 shadow-lg rounded-lg z-50`}>

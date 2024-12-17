@@ -56,11 +56,11 @@ const About = () => {
       </section>
 
       {/* Meet the Team Section */}
-      <Team/>
+      <Team />
 
       {/* Why Choose Us Section */}
-      <WhyChooseUs/>
-      <CTA/>
+      <WhyChooseUs />
+      <CTA />
     </div>
   );
 };

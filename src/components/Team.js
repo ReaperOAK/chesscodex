@@ -48,9 +48,9 @@ const Team = () => {
     <section className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-12">Meet Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {coaches.map((coach, index) => (
-            <div key={index} className="bg-white p-6 shadow-lg rounded-lg">
+            <div key={index} className="bg-white p-6 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
               <img
                 className="w-24 h-24 rounded-full mx-auto mb-4"
                 src={coach.image}

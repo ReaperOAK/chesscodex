@@ -13,13 +13,13 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 w-full">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: About Us */}
           <div>
             <h4 className="text-xl font-semibold mb-4">About ChessCodex</h4>
             <p className="text-gray-400">
               <b><u>Striving to Help All Players Achieve and Improve Their Chess Rating.</u></b><br/>
-              ChessCodex is dedicated to build a community packed with rated players through it structured methodology and constant guidance.
+              ChessCodex is dedicated to building a community packed with rated players through its structured methodology and constant guidance.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ function Footer() {
               <li className="text-gray-400">Phone: +123 456 7890</li>
             </ul>
             <br/>
-            <a href="/refund-policy" className="text-xl font-semibold mb-4">Refund Policy</a>
+            <a href="/refund-policy" className="text-gray-400 hover:text-white">Refund Policy</a>
           </div>
 
           {/* Column 4: Follow Us */}

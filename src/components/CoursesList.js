@@ -78,7 +78,7 @@ const CoursesList = () => {
     <section id="courses" className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Explore Our Courses</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {coursesData.map((course, index) => (
             <div
               key={index}

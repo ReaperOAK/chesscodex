@@ -162,16 +162,16 @@ const Contact = () => {
           <h2 className="text-4xl font-bold text-gray-800 mb-12">Follow Us</h2>
           <div className="flex justify-center space-x-6">
             <a href="https://facebook.com" className="text-blue-600 hover:text-blue-500">
-              <FaFacebook/>
+              <FaFacebook size={32}/>
             </a>
             <a href="https://twitter.com" className="text-blue-400 hover:text-blue-300">
-              <FaTwitter/>
+              <FaTwitter size={32}/>
             </a>
             <a href="https://instagram.com" className="text-pink-600 hover:text-pink-500">
-              <FaInstagram/>
+              <FaInstagram size={32}/>
             </a>
             <a href="https://linkedin.com" className="text-blue-800 hover:text-blue-700">
-              <FaLinkedin/>
+              <FaLinkedin size={32}/>
             </a>
           </div>
         </div>

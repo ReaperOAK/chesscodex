@@ -6,12 +6,12 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 text-white shadow-lg">
+    <nav className="bg-white text-gray-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-bold text-white">
+            <Link to="/" className="text-2xl font-bold text-gray-800">
               <img src='/KCA_PNG.png' alt="ChessCodex Logo" className="h-10 w-auto" />
             </Link>
           </div>
@@ -21,7 +21,7 @@ function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 hover:bg-gray-200 focus:outline-none"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -31,71 +31,71 @@ function Navbar() {
           <div className="hidden md:flex space-x-4 items-center">
             <NavLink
               to="/about"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               About Us
             </NavLink>
             <NavLink
               to="/courses"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Admission & Courses
             </NavLink>
             <NavLink
               to="/achievements-testimonials"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Achievements & Testimonials
             </NavLink>
             <NavLink
               to="/exclusives"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Exclusives
             </NavLink>
             <NavLink
               to="/events-blogs"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Events & Blogs
             </NavLink>
             <NavLink
               to="/gallery"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Gallery
             </NavLink>
             <NavLink
               to="/collaborate-with-us"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Collaborate with Us
             </NavLink>
             <NavLink
               to="/faqs"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               FAQs
             </NavLink>
             <NavLink
               to="/contact"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Contact Us
             </NavLink>
             <NavLink
               to="https://dashboard.kolkatachessacademy.in/"
-              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
-              activeClassName="bg-gray-900"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200 hover:text-gray-800"
+              activeClassName="bg-gray-300"
             >
               Dashboard
             </NavLink>
@@ -110,8 +110,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
@@ -120,8 +120,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/courses"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Admission & Courses
@@ -130,8 +130,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/achievements-testimonials"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Achievements & Testimonials
@@ -140,8 +140,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/exclusives"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Exclusives
@@ -150,8 +150,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/events-blogs"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Events & Blogs
@@ -160,8 +160,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/gallery"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Gallery
@@ -170,8 +170,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/collaborate-with-us"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Collaborate with Us
@@ -180,8 +180,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/faqs"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 FAQs
@@ -190,8 +190,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Contact Us
@@ -200,8 +200,8 @@ function Navbar() {
             <li>
               <NavLink
                 to="https://dashboard.kolkatachessacademy.in/"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                activeClassName="bg-gray-900"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-200 hover:text-gray-800"
+                activeClassName="bg-gray-300"
                 onClick={() => setIsOpen(false)}
               >
                 Dashboard

@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
           Whether you're a beginner, an intermediate player, or an advanced player aiming to master the game, our expert coaches guide you every step of the way.
         </p>
         <div className="bg-white p-8 rounded-lg shadow-lg text-left">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex items-start">
               <FaBook className="text-blue-500 text-4xl mr-4" />
               <div>
