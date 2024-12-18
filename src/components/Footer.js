@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h4 className="text-2xl font-bold mb-4">About ChessCodex</h4>
+            <h2 className="text-2xl font-bold mb-4">About ChessCodex</h2>
             <p className="text-gray-400 leading-relaxed">
               <strong>Empowering chess enthusiasts worldwide.</strong><br />
               ChessCodex offers structured programs and community engagement to help you level up your chess game.
@@ -23,7 +23,7 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h4 className="text-2xl font-bold mb-4">Quick Links</h4>
+            <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
             <ul className="space-y-2 text-gray-400">
               <li><a href="/exclusives" className="hover:text-yellow-500">Pro Members</a></li>
               <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500">Latest Games</a></li>
@@ -34,6 +34,7 @@ const Footer = () => {
                 <button
                   onClick={toggleDropdown}
                   className="hover:text-yellow-500 focus:outline-none"
+                  aria-label="Tournaments"
                 >
                   Tournaments
                 </button>
@@ -52,7 +53,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-2xl font-bold mb-4">Contact Us</h4>
+            <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center space-x-2">
                 <FaEnvelope className="text-yellow-500" />
@@ -70,7 +71,7 @@ const Footer = () => {
 
           {/* Social Media & Newsletter */}
           <div>
-            <h4 className="text-2xl font-bold mb-4">Follow Us</h4>
+            <h2 className="text-2xl font-bold mb-4">Follow Us</h2>
             <div className="flex space-x-4 mb-6">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaFacebook />

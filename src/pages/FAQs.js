@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import RefundPolicy from "../components/RefundPolicy";
 
@@ -109,6 +110,11 @@ const FAQs = () => {
 
   return (
     <section className="bg-gray-100 py-12">
+      <Helmet>
+        <title>FAQs - ChessCodex</title>
+        <meta name="description" content="Find answers to frequently asked questions about ChessCodex. Learn about our courses, policies, and more." />
+        <meta name="keywords" content="ChessCodex, FAQs, chess courses, chess policies, chess training, chess coaching" />
+      </Helmet>
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
           Frequently Asked Questions

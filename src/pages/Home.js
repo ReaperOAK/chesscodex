@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -28,16 +29,21 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Home - ChessCodex</title>
+        <meta name="description" content="Welcome to ChessCodex. Elevate your chess skills with expert training and comprehensive courses." />
+        <meta name="keywords" content="ChessCodex, chess training, chess courses, chess coaching, chess academy" />
+      </Helmet>
       {/* Benefits Slider */}
-<div className="bg-gray-700 text-white py-2">
-<Slider {...sliderSettings}>
-  {benefits.map((benefit, index) => (
-    <div key={index} className="text-center">
-      <p className="text-lg">{benefit}</p>
-    </div>
-  ))}
-</Slider>
-</div>
+      <div className="bg-gray-700 text-white py-2">
+        <Slider {...sliderSettings}>
+          {benefits.map((benefit, index) => (
+            <div key={index} className="text-center">
+              <p className="text-lg">{benefit}</p>
+            </div>
+          ))}
+        </Slider>
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-900 via-blue-800 to-indigo-900 text-white py-24 text-center">

@@ -4,9 +4,9 @@ const CTA = () => {
   return (
     <section className="bg-gradient-to-br from-blue-700 via-blue-500 to-purple-600 text-white py-16 sm:py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
           Unleash Your Inner Grandmaster
-        </h2>
+        </h1>
         <p className="text-lg sm:text-xl mb-8 text-gray-200 max-w-3xl mx-auto">
           Take your chess skills to the next level with <span className="font-semibold">ChessCodex</span>. Join our world-class training programs, designed for all skill levels, and start your journey toward mastery.
         </p>

@@ -99,7 +99,7 @@ const CoursesList = () => {
     <section id="courses" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-10">Explore Our Courses</h2>
+        <h1 className="text-4xl font-extrabold text-gray-800 text-center mb-10">Explore Our Chess Courses</h1>
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,7 +110,7 @@ const CoursesList = () => {
               onClick={() => openModal(course)}
             >
               <div>
-                <h3 className="text-2xl font-semibold text-blue-600 mb-4">{course.title}</h3>
+                <h2 className="text-2xl font-semibold text-blue-600 mb-4">{course.title}</h2>
                 <p className="text-gray-700 font-medium mb-2">Duration: {course.duration}</p>
                 <ul className="list-disc pl-4 text-gray-600 space-y-1 text-sm">
                   {course.description.slice(0, 3).map((item, idx) => (

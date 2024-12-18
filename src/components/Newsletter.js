@@ -37,6 +37,7 @@ const Newsletter = ({ position }) => {
     <div
       className={`${positionClasses} bg-white p-5 rounded-lg shadow-2xl animate-slideIn transition-all duration-300`}
       style={{ zIndex: 1000 }}
+      aria-label="Newsletter Subscription Form"
     >
       {/* Close Button */}
       <button
@@ -56,7 +57,7 @@ const Newsletter = ({ position }) => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h3 className="text-xl font-bold text-gray-800">Join Our Newsletter</h3>
+            <h2 className="text-xl font-bold text-gray-800">Join Our Newsletter</h2>
             <p className="text-gray-600 text-sm mt-1">
               Stay updated with our latest news and events.
             </p>
@@ -70,6 +71,7 @@ const Newsletter = ({ position }) => {
             placeholder="Enter your email"
             required
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Email Address"
           />
 
           {/* Subscribe Button */}

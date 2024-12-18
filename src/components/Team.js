@@ -58,7 +58,7 @@ const Team = () => {
   return (
     <section className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-10">Meet Our Expert Coaches</h2>
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-10">Meet Our Expert Chess Coaches</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {coaches.map((coach, index) => (
             <div
@@ -72,9 +72,9 @@ const Team = () => {
                 alt={coach.name}
               />
               <div className="p-6 relative z-10">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">
                   {highlightTitle(coach.name)}
-                </h3>
+                </h2>
                 <p className="text-blue-600 font-semibold mb-4">{coach.role}</p>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {expandedCoach === index

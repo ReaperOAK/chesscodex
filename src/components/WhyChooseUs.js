@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-gray-100 via-white to-gray-100">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold mb-6 text-gray-800">Why Choose Us?</h2>
+        <h1 className="text-4xl font-extrabold mb-6 text-gray-800">Why Choose ChessCodex?</h1>
         <p className="text-lg mb-12 text-gray-600">
           At ChessCodex, we empower chess enthusiasts with unparalleled coaching, a world-class curriculum, and the tools needed to succeed at any level.
         </p>
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
               className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
               {feature.icon}
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{feature.title}</h3>
+              <h2 className="text-xl font-semibold text-gray-800 mb-3">{feature.title}</h2>
               <p className="text-gray-600 text-center">{feature.description}</p>
             </div>
           ))}

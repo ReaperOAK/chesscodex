@@ -1,8 +1,14 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 
 const CollaborateWithUs = () => {
   return (
     <div>
+      <Helmet>
+        <title>Collaborate With Us - ChessCodex</title>
+        <meta name="description" content="Partner with ChessCodex to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies." />
+        <meta name="keywords" content="ChessCodex, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-600 to-purple-500 text-white py-20 text-center">
         <div className="max-w-5xl mx-auto px-4">

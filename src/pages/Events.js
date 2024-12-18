@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet';
 import CTA from "../components/CTA";
 
 // Data for events
@@ -27,6 +28,11 @@ const Events = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Upcoming Events - ChessCodex</title>
+        <meta name="description" content="Join us in our exciting tournaments and chess events. Check out the schedule and register for upcoming events at ChessCodex." />
+        <meta name="keywords" content="ChessCodex, chess events, chess tournaments, chess schedule, chess competitions" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 text-white py-24">
         <div className="absolute inset-0 opacity-20 bg-pattern"></div>

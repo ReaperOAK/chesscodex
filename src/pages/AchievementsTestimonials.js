@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
@@ -55,6 +56,11 @@ const testimonials = [
 const AchievementsTestimonials = () => {
   return (
     <div>
+      <Helmet>
+        <title>Achievements & Testimonials - ChessCodex</title>
+        <meta name="description" content="Celebrating our students' success stories and heartfelt experiences at ChessCodex. Learn about our notable achievements and read testimonials from our students." />
+        <meta name="keywords" content="ChessCodex, chess achievements, chess testimonials, chess success stories, chess training, chess coaching" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-indigo-400 text-white py-20 text-center">
         <div className="max-w-5xl mx-auto px-4">

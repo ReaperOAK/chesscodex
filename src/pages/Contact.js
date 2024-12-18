@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Helmet } from 'react-helmet';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -61,6 +62,11 @@ const Contact = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us - ChessCodex</title>
+        <meta name="description" content="Get in touch with ChessCodex. Send us a message or find our location." />
+        <meta name="keywords" content="ChessCodex, contact, chess academy, chess training, chess coaching" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 to-indigo-500 text-white py-20">
         <div className="text-center">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import CTA from '../components/CTA';
 import CoursesList from '../components/CoursesList';
 import { FaChessKnight } from 'react-icons/fa';
@@ -48,6 +49,11 @@ const AdmissionCourses = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Admission & Courses - ChessCodex</title>
+        <meta name="description" content="Join ChessCodex to elevate your chess skills with expert training and comprehensive courses. Learn more about our admission process and available courses." />
+        <meta name="keywords" content="ChessCodex, chess courses, chess training, chess admission, chess coaching, chess academy" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">

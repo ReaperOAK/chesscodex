@@ -14,6 +14,7 @@ import Exclusives from './pages/Exclusives';
 import CollaborateWithUs from './pages/CollaborateWithUs';
 import Newsletter from './components/Newsletter'; // Import the Newsletter component
 import WhatsAppButton from './components/WhatsAppButton'; // Import the WhatsAppButton component
+import NotFound from './pages/NotFound'; // Import the NotFound component
 import { Helmet } from 'react-helmet';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/dashboard" element={<Maintenance />} />
           <Route path="/exclusives" element={<Exclusives />} />
           <Route path="/collaborate-with-us" element={<CollaborateWithUs />} />
+          <Route path="*" element={<NotFound />} /> {/* Add this line */}
         </Routes>
         <WhatsAppButton />
       </div>

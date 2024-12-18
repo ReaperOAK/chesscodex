@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
 import CTA from '../components/CTA';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -7,6 +8,11 @@ import Team from '../components/Team';
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>About Us - ChessCodex</title>
+        <meta name="description" content="Learn more about ChessCodex, our mission, and our team of expert coaches. Empowering chess enthusiasts to achieve their best." />
+        <meta name="keywords" content="ChessCodex, Kolkata Chess Academy, chess training, chess coaching, chess courses, chess community" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-24">
         <div className="max-w-5xl mx-auto text-center px-4">

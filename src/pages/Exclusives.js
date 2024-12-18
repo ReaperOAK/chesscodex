@@ -1,8 +1,14 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 
 const Exclusives = () => {
   return (
     <div>
+      <Helmet>
+        <title>Exclusives - ChessCodex</title>
+        <meta name="description" content="Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans." />
+        <meta name="keywords" content="ChessCodex, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">

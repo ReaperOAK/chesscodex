@@ -25,8 +25,8 @@ function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0 mr-10">
-            <Link to="/" className="flex items-center text-2xl font-bold">
-              <img src="/KCA_PNG.png" alt="Logo" className="h-10 w-auto mr-2" />
+            <Link to="/" className="flex items-center text-2xl font-bold" aria-label="ChessCodex Home">
+              <img src="/KCA_PNG.png" alt="ChessCodex Logo" className="h-10 w-auto mr-2" />
               ChessCodex
             </Link>
           </div>
@@ -38,6 +38,7 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 className="hover:text-gray-200 transition-colors duration-300"
+                aria-label={link.label}
               >
                 {link.label}
               </NavLink>
@@ -47,6 +48,7 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-200 transition-colors duration-300"
+              aria-label="Dashboard"
             >
               Dashboard
             </a>
@@ -54,7 +56,7 @@ function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-white focus:outline-none">
+            <button onClick={toggleMenu} className="text-white focus:outline-none" aria-label="Toggle Menu">
               {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
             </button>
           </div>
@@ -71,6 +73,7 @@ function Navbar() {
                   to={link.to}
                   className="block text-white hover:text-gray-200"
                   onClick={toggleMenu}
+                  aria-label={link.label}
                 >
                   {link.label}
                 </NavLink>
@@ -83,6 +86,7 @@ function Navbar() {
                 rel="noopener noreferrer"
                 className="block text-white hover:text-gray-200"
                 onClick={toggleMenu}
+                aria-label="Dashboard"
               >
                 Dashboard
               </a>
