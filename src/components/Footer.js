@@ -1,82 +1,90 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import Newsletter from './Newsletter'; // Import the Newsletter component
+import Newsletter from './Newsletter';
 
-function Footer() {
+const Footer = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
-    <footer className="bg-gray-900 text-white py-12 w-full">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gray-800 text-white py-12">
+      <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: About Us */}
+          {/* About Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">About ChessCodex</h4>
-            <p className="text-gray-400">
-              <b><u>Striving to Help All Players Achieve and Improve Their Chess Rating.</u></b><br/>
-              ChessCodex is dedicated to building a community packed with rated players through its structured methodology and constant guidance.
+            <h4 className="text-2xl font-bold mb-4">About ChessCodex</h4>
+            <p className="text-gray-400 leading-relaxed">
+              <strong>Empowering chess enthusiasts worldwide.</strong><br />
+              ChessCodex offers structured programs and community engagement to help you level up your chess game.
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Quick Links Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="/exclusives" className="text-gray-400 hover:text-white">Pro Members</a></li>
-              <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Latest Games</a></li>
-              <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">FIDE Ratings</a></li>
-              <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Play Online</a></li>
-              <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Solve Puzzles</a></li>
+            <h4 className="text-2xl font-bold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li><a href="/exclusives" className="hover:text-yellow-500">Pro Members</a></li>
+              <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500">Latest Games</a></li>
+              <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500">FIDE Ratings</a></li>
+              <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500">Play Online</a></li>
+              <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500">Solve Puzzles</a></li>
               <li className="relative">
-                <button onClick={toggleDropdown} className="text-gray-400 hover:text-white focus:outline-none">
+                <button
+                  onClick={toggleDropdown}
+                  className="hover:text-yellow-500 focus:outline-none"
+                >
                   Tournaments
                 </button>
                 {isDropdownOpen && (
-                  <ul className="absolute left-0 mt-2 bg-gray-800 rounded shadow-lg z-10">
-                    <li><a href="https://tournaments/kolkatachessacademy.in/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-400 hover:text-white">Kolkata Chess Academy</a></li>
-                    <li><a href="https://www.fide.com/calendar" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-400 hover:text-white">World</a></li>
-                    <li><a href="https://aicf.in/all-events/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-400 hover:text-white">India</a></li>
-                    <li><a href="https://www.sbdschess.in/state_events.php" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-400 hover:text-white">Bengal</a></li>
-                    <li><a href="https://new.uschess.org/play-chess" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-400 hover:text-white">US</a></li>
+                  <ul className="absolute mt-2 bg-gray-700 text-white rounded shadow-lg">
+                    <li><a href="https://tournaments/kolkatachessacademy.in/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-gray-600">Kolkata Chess Academy</a></li>
+                    <li><a href="https://www.fide.com/calendar" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-gray-600">World</a></li>
+                    <li><a href="https://aicf.in/all-events/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-gray-600">India</a></li>
+                    <li><a href="https://www.sbdschess.in/state_events.php" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-gray-600">Bengal</a></li>
+                    <li><a href="https://new.uschess.org/play-chess" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-gray-600">US</a></li>
                   </ul>
                 )}
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
+          {/* Contact Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2">
-              <li className="text-gray-400">Email: info@chesscodex.com</li>
-              <li className="text-gray-400">Phone: +91 98301 49852</li>
+            <h4 className="text-2xl font-bold mb-4">Contact Us</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li className="flex items-center space-x-2">
+                <FaEnvelope className="text-yellow-500" />
+                <span>info@chesscodex.com</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaPhoneAlt className="text-yellow-500" />
+                <span>+91 98301 49852</span>
+              </li>
             </ul>
-            <br/>
-            <a href="/refund-policy" className="text-gray-400 hover:text-white">Refund Policy</a>
+            <a href="/refund-policy" className="inline-block mt-4 text-yellow-500 hover:underline">
+              Refund Policy
+            </a>
           </div>
 
-          {/* Column 4: Follow Us */}
+          {/* Social Media & Newsletter */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4 mb-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+            <h4 className="text-2xl font-bold mb-4">Follow Us</h4>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaFacebook />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaXTwitter />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaLinkedin />
               </a>
-              <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">
+              <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 text-2xl">
                 <FaWhatsapp />
               </a>
             </div>
@@ -84,13 +92,17 @@ function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom: Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-gray-400">© 2024 ChessCodex. All Rights Reserved.<br/>Made with &#10084; by Owais Khan</p>
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+          <p>
+            © {new Date().getFullYear()} ChessCodex. All Rights Reserved.
+            <br />
+            Made with <span className="text-yellow-500">♥</span> by Owais Khan
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

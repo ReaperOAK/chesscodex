@@ -7,10 +7,12 @@ const WhatsAppButton = () => {
       href="https://wa.me/+919830149852" // Replace with your WhatsApp number
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
+      className="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex items-center gap-3 bg-green-500 text-white py-3 px-4 md:px-5 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:shadow-2xl scale-105 z-50"
     >
-      <FaWhatsapp size={24} className="md:hidden" />
-      <FaWhatsapp size={32} className="hidden md:block" />
+      <FaWhatsapp size={28} className="animate-pulse" />
+      <span className="hidden md:inline text-lg font-semibold">
+        Chat with Us
+      </span>
     </a>
   );
 };

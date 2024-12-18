@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// Team data
 const coaches = [
   {
     name: 'GM Sayantan Das',
@@ -29,47 +30,64 @@ const coaches = [
     name: 'Arpan Das',
     role: 'Coach',
     image: '/arpan.jpg',
-    description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Formerly ranked among the top 100 Indian players of all time, he has represented India multiple times. Now focusing on coaching he has already mentored 10+ titled players and national rankholders in a span of 3 years, guiding them to success. His approach emphasizes the fusion of chess literature with the calculative side of the game.`,
+    description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Formerly ranked among the top 100 Indian players of all time, he has represented India multiple times. Now focusing on coaching, he has already mentored 10+ titled players and national rankholders in a span of 3 years, guiding them to success.`,
   },
 ];
 
+// Component
 const Team = () => {
   const [expandedCoach, setExpandedCoach] = useState(null);
 
-  const toggleReadMore = (index) => {
+  const toggleDescription = (index) => {
     setExpandedCoach(expandedCoach === index ? null : index);
   };
 
-  const highlightTitles = (name) => {
-    return name.replace(/(GM|IM|FM)/g, '<span class="text-blue-500 font-bold">$1</span>');
+  const highlightTitle = (name) => {
+    const titleRegex = /^(GM|IM|FM)/;
+    const match = name.match(titleRegex);
+    if (match) {
+      return (
+        <>
+          <span className="text-blue-500">{match[0]}</span> {name.replace(titleRegex, '').trim()}
+        </>
+      );
+    }
+    return name;
   };
 
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12">Meet Our Team</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="bg-gray-50 py-16">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-4xl font-extrabold text-gray-800 mb-10">Meet Our Expert Coaches</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {coaches.map((coach, index) => (
-            <div key={index} className="bg-white p-6 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-20"></div>
               <img
-                className="w-24 h-24 rounded-full mx-auto mb-4"
+                className="w-full h-64 object-cover"
                 src={coach.image}
                 alt={coach.name}
               />
-              <h3
-                className="text-xl font-bold text-gray-800"
-                dangerouslySetInnerHTML={{ __html: highlightTitles(coach.name) }}
-              ></h3>
-              <p className="text-gray-600 mb-4">{coach.role}</p>
-              <p className="text-gray-600">
-                {expandedCoach === index ? coach.description : `${coach.description.substring(0, 100)}...`}
-              </p>
-              <button
-                className="text-blue-500 mt-2"
-                onClick={() => toggleReadMore(index)}
-              >
-                {expandedCoach === index ? "Read Less" : "Read More"}
-              </button>
+              <div className="p-6 relative z-10">
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  {highlightTitle(coach.name)}
+                </h3>
+                <p className="text-blue-600 font-semibold mb-4">{coach.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {expandedCoach === index
+                    ? coach.description
+                    : `${coach.description.substring(0, 120)}...`}
+                </p>
+                <button
+                  onClick={() => toggleDescription(index)}
+                  className="text-blue-500 hover:underline font-medium"
+                >
+                  {expandedCoach === index ? 'Read Less' : 'Read More'}
+                </button>
+              </div>
             </div>
           ))}
         </div>
