@@ -9,9 +9,9 @@ function Navbar() {
 
   const navLinks = [
     { to: "/about", label: "About" },
-    { to: "/courses", label: "Admission/Courses" },
-    { to: "/achievements-testimonials", label: "Achievements/Testimonials" },
-    { to: "/events-blogs", label: "Events/Blogs" },
+    { to: "/courses", label: "Admission & Courses" },
+    { to: "/achievements-testimonials", label: "Achievements & Testimonials" },
+    { to: "/events-blogs", label: "Events & Blogs" },
     { to: "/gallery", label: "Gallery" },
     { to: "/collaborate-with-us", label: "Collaboration" },
     { to: "/exclusives", label: "Exclusives" },
@@ -32,7 +32,7 @@ function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:flex-1 md:justify-end space-x-6">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end space-x-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -55,7 +55,7 @@ function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none" aria-label="Toggle Menu">
               {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
             </button>
@@ -65,7 +65,7 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-blue-700 absolute top-16 left-0 w-full z-50">
+        <div className="lg:hidden bg-blue-700 absolute top-16 left-0 w-full z-50">
           <ul className="space-y-4 px-4 py-6">
             {navLinks.map((link) => (
               <li key={link.to}>
