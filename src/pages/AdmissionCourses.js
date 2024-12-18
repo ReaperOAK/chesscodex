@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CTA from '../components/CTA';
 import CoursesList from '../components/CoursesList';
+import { FaChessKnight } from 'react-icons/fa';
 
 const admissionSteps = [
   { step: 'Step 1: Choose a Course', description: 'Select the course that best fits your skill level and interest.' },
@@ -89,21 +90,24 @@ const AdmissionCourses = () => {
       </section>
 
       {/* Google Form Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-6">Join Our Academy</h2>
-          <p className="text-gray-700 mb-8">
+          <FaChessKnight className="text-6xl mx-auto mb-6 text-yellow-400" />
+          <h2 className="text-4xl font-extrabold mb-6">Join Our Academy</h2>
+          <p className="text-lg mb-8">
             Ready to master chess? Fill out the application form to enroll in your desired course.
           </p>
           <a
             href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
+            className="inline-block bg-yellow-400 text-blue-900 py-3 px-6 rounded-lg font-semibold hover:bg-yellow-300 transition"
           >
             Open Application Form
           </a>
         </div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-300 opacity-30 blur-lg"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-300 opacity-20 blur-lg"></div>
       </section>
 
       {/* FAQs Section */}

@@ -139,7 +139,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16">
+      <section className="py-16 relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
             Visit Us

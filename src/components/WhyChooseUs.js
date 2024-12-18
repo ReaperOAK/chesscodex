@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt } from 'react-icons/fa';
+import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers } from 'react-icons/fa';
 
 const WhyChooseUs = () => {
   const features = [
@@ -37,6 +37,16 @@ const WhyChooseUs = () => {
       icon: <FaFileAlt className="text-pink-500 text-5xl mb-4" />,
       title: "Detailed Report Card",
       description: "Receive personalized feedback to identify strengths and areas for growth.",
+    },
+    {
+      icon: <FaMedal className="text-orange-500 text-5xl mb-4" />,
+      title: "Achievement Recognition",
+      description: "Celebrate your milestones and achievements with certificates and awards.",
+    },
+    {
+      icon: <FaUsers className="text-teal-500 text-5xl mb-4" />,
+      title: "Community Support",
+      description: "Join a vibrant community of chess enthusiasts and participate in group activities.",
     },
   ];
 
