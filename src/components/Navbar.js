@@ -14,8 +14,9 @@ function Navbar() {
     { to: "/events-blogs", label: "Events/Blogs" },
     { to: "/gallery", label: "Gallery" },
     { to: "/collaborate-with-us", label: "Collaboration" },
+    { to: "/exclusives", label: "Exclusives" },
     { to: "/faqs", label: "FAQs" },
-    { to: "/contact", label: "Contact Us" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -23,7 +24,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0 mr-10">
             <Link to="/" className="flex items-center text-2xl font-bold">
               <img src="/KCA_PNG.png" alt="Logo" className="h-10 w-auto mr-2" />
               ChessCodex
@@ -31,7 +32,7 @@ function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex md:flex-1 md:justify-end space-x-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -62,7 +63,7 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-blue-700">
+        <div className="md:hidden bg-blue-700 absolute top-16 left-0 w-full z-50">
           <ul className="space-y-4 px-4 py-6">
             {navLinks.map((link) => (
               <li key={link.to}>

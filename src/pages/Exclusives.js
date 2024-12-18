@@ -1,129 +1,158 @@
-import React from 'react';
+import React from "react";
 
 const Exclusives = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-24 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Exclusives</h1>
-          <p className="text-lg">Unlock exclusive benefits and opportunities with our Pro Membership and Scholarships.</p>
+      <section className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-16">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h1 className="text-4xl font-extrabold mb-4">Exclusives</h1>
+          <p className="text-lg">
+            Unlock exclusive benefits with our Pro Membership and Scholarships.
+          </p>
         </div>
       </section>
 
-      {/* Pro Members Section */}
-      <section className="py-16 bg-gray-100 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Pro Members</h2>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Pro Members - Kolkata Chess Academy</h3>
-            <p className="text-lg text-gray-700 mb-8">
-              At Kolkata Chess Academy, we are dedicated to enhancing the quality of chess coaching worldwide. Through our Pro Membership programme, we are trying to regulate the daily chess training at home, with a structured method.
-              Our key areas of focus through this Study Method will be Calculation and Strategy with a mix of Endgames, Opening and Psychology.
-              Join us in our mission to create structured chess training at home and to set new standards in your career!
+      {/* Sections Wrapper */}
+      <div className="bg-gray-50">
+        {/* Pro Members Section */}
+        <section className="py-16">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">Pro Membership</h2>
+            <div className="space-y-8">
+              {[
+                {
+                  title: "Calculation Pack",
+                  details: [
+                    "9 curated puzzles divided into 3 levels.",
+                    "Frequency: 3 days/week.",
+                    "Support: Self-check positions.",
+                  ],
+                },
+                {
+                  title: "Game Analysis",
+                  details: [
+                    "8 modern & classical games analyzed monthly.",
+                    "Includes solvable in-game diagrams.",
+                    "Insights from titled players.",
+                  ],
+                },
+                {
+                  title: "Hot Topic Summarizations",
+                  details: [
+                    "Video courses with monthly topics.",
+                    "Frequency: Beginner and advanced topics monthly.",
+                    "Includes homework for hands-on learning.",
+                  ],
+                },
+                {
+                  title: "Additional Benefits",
+                  details: [
+                    "Exclusive bonus content.",
+                    "Access to a Pro Members Community Forum.",
+                  ],
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                >
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
+                  <ul className="text-left list-disc list-inside text-gray-600 space-y-1">
+                    {item.details.map((detail, index) => (
+                      <li key={index}>{detail}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-12 bg-indigo-600 text-white">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-4">Pricing</h2>
+            <p className="text-lg mb-8">
+              Affordable plans to kickstart your chess journey!
             </p>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Offerings</h3>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-lg mb-8">
-              <h4 className="text-2xl font-bold text-gray-800 mb-2">Calculation Pack</h4>
-              <p className="text-gray-700">Structure: 9 curated puzzles divided in 3 levels prepared by a GM.</p>
-              <p className="text-gray-700">Frequency: 3 days/ week.</p>
-              <p className="text-gray-700">Support: You can self-check the positions.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { plan: "Monthly", price: "₹999 / $14.99" },
+                { plan: "Half-Yearly", price: "₹4,999 / $74.99" },
+                { plan: "Yearly", price: "₹8,999 / $134.99" },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white text-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                >
+                  <h3 className="text-xl font-bold mb-2">{item.plan} Plan</h3>
+                  <p className="text-lg">{item.price}</p>
+                </div>
+              ))}
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-lg mb-8">
-              <h4 className="text-2xl font-bold text-gray-800 mb-2">Game Analysis</h4>
-              <p className="text-gray-700">Structure: 8 in-depth game modern and classical analysis, with in-game solvable Diagrams.</p>
-              <p className="text-gray-700">Frequency: 8 games to analyse, learn & study for a month.</p>
-              <p className="text-gray-700">Support: Deep Dive by Titled Players and their personal insights.</p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-lg mb-8">
-              <h4 className="text-2xl font-bold text-gray-800 mb-2">Hot Topic Summarizations</h4>
-              <p className="text-gray-700">Structure: Video explanation Course with Positions- 1 Topic every Month of Beginner & 1 Topic of Intermediate or Advance or Expert Level presented by FM Joydeep Dutta & Arpan Das.</p>
-              <p className="text-gray-700">Frequency: 2 Topics every Month</p>
-              <p className="text-gray-700">Support: Homework of specific Topics Presented to work at Home.</p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-lg mb-8">
-              <h4 className="text-2xl font-bold text-gray-800 mb-2">Additional Benefits</h4>
-              <p className="text-gray-700">Access to Exclusive Bonus Content.</p>
-              <p className="text-gray-700">Access to our exclusive Pro Members Community Forum where we discuss daily ideas around chess!</p>
-            </div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Pricing and Terms</h3>
-            <p className="text-lg text-gray-700 mb-8">Monthly Plan: ₹999 / $14.99</p>
-            <p className="text-lg text-gray-700 mb-8">Half-Yearly Plan: ₹4,999 / $74.99</p>
-            <p className="text-lg text-gray-700 mb-8">Yearly Plan: ₹8,999 / $134.99</p>
             <a
               href="https://wa.me/+919830149852"
-              className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+              className="inline-block mt-6 bg-green-500 py-2 px-4 rounded text-white font-medium hover:bg-green-600 transition"
             >
-              Subscribe
+              Subscribe Now
             </a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Scholarships Section */}
-      <section className="py-16 bg-white text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Scholarships</h2>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Aspiration of the Month Scholarship</h3>
-            <p className="text-lg text-gray-700 mb-8">
-              Our "Aspiration of the Month Scholarship" recognizes and supports outstanding students who show exceptional promise and dedication in chess. Each month, one student will be awarded a full scholarship to our Pro Membership.
-            </p>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Scholarships Categories</h3>
-            <ul className="list-disc list-inside text-left text-gray-700 mb-8">
-              <li>For our Young FIDE rated & USCF 1200+ rated Stars:
-                <ul className="list-disc list-inside ml-4">
-                  <li>One-month free subscription to our “Pro Membership”</li>
-                </ul>
-              </li>
-              <li>For our State Age Group category winners:
-                <ul className="list-disc list-inside ml-4">
-                  <li>1st & 2nd Rank Holders: Six (6) months free subscription to “Pro Membership”</li>
-                  <li>Exclusive 1st Rank Holder: 5 Game Analysis</li>
-                  <li>3rd Rank- 2 Months free “Pro Membership”</li>
-                  <li>4th Rank- 1 Month free “Pro Membership”</li>
-                </ul>
-              </li>
-              <li>For our National Age Group category winners:
-                <ul className="list-disc list-inside ml-4">
-                  <li>1st & 2nd Rank Holders: 1 year free subscription to “Pro Membership”</li>
-                  <li>Exclusive 1st Rank Holder: Quarterly 5 Game Analysis</li>
-                  <li>Exclusive 2nd Rank Holder: 1 time 5 Game Analysis</li>
-                  <li>3rd Rank- 6 Months free “Pro Membership” & 1 time 5 Game Analysis</li>
-                  <li>4th Rank- 4 Months free “Pro Membership”</li>
-                  <li>5th Rank- 2 Months free “Pro Membership”</li>
-                </ul>
-              </li>
-            </ul>
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Additional Incentives to both Categories</h3>
-            <ul className="list-disc list-inside text-left text-gray-700">
-              <li>Achievement Highlight on all our Social Media Platforms</li>
-              <li>Personalized Merchandize Gifts</li>
-              <li>Selected One free Tournament Registration</li>
-            </ul>
+        {/* Scholarships Section */}
+        <section className="py-16">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">Scholarships</h2>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-2xl font-bold mb-4">
+                Aspiration of the Month Scholarship
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Recognizing outstanding students with Pro Membership scholarships.
+              </p>
+              <ul className="list-disc list-inside text-left space-y-3 text-gray-700">
+                <li>
+                  <strong>FIDE Rated & USCF 1200+ Stars:</strong> One-month free
+                  Pro Membership.
+                </li>
+                <li>
+                  <strong>State Age Group Winners:</strong>
+                  <ul className="list-disc list-inside ml-4 space-y-1">
+                    <li>1st & 2nd: 6 months Pro Membership + Analysis Bonus.</li>
+                    <li>3rd: 2 months Pro Membership.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>National Age Group Winners:</strong>
+                  <ul className="list-disc list-inside ml-4 space-y-1">
+                    <li>1st & 2nd: 1 year Pro Membership + Game Analysis.</li>
+                    <li>3rd: 6 months Pro Membership + Game Analysis.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Game Analysis Section */}
-      <section className="py-16 bg-white text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Game Analysis</h2>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-            <p className="text-lg text-gray-700 mb-8">
-              Enhance your chess skills with our comprehensive game analysis service. Our expert coaches will analyze your games, provide detailed feedback, and offer personalized recommendations to help you improve your strategies and performance.
+        {/* Game Analysis Section */}
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">Game Analysis</h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Improve your gameplay with expert feedback and detailed reviews.
             </p>
             <a
               href="https://forms.gle/6Tb4CTK7sRLW7n1E6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
+              className="inline-block bg-blue-600 py-2 px-4 rounded text-white hover:bg-blue-700 transition"
             >
               Learn More
             </a>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

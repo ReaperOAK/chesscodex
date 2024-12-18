@@ -1,73 +1,134 @@
-import React from 'react';
+import React from "react";
 
 const CollaborateWithUs = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-24 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Collaborate With Us</h1>
-          <p className="text-lg">Join us in promoting chess and making a difference in the community.</p>
+      <section className="bg-gradient-to-br from-indigo-600 to-purple-500 text-white py-20 text-center">
+        <div className="max-w-5xl mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-6">Collaborate With Us</h1>
+          <p className="text-lg md:text-xl">
+            Partner with us to promote chess, foster creativity, and make a meaningful impact in your community.
+          </p>
         </div>
       </section>
 
-      {/* Referral Programme Section */}
-      <section className="py-16 bg-gray-100 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Referral Programme</h2>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <p className="text-lg text-gray-700 mb-4">
-              Our Referral Programme allows you to earn rewards by referring friends and family to our chess academy. Share your love for chess and help others discover the benefits of our courses.
+      {/* Sections Wrapper */}
+      <div className="space-y-20 py-16 bg-gray-50">
+        {/* Referral Programme */}
+        <section className="bg-white rounded-lg shadow-md py-12">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-indigo-600 mb-4">
+              Referral Programme
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Share your love for chess and earn rewards by bringing your friends and family to our academy.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              For each successful referral, you will receive a discount on your next course or a special gift from us. Join our Referral Programme today and start earning rewards!
-            </p>
+            <div className="bg-gray-100 p-8 rounded-lg">
+              <ul className="list-disc list-inside text-left text-gray-700">
+                <li className="mb-3">
+                  <strong>Earn Discounts:</strong> Receive exclusive discounts for every successful referral.
+                </li>
+                <li className="mb-3">
+                  <strong>Share the Benefits:</strong> Introduce others to the joy of learning chess with us.
+                </li>
+                <li>
+                  <strong>Simple Process:</strong> Refer, enroll, and get rewarded!
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Chess in School Section */}
-      <section className="py-16 bg-white text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Chess in School</h2>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-            <p className="text-lg text-gray-700 mb-4">
-              We believe that chess can play a vital role in the development of young minds. Our Chess in School programme aims to introduce chess to students and integrate it into the school curriculum.
+        {/* Chess in Schools */}
+        <section className="bg-indigo-50 py-12">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-indigo-600 mb-4">
+              Chess in Schools
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Bring the timeless game of chess to the classroom, enriching young minds through strategic thinking.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              By partnering with schools, we provide structured chess lessons, organize tournaments, and offer resources to help students improve their skills. Join us in bringing the benefits of chess to schools and nurturing the next generation of chess champions.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow">
+                <h3 className="text-2xl font-bold text-indigo-500 mb-2">
+                  Structured Lessons
+                </h3>
+                <p className="text-gray-600">
+                  Tailored chess lessons designed to improve cognitive skills and problem-solving abilities.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow">
+                <h3 className="text-2xl font-bold text-indigo-500 mb-2">
+                  Tournaments & Competitions
+                </h3>
+                <p className="text-gray-600">
+                  Encourage students to showcase their skills and build confidence through competitive events.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Chess in Workspace Section */}
-      <section className="py-16 bg-gray-100 text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Chess in Workspace</h2>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <p className="text-lg text-gray-700 mb-4">
-              Chess is not just a game; it is a powerful tool for enhancing cognitive skills, strategic thinking, and teamwork. Our Chess in Workspace programme brings the benefits of chess to the corporate world.
+        {/* Chess in Workspaces */}
+        <section className="bg-white py-12">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-indigo-600 mb-4">
+              Chess in Workspaces
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Empower employees with chess-based workshops that boost strategic thinking, focus, and teamwork.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              We offer chess workshops, training sessions, and tournaments for employees, helping them develop critical skills that can be applied in the workplace. Partner with us to create a stimulating and engaging work environment through chess.
-            </p>
+            <div className="flex justify-center">
+              <div className="bg-gray-50 p-8 rounded-lg shadow-lg max-w-xl">
+                <ul className="list-disc list-inside text-left text-gray-700">
+                  <li className="mb-3">
+                    <strong>Workshops & Training:</strong> Interactive sessions to hone cognitive and analytical skills.
+                  </li>
+                  <li className="mb-3">
+                    <strong>Team Building:</strong> Encourage collaboration and camaraderie through chess.
+                  </li>
+                  <li>
+                    <strong>Corporate Tournaments:</strong> Host engaging tournaments for your organization.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Chess Academies Section */}
-      <section className="py-16 bg-white text-center">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Chess Academies</h2>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-            <p className="text-lg text-gray-700 mb-4">
-              We collaborate with chess academies around the world to promote the game and provide high-quality training to players of all levels. Our partnerships with academies help us reach a wider audience and offer diverse learning opportunities.
+        {/* Chess Academies */}
+        <section className="bg-indigo-50 py-12">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold text-indigo-600 mb-4">
+              Chess Academies
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Join our network of chess academies to expand the game’s reach and create world-class learning opportunities.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              By working together, we can share resources, organize joint events, and create a global network of chess enthusiasts. Join us in our mission to make chess accessible to everyone and elevate the standards of chess education.
-            </p>
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <p className="text-gray-600">
+                Collaborate with us to organize joint events, share resources, and elevate the standard of chess training
+                worldwide.
+              </p>
+            </div>
           </div>
+        </section>
+      </div>
+
+      {/* Call to Action */}
+      <section className="bg-indigo-600 text-white py-12 text-center">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-6">Let’s Make a Difference Together!</h2>
+          <p className="text-lg mb-8">
+            Ready to collaborate? Reach out to us today and become a part of our chess community.
+          </p>
+          <a
+            href="/contact"
+            className="bg-yellow-400 text-indigo-600 font-bold py-3 px-6 rounded shadow hover:bg-yellow-500 transition"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
     </div>
