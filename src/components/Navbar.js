@@ -20,8 +20,8 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white sticky top-0 shadow-lg z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white sticky top-0 shadow-lg z-50 w-full">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
