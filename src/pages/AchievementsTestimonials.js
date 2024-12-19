@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-
 // Sample data for achievements
 const achievementsData = [
   {
@@ -62,7 +61,7 @@ const AchievementsTestimonials = () => {
         <meta name="keywords" content="ChessCodex, chess achievements, chess testimonials, chess success stories, chess training, chess coaching" />
       </Helmet>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-indigo-400 text-white py-20 text-center">
+      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20 text-center">
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">Achievements & Testimonials</h1>
           <p className="text-lg">
@@ -72,9 +71,9 @@ const AchievementsTestimonials = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#f3f1f9]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
             Celebrating Notable Achievements
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -88,10 +87,10 @@ const AchievementsTestimonials = () => {
                   alt={achievement.title}
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />
-                <h3 className="text-xl font-semibold text-indigo-600 group-hover:text-indigo-800">
+                <h3 className="text-xl font-semibold text-[#461fa3] group-hover:text-[#7646eb]">
                   {achievement.title}
                 </h3>
-                <p className="text-gray-600 mt-2">{achievement.description}</p>
+                <p className="text-[#270185] mt-2">{achievement.description}</p>
               </div>
             ))}
           </div>
@@ -99,9 +98,9 @@ const AchievementsTestimonials = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 py-16">
+      <section className="bg-gradient-to-r from-[#f3f1f9] via-[#e3e1f7] to-[#f3f1f9] py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
             What Our Students Say
           </h2>
 
@@ -129,13 +128,13 @@ const AchievementsTestimonials = () => {
                       alt={`${testimonial.name}'s avatar`}
                     />
                     <div>
-                      <h4 className="text-xl font-bold text-gray-800">
+                      <h4 className="text-xl font-bold text-[#200e4a]">
                         {testimonial.name}
                       </h4>
-                      <p className="text-gray-500">{testimonial.role}</p>
+                      <p className="text-[#461fa3]">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600">{testimonial.quote}</p>
+                  <p className="text-[#270185]">{testimonial.quote}</p>
                 </div>
               </SwiperSlide>
             ))}

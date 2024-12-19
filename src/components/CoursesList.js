@@ -69,9 +69,9 @@ const Modal = ({ course, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">
-        <h3 className="text-2xl font-bold mb-4 text-gray-800">{course.title}</h3>
-        <p className="text-gray-700 mb-2 font-medium">Duration: {course.duration}</p>
-        <ul className="list-disc pl-5 space-y-2 text-gray-600">
+        <h3 className="text-2xl font-bold mb-4 text-[#270185]">{course.title}</h3>
+        <p className="text-[#270185] mb-2 font-medium">Duration: {course.duration}</p>
+        <ul className="list-disc pl-5 space-y-2 text-[#270185]">
           {course.description.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
@@ -79,7 +79,7 @@ const Modal = ({ course, onClose }) => {
         <div className="mt-6 text-right">
           <button
             onClick={onClose}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-300"
+            className="bg-[#af0505] text-white px-4 py-2 rounded hover:bg-[#8c0404] transition-colors duration-300"
           >
             Close
           </button>
@@ -96,10 +96,10 @@ const CoursesList = () => {
   const closeModal = () => setSelectedCourse(null);
 
   return (
-    <section id="courses" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="courses" className="py-16 bg-[#14092e]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <h1 className="text-4xl font-extrabold text-gray-800 text-center mb-10">Explore Our Chess Courses</h1>
+        <h1 className="text-4xl font-extrabold text-white text-center mb-10">Explore Our Chess Courses</h1>
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,13 +110,13 @@ const CoursesList = () => {
               onClick={() => openModal(course)}
             >
               <div>
-                <h2 className="text-2xl font-semibold text-blue-600 mb-4">{course.title}</h2>
-                <p className="text-gray-700 font-medium mb-2">Duration: {course.duration}</p>
-                <ul className="list-disc pl-4 text-gray-600 space-y-1 text-sm">
+                <h2 className="text-2xl font-semibold text-[#200e4a] mb-4">{course.title}</h2>
+                <p className="text-[#270185] font-medium mb-2">Duration: {course.duration}</p>
+                <ul className="list-disc pl-4 text-[#270185] space-y-1 text-sm">
                   {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
-                  <li className="text-blue-500 italic">...Read more</li>
+                  <li className="text-[#7646eb] italic">...Read more</li>
                 </ul>
               </div>
               <div className="mt-4">
@@ -128,7 +128,7 @@ const CoursesList = () => {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+                  className="block text-center bg-[#461fa3] text-white py-2 px-4 rounded hover:bg-[#7646eb] transition duration-300"
                 >
                   {course.title === 'Private Classes' ? 'Contact Us' : 'Enroll Now'}
                 </a>

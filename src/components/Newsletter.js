@@ -51,14 +51,14 @@ const Newsletter = ({ position }) => {
       {/* Content */}
       {submitted ? (
         <div className="text-center">
-          <h3 className="text-lg font-semibold text-green-600 mb-2">Thank You!</h3>
-          <p className="text-gray-700">You’ve successfully subscribed to our newsletter.</p>
+          <h3 className="text-lg font-semibold text-[#af0505] mb-2">Thank You!</h3>
+          <p className="text-[#270185]">You’ve successfully subscribed to our newsletter.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-800">Join Our Newsletter</h2>
-            <p className="text-gray-600 text-sm mt-1">
+            <h2 className="text-xl font-bold text-[#200e4a]">Join Our Newsletter</h2>
+            <p className="text-[#270185] text-sm mt-1">
               Stay updated with our latest news and events.
             </p>
           </div>
@@ -70,14 +70,14 @@ const Newsletter = ({ position }) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-[#c2c1d3] rounded focus:outline-none focus:ring-2 focus:ring-[#461fa3]"
             aria-label="Email Address"
           />
 
           {/* Subscribe Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-transform transform hover:scale-105"
+            className="w-full bg-[#461fa3] text-white py-2 rounded hover:bg-[#7646eb] transition-transform transform hover:scale-105"
           >
             Subscribe
           </button>

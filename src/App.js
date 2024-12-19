@@ -27,7 +27,7 @@ function App() {
           <meta name="description" content="Join ChessCodex to elevate your chess skills with expert training and comprehensive courses." />
         </Helmet>
         <Navbar />
-        <div className="relative">
+        <div className="relative bg-[#f3f1f9] text-[#270185]">
           <Newsletter position="left" /> {/* Include the Newsletter component */}
           <Routes>
             <Route path="/" element={<Home />} />

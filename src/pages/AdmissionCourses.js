@@ -54,18 +54,18 @@ const AdmissionCourses = () => {
         <meta name="keywords" content="ChessCodex, chess courses, chess training, chess admission, chess coaching, chess academy" />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 text-white py-20">
+      <section className="relative bg-gradient-to-br from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:flex-1 text-center lg:text-left">
             <h1 className="text-5xl font-extrabold mb-6">
-              Elevate Your Chess Skills with <span className="text-yellow-400">Expert Training</span>
+              Elevate Your Chess Skills with <span className="text-[#af0505]">Expert Training</span>
             </h1>
             <p className="text-lg leading-relaxed mb-8">
               Learn from the best with courses curated by Grandmaster Niaz Murshed, the first Grandmaster in Asia.
             </p>
             <a
               href="#courses"
-              className="inline-block bg-yellow-400 text-blue-900 py-3 px-6 rounded-lg font-semibold hover:bg-yellow-300 transition"
+              className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
             >
               Explore Courses
             </a>
@@ -75,7 +75,7 @@ const AdmissionCourses = () => {
               <img
                 src="/niaz.jpg"
                 alt="GM Niaz Murshed"
-                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-400"
+                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-[#af0505]"
               />
               <h3 className="text-2xl font-semibold text-center">GM Niaz Murshed</h3>
               <p className="text-center text-gray-500 mb-4">Chess Mentor & Grandmaster</p>
@@ -85,19 +85,19 @@ const AdmissionCourses = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-300 opacity-30 blur-lg"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-300 opacity-20 blur-lg"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
       </section>
 
       {/* Courses Section */}
-      <section id="courses" className="py-16">
+      <section id="courses" className="py-16 bg-[#f3f1f9]">
         <CoursesList />
       </section>
 
       {/* Google Form Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-500 text-white py-20">
+      <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <FaChessKnight className="text-6xl mx-auto mb-6 text-yellow-400" />
+          <FaChessKnight className="text-6xl mx-auto mb-6 text-[#af0505]" />
           <h2 className="text-4xl font-extrabold mb-6">Join Our Academy</h2>
           <p className="text-lg mb-8">
             Ready to master chess? Fill out the application form to enroll in your desired course.
@@ -106,34 +106,34 @@ const AdmissionCourses = () => {
             href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-yellow-400 text-blue-900 py-3 px-6 rounded-lg font-semibold hover:bg-yellow-300 transition"
+            className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
           >
             Open Application Form
           </a>
         </div>
-        <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-300 opacity-30 blur-lg"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-300 opacity-20 blur-lg"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
       </section>
 
       {/* FAQs Section */}
-      <section id="admission" className="py-16">
+      <section id="admission" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-[#200e4a] mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {FAQs.map((faq, index) => (
               <div
                 key={index}
-                className="p-4 bg-white rounded-lg shadow-md cursor-pointer hover:bg-gray-50 transition"
+                className="p-4 bg-[#f3f1f9] rounded-lg shadow-md cursor-pointer hover:bg-[#e3e1f7] transition"
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
-                  <span className="text-gray-500">
+                  <h3 className="text-lg font-semibold text-[#200e4a]">{faq.question}</h3>
+                  <span className="text-[#270185]">
                     {expandedIndex === index ? '-' : '+'}
                   </span>
                 </div>
                 <div
-                  className={`mt-2 text-gray-600 transition-max-height duration-300 ease-in-out ${
+                  className={`mt-2 text-[#270185] transition-max-height duration-300 ease-in-out ${
                     expandedIndex === index ? 'max-h-screen' : 'max-h-0 overflow-hidden'
                   }`}
                 >

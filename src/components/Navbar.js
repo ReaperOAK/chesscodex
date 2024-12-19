@@ -20,7 +20,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-indigo-500 text-white sticky top-0 shadow-lg z-50 w-full">
+    <nav className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white sticky top-0 shadow-lg z-50 w-full">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -37,7 +37,7 @@ function Navbar() {
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="hover:text-gray-200 transition-colors duration-300"
+                className="hover:text-[#e3e1f7] transition-colors duration-300"
                 aria-label={link.label}
               >
                 {link.label}
@@ -47,7 +47,7 @@ function Navbar() {
               href="https://dashboard.kolkatachessacademy.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-200 transition-colors duration-300"
+              className="hover:text-[#e3e1f7] transition-colors duration-300"
               aria-label="Dashboard"
             >
               Dashboard
@@ -65,13 +65,13 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden bg-blue-700 absolute top-16 left-0 w-full z-50">
+        <div className="lg:hidden bg-[#200e4a] absolute top-16 left-0 w-full z-50">
           <ul className="space-y-4 px-4 py-6">
             {navLinks.map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
-                  className="block text-white hover:text-gray-200"
+                  className="block text-white hover:text-[#e3e1f7]"
                   onClick={toggleMenu}
                   aria-label={link.label}
                 >
@@ -84,7 +84,7 @@ function Navbar() {
                 href="https://dashboard.kolkatachessacademy.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white hover:text-gray-200"
+                className="block text-white hover:text-[#e3e1f7]"
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

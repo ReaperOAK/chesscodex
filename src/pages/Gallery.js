@@ -34,11 +34,11 @@ const Gallery = () => {
         <meta name="description" content="Explore the vibrant moments from ChessCodex's events, tournaments, and training sessions. View our gallery of images and videos." />
         <meta name="keywords" content="ChessCodex, chess gallery, chess events, chess tournaments, chess training, chess photos, chess videos" />
       </Helmet>
-      <div className="bg-gray-50 min-h-screen p-6 md:p-12">
+      <div className="bg-[#f3f1f9] min-h-screen p-6 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-800">Gallery</h1>
-          <p className="text-gray-600 text-lg mt-4">
+          <h1 className="text-5xl font-extrabold text-[#200e4a]">Gallery</h1>
+          <p className="text-lg text-[#270185] mt-4">
             Dive into the vibrant moments from our academy's events, tournaments, and training sessions.
           </p>
         </div>
@@ -50,8 +50,8 @@ const Gallery = () => {
               key={type}
               className={`px-6 py-2 rounded-full font-semibold text-sm ${
                 filter === type
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  ? 'bg-[#461fa3] text-white'
+                  : 'bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white'
               } transition duration-300`}
               onClick={() => setFilter(type)}
             >

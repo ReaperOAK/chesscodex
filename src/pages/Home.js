@@ -34,7 +34,7 @@ const Home = () => {
         <meta name="keywords" content="ChessCodex, chess training, chess courses, chess coaching, chess academy" />
       </Helmet>
       {/* Benefits Slider */}
-      <div className="bg-gray-700 text-white py-2">
+      <div className="bg-[#14092e] text-white py-2">
         <Slider {...sliderSettings}>
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center">
@@ -45,7 +45,7 @@ const Home = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-900 via-blue-800 to-indigo-900 text-white py-24 text-center">
+      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24 text-center">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">Welcome to ChessCodex</h1>
           <p className="text-lg mb-4">Building the Future of Chess Excellence</p>
@@ -54,7 +54,7 @@ const Home = () => {
           </p>
           <a
             href="/admission"
-            className="bg-yellow-500 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300"
+            className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
           >
             Join ChessCodex Today
           </a>
@@ -65,15 +65,15 @@ const Home = () => {
       <WhyChooseUs />
 
       {/* Scholarship Programs Section */}
-      <section className="bg-gray-100 py-20">
+      <section className="bg-[#f3f1f9] py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">Scholarship Programs</h2>
-          <p className="text-lg mb-6 text-gray-600">
+          <h2 className="text-4xl font-bold mb-6 text-[#200e4a]">Scholarship Programs</h2>
+          <p className="text-lg mb-6 text-[#270185]">
             Recognizing talent and hard work, we offer scholarships to support dedicated students with exceptional potential in chess.
           </p>
           <a
             href="/exclusives"
-            className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition duration-300"
+            className="bg-[#461fa3] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#7646eb] transition duration-300"
           >
             Learn More
           </a>
@@ -83,13 +83,13 @@ const Home = () => {
       {/* Pro Members Section */}
       <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">Pro Members</h2>
-          <p className="text-lg mb-6 text-gray-600">
+          <h2 className="text-4xl font-bold mb-6 text-[#200e4a]">Pro Members</h2>
+          <p className="text-lg mb-6 text-[#270185]">
             Unlock premium benefits such as exclusive content, personalized coaching, and advanced resources by becoming a Pro Member.
           </p>
           <a
             href="/exclusives"
-            className="bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-green-500 transition duration-300"
+            className="bg-[#461fa3] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#7646eb] transition duration-300"
           >
             Join Pro Membership
           </a>
@@ -97,9 +97,9 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gray-100 py-20">
+      <section className="bg-[#f3f1f9] py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">What Our Students Say</h2>
+          <h2 className="text-4xl font-bold mb-6 text-[#200e4a]">What Our Students Say</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {[
               "“ChessCodex made learning chess accessible and enjoyable. Highly recommended!” - Sarah K.",
@@ -108,7 +108,7 @@ const Home = () => {
             ].map((testimonial, index) => (
               <blockquote
                 key={index}
-                className="italic text-gray-700 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                className="italic text-[#270185] bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
               >
                 {testimonial}
               </blockquote>
@@ -118,7 +118,7 @@ const Home = () => {
       </section>
 
       {/* Collaborate Section */}
-      <section className="bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white py-20">
+      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Collaborate with Us</h2>
           <p className="text-lg mb-6">
@@ -126,7 +126,7 @@ const Home = () => {
           </p>
           <a
             href="/collaborate-with-us"
-            className="bg-yellow-500 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300"
+            className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
           >
             View Brochure
           </a>

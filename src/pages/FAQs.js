@@ -46,20 +46,20 @@ const faqs = [
 ];
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => (
-  <div className="border-b border-gray-200 py-4">
+  <div className="border-b border-[#c2c1d3] py-4">
     <div
       className="flex justify-between items-center cursor-pointer"
       onClick={toggle}
     >
-      <h3 className="text-lg font-medium text-gray-800">{question}</h3>
+      <h3 className="text-lg font-medium text-[#200e4a]">{question}</h3>
       {isOpen ? (
-        <FaChevronUp className="text-gray-500" />
+        <FaChevronUp className="text-[#461fa3]" />
       ) : (
-        <FaChevronDown className="text-gray-500" />
+        <FaChevronDown className="text-[#461fa3]" />
       )}
     </div>
     {isOpen && (
-      <p className="mt-4 text-gray-600 transition-opacity duration-300 ease-in-out">
+      <p className="mt-4 text-[#270185] transition-opacity duration-300 ease-in-out">
         {answer}
       </p>
     )}
@@ -109,14 +109,14 @@ const FAQs = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-[#f3f1f9] py-12">
       <Helmet>
         <title>FAQs - ChessCodex</title>
         <meta name="description" content="Find answers to frequently asked questions about ChessCodex. Learn about our courses, policies, and more." />
         <meta name="keywords" content="ChessCodex, FAQs, chess courses, chess policies, chess training, chess coaching" />
       </Helmet>
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
           Frequently Asked Questions
         </h2>
 
@@ -124,7 +124,7 @@ const FAQs = () => {
         <div className="mb-8">
           <input
             type="text"
-            className="w-full p-3 rounded-lg border border-gray-300"
+            className="w-full p-3 rounded-lg border border-[#c2c1d3] text-[#270185]"
             placeholder="Search for a question..."
             value={searchTerm}
             onChange={handleSearchChange}
@@ -135,20 +135,20 @@ const FAQs = () => {
         {filteredFAQs.map((section, i) => (
           <div key={i} className="mb-8">
             <div
-              className="flex justify-between items-center mb-4 cursor-pointer bg-gray-200 p-4 rounded-lg"
+              className="flex justify-between items-center mb-4 cursor-pointer bg-[#e3e1f7] p-4 rounded-lg"
               onClick={() =>
                 setActiveCategory(
                   activeCategory === section.category ? null : section.category
                 )
               }
             >
-              <h3 className="text-xl font-semibold text-gray-800">
+              <h3 className="text-xl font-semibold text-[#200e4a]">
                 {section.category}
               </h3>
               {activeCategory === section.category ? (
-                <FaChevronUp className="text-gray-500" />
+                <FaChevronUp className="text-[#461fa3]" />
               ) : (
-                <FaChevronDown className="text-gray-500" />
+                <FaChevronDown className="text-[#461fa3]" />
               )}
             </div>
             {activeCategory === section.category && (
@@ -164,7 +164,7 @@ const FAQs = () => {
                     />
                   ))
                 ) : (
-                  <p className="text-gray-600">No FAQs match your search.</p>
+                  <p className="text-[#270185]">No FAQs match your search.</p>
                 )}
               </div>
             )}
