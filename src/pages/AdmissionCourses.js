@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import CTA from '../components/CTA';
 import CoursesList from '../components/CoursesList';
 import { FaChessKnight } from 'react-icons/fa';
 
@@ -145,8 +144,6 @@ const AdmissionCourses = () => {
           </div>
         </div>
       </section>
-
-      <CTA />
     </div>
   );
 };

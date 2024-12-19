@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import CTA from '../components/CTA';
 
 // Media data
 const media = [
@@ -98,10 +97,6 @@ const Gallery = () => {
           slides={slides}
           captions={slides.map((slide) => slide.alt)} // Adds captions
         />
-      </div>
-      {/* Call-to-Action */}
-      <div className="mt-16">
-        <CTA />
       </div>
     </>
   );

@@ -114,8 +114,13 @@ const CollaborateWithUs = () => {
             </p>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <p className="text-gray-600">
-                Collaborate with us to organize joint events, share resources, and elevate the standard of chess training
-                worldwide.
+                Collaborate with us to organize joint events, share resources, and elevate the standard of chess training worldwide.
+              </p>
+              <p className="text-gray-600 mt-4">
+                Our academy network provides a platform for chess enthusiasts to connect, learn, and grow together. We offer comprehensive training programs, access to exclusive resources, and opportunities to participate in national and international tournaments.
+              </p>
+              <p className="text-gray-600 mt-4">
+                By joining our network, you will benefit from our expertise, support, and commitment to excellence in chess education. Together, we can make a significant impact on the chess community and help aspiring players achieve their full potential.
               </p>
             </div>
           </div>

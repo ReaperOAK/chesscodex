@@ -1,0 +1,32 @@
+### Color Roles and Usage
+1. **Primary Color**: `#200e4a`  
+   - This will be the dominant color of your website. Use it for headers, main buttons, and other key elements.
+
+2. **Secondary Color**: `#461fa3`  
+   - A complementary color to the primary. Ideal for secondary buttons, highlights, or navigation links.
+
+3. **Accent Color**: `#7646eb`  
+   - Use this for hover states, call-to-action elements, and interactive features.
+
+4. **Background Color**: `#14092e`  
+   - A dark and neutral color suitable for the main background.
+
+5. **Highlight/Alert Color**: `#af0505`  
+   - Best for warnings, errors, or important notifications.
+
+6. **Text Color**: `#270185`  
+   - A deep color for headings and readable contrast against lighter backgrounds or accents.
+
+### Color Palette Preview
+- **Primary**: ![#200e4a](https://via.placeholder.com/15/200e4a/200e4a.png) `#200e4a`  
+- **Secondary**: ![#461fa3](https://via.placeholder.com/15/461fa3/461fa3.png) `#461fa3`  
+- **Accent**: ![#7646eb](https://via.placeholder.com/15/7646eb/7646eb.png) `#7646eb`  
+- **Background**: ![#14092e](https://via.placeholder.com/15/14092e/14092e.png) `#14092e`  
+- **Highlight**: ![#af0505](https://via.placeholder.com/15/af0505/af0505.png) `#af0505`  
+- **Text**: ![#270185](https://via.placeholder.com/15/270185/270185.png) `#270185`
+
+### Suggestions for Usage
+- Combine the **primary** and **secondary** colors for a sleek, modern look.
+- Use the **accent** color sparingly to maintain balance and direct attention.
+- Pair the **text** color with the **background** for readability.
+- Use **highlight** color only for critical elements.

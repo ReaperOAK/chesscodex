@@ -30,7 +30,7 @@ const Contact = () => {
 
       L.marker([22.623208, 88.399405], { icon: customIcon })
         .addTo(map)
-        .bindPopup("123 Chess Lane, Kolkata, India")
+        .bindPopup("Cross Road, Purba Sinthee, Dumdum, Kolkata:700030")
         .openPopup();
     }
   }, []);

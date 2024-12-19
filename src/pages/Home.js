@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import WhyChooseUs from '../components/WhyChooseUs';
-import CTA from '../components/CTA';
 
 const benefits = [
   "Helps in Problem Solving & Memory Retention",
@@ -133,9 +132,6 @@ const Home = () => {
           </a>
         </div>
       </section>
-
-      {/* Call to Action */}
-      <CTA />
     </div>
   );
 };

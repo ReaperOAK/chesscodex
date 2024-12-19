@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
-import CTA from '../components/CTA';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Team from '../components/Team';
 
@@ -21,24 +20,24 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-4xl font-bold text-gray-800 text-center mb-6">
-              Empowering Chess Enthusiasts to Achieve Their Best
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Founded as the <span className="font-semibold text-blue-600">Kolkata Chess Academy</span>, our mission has always been to place India on the global chess map. Now known as ChessCodex, we remain committed to creating a strong chess community of rated players, fostering talent, and unlocking potential.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Whether you're a beginner discovering the game, an intermediate player aiming to improve, or a seasoned competitor sharpening your skills, our expert coaches will guide you every step of the way.
-            </p>
+     { /* About Section */}
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+          <h2 className="text-4xl font-bold text-gray-800 text-center mb-6">
+            Striving to Help All Players Achieve and Improve Their Chess Rating
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Started out with Kolkata Chess Academy our singular goal was of making India the leading nation in chess titles, ChessCodex is now dedicated to building a community packed with rated players who are prepared for success. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.
+          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            At ChessCodex, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.
+          </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Mission & Vision Section */}
+        {/* Mission & Vision Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -84,9 +83,6 @@ const About = () => {
           <WhyChooseUs />
         </div>
       </section>
-
-      {/* Call-to-Action */}
-      <CTA />
     </div>
   );
 };

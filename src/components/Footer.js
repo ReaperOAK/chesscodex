@@ -13,15 +13,15 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
-          <div>
-            <h2 className="text-2xl font-bold mb-4">About ChessCodex</h2>
-            <p className="text-gray-400 leading-relaxed">
-              <strong>Empowering chess enthusiasts worldwide.</strong><br />
-              ChessCodex offers structured programs and community engagement to help you level up your chess game.
-            </p>
-          </div>
+                <div>
+                <h2 className="text-2xl font-bold mb-4">About ChessCodex</h2>
+                <p className="text-gray-400 leading-relaxed">
+                  <strong>Striving to Help All Players Achieve and Improve Their Chess Rating.</strong><br />
+                  ChessCodex is dedicated to build a community packed with rated players through its structured methodology and constant guidance.
+                </p>
+                </div>
 
-          {/* Quick Links Section */}
+                {/* Quick Links Section */}
           <div>
             <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
             <ul className="space-y-2 text-gray-400">

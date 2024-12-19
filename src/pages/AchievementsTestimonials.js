@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import CTA from '../components/CTA';
+
 
 // Sample data for achievements
 const achievementsData = [
@@ -142,8 +142,6 @@ const AchievementsTestimonials = () => {
           </Swiper>
         </div>
       </section>
-
-      <CTA />
     </div>
   );
 };

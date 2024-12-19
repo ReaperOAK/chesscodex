@@ -10,11 +10,11 @@ function Navbar() {
   const navLinks = [
     { to: "/about", label: "About" },
     { to: "/courses", label: "Admission & Courses" },
-    { to: "/achievements-testimonials", label: "Achievements & Testimonials" },
-    { to: "/events-blogs", label: "Events & Blogs" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/collaborate-with-us", label: "Collaboration" },
     { to: "/exclusives", label: "Exclusives" },
+    { to: "/events-blogs", label: "Events & Blogs" },
+    { to: "/achievements-testimonials", label: "Achievements & Testimonials" },
+    { to: "/collaborate-with-us", label: "Collaboration" },
+    { to: "/gallery", label: "Gallery" },
     { to: "/faqs", label: "FAQs" },
     { to: "/contact", label: "Contact" },
   ];
