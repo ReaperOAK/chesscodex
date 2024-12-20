@@ -3,10 +3,13 @@ import { Helmet } from 'react-helmet';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+const ITEMS_PER_PAGE = 8;
+
 const Gallery = () => {
   const [index, setIndex] = useState(-1); // Lightbox state
   const [filter, setFilter] = useState('all'); // Media filter state
   const [media, setMedia] = useState([]); // Media state
+  const [currentPage, setCurrentPage] = useState(1); // Pagination state
 
   useEffect(() => {
     async function fetchGallery() {
@@ -33,6 +36,20 @@ const Gallery = () => {
 
   const filteredMedia = media.filter(
     (item) => filter === 'all' || item.type === filter
+  );
+
+  const groupedMedia = filteredMedia.reduce((acc, item) => {
+    if (!acc[item.folder]) {
+      acc[item.folder] = [];
+    }
+    acc[item.folder].push(item);
+    return acc;
+  }, {});
+
+  const totalPages = Math.ceil(Object.keys(groupedMedia).length / ITEMS_PER_PAGE);
+  const paginatedFolders = Object.keys(groupedMedia).slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
   );
 
   const slides = filteredMedia.map((item) => ({
@@ -75,32 +92,68 @@ const Gallery = () => {
         </div>
 
         {/* Media Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredMedia.map((item, idx) => (
-            <div
-              key={idx}
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
-              onClick={() => setIndex(idx)}
-            >
-              {item.type === 'image' ? (
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              ) : (
-                <video
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
-                  controls
-                />
-              )}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white font-semibold text-lg">{item.alt}</p>
-              </div>
+        {paginatedFolders.map((folder, idx) => (
+          <div key={idx} className="mb-12">
+            <h2 className="text-3xl font-bold text-[#200e4a] mb-6">{folder}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {groupedMedia[folder].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+                  onClick={() => setIndex(media.indexOf(item))}
+                >
+                  {item.type === 'image' ? (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  ) : (
+                    <video
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                      controls
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white font-semibold text-lg">{item.alt}</p>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
+        ))}
+
+        {/* Pagination */}
+        <div className="flex justify-center mt-8">
+          <button
+            className="px-4 py-2 mx-1 rounded-full bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white transition duration-300"
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              className={`px-4 py-2 mx-1 rounded-full ${
+                currentPage === i + 1
+                  ? 'bg-[#461fa3] text-white'
+                  : 'bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white'
+              } transition duration-300`}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
           ))}
+          <button
+            className="px-4 py-2 mx-1 rounded-full bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white transition duration-300"
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
         </div>
 
         {/* Lightbox */}
