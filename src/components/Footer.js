@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
 import Newsletter from './Newsletter';
 
 const Footer = () => {
@@ -75,9 +74,6 @@ const Footer = () => {
             <div className="flex space-x-4 mb-6">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
                 <FaFacebook />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
-                <FaXTwitter />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
                 <FaInstagram />

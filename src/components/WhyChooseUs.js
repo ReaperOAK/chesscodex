@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { NextArrow, PrevArrow } from './CustomArrows';
 
 const WhyChooseUs = () => {
-  const features = [
+  const highlightedFeatures = [
     {
       icon: <FaBook className="text-blue-500 text-4xl mb-2" />,
       title: "Comprehensive Curriculum",
@@ -15,17 +15,20 @@ const WhyChooseUs = () => {
       link: "/courses",
     },
     {
-      icon: <FaCrown className="text-yellow-500 text-4xl mb-2" />,
-      title: "Expert Coaching Panel",
-      description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.",
-      link: "/about",
-    },
-    {
       icon: <FaChalkboardTeacher className="text-green-500 text-4xl mb-2" />,
       title: "Top Tier Guidance",
       description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.",
       link: "/about",
     },
+    {
+      icon: <FaCrown className="text-yellow-500 text-4xl mb-2" />,
+      title: "Expert Coaching Panel",
+      description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.",
+      link: "/about",
+    },
+  ];
+
+  const features = [
     {
       icon: <FaTasks className="text-red-500 text-4xl mb-2" />,
       title: "Weekly Practice Classes",
@@ -106,6 +109,25 @@ const WhyChooseUs = () => {
         <p className="text-lg mb-12 text-[#270185]">
           At ChessCodex, we empower chess enthusiasts with unparalleled coaching, a world-class curriculum, and the tools needed to succeed at any level.
         </p>
+
+        {/* Highlighted Features */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {highlightedFeatures.map((feature, index) => (
+            <NavLink
+              key={index}
+              to={feature.link}
+              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex justify-center items-center mb-2">
+                {feature.icon}
+              </div>
+              <h2 className="text-lg font-semibold text-[#200e4a] mb-2">{feature.title}</h2>
+              <p className="text-[#270185] text-center text-sm">{feature.description}</p>
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Slider for Other Features */}
         <Slider {...sliderSettings}>
           {features.map((feature, index) => (
             <NavLink

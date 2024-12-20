@@ -54,7 +54,7 @@ const Exclusives = () => {
       {/* Navigation Links */}
       <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex space-x-4">
+          <div className="flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
             <NavLink
               to="pro-membership"
               className={({ isActive }) =>
@@ -66,16 +66,6 @@ const Exclusives = () => {
               Pro Membership
             </NavLink>
             <NavLink
-              to="scholarships"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
-              }
-            >
-              Scholarships
-            </NavLink>
-            <NavLink
               to="game-analysis"
               className={({ isActive }) =>
                 isActive
@@ -85,6 +75,16 @@ const Exclusives = () => {
             >
               Game Analysis
             </NavLink>
+            <NavLink
+              to="scholarships"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+              }
+            >
+              Scholarships
+            </NavLink>
           </div>
         </div>
       </nav>
@@ -93,8 +93,8 @@ const Exclusives = () => {
       <Routes>
         <Route path="/" element={<Navigate to="pro-membership" />} />
         <Route path="pro-membership" element={<ProMembership />} />
-        <Route path="scholarships" element={<Scholarships />} />
         <Route path="game-analysis" element={<GameAnalysis />} />
+        <Route path="scholarships" element={<Scholarships />} />
       </Routes>
 
       {/* Add padding at the bottom to prevent overlay */}

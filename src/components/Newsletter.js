@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-const Newsletter = ({ position }) => {
+const Newsletter = ({ position, theme }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -33,6 +33,10 @@ const Newsletter = ({ position }) => {
       ? 'w-full mx-auto my-6'
       : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
 
+  const textColor = theme === 'contact' ? 'text-[#af0505]' : 'text-[#270185]';
+  const buttonClasses = theme === 'contact' ? 'bg-[#af0505] text-white hover:bg-[#8c0404]' : 'bg-[#461fa3] text-white hover:bg-[#7646eb]';
+  const inputClasses = theme === 'contact' ? 'border-[#af0505] text-[#af0505] placeholder-[#af0505] focus:ring-[#af0505]' : 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]';
+
   return (
     <div
       className={`${positionClasses} bg-white p-5 rounded-lg shadow-2xl animate-slideIn transition-all duration-300`}
@@ -51,14 +55,14 @@ const Newsletter = ({ position }) => {
       {/* Content */}
       {submitted ? (
         <div className="text-center">
-          <h3 className="text-lg font-semibold text-[#af0505] mb-2">Thank You!</h3>
-          <p className="text-[#270185]">You’ve successfully subscribed to our newsletter.</p>
+          <h3 className={`text-lg font-semibold mb-2 ${textColor}`}>Thank You!</h3>
+          <p className={textColor}>You’ve successfully subscribed to our newsletter.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h2 className="text-xl font-bold text-[#200e4a]">Join Our Newsletter</h2>
-            <p className="text-[#270185] text-sm mt-1">
+            <h2 className={`text-xl font-bold ${textColor}`}>Join Our Newsletter</h2>
+            <p className={`text-sm mt-1 ${textColor}`}>
               Stay updated with our latest news and events.
             </p>
           </div>
@@ -70,14 +74,14 @@ const Newsletter = ({ position }) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="w-full px-3 py-2 border border-[#c2c1d3] rounded focus:outline-none focus:ring-2 focus:ring-[#461fa3]"
+            className={`w-full px-3 py-2 rounded focus:outline-none focus:ring-2 ${inputClasses}`}
             aria-label="Email Address"
           />
 
           {/* Subscribe Button */}
           <button
             type="submit"
-            className="w-full bg-[#461fa3] text-white py-2 rounded hover:bg-[#7646eb] transition-transform transform hover:scale-105"
+            className={`w-full py-2 rounded hover:scale-105 transition-transform transform ${buttonClasses}`}
           >
             Subscribe
           </button>

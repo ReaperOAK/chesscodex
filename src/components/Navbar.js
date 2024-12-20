@@ -32,12 +32,16 @@ function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end space-x-4">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end flex-nowrap">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="hover:text-[#e3e1f7] transition-colors duration-300"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FFD700] font-semibold transition-colors duration-300 mx-2"
+                    : "hover:text-[#e3e1f7] transition-colors duration-300 mx-2"
+                }
                 aria-label={link.label}
               >
                 {link.label}
@@ -47,7 +51,7 @@ function Navbar() {
               href="/dashboard"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#e3e1f7] transition-colors duration-300"
+              className="hover:text-[#e3e1f7] transition-colors duration-300 mx-2"
               aria-label="Dashboard"
             >
               Dashboard
@@ -66,12 +70,16 @@ function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="lg:hidden bg-[#200e4a] absolute top-16 left-0 w-full z-50">
-          <ul className="flex flex-wrap justify-center space-y-4 px-4 py-6">
+          <ul className="flex flex-col items-center space-y-4 px-4 py-6">
             {navLinks.map((link) => (
-              <li key={link.to} className="w-full sm:w-auto">
+              <li key={link.to} className="w-full">
                 <NavLink
                   to={link.to}
-                  className="block text-white hover:text-[#e3e1f7] text-center"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block text-[#FFD700] font-semibold text-center"
+                      : "block text-white hover:text-[#e3e1f7] text-center"
+                  }
                   onClick={toggleMenu}
                   aria-label={link.label}
                 >
@@ -79,7 +87,7 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li className="w-full sm:w-auto">
+            <li className="w-full">
               <a
                 href="/dashboard"
                 target="_blank"

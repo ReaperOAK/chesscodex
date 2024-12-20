@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from 'react-helmet';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -176,17 +176,17 @@ const Contact = () => {
                     Connect With Us
                   </h2>
                   <div className="flex space-x-4">
-                    <a href="https://www.facebook.com" className="text-[#461fa3] hover:text-[#7646eb]">
+                    <a href="https://www.facebook.com" className="text-[#1877F2] hover:text-[#145dbf]">
                       <FaFacebook size={32} />
                     </a>
-                    <a href="https://www.instagram.com" className="text-[#af0505] hover:text-[#8c0404]">
+                    <a href="https://www.instagram.com" className="text-[#E4405F] hover:text-[#bc2a8d]">
                       <FaInstagram size={32} />
                     </a>
-                    <a href="https://www.twitter.com" className="text-[#461fa3] hover:text-[#7646eb]">
-                      <FaTwitter size={32} />
-                    </a>
-                    <a href="https://www.linkedin.com" className="text-[#461fa3] hover:text-[#7646eb]">
+                    <a href="https://www.linkedin.com" className="text-[#0A66C2] hover:text-[#004182]">
                       <FaLinkedin size={32} />
+                    </a>
+                    <a href="https://wa.me/+919830149852" className="text-[#25D366] hover:text-[#128C7E]">
+                      <FaWhatsapp size={32} />
                     </a>
                   </div>
                 </div>
