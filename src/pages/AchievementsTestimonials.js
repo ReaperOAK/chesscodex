@@ -1,30 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-// Sample data for achievements
 const achievementsData = [
   {
-    title: "State Chess Championship 2023",
-    description: "Anika won 1st place in the State Chess Championship in Kolkata.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "National Level Tournament 2023",
-    description: "Rohit secured 2nd position in the National Level Tournament.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "International Chess Olympiad 2022",
-    description: "Our team represented India and achieved bronze at the Olympiad.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Beginner's Tournament 2023",
-    description: "Young prodigy Sam clinched 1st place in the Beginner's Tournament.",
-    image: "https://via.placeholder.com/300",
+    title: "Adreesh Dey's International FIDE Rating",
+    description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! Starting from scratch just a year ago in our beginners’ group, Adreesh’s dedication and hard work, combined with Aspire Academy’s structured methodology, have brought him to this wonderful milestone. Adreesh’s journey is a testament to what determination and the right guidance can achieve. Here’s to many more achievements and growth ahead! Keep up the great work, Adreesh! We are proud of you! 🎉🏆♟",
+    image: "/Achievements/1.jpg",
   },
 ];
 
@@ -52,7 +36,31 @@ const testimonials = [
   },
 ];
 
+const Modal = ({ achievement, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">
+        <h3 className="text-2xl font-bold mb-4 text-[#270185]">{achievement.title}</h3>
+        <p className="text-[#270185] mb-2 font-medium">{achievement.description}</p>
+        <div className="mt-6 text-right">
+          <button
+            onClick={onClose}
+            className="bg-[#af0505] text-white px-4 py-2 rounded hover:bg-[#8c0404] transition-colors duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AchievementsTestimonials = () => {
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+
+  const openModal = (achievement) => setSelectedAchievement(achievement);
+  const closeModal = () => setSelectedAchievement(null);
+
   return (
     <div>
       <Helmet>
@@ -80,17 +88,32 @@ const AchievementsTestimonials = () => {
             {achievementsData.map((achievement, index) => (
               <div
                 key={index}
-                className="group bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-2"
+                className="group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                onClick={() => openModal(achievement)}
               >
-                <img
-                  src={achievement.image}
-                  alt={achievement.title}
-                  className="w-full h-48 object-cover rounded-md mb-4"
-                />
-                <h3 className="text-xl font-semibold text-[#461fa3] group-hover:text-[#7646eb]">
-                  {achievement.title}
-                </h3>
-                <p className="text-[#270185] mt-2">{achievement.description}</p>
+                <div>
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                  />
+                  <h3 className="text-xl font-semibold text-[#461fa3] group-hover:text-[#7646eb]">
+                    {achievement.title}
+                  </h3>
+                  <p className="text-[#270185] mt-2 group-hover:hidden">
+                    {achievement.description.length > 120
+                      ? `${achievement.description.substring(0, 120)}...`
+                      : achievement.description}
+                  </p>
+                  <p className="hidden group-hover:block text-[#270185] mt-2">
+                    {achievement.description}
+                  </p>
+                </div>
+                <div className="mt-4">
+                  <button className="text-[#7646eb] hover:underline font-medium">
+                    Read More
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -141,6 +164,9 @@ const AchievementsTestimonials = () => {
           </Swiper>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedAchievement && <Modal achievement={selectedAchievement} onClose={closeModal} />}
     </div>
   );
 };

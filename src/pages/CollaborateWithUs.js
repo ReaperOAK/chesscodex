@@ -42,6 +42,14 @@ const CollaborateWithUs = () => {
                   <strong>Simple Process:</strong> Refer, enroll, and get rewarded!
                 </li>
               </ul>
+              <div className="mt-6">
+                <a
+                  href="/dashboard"
+                  className="bg-[#461fa3] text-white font-bold py-3 px-6 rounded shadow hover:bg-[#7646eb] transition"
+                >
+                  Go to Dashboard
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -73,6 +81,11 @@ const CollaborateWithUs = () => {
                 </p>
               </div>
             </div>
+            <div className="mt-6">
+              <p className="text-lg text-[#270185]">
+                <strong>Brochure:</strong> To be Announced Soon
+              </p>
+            </div>
           </div>
         </section>
 
@@ -98,6 +111,11 @@ const CollaborateWithUs = () => {
                     <strong>Corporate Tournaments:</strong> Host engaging tournaments for your organization.
                   </li>
                 </ul>
+                <div className="mt-6">
+                  <p className="text-lg text-[#270185]">
+                    <strong>Brochure:</strong> To be uploaded later
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +140,16 @@ const CollaborateWithUs = () => {
               <p className="text-[#270185] mt-4">
                 By joining our network, you will benefit from our expertise, support, and commitment to excellence in chess education. Together, we can make a significant impact on the chess community and help aspiring players achieve their full potential.
               </p>
+              <div className="mt-6">
+                <a
+                  href="/brochures/ChessAcademy.pdf"
+                  className="bg-[#461fa3] text-white font-bold py-3 px-6 rounded shadow hover:bg-[#7646eb] transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Brochure
+                </a>
+              </div>
             </div>
           </div>
         </section>

@@ -106,7 +106,7 @@ const CoursesList = () => {
           {coursesData.map((course, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+              className="group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               onClick={() => openModal(course)}
             >
               <div>
@@ -116,7 +116,10 @@ const CoursesList = () => {
                   {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
-                  <li className="text-[#7646eb] italic">...Read more</li>
+                  <li className="text-[#7646eb] italic group-hover:hidden">...Read more</li>
+                  {course.description.slice(3).map((item, idx) => (
+                    <li key={idx} className="hidden group-hover:list-item">{item}</li>
+                  ))}
                 </ul>
               </div>
               <div className="mt-4">

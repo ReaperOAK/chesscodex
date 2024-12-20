@@ -17,6 +17,7 @@ import WhatsAppButton from './components/WhatsAppButton'; // Import the WhatsApp
 import NotFound from './pages/NotFound'; // Import the NotFound component
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import CTA from './components/CTA';
+import BenefitsSlider from './components/BenefitsSlider'; // Import the BenefitsSlider component
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <meta name="description" content="Join ChessCodex to elevate your chess skills with expert training and comprehensive courses." />
         </Helmet>
         <Navbar />
+        <BenefitsSlider /> {/* Include the BenefitsSlider component */}
         <div className="relative bg-[#f3f1f9] text-[#270185]">
           <Newsletter position="left" /> {/* Include the Newsletter component */}
           <Routes>

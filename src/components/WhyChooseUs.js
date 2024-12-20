@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers } from 'react-icons/fa';
+import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers, FaTrophy } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 const WhyChooseUs = () => {
@@ -59,6 +59,12 @@ const features = [
     description: "Join our community forum to discuss ideas, share experiences, and get support from fellow chess enthusiasts.",
     link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI",
   },
+  {
+    icon: <FaTrophy className="text-gold-500 text-4xl mb-2" />,
+    title: "Tournament Participation",
+    description: "Participate in local and international tournaments to test your skills and gain experience.",
+    link: "/events-blogs",
+  },
 ];
 
   return (
@@ -68,7 +74,7 @@ const features = [
         <p className="text-lg mb-12 text-[#270185]">
           At ChessCodex, we empower chess enthusiasts with unparalleled coaching, a world-class curriculum, and the tools needed to succeed at any level.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((feature, index) => (
             <NavLink
               key={index}

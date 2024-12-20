@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// Media data
-const media = [
-  { src: 'https://drive.google.com/uc?id=1x1mk8qlb1jZEcWAddzUdmGLi1o9Rkmag', type: 'image', alt: 'Chess Event 1' },
-  { src: 'https://drive.google.com/uc?id=1TMWD6MeSbStBnVAOoo7E8KydNq0AZ9Rf', type: 'image', alt: 'Chess Event 2' },
-  { src: 'https://drive.google.com/uc?id=1NynISGt9IWPAD-jdKzwhKr1Bz11ZPXot', type: 'image', alt: 'Chess Training Session' },
-  { src: 'https://drive.google.com/uc?id=1NynISGt9IWPAD-jdKzwhKr1Bz11ZPXot', type: 'image', alt: 'Tournament Final' },
-  { src: 'https://drive.google.com/uc?id=1NynISGt9IWPAD-jdKzwhKr1Bz11ZPXot', type: 'video', alt: 'Chess Event Video 1' },
-  { src: 'https://drive.google.com/uc?id=1NynISGt9IWPAD-jdKzwhKr1Bz11ZPXot', type: 'video', alt: 'Chess Event Video 2' },
-];
-
 const Gallery = () => {
   const [index, setIndex] = useState(-1); // Lightbox state
   const [filter, setFilter] = useState('all'); // Media filter state
+  const [media, setMedia] = useState([]); // Media state
+
+  useEffect(() => {
+    async function fetchGallery() {
+      try {
+        const response = await fetch('/php/gallery.php');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const gallery = await response.json();
+        const formattedMedia = gallery.flatMap(folder =>
+          folder.files.map(file => ({
+            ...file,
+            folder: folder.folder
+          }))
+        );
+        setMedia(formattedMedia);
+      } catch (error) {
+        console.error('Error fetching gallery:', error);
+      }
+    }
+
+    fetchGallery();
+  }, []);
 
   const filteredMedia = media.filter(
     (item) => filter === 'all' || item.type === filter

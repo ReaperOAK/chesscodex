@@ -44,7 +44,7 @@ function Navbar() {
               </NavLink>
             ))}
             <a
-              href="https://dashboard.kolkatachessacademy.in/"
+              href="/dashboard"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#e3e1f7] transition-colors duration-300"
@@ -81,7 +81,7 @@ function Navbar() {
             ))}
             <li>
               <a
-                href="https://dashboard.kolkatachessacademy.in/"
+                href="/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-white hover:text-[#e3e1f7]"

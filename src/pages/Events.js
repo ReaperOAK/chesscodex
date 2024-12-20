@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 
 // Data for events
 const eventsData = [
   {
     title: "Invitational Inter-Club U-25 Chess Tournament 2024",
-    date: "02/10/2024",
+    date: "2024-10-02",
     mode: "Offline",
     link: null,
+    image: "/events/event1.jpg",
   },
   {
     title: "Invitational Inter-Club U-25 Chess Tournament 2024",
-    date: "15/11/2024",
+    date: "2024-11-15",
     mode: "Offline",
     link: "https://forms.gle/zBsTohCXppUNCWjU6",
+    image: "/events/event2.jpg",
   },
 ];
 
@@ -21,25 +23,44 @@ const eventsData = [
 const blogsData = [
   {
     title: "The Benefits of Chess for Cognitive Development",
-    date: "01/09/2023",
+    date: "2023-09-01",
     author: "John Doe",
     link: "/blog/benefits-of-chess",
+    image: "/blogs/blog1.jpg",
+    content: "Chess has been shown to improve cognitive abilities, enhance problem-solving skills, and boost memory. In this blog, we explore the various benefits of chess for cognitive development and how it can positively impact individuals of all ages.",
   },
   {
     title: "Top 10 Chess Strategies for Beginners",
-    date: "15/08/2023",
+    date: "2023-08-15",
     author: "Jane Smith",
     link: "/blog/top-10-chess-strategies",
+    image: "/blogs/blog2.jpg",
+    content: "Starting out in chess can be daunting, but with the right strategies, you can quickly improve your game. In this blog, we cover the top 10 chess strategies for beginners to help you get started on the right foot.",
   },
 ];
 
 const Events = () => {
   const [filter, setFilter] = useState("All");
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 60000); // Update current date every minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Filter events based on the selected mode
   const filteredEvents = eventsData.filter(
     (event) => filter === "All" || event.mode === filter
   );
+
+  // Check if the event link is expired
+  const isLinkExpired = (date) => {
+    const eventDate = new Date(date);
+    return currentDate > eventDate;
+  };
 
   return (
     <div>
@@ -103,6 +124,11 @@ const Events = () => {
                   key={index}
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
                 >
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-48 object-cover"
+                  />
                   <div className="p-6">
                     <h3 className="text-2xl font-semibold text-[#461fa3] mb-3">
                       {event.title}
@@ -113,7 +139,7 @@ const Events = () => {
                     <p className="text-[#270185] mb-4">
                       <strong>Mode:</strong> {event.mode}
                     </p>
-                    {event.link ? (
+                    {event.link && !isLinkExpired(event.date) ? (
                       <a
                         href={event.link}
                         className="block bg-[#461fa3] text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-[#7646eb] transition-colors duration-300"
@@ -122,9 +148,15 @@ const Events = () => {
                       </a>
                     ) : (
                       <p className="text-center text-[#270185]">
-                        Registration link not available
+                        Registration link unavailable/expired
                       </p>
                     )}
+                    <a
+                      href="https://kolkatachessacademy.in/events-blogs"
+                      className="block text-[#7646eb] text-center mt-4 hover:underline"
+                    >
+                      Read More
+                    </a>
                   </div>
                 </div>
               ))}
@@ -145,6 +177,11 @@ const Events = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
               >
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-48 object-cover"
+                />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-[#461fa3] mb-3">
                     {blog.title}
@@ -152,11 +189,16 @@ const Events = () => {
                   <p className="text-[#270185] mb-1">
                     <strong>Date:</strong> {blog.date}
                   </p>
-                  <p className="text-[#270185] mb-4">
+                  <p className="text-[#270185] mb-1">
                     <strong>Author:</strong> {blog.author}
                   </p>
+                  <p className="text-[#270185] mb-4">
+                    {blog.content.length > 100
+                      ? `${blog.content.substring(0, 100)}...`
+                      : blog.content}
+                  </p>
                   <a
-                    href={blog.link}
+                    href="https://kolkatachessacademy.in/events-blogs"
                     className="block bg-[#461fa3] text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-[#7646eb] transition-colors duration-300"
                   >
                     Read More

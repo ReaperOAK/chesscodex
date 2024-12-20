@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import RefundPolicy from "../components/RefundPolicy";
@@ -68,8 +68,8 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => (
 
 const FAQs = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [openIndex, setOpenIndex] = useState({});
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [openIndex, setOpenIndex] = useState({ General: 0 });
+  const [activeCategory, setActiveCategory] = useState("General");
 
   const toggleFAQ = (category, index) => {
     setOpenIndex((prev) => ({
@@ -86,27 +86,24 @@ const FAQs = () => {
   }));
 
   const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-
-    const newOpenIndex = {};
-    const newActiveCategories = [];
-
-    filteredFAQs.forEach((section) => {
-      section.items.forEach((faq, index) => {
-        if (faq.question.toLowerCase().includes(value.toLowerCase())) {
-          if (!newOpenIndex[section.category]) {
-            newOpenIndex[section.category] = [];
-            newActiveCategories.push(section.category);
-          }
-          newOpenIndex[section.category].push(index);
-        }
-      });
-    });
-
-    setOpenIndex(newOpenIndex);
-    setActiveCategory(newActiveCategories.length > 0 ? newActiveCategories[0] : null);
+    setSearchTerm(e.target.value);
   };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#refund-policy") {
+      const refundPolicyIndex = faqs.findIndex(section =>
+        section.items.some(faq => faq.question.toLowerCase().includes("refund policy"))
+      );
+      if (refundPolicyIndex !== -1) {
+        setActiveCategory("Policies & Refunds");
+        setOpenIndex({ "Policies & Refunds": refundPolicyIndex });
+        document.getElementById("refund-policy").scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
+  const isSearching = searchTerm.trim().length > 0;
 
   return (
     <section className="bg-[#f3f1f9] py-12">
@@ -131,48 +128,69 @@ const FAQs = () => {
           />
         </div>
 
-        {/* FAQ Categories */}
-        {filteredFAQs.map((section, i) => (
-          <div key={i} className="mb-8">
-            <div
-              className="flex justify-between items-center mb-4 cursor-pointer bg-[#e3e1f7] p-4 rounded-lg"
-              onClick={() =>
-                setActiveCategory(
-                  activeCategory === section.category ? null : section.category
-                )
-              }
-            >
-              <h3 className="text-xl font-semibold text-[#200e4a]">
-                {section.category}
-              </h3>
-              {activeCategory === section.category ? (
-                <FaChevronUp className="text-[#461fa3]" />
-              ) : (
-                <FaChevronDown className="text-[#461fa3]" />
-              )}
-            </div>
-            {activeCategory === section.category && (
-              <div className="space-y-4">
-                {section.items.length > 0 ? (
-                  section.items.map((faq, index) => (
-                    <FAQItem
-                      key={index}
-                      question={faq.question}
-                      answer={faq.answer}
-                      isOpen={openIndex[section.category]?.includes(index)}
-                      toggle={() => toggleFAQ(section.category, index)}
-                    />
-                  ))
-                ) : (
-                  <p className="text-[#270185]">No FAQs match your search.</p>
-                )}
-              </div>
+        {/* FAQ Categories Menu */}
+        {!isSearching && (
+          <div className="mb-8">
+            <ul className="flex justify-center space-x-4">
+              {faqs.map((section, index) => (
+                <li key={index}>
+                  <button
+                    className={`px-4 py-2 rounded-lg ${activeCategory === section.category ? 'bg-[#461fa3] text-white' : 'bg-white text-[#200e4a]'} hover:bg-[#7646eb] transition`}
+                    onClick={() => setActiveCategory(section.category)}
+                  >
+                    {section.category}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* FAQ List */}
+        {isSearching ? (
+          <div className="space-y-4">
+            {filteredFAQs.flatMap(section => section.items).length > 0 ? (
+              filteredFAQs.flatMap(section => section.items).map((faq, index) => (
+                <FAQItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex[faq.question]}
+                  toggle={() => toggleFAQ(faq.question, index)}
+                />
+              ))
+            ) : (
+              <p className="text-[#270185]">No FAQs match your search.</p>
             )}
           </div>
-        ))}
+        ) : (
+          filteredFAQs.map((section, i) => (
+            <div key={i} className="mb-8">
+              {activeCategory === section.category && (
+                <div className="space-y-4">
+                  {section.items.length > 0 ? (
+                    section.items.map((faq, index) => (
+                      <FAQItem
+                        key={index}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex[section.category] === index}
+                        toggle={() => toggleFAQ(section.category, index)}
+                      />
+                    ))
+                  ) : (
+                    <p className="text-[#270185]">No FAQs match your search.</p>
+                  )}
+                </div>
+              )}
+            </div>
+          ))
+        )}
 
         {/* Refund Policy */}
-        <RefundPolicy />
+        <div id="refund-policy">
+          <RefundPolicy />
+        </div>
       </div>
     </section>
   );

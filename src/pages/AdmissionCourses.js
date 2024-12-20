@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import CoursesList from '../components/CoursesList';
-import { FaChessKnight } from 'react-icons/fa';
 
 const admissionSteps = [
   { step: 'Step 1: Choose a Course', description: 'Select the course that best fits your skill level and interest.' },
@@ -73,7 +72,7 @@ const AdmissionCourses = () => {
           <div className="lg:flex-1 flex justify-center">
             <div className="relative bg-white text-gray-800 p-6 rounded-lg shadow-lg">
               <img
-                src="/niaz.jpg"
+                src="/Team/niaz.jpg"
                 alt="GM Niaz Murshed"
                 className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-[#af0505]"
               />
@@ -90,32 +89,32 @@ const AdmissionCourses = () => {
       </section>
 
       {/* Courses Section */}
-      <section id="courses" className="py-16 bg-[#f3f1f9]">
-        <CoursesList />
-      </section>
+        <section id="courses" className="py-16 bg-[#f3f1f9]">
+          <CoursesList />
+        </section>
 
-      {/* Google Form Section */}
-      <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <FaChessKnight className="text-6xl mx-auto mb-6 text-[#af0505]" />
-          <h2 className="text-4xl font-extrabold mb-6">Join Our Academy</h2>
-          <p className="text-lg mb-8">
-            Ready to master chess? Fill out the application form to enroll in your desired course.
-          </p>
-          <a
-            href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
-          >
-            Open Application Form
-          </a>
-        </div>
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
-      </section>
+        {/* Google Form Section */}
+        <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <img src="/KCA_PNG.png" alt="Custom Logo" className="mx-auto mb-6" style={{ width: '100px', height: '100px' }} />
+            <h2 className="text-4xl font-extrabold mb-6">Join Our Academy</h2>
+            <p className="text-lg mb-8">
+          Ready to master chess? Fill out the application form to enroll in your desired course.
+            </p>
+            <a
+          href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
+            >
+          Open Application Form
+            </a>
+          </div>
+          <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
+        </section>
 
-      {/* FAQs Section */}
+        {/* FAQs Section */}
       <section id="admission" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-[#200e4a] mb-12">Frequently Asked Questions</h2>

@@ -64,7 +64,7 @@ const Footer = () => {
                 <span>+91 98301 49852</span>
               </li>
             </ul>
-            <a href="/refund-policy" className="inline-block mt-4 text-[#af0505] hover:underline">
+            <a href="/faqs#refund-policy" className="inline-block mt-4 text-[#af0505] hover:underline">
               Refund Policy
             </a>
           </div>
