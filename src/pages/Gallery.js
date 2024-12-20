@@ -114,7 +114,7 @@ const Gallery = () => {
                 <div
                   key={idx}
                   className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group mx-2"
-                  onClick={() => setIndex(media.indexOf(item))}
+                  onClick={() => item.type === 'image' && setIndex(media.indexOf(item))}
                 >
                   {item.type === 'image' ? (
                     <img
