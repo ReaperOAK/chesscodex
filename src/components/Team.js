@@ -5,7 +5,7 @@ const coaches = [
   {
     name: 'GM Sayantan Das',
     role: 'Guest Coach & Opening Expert',
-    image: '/Team/Sayantan.jpeg',
+    image: '/Team/sayantan.jpg',
     description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of elite chess experience and multiple National Championship titles. His role in our academy goes beyond coaching—he meticulously designs and refines opening repertoires that ensure our players are always well-prepared and a step ahead of their opponents.`,
   },
   {
@@ -19,7 +19,7 @@ As Chief Advisor, he focuses on building dynamic, engaging positions that challe
   {
     name: 'IM Somak Palit',
     role: 'Coach',
-    image: '/Team/Somak.jpeg',
+    image: '/Team/somak.jpg',
     description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy.
 His methodology focuses on distilling vast and often overwhelming chess material into digestible and practical lessons, ensuring that students grasp essential strategies and enjoy chess without feeling overloaded. 
 `,
@@ -27,7 +27,7 @@ His methodology focuses on distilling vast and often overwhelming chess material
   {
     name: 'FM Joydeep Dutta',
     role: 'Coach',
-    image: '/Team/joydeep.jpeg',
+    image: '/Team/joydeep.jpg',
     description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various rank holders. With over a decade of coaching experience, his unique approach focuses on identifying each student’s strengths and weaknesses to foster growth.
 He curates the progress plan based on this with regular game analysis and customized assignments to reinforce concepts, while frequent assessments track progress.
 `,

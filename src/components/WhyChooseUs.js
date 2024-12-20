@@ -111,9 +111,11 @@ const WhyChooseUs = () => {
             <NavLink
               key={index}
               to={feature.link}
-              className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
-              {feature.icon}
+              <div className="flex justify-center items-center mb-2">
+                {feature.icon}
+              </div>
               <h2 className="text-lg font-semibold text-[#200e4a] mb-2">{feature.title}</h2>
               <p className="text-[#270185] text-center text-sm">{feature.description}</p>
             </NavLink>

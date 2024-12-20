@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import Slider from 'react-slick';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { NextArrow, PrevArrow } from '../components/CustomArrows';
 
 const ITEMS_PER_PAGE = 8;
 
@@ -58,6 +62,18 @@ const Gallery = () => {
     alt: item.alt,
   }));
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
   return (
     <>
       <Helmet>
@@ -91,11 +107,11 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Media Grid */}
+        {/* Media Sliders */}
         {paginatedFolders.map((folder, idx) => (
           <div key={idx} className="mb-12">
             <h2 className="text-3xl font-bold text-[#200e4a] mb-6">{folder}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <Slider {...sliderSettings}>
               {groupedMedia[folder].map((item, idx) => (
                 <div
                   key={idx}
@@ -121,7 +137,7 @@ const Gallery = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </Slider>
           </div>
         ))}
 
