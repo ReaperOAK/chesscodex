@@ -19,7 +19,7 @@ As Chief Advisor, he focuses on building dynamic, engaging positions that challe
   {
     name: 'IM Somak Palit',
     role: 'Coach',
-    image: '/Team/somak.jpeg',
+    image: '/Team/Somak.jpeg',
     description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy.
 His methodology focuses on distilling vast and often overwhelming chess material into digestible and practical lessons, ensuring that students grasp essential strategies and enjoy chess without feeling overloaded. 
 `,
