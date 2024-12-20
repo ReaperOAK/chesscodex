@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import FAQs from "../components/FAQs";
+import RefundPolicy from "../components/RefundPolicy";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +38,16 @@ const Contact = () => {
         .addTo(map)
         .bindPopup("Cross Road, Purba Sinthee, Dumdum, Kolkata:700030")
         .openPopup();
+    }
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }, []);
 
@@ -202,6 +214,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section id="faqs">
+        <FAQs />
+      </section>
+      <section id="refund-policy">
+        <RefundPolicy />
       </section>
     </div>
   );

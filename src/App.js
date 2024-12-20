@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import AchievementsTestimonials from './pages/AchievementsTestimonials';
 import Gallery from './pages/Gallery';
 import Events from './pages/Events';
-import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -42,8 +41,8 @@ function AppContent() {
           <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/events-blogs" element={<Events />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/refund-policy" element={<FAQs />} />
+          <Route path="/faqs" element={<Contact />} />
+          <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Maintenance />} />
           <Route path="/exclusives/*" element={<Exclusives />} />

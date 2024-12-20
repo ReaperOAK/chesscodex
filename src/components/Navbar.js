@@ -15,8 +15,7 @@ function Navbar() {
     { to: "/achievements-testimonials", label: "Achievements & Testimonials" },
     { to: "/collaborate-with-us", label: "Collaboration" },
     { to: "/gallery", label: "Gallery" },
-    { to: "/faqs", label: "FAQs" },
-    { to: "/contact", label: "Contact" },
+    { to: "/contact", label: "Contact & FAQs" },
   ];
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import RefundPolicy from "../components/RefundPolicy";
 
 const faqs = [
   {
@@ -233,11 +232,6 @@ const FAQs = () => {
             </div>
           ))
         )}
-
-        {/* Refund Policy */}
-        <div id="refund-policy">
-          <RefundPolicy />
-        </div>
       </div>
     </section>
   );
