@@ -20,7 +20,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white sticky top-0 shadow-lg z-50 w-full">
+    <nav className="bg-gradient-to-l from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white sticky top-0 shadow-lg z-50 w-full">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -66,12 +66,12 @@ function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="lg:hidden bg-[#200e4a] absolute top-16 left-0 w-full z-50">
-          <ul className="space-y-4 px-4 py-6">
+          <ul className="flex flex-wrap justify-center space-y-4 px-4 py-6">
             {navLinks.map((link) => (
-              <li key={link.to}>
+              <li key={link.to} className="w-full sm:w-auto">
                 <NavLink
                   to={link.to}
-                  className="block text-white hover:text-[#e3e1f7]"
+                  className="block text-white hover:text-[#e3e1f7] text-center"
                   onClick={toggleMenu}
                   aria-label={link.label}
                 >
@@ -79,12 +79,12 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li>
+            <li className="w-full sm:w-auto">
               <a
                 href="/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white hover:text-[#e3e1f7]"
+                className="block text-white hover:text-[#e3e1f7] text-center"
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

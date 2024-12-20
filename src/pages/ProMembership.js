@@ -35,6 +35,12 @@ const ProMembership = () => {
     },
   ];
 
+  const pricingPlans = [
+    { plan: "Monthly", price: "₹999 / $14.99" },
+    { plan: "Half-Yearly", price: "₹4,999 / $74.99" },
+    { plan: "Yearly", price: "₹8,999 / $134.99" },
+  ];
+
   return (
     <section className="py-16 bg-[#f3f1f9]">
       <div className="max-w-5xl mx-auto px-6 text-center">
@@ -59,6 +65,31 @@ const ProMembership = () => {
               </ul>
             </div>
           ))}
+        </div>
+        {/* Call to Action and Pricing Section */}
+        <div className="mt-12 bg-[#200e4a] text-white py-8 px-6 rounded-lg shadow-md">
+          <h3 className="text-2xl font-bold mb-4">Ready to Elevate Your Chess Skills?</h3>
+          <p className="text-lg mb-6">
+            Join our Pro Membership today and gain access to exclusive content, personalized coaching, and a supportive community of chess enthusiasts.
+          </p>
+          <h3 className="text-2xl font-bold mb-6">Pricing</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {pricingPlans.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white text-[#270185] rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-2xl font-bold mb-2 text-[#200e4a]">{item.plan} Plan</h3>
+                <p className="text-lg">{item.price}</p>
+              </div>
+            ))}
+          </div>
+          <a
+            href="https://wa.me/+919830149852"
+            className="inline-block bg-[#7646eb] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#461fa3] transition"
+          >
+            Get Started Now
+          </a>
         </div>
         <p className="text-lg text-[#270185] mt-8">
           We look forward to structuring your training at home and easing the process with fragmented, digestible chess information!

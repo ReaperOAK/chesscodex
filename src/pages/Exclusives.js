@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
 import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import ProMembership from './ProMembership';
-import Pricing from './Pricing';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
 
 const Exclusives = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const menuRef = useRef(null);
+  const sentinelRef = useRef(null);
+
+  useEffect(() => {
+    const currentSentinelRef = sentinelRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    if (currentSentinelRef) {
+      observer.observe(currentSentinelRef);
+    }
+
+    return () => {
+      if (currentSentinelRef) {
+        observer.unobserve(currentSentinelRef);
+      }
+    };
+  }, []);
+
   return (
     <div>
       <Helmet>
@@ -24,49 +48,44 @@ const Exclusives = () => {
         </div>
       </section>
 
+      {/* Sentinel Element */}
+      <div ref={sentinelRef} className="h-1"></div>
+
       {/* Navigation Links */}
-      <nav className="bg-[#f3f1f9] py-4 shadow-md">
+      <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <NavLink
-            to="pro-membership"
-            className={({ isActive }) =>
-              isActive
-                ? "mx-4 text-[#200e4a] font-semibold border-b-2 border-[#200e4a]"
-                : "mx-4 text-[#461fa3] hover:text-[#200e4a]"
-            }
-          >
-            Pro Membership
-          </NavLink>
-          <NavLink
-            to="pricing"
-            className={({ isActive }) =>
-              isActive
-                ? "mx-4 text-[#200e4a] font-semibold border-b-2 border-[#200e4a]"
-                : "mx-4 text-[#461fa3] hover:text-[#200e4a]"
-            }
-          >
-            Pricing
-          </NavLink>
-          <NavLink
-            to="scholarships"
-            className={({ isActive }) =>
-              isActive
-                ? "mx-4 text-[#200e4a] font-semibold border-b-2 border-[#200e4a]"
-                : "mx-4 text-[#461fa3] hover:text-[#200e4a]"
-            }
-          >
-            Scholarships
-          </NavLink>
-          <NavLink
-            to="game-analysis"
-            className={({ isActive }) =>
-              isActive
-                ? "mx-4 text-[#200e4a] font-semibold border-b-2 border-[#200e4a]"
-                : "mx-4 text-[#461fa3] hover:text-[#200e4a]"
-            }
-          >
-            Game Analysis
-          </NavLink>
+          <div className="inline-flex space-x-4">
+            <NavLink
+              to="pro-membership"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+              }
+            >
+              Pro Membership
+            </NavLink>
+            <NavLink
+              to="scholarships"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+              }
+            >
+              Scholarships
+            </NavLink>
+            <NavLink
+              to="game-analysis"
+              className={({ isActive }) =>
+                isActive
+                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+              }
+            >
+              Game Analysis
+            </NavLink>
+          </div>
         </div>
       </nav>
 
@@ -74,10 +93,12 @@ const Exclusives = () => {
       <Routes>
         <Route path="/" element={<Navigate to="pro-membership" />} />
         <Route path="pro-membership" element={<ProMembership />} />
-        <Route path="pricing" element={<Pricing />} />
         <Route path="scholarships" element={<Scholarships />} />
         <Route path="game-analysis" element={<GameAnalysis />} />
       </Routes>
+
+      {/* Add padding at the bottom to prevent overlay */}
+      <div className="pb-20"></div>
     </div>
   );
 };
