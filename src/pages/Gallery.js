@@ -115,7 +115,7 @@ const Gallery = () => {
               {groupedMedia[folder].map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+                  className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group mx-2"
                   onClick={() => setIndex(media.indexOf(item))}
                 >
                   {item.type === 'image' ? (
