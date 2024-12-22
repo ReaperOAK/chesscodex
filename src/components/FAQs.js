@@ -135,6 +135,10 @@ const FAQs = () => {
     setSearchTerm(e.target.value);
   };
 
+  const handleCategoryChange = (e) => {
+    setActiveCategory(e.target.value);
+  };
+
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === "#refund-policy") {
@@ -177,7 +181,20 @@ const FAQs = () => {
         {/* FAQ Categories Menu */}
         {!isSearching && (
           <div className="mb-8">
-            <ul className="flex justify-center space-x-4">
+            <div className="md:hidden">
+              <select
+                onChange={handleCategoryChange}
+                className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+                value={activeCategory}
+              >
+                {faqs.map((section, index) => (
+                  <option key={index} value={section.category}>
+                    {section.category}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <ul className="hidden md:flex justify-center space-x-4">
               {faqs.map((section, index) => (
                 <li key={index}>
                   <button

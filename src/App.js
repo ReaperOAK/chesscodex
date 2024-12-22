@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound'; // Import the NotFound component
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import CTA from './components/CTA';
 import BenefitsSlider from './components/BenefitsSlider'; // Import the BenefitsSlider component
+import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 
 function AppContent() {
   const location = useLocation();
@@ -61,6 +62,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop /> {/* Include the ScrollToTop component */}
         <AppContent />
       </Router>
     </HelmetProvider>

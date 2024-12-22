@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
@@ -9,6 +9,7 @@ const Exclusives = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentSentinelRef = sentinelRef.current;
@@ -30,6 +31,10 @@ const Exclusives = () => {
       }
     };
   }, []);
+
+  const handleDropdownChange = (event) => {
+    navigate(event.target.value);
+  };
 
   return (
     <div>
@@ -54,7 +59,17 @@ const Exclusives = () => {
       {/* Navigation Links */}
       <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
+          <div className="md:hidden">
+            <select
+              onChange={handleDropdownChange}
+              className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+            >
+              <option value="pro-membership">Pro Membership</option>
+              <option value="game-analysis">Game Analysis</option>
+              <option value="scholarships">Scholarships</option>
+            </select>
+          </div>
+          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
             <NavLink
               to="pro-membership"
               className={({ isActive }) =>

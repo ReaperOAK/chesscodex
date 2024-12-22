@@ -71,7 +71,7 @@ const About = () => {
 
       {/* Meet the Team */}
       <section className="py-16 bg-[#f3f1f9]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6" id="team">
           <h2 className="text-4xl font-bold text-[#200e4a] text-center mb-12">Meet Our Team</h2>
           <Team />
         </div>

@@ -56,11 +56,11 @@ const Footer = () => {
             <ul className="space-y-2 text-white">
               <li className="flex items-center space-x-2">
                 <FaEnvelope className="text-[#af0505]" />
-                <span>info@chesscodex.com</span>
+                <a href="mailto:info@chesscodex.com" className="hover:underline">info@chesscodex.com</a>
               </li>
               <li className="flex items-center space-x-2">
                 <FaPhoneAlt className="text-[#af0505]" />
-                <span>+91 98301 49852</span>
+                <a href="tel:+919830149852" className="hover:underline">+91 98301 49852</a>
               </li>
             </ul>
             <a href="/contact#refund-policy" className="inline-block mt-4 text-[#af0505] hover:underline">
@@ -94,7 +94,7 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()} ChessCodex. All Rights Reserved.
             <br />
-            Made with <span className="text-[#af0505]">♥</span> by Owais Khan
+            Made with <span className="text-[#af0505]">♥</span> by <a href="https://www.instagram.com/being._owais/profilecard/?igsh=MWo5Nm45cjFuNzVobA==" target="_blank" rel="noopener noreferrer" className="hover:underline">Owais Khan</a>
           </p>
         </div>
       </div>

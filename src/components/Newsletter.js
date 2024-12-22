@@ -33,9 +33,9 @@ const Newsletter = ({ position, theme }) => {
       ? 'w-full mx-auto my-6'
       : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
 
-  const textColor = theme === 'contact' ? 'text-[#af0505]' : 'text-[#270185]';
+  const textColor = theme === 'contact' ? 'text-[#270185]' : 'text-[#270185]';
   const buttonClasses = theme === 'contact' ? 'bg-[#af0505] text-white hover:bg-[#8c0404]' : 'bg-[#461fa3] text-white hover:bg-[#7646eb]';
-  const inputClasses = theme === 'contact' ? 'border-[#af0505] text-[#af0505] placeholder-[#af0505] focus:ring-[#af0505]' : 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]';
+  const inputClasses = theme === 'contact' ? 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]' : 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]';
 
   return (
     <div

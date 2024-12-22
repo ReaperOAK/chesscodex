@@ -18,13 +18,13 @@ const WhyChooseUs = () => {
       icon: <FaChalkboardTeacher className="text-green-500 text-4xl mb-2" />,
       title: "Top Tier Guidance",
       description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.",
-      link: "/about",
+      link: "/about#team",
     },
     {
       icon: <FaCrown className="text-yellow-500 text-4xl mb-2" />,
       title: "Expert Coaching Panel",
       description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.",
-      link: "/about",
+      link: "/about#team",
     },
   ];
 

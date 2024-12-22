@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
 import ChessInWorkspaces from './ChessInWorkspaces';
@@ -10,6 +10,7 @@ const CollaborateWithUs = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentSentinelRef = sentinelRef.current;
@@ -31,6 +32,10 @@ const CollaborateWithUs = () => {
       }
     };
   }, []);
+
+  const handleDropdownChange = (event) => {
+    navigate(event.target.value);
+  };
 
   return (
     <div>
@@ -55,7 +60,18 @@ const CollaborateWithUs = () => {
       {/* Navigation Links */}
       <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
+          <div className="md:hidden">
+            <select
+              onChange={handleDropdownChange}
+              className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+            >
+              <option value="referral-programme">Referral Programme</option>
+              <option value="chess-in-schools">Chess in Schools</option>
+              <option value="chess-in-workspaces">Chess in Workspaces</option>
+              <option value="chess-academies">Chess Academies</option>
+            </select>
+          </div>
+          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
             <NavLink
               to="referral-programme"
               className={({ isActive }) =>
@@ -109,9 +125,21 @@ const CollaborateWithUs = () => {
         <Route path="chess-academies" element={<ChessAcademies />} />
       </Routes>
 
-      {/* Add padding at the bottom to prevent overlay */}
-      <div className="pb-20"></div>
-
+      {/* Collaboration Section */}
+      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-6">Collaborate with Us</h2>
+          <p className="text-lg mb-6">
+            Partner with ChessCodex to promote chess and create a meaningful impact in the community.
+          </p>
+          <a
+            href="/collaborate-with-us/chess-academies"
+            className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
+          >
+            View Brochure
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
