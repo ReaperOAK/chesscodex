@@ -19,6 +19,7 @@ import CTA from './components/CTA';
 import BenefitsSlider from './components/BenefitsSlider'; // Import the BenefitsSlider component
 import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 
+
 function AppContent() {
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
