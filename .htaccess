@@ -2,9 +2,10 @@
     RewriteEngine On
     RewriteBase /
 
-    # Log requests
-    RewriteLog "/rewrite.log"
-    RewriteLogLevel 3
+    # Remove trailing slash from URLs
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Redirect all requests to index.html
     RewriteCond %{REQUEST_FILENAME} !-f
