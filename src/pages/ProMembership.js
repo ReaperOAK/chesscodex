@@ -5,7 +5,7 @@ const ProMembership = () => {
     {
       title: "Calculation Pack",
       details: [
-        "Structure: 9 curated puzzles divided in 3 levels prepared by a GM.",
+        "Structure: 9 curated puzzles every week, divided in 3 levels prepared by a GM.",
         "Frequency: 3 days/week.",
         "Support: You can self-check the positions.",
       ],

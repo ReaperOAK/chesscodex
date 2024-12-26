@@ -57,7 +57,7 @@ const ChessAcademies = () => {
             Join Now
           </a>
           <a
-            href="/brochures/ChessAcademy.pdf"
+            href="https://docs.google.com/document/d/1SsF2ro-1i3uYLDVO1YZH9g-hkOeytgqh/edit?usp=drivesdk&ouid=104577402643292754346&rtpof=true&sd=true"
             className="inline-block bg-[#7646eb] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#461fa3] transition ml-4"
             target="_blank"
             rel="noopener noreferrer"
