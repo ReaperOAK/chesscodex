@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$galleryPath = __DIR__ . '/../gallery';
+$galleryPath = __DIR__ . '/../galleryPics';
 $folders = array_diff(scandir($galleryPath), array('.', '..'));
 
 $gallery = array();
@@ -13,7 +13,7 @@ foreach ($folders as $folder) {
         $fileData = array();
 
         foreach ($files as $file) {
-            $filePath = '/gallery/' . $folder . '/' . $file;
+            $filePath = '/galleryPics/' . $folder . '/' . $file;
             $fileType = pathinfo($file, PATHINFO_EXTENSION) === 'mp4' ? 'video' : 'image';
             $fileData[] = array(
                 'src' => $filePath,
