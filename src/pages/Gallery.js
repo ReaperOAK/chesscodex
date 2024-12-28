@@ -30,6 +30,7 @@ const Gallery = () => {
           }))
         );
         setMedia(formattedMedia);
+        console.log('Fetched gallery:', formattedMedia); // Debugging log
       } catch (error) {
         console.error('Error fetching gallery:', error);
       }
@@ -70,6 +71,16 @@ const Gallery = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+  };
+
+  const handleLightboxOpen = (index) => {
+    console.log('Opening lightbox at index:', index); // Debugging log
+    setIndex(index);
+  };
+
+  const handleLightboxClose = () => {
+    console.log('Closing lightbox'); // Debugging log
+    setIndex(-1);
   };
 
   return (
@@ -114,7 +125,7 @@ const Gallery = () => {
                 <div
                   key={idx}
                   className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group mx-2"
-                  onClick={() => setIndex(media.indexOf(item))}
+                  onClick={() => handleLightboxOpen(media.indexOf(item))}
                 >
                   {item.type === 'image' ? (
                     <img
@@ -183,7 +194,7 @@ const Gallery = () => {
         <Lightbox
           open={index >= 0}
           index={index}
-          close={() => setIndex(-1)}
+          close={handleLightboxClose}
           slides={slides.map((slide) => ({
             src: slide.src,
             type: slide.type,
