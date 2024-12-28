@@ -78,7 +78,7 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
+              <a href="https://www.linkedin.com/company/kolkatachessacademy/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
                 <FaLinkedin />
               </a>
               <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">

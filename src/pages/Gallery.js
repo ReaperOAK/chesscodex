@@ -90,7 +90,7 @@ const Gallery = () => {
 
         {/* Filter Buttons */}
         <div className="flex justify-center mb-8 space-x-4">
-          {['all', 'image', 'video'].map((type) => (
+          {['all', 'image', 'video', 'youtube'].map((type) => (
             <button
               key={type}
               className={`px-6 py-2 rounded-full font-semibold text-sm ${
@@ -122,13 +122,22 @@ const Gallery = () => {
                       alt={item.alt}
                       className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                  ) : (
+                  ) : item.type === 'video' ? (
                     <video
                       src={item.src}
                       alt={item.alt}
                       className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
                       controls
                     />
+                  ) : (
+                    <iframe
+                      src={item.src}
+                      title={item.alt}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
                   )}
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white font-semibold text-lg">{item.alt}</p>

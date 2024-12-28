@@ -29,5 +29,17 @@ foreach ($folders as $folder) {
     }
 }
 
+// Add YouTube video
+$gallery[] = array(
+    'folder' => 'YouTube Videos',
+    'files' => array(
+        array(
+            'src' => 'https://www.youtube.com/embed/0Khob6ZL0sU',
+            'type' => 'youtube',
+            'alt' => 'ChessCodex YouTube Video'
+        )
+    )
+);
+
 echo json_encode($gallery);
 ?>
