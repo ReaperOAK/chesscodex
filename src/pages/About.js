@@ -16,7 +16,7 @@ const About = () => {
       <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24">
         <div className="max-w-5xl mx-auto text-center px-4">
           <h1 className="text-5xl font-bold mb-4">About ChessCodex</h1>
-          <p className="text-lg font-medium">Shaping the Future of Chess Excellence</p>
+          <p className="text-lg font-medium">Striving for 100% Rated Players</p>
         </div>
       </section>
 

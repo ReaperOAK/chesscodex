@@ -125,21 +125,7 @@ const CollaborateWithUs = () => {
         <Route path="chess-academies" element={<ChessAcademies />} />
       </Routes>
 
-      {/* Collaboration Section */}
-      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Collaborate with Us</h2>
-          <p className="text-lg mb-6">
-            Partner with ChessCodex to promote chess and create a meaningful impact in the community.
-          </p>
-          <a
-            href="/collaborate-with-us/chess-academies"
-            className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
-          >
-            View Brochure
-          </a>
-        </div>
-      </section>
+      
     </div>
   );
 };
