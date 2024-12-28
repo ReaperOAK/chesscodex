@@ -189,20 +189,24 @@ const Gallery = () => {
             type: slide.type,
             alt: slide.alt,
             content: slide.type === 'youtube' ? (
-              <iframe
-                src={slide.src}
-                title={slide.alt}
-                className="w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <div className="w-full h-full flex items-center justify-center">
+                <iframe
+                  src={slide.src}
+                  title={slide.alt}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             ) : slide.type === 'video' ? (
-              <video
-                src={slide.src}
-                className="w-full h-full"
-                controls
-              ></video>
+              <div className="w-full h-full flex items-center justify-center">
+                <video
+                  src={slide.src}
+                  className="w-full h-full"
+                  controls
+                ></video>
+              </div>
             ) : (
               <img
                 src={slide.src}
