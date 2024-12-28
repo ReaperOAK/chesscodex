@@ -35,10 +35,10 @@ const RefundPolicy = () => {
             <div className="mt-2 flex items-center">
               <FaEnvelope className="text-[#af0505] mr-2" />
               <a
-                href="mailto:hello@chesscodex.com"
+                href="mailto:hello@kolkatachessacademy.in"
                 className="text-[#461fa3] font-semibold underline hover:text-[#7646eb] transition-colors"
               >
-                hello@chesscodex.com
+                hello@kolkatachessacademy.in
               </a>
             </div>
           </div>

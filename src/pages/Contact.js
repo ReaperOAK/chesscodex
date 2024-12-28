@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from 'react-helmet';
-import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import FAQs from "../components/FAQs";
@@ -174,7 +174,7 @@ const Contact = () => {
                     </li>
                     <li className="flex items-center space-x-2">
                       <FaEnvelope className="text-[#af0505]" />
-                      <span>info@chesscodex.com</span>
+                      <span>info@kolkatachessacademy.in</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <FaMapMarkerAlt className="text-[#af0505]" />
@@ -199,6 +199,9 @@ const Contact = () => {
                     </a>
                     <a href="https://wa.me/+919830149852" className="text-[#25D366] hover:text-[#128C7E]">
                       <FaWhatsapp size={32} />
+                    </a>
+                    <a href="https://www.youtube.com/@kolkatachessacademy" className="text-[#FF0000] hover:text-[#cc0000]">
+                      <FaYoutube size={32} />
                     </a>
                   </div>
                 </div>

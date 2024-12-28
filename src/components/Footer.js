@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt, FaYoutube } from 'react-icons/fa';
 import Newsletter from './Newsletter';
 
 const Footer = () => {
@@ -56,7 +56,7 @@ const Footer = () => {
             <ul className="space-y-2 text-white">
               <li className="flex items-center space-x-2">
                 <FaEnvelope className="text-[#af0505]" />
-                <a href="mailto:info@chesscodex.com" className="hover:underline">info@chesscodex.com</a>
+                <a href="mailto:info@kolkatachessacademy.in" className="hover:underline">info@kolkatachessacademy.in</a>
               </li>
               <li className="flex items-center space-x-2">
                 <FaPhoneAlt className="text-[#af0505]" />
@@ -83,6 +83,9 @@ const Footer = () => {
               </a>
               <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
                 <FaWhatsapp />
+              </a>
+              <a href="https://www.youtube.com/@kolkatachessacademy" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7646eb] text-2xl">
+                <FaYoutube />
               </a>
             </div>
             <Newsletter position="footer" />
