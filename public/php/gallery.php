@@ -36,7 +36,7 @@ $gallery[] = array(
         array(
             'src' => 'https://www.youtube.com/embed/0Khob6ZL0sU',
             'type' => 'youtube',
-            'alt' => 'ChessCodex YouTube Video'
+            'alt' => 'Power of Passed Pawns- Dhruv Kar vs Soumalya Mondal | Inter Club Invitational (Nov 24)'
         )
     )
 );

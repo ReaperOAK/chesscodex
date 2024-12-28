@@ -114,7 +114,7 @@ const Gallery = () => {
                 <div
                   key={idx}
                   className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group mx-2"
-                  onClick={() => item.type === 'image' && setIndex(media.indexOf(item))}
+                  onClick={() => setIndex(media.indexOf(item))}
                 >
                   {item.type === 'image' ? (
                     <img
@@ -184,8 +184,33 @@ const Gallery = () => {
           open={index >= 0}
           index={index}
           close={() => setIndex(-1)}
-          slides={slides}
-          captions={slides.map((slide) => slide.alt)} // Adds captions
+          slides={slides.map((slide) => ({
+            src: slide.src,
+            type: slide.type,
+            alt: slide.alt,
+            content: slide.type === 'youtube' ? (
+              <iframe
+                src={slide.src}
+                title={slide.alt}
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : slide.type === 'video' ? (
+              <video
+                src={slide.src}
+                className="w-full h-full"
+                controls
+              ></video>
+            ) : (
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                className="w-full h-full object-cover"
+              />
+            ),
+          }))}
         />
       </div>
     </>
