@@ -74,8 +74,13 @@ const Gallery = () => {
   };
 
   const handleLightboxOpen = (index) => {
-    console.log('Opening lightbox at index:', index); // Debugging log
-    setIndex(index);
+    const item = media[index];
+    if (item.type === 'youtube') {
+      window.open(item.src, '_blank');
+    } else {
+      console.log('Opening lightbox at index:', index); // Debugging log
+      setIndex(index);
+    }
   };
 
   const handleLightboxClose = () => {
