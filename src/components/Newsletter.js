@@ -34,8 +34,8 @@ const Newsletter = ({ position, theme }) => {
       : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
 
   const textColor = theme === 'contact' ? 'text-[#270185]' : 'text-[#270185]';
-  const buttonClasses = theme === 'contact' ? 'bg-[#af0505] text-white hover:bg-[#8c0404]' : 'bg-[#461fa3] text-white hover:bg-[#7646eb]';
-  const inputClasses = theme === 'contact' ? 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]' : 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3]';
+  const buttonClasses = 'bg-[#af0505] text-white hover:bg-[#8c0404]';
+  const inputClasses = 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3] border-2';
 
   return (
     <div
@@ -60,12 +60,13 @@ const Newsletter = ({ position, theme }) => {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
+          <div className="flex items-center space-x-2">
             <h2 className={`text-xl font-bold ${textColor}`}>Join Our Newsletter</h2>
-            <p className={`text-sm mt-1 ${textColor}`}>
-              Stay updated with our latest news and events.
-            </p>
+            <img src="/KCA_PNG.png" alt="Logo" className="w-8 h-8" />
           </div>
+          <p className={`text-sm mt-1 ${textColor}`}>
+            Stay updated with our latest news and events.
+          </p>
 
           {/* Email Input */}
           <input

@@ -6,7 +6,7 @@ const RefundPolicy = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#f3f1f9] to-[#f3f1f9] p-6">
       <div className="bg-white max-w-4xl w-full p-8 rounded-2xl shadow-2xl relative animate-fadeIn">
         <div className="flex items-center justify-center mb-6">
-          <FaUndoAlt className="text-[#200e4a] text-5xl mr-3" />
+          <FaUndoAlt className="text-[#af0505] text-5xl mr-3" />
           <h1 className="text-4xl font-extrabold text-[#200e4a]">Refund Policy</h1>
         </div>
         <div className="space-y-6 text-[#270185] leading-relaxed">

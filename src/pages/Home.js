@@ -15,7 +15,7 @@ const Home = () => {
       <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24 text-center">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">Welcome to ChessCodex</h1>
-          <p className="text-lg mb-4">Building the Future of Chess Excellence</p>
+          <p className="text-lg mb-4 text-[#af0505]">Striving for 100% Rated Players</p>
           <p className="text-md mb-6 max-w-3xl mx-auto">
             Started with Kolkata Chess Academy, we now strive to create a community of rated players, enhancing their skills through world-class coaching and resources.
           </p>
