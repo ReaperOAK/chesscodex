@@ -99,10 +99,10 @@ const Contact = () => {
       </Helmet>
       {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
-          <div className="text-center">
+          <div className="text-center px-6 md:px-12 lg:px-24">
             <h1 className="text-6xl font-extrabold mb-4">Get In Touch</h1>
-            <p className="text-lg max-w-xl mx-auto">
-          We're here to assist you. Send us a message or find us at our location!
+            <p className="text-lg max-w-4xl mx-auto">
+            Seek further insights into the offerings of Kolkata Chess Academy, we're here to assist you with grace and expertise. Feel free to connect with us. Your curiosity and interest are highly valued.
             </p>
           </div>
         </section>
