@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { NavLink, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
@@ -10,6 +10,15 @@ const Exclusives = () => {
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? 'Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans.'
+    : 'Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans.';
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing'
+    : 'AspireChess, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing';
 
   useEffect(() => {
     const currentSentinelRef = sentinelRef.current;
@@ -39,9 +48,9 @@ const Exclusives = () => {
   return (
     <div>
       <Helmet>
-        <title>Exclusives - ChessCodex</title>
-        <meta name="description" content="Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans." />
-        <meta name="keywords" content="ChessCodex, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing" />
+        <title>Exclusives - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-16">

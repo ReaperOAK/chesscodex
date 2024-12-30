@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { NavLink, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
 import ChessInWorkspaces from './ChessInWorkspaces';
@@ -11,6 +11,15 @@ const CollaborateWithUs = () => {
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? 'Partner with ChessCodex to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies.'
+    : 'Partner with AspireChess to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies.';
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies'
+    : 'AspireChess, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies';
 
   useEffect(() => {
     const currentSentinelRef = sentinelRef.current;
@@ -40,9 +49,9 @@ const CollaborateWithUs = () => {
   return (
     <div>
       <Helmet>
-        <title>Collaborate With Us - ChessCodex</title>
-        <meta name="description" content="Partner with ChessCodex to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies." />
-        <meta name="keywords" content="ChessCodex, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies" />
+        <title>Collaborate With Us - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-16">
@@ -124,8 +133,6 @@ const CollaborateWithUs = () => {
         <Route path="chess-in-workspaces" element={<ChessInWorkspaces />} />
         <Route path="chess-academies" element={<ChessAcademies />} />
       </Routes>
-
-      
     </div>
   );
 };

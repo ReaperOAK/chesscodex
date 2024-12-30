@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 import Slider from 'react-slick';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -10,6 +11,16 @@ import { NextArrow, PrevArrow } from '../components/CustomArrows';
 const ITEMS_PER_PAGE = 8;
 
 const Gallery = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? "Explore the vibrant moments from ChessCodex's events, tournaments, and training sessions. View our gallery of images and videos."
+    : "Explore the vibrant moments from AspireChess's events, tournaments, and training sessions. View our gallery of images and videos.";
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, chess gallery, chess events, chess tournaments, chess training, chess photos, chess videos'
+    : 'AspireChess, chess gallery, chess events, chess tournaments, chess training, chess photos, chess videos';
+
   const [index, setIndex] = useState(-1); // Lightbox state
   const [filter, setFilter] = useState('all'); // Media filter state
   const [media, setMedia] = useState([]); // Media state
@@ -91,9 +102,9 @@ const Gallery = () => {
   return (
     <>
       <Helmet>
-        <title>Gallery - ChessCodex</title>
-        <meta name="description" content="Explore the vibrant moments from ChessCodex's events, tournaments, and training sessions. View our gallery of images and videos." />
-        <meta name="keywords" content="ChessCodex, chess gallery, chess events, chess tournaments, chess training, chess photos, chess videos" />
+        <title>Gallery - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       <div className="bg-[#f3f1f9] min-h-screen p-6 md:p-12">
         {/* Header */}

@@ -1,45 +1,94 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 
 // Data for events
-const eventsData = [
-  {
-    title: "Invitational Inter-Club U-25 Chess Tournament 2024",
-    date: "2024-10-02",
-    mode: "Offline",
-    link: null,
-    image: "/events/2024-10-02.jpg",
-  },
-  {
-    title: "Invitational Inter-Club U-25 Chess Tournament 2024",
-    date: "2024-11-15",
-    mode: "Offline",
-    link: "https://forms.gle/zBsTohCXppUNCWjU6",
-    image: "/events/2024-11-15.jpg",
-  },
-];
+const eventsData = {
+  chesscodex: [
+    {
+      title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+      date: "2024-10-02",
+      mode: "Offline",
+      link: null,
+      image: "/events/2024-10-02.jpg",
+    },
+    {
+      title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+      date: "2024-11-15",
+      mode: "Offline",
+      link: "https://forms.gle/zBsTohCXppUNCWjU6",
+      image: "/events/2024-11-15.jpg",
+    },
+  ],
+  aspirechess: [
+    {
+      title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+      date: "2024-10-02",
+      mode: "Offline",
+      link: null,
+      image: "/events/2024-10-02.jpg",
+    },
+    {
+      title: "Invitational Inter-Club U-25 Chess Tournament 2024",
+      date: "2024-11-15",
+      mode: "Offline",
+      link: "https://forms.gle/zBsTohCXppUNCWjU6",
+      image: "/events/2024-11-15.jpg",
+    },
+  ],
+};
 
 // Data for blogs
-const blogsData = [
-  {
-    title: "The Benefits of Chess for Cognitive Development",
-    date: "2023-09-01",
-    author: "John Doe",
-    link: "/blog/benefits-of-chess",
-    image: "/blogs/blog1.jpg",
-    content: "Chess has been shown to improve cognitive abilities, enhance problem-solving skills, and boost memory. In this blog, we explore the various benefits of chess for cognitive development and how it can positively impact individuals of all ages.",
-  },
-  {
-    title: "Top 10 Chess Strategies for Beginners",
-    date: "2023-08-15",
-    author: "Jane Smith",
-    link: "/blog/top-10-chess-strategies",
-    image: "/blogs/blog2.jpg",
-    content: "Starting out in chess can be daunting, but with the right strategies, you can quickly improve your game. In this blog, we cover the top 10 chess strategies for beginners to help you get started on the right foot.",
-  },
-];
+const blogsData = {
+  chesscodex: [
+    {
+      title: "The Benefits of Chess for Cognitive Development",
+      date: "2023-09-01",
+      author: "John Doe",
+      link: "/blog/benefits-of-chess",
+      image: "/blogs/blog1.jpg",
+      content: "Chess has been shown to improve cognitive abilities, enhance problem-solving skills, and boost memory. In this blog, we explore the various benefits of chess for cognitive development and how it can positively impact individuals of all ages.",
+    },
+    {
+      title: "Top 10 Chess Strategies for Beginners",
+      date: "2023-08-15",
+      author: "Jane Smith",
+      link: "/blog/top-10-chess-strategies",
+      image: "/blogs/blog2.jpg",
+      content: "Starting out in chess can be daunting, but with the right strategies, you can quickly improve your game. In this blog, we cover the top 10 chess strategies for beginners to help you get started on the right foot.",
+    },
+  ],
+  aspirechess: [
+    {
+      title: "How to Improve Your Chess Rating",
+      date: "2023-10-01",
+      author: "Alice Johnson",
+      link: "/blog/improve-chess-rating",
+      image: "/blogs/blog3.jpg",
+      content: "Improving your chess rating requires dedication, practice, and the right strategies. In this blog, we provide tips and techniques to help you boost your chess rating and achieve your goals.",
+    },
+    {
+      title: "The Importance of Endgame Knowledge",
+      date: "2023-11-20",
+      author: "Bob Brown",
+      link: "/blog/endgame-knowledge",
+      image: "/blogs/blog4.jpg",
+      content: "Endgame knowledge is crucial for success in chess. In this blog, we discuss the importance of understanding endgame principles and how they can help you win more games.",
+    },
+  ],
+};
 
 const Events = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? 'Join us in our exciting tournaments and chess events. Check out the schedule and register for upcoming events at ChessCodex. Read our latest blogs on chess strategies and benefits.'
+    : 'Join us in our exciting tournaments and chess events. Check out the schedule and register for upcoming events at AspireChess. Read our latest blogs on chess strategies and benefits.';
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, chess events, chess tournaments, chess schedule, chess competitions, chess blogs, chess strategies'
+    : 'AspireChess, chess events, chess tournaments, chess schedule, chess competitions, chess blogs, chess strategies';
+
   const [filter, setFilter] = useState("All");
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -52,7 +101,7 @@ const Events = () => {
   }, []);
 
   // Filter events based on the selected mode
-  const filteredEvents = eventsData.filter(
+  const filteredEvents = (isChessCodex ? eventsData.chesscodex : eventsData.aspirechess).filter(
     (event) => filter === "All" || event.mode === filter
   );
 
@@ -65,9 +114,9 @@ const Events = () => {
   return (
     <div>
       <Helmet>
-        <title>Upcoming Events & Blogs - ChessCodex</title>
-        <meta name="description" content="Join us in our exciting tournaments and chess events. Check out the schedule and register for upcoming events at ChessCodex. Read our latest blogs on chess strategies and benefits." />
-        <meta name="keywords" content="ChessCodex, chess events, chess tournaments, chess schedule, chess competitions, chess blogs, chess strategies" />
+        <title>Upcoming Events & Blogs - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24">
@@ -166,7 +215,7 @@ const Events = () => {
             Latest Blogs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogsData.map((blog, index) => (
+            {(isChessCodex ? blogsData.chesscodex : blogsData.aspirechess).map((blog, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"

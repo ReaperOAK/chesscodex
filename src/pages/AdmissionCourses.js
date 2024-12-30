@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 import CoursesList from '../components/CoursesList';
 
 const admissionSteps = [
@@ -39,6 +40,16 @@ const FAQs = [
 ];
 
 const AdmissionCourses = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? 'Join ChessCodex to elevate your chess skills with expert training and comprehensive courses. Learn more about our admission process and available courses.'
+    : 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses. Learn more about our admission process and available courses.';
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, chess courses, chess training, chess admission, chess coaching, chess academy'
+    : 'AspireChess, chess courses, chess training, chess admission, chess coaching, chess academy';
+
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [formData, setFormData] = useState({
     full_name: '',
@@ -80,9 +91,9 @@ const AdmissionCourses = () => {
   return (
     <div>
       <Helmet>
-        <title>Admission & Courses - ChessCodex</title>
-        <meta name="description" content="Join ChessCodex to elevate your chess skills with expert training and comprehensive courses. Learn more about our admission process and available courses." />
-        <meta name="keywords" content="ChessCodex, chess courses, chess training, chess admission, chess coaching, chess academy" />
+        <title>Admission & Courses - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
       <section id="hero" className="relative bg-gradient-to-br from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
