@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
     {
       icon: <FaUsers className="text-teal-500 text-4xl mb-2" />,
       title: "Community Support",
-      description: "Join our community forum to discuss ideas, share experiences, and get support from fellow chess enthusiasts.",
+      description: "Join our community forum to discuss ideas, share experiences, and get support.",
       link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI",
     },
     {
@@ -116,7 +116,7 @@ const WhyChooseUs = () => {
             <NavLink
               key={index}
               to={feature.link}
-              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full"
             >
               <div className="flex justify-center items-center mb-2">
                 {feature.icon}
@@ -133,7 +133,7 @@ const WhyChooseUs = () => {
             <NavLink
               key={index}
               to={feature.link}
-              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full"
             >
               <div className="flex justify-center items-center mb-2">
                 {feature.icon}
