@@ -7,7 +7,7 @@ function Navbar() {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/AspireChess_PNG.png';
+  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/KCA_PNG.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import WhyChooseUs from '../components/WhyChooseUs';
 
-const Home = () => {
+const SiteHome = () => {
   return (
     <div>
       <Helmet>
@@ -87,4 +87,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SiteHome;

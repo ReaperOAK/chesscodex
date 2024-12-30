@@ -8,8 +8,8 @@ const Footer = () => {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const contactEmail = isChessCodex ? 'info@kolkatachessacademy.in' : 'info@aspirechessacademy.in';
-  const contactPhone = isChessCodex ? '+91 98301 49852' : '+91 12345 67890';
+  const contactEmail = isChessCodex ? 'info@kolkatachessacademy.in' : 'info@kolkatachessacademy.in';
+  const contactPhone = isChessCodex ? '+91 98301 49852' : '+91 98301 49852 67890';
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 

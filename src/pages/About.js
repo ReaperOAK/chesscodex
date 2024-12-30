@@ -1,21 +1,32 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaChessKing, FaTrophy } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Team from '../components/Team';
 
 const About = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteDescription = isChessCodex
+    ? 'Learn more about ChessCodex, our mission, and our team of expert coaches. Empowering chess enthusiasts to achieve their best.'
+    : 'Learn more about AspireChess, our mission, and our team of expert coaches. Empowering chess enthusiasts to achieve their best.';
+  const siteKeywords = isChessCodex
+    ? 'ChessCodex, Kolkata Chess Academy, chess training, chess coaching, chess courses, chess community'
+    : 'AspireChess, chess training, chess coaching, chess courses, chess community';
+
   return (
     <div>
       <Helmet>
-        <title>About Us - ChessCodex</title>
-        <meta name="description" content="Learn more about ChessCodex, our mission, and our team of expert coaches. Empowering chess enthusiasts to achieve their best." />
-        <meta name="keywords" content="ChessCodex, Kolkata Chess Academy, chess training, chess coaching, chess courses, chess community" />
+        <title>About Us - {siteName}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24">
         <div className="max-w-5xl mx-auto text-center px-4">
-          <h1 className="text-5xl font-bold mb-4">About ChessCodex</h1>
+          <h1 className="text-5xl font-bold mb-4">About {siteName}</h1>
           <p className="text-lg font-medium text-[#af0505]">Striving for 100% Rated Players</p>
         </div>
       </section>
@@ -28,10 +39,12 @@ const About = () => {
               Striving to Help All Players Achieve and Improve Their Chess Rating
             </h2>
             <p className="text-lg text-[#270185] leading-relaxed mb-6">
-              Started out with Kolkata Chess Academy our singular goal was of making India the leading nation in chess titles, ChessCodex is now dedicated to building a community packed with rated players who are prepared for success. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.
+              {isChessCodex
+                ? 'Started out with Kolkata Chess Academy our singular goal was of making India the leading nation in chess titles, ChessCodex is now dedicated to building a community packed with rated players who are prepared for success. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.'
+                : 'AspireChess is dedicated to building a community packed with rated players who are prepared for success. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.'}
             </p>
             <p className="text-lg text-[#270185] leading-relaxed">
-              At ChessCodex, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.
+              At {siteName}, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.
             </p>
           </div>
         </div>
