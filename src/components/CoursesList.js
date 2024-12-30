@@ -127,7 +127,7 @@ const CoursesList = () => {
                   href={
                     course.title === 'Private Classes'
                       ? 'https://wa.me/+919830149852'
-                      : 'https://forms.gle/4CaSH9r9sWJ2BZpy8'
+                      : '#application-form'
                   }
                   target="_blank"
                   rel="noopener noreferrer"

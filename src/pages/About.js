@@ -49,19 +49,19 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
             {/* Mission */}
             <div className="flex-1 bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <FaChessKing className="mx-auto text-6xl text-blue-600 mb-6" />
+              <FaChessKing className="mx-auto text-6xl text-indigo-600 mb-6" />
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
               <p className="text-gray-600">
-                <span className="font-semibold text-blue-600">To make chess a habit!</span> 
+                <span className="font-semibold text-indigo-600">To make chess a habit!</span> 
                 Cultivate a love for chess through structured programs, fostering critical thinking and creativity in every player.
               </p>
             </div>
             {/* Vision */}
             <div className="flex-1 bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <FaTrophy className="mx-auto text-6xl text-blue-600 mb-6" />
+              <FaTrophy className="mx-auto text-6xl text-indigo-600 mb-6" />
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
               <p className="text-gray-600">
-                <span className="font-semibold text-blue-600">Striving for 100% Rated Players.</span> 
+                <span className="font-semibold text-indigo-600">Striving for 100% Rated Players.</span> 
                 Our vision is to ensure that every player reaches their highest potential, achieving excellence in chess.
               </p>
             </div>

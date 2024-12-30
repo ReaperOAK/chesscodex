@@ -55,11 +55,11 @@ const Footer = () => {
             <h2 className="text-2xl font-bold mb-4 text-white">Contact Us</h2>
             <ul className="space-y-2 text-white">
               <li className="flex items-center space-x-2">
-                <FaEnvelope className="text-[#af0505]" />
+                <FaEnvelope className="text-[#af0505] flex-shrink-0" />
                 <a href="mailto:info@kolkatachessacademy.in" className="hover:underline">info@kolkatachessacademy.in</a>
               </li>
               <li className="flex items-center space-x-2">
-                <FaPhoneAlt className="text-[#af0505]" />
+                <FaPhoneAlt className="text-[#af0505] flex-shrink-0" />
                 <a href="tel:+919830149852" className="hover:underline">+91 98301 49852</a>
               </li>
             </ul>

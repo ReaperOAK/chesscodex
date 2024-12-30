@@ -40,9 +40,41 @@ const FAQs = [
 
 const AdmissionCourses = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [formData, setFormData] = useState({
+    full_name: '',
+    email: '',
+    phone_number: '',
+    course: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const toggleFAQ = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/php/application_form.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ full_name: '', email: '', phone_number: '', course: '' });
+      } else {
+        console.error('Error:', data.message);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -93,25 +125,76 @@ const AdmissionCourses = () => {
         <CoursesList />
       </section>
 
-      {/* Google Form Section */}
-      <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <img src="/KCA_PNG.png" alt="Custom Logo" className="mx-auto mb-6" style={{ width: '100px', height: '100px' }} />
-          <h2 className="text-4xl font-extrabold mb-6">Join Our Academy</h2>
-          <p className="text-lg mb-8">
-            Ready to master chess? Fill out the application form to enroll in your desired course.
-          </p>
-          <a
-            href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
-          >
-            Open Application Form
-          </a>
+      {/* Application Form Section */}
+      <section className="py-16 bg-[#f3f1f9]">
+        <div className="max-w-6xl mx-auto px-4" id='application-form'>
+          <h2 className="text-4xl font-bold text-[#200e4a] mb-12 text-center">Application Form</h2>
+          {submitted ? (
+            <p className="text-center text-[#af0505] text-xl font-medium">
+              Thank you! Your application has been received. We'll get back to you soon.
+            </p>
+          ) : (
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-[#270185]">Full Name</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    value={formData.full_name}
+                    onChange={handleChange}
+                    required
+                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-[#270185]">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-[#270185]">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    required
+                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-[#270185]">Select Course</label>
+                  <select
+                    name="course"
+                    value={formData.course}
+                    onChange={handleChange}
+                    required
+                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                  >
+                    <option value="">-- Choose a Course --</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="kids">Expert</option>
+                  </select>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="mt-4 w-full bg-[#af0505] text-white py-2 px-4 rounded hover:bg-[#8c0404] transition-colors duration-300"
+              >
+                Submit Application
+              </button>
+            </form>
+          )}
         </div>
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
       </section>
 
       {/* FAQs Section */}
