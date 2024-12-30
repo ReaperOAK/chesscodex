@@ -1,48 +1,71 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // Team data
-const coaches = [
-  {
-    name: 'GM Sayantan Das',
-    role: 'Guest Coach & Opening Expert',
-    image: '/Team/sayantan.jpg',
-    description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of elite chess experience and multiple National Championship titles. His role in our academy goes beyond coaching—he meticulously designs and refines opening repertoires that ensure our players are always well-prepared and a step ahead of their opponents.`,
-  },
-  {
-    name: 'GM Saptarshi Roy Chowdhury',
-    role: 'Chief Advisor & Breakthrough Strategy Maker',
-    image: '/Team/saptarshi.jpg',
-    description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is the strategic mind behind our academy’s success.
-As Chief Advisor, he focuses on building dynamic, engaging positions that challenge and inspire our students to think deeply about every move.
-`,
-  },
-  {
-    name: 'IM Somak Palit',
-    role: 'Coach',
-    image: '/Team/somak.jpg',
-    description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy.
-His methodology focuses on distilling vast and often overwhelming chess material into digestible and practical lessons, ensuring that students grasp essential strategies and enjoy chess without feeling overloaded. 
-`,
-  },
-  {
-    name: 'FM Joydeep Dutta',
-    role: 'Coach',
-    image: '/Team/joydeep.jpg',
-    description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various rank holders. With over a decade of coaching experience, his unique approach focuses on identifying each student’s strengths and weaknesses to foster growth.
-He curates the progress plan based on this with regular game analysis and customized assignments to reinforce concepts, while frequent assessments track progress.
-`,
-  },
-  {
-    name: 'Arpan Das',
-    role: 'Coach',
-    image: '/Team/arpan.jpg',
-    description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Formerly ranked among the top 100 Indian players of all time, he has represented India multiple times. Now focusing on coaching, he has already mentored 10+ titled players and national rankholders in a span of 3 years, guiding them to success.`,
-  },
-];
+const coachesData = {
+  chesscodex: [
+    {
+      name: 'GM Sayantan Das',
+      role: 'Guest Coach & Opening Expert',
+      image: '/Team/sayantan.jpg',
+      description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of elite chess experience and multiple National Championship titles. His role in our academy goes beyond coaching—he meticulously designs and refines opening repertoires that ensure our players are always well-prepared and a step ahead of their opponents.`,
+    },
+    {
+      name: 'GM Saptarshi Roy Chowdhury',
+      role: 'Chief Advisor & Breakthrough Strategy Maker',
+      image: '/Team/saptarshi.jpg',
+      description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is the strategic mind behind our academy’s success.
+As Chief Advisor, he focuses on building dynamic, engaging positions that challenge and inspire our students to think deeply about every move.`,
+    },
+    {
+      name: 'IM Somak Palit',
+      role: 'Coach',
+      image: '/Team/somak.jpg',
+      description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy.
+His methodology focuses on distilling vast and often overwhelming chess material into digestible and practical lessons, ensuring that students grasp essential strategies and enjoy chess without feeling overloaded.`,
+    },
+    {
+      name: 'FM Joydeep Dutta',
+      role: 'Coach',
+      image: '/Team/joydeep.jpg',
+      description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various rank holders. With over a decade of coaching experience, his unique approach focuses on identifying each student’s strengths and weaknesses to foster growth.
+He curates the progress plan based on this with regular game analysis and customized assignments to reinforce concepts, while frequent assessments track progress.`,
+    },
+    {
+      name: 'Arpan Das',
+      role: 'Coach',
+      image: '/Team/arpan.jpg',
+      description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Formerly ranked among the top 100 Indian players of all time, he has represented India multiple times. Now focusing on coaching, he has already mentored 10+ titled players and national rankholders in a span of 3 years, guiding them to success.`,
+    },
+  ],
+  aspirechess: [
+    {
+      name: 'GM John Doe',
+      role: 'Head Coach',
+      image: '/Team/johndoe.jpg',
+      description: `GM John Doe, with over 20 years of experience, leads our coaching team with a focus on advanced strategies and techniques. His expertise has helped numerous students achieve their chess goals.`,
+    },
+    {
+      name: 'IM Jane Smith',
+      role: 'Senior Coach',
+      image: '/Team/janesmith.jpg',
+      description: `IM Jane Smith specializes in middle-game tactics and endgame strategies. With a decade of coaching experience, she has a proven track record of improving her students' performance.`,
+    },
+    {
+      name: 'FM Alan Brown',
+      role: 'Coach',
+      image: '/Team/alanbrown.jpg',
+      description: `FM Alan Brown brings a wealth of knowledge in opening theory and practical play. His coaching style emphasizes understanding key concepts and applying them effectively in games.`,
+    },
+  ],
+};
 
 // Component
 const Team = () => {
   const [expandedCoach, setExpandedCoach] = useState(null);
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const coaches = isChessCodex ? coachesData.chesscodex : coachesData.chesscodex;
 
   const toggleDescription = (index) => {
     setExpandedCoach(expandedCoach === index ? null : index);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // Course data
 const coursesData = [
@@ -15,6 +16,7 @@ const coursesData = [
       'Basics of Endgames',
     ],
     duration: '12 months',
+    site: 'common', // Specific to ChessCodex
   },
   {
     title: 'Intermediate Course',
@@ -27,6 +29,7 @@ const coursesData = [
       'Fundamental Strategies (Open File, Outpost, Center, Space & Exchanges)',
     ],
     duration: '18 months',
+    site: 'common', // Common to both sites
   },
   {
     title: 'Advanced Course',
@@ -37,6 +40,7 @@ const coursesData = [
       'Colour Complex Piece Play',
     ],
     duration: '24 months',
+    site: 'common', // Specific to AspireChess
   },
   {
     title: 'Expert Course',
@@ -48,6 +52,7 @@ const coursesData = [
       'Building a Tailored Opening Repertoire',
     ],
     duration: 'Ongoing',
+    site: 'common', // Common to both sites
   },
   {
     title: 'Private Classes',
@@ -61,6 +66,7 @@ const coursesData = [
       'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
     ],
     duration: 'Flexible',
+    site: 'common', // Specific to ChessCodex
   },
 ];
 
@@ -91,9 +97,19 @@ const Modal = ({ course, onClose }) => {
 
 const CoursesList = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
 
   const openModal = (course) => setSelectedCourse(course);
   const closeModal = () => setSelectedCourse(null);
+
+  // Filter courses based on the current site
+  const filteredCourses = coursesData.filter(course => 
+    course.site === 'common' || 
+    (isChessCodex && course.site === 'chesscodex') || 
+    (isAspireChess && course.site === 'aspirechess')
+  );
 
   return (
     <section id="courses" className="py-16 bg-[#14092e]">
@@ -103,7 +119,7 @@ const CoursesList = () => {
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {coursesData.map((course, index) => (
+          {filteredCourses.map((course, index) => (
             <div
               key={index}
               className="group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"

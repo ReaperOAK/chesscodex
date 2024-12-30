@@ -1,7 +1,12 @@
 import React from 'react';
 import { FaEnvelope, FaInfoCircle, FaUndoAlt } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 
 const RefundPolicy = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const contactEmail = isChessCodex ? 'hello@kolkatachessacademy.in' : 'hello@kolkatachessacademy.in';
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#f3f1f9] to-[#f3f1f9] p-6">
       <div className="bg-white max-w-4xl w-full p-8 rounded-2xl shadow-2xl relative animate-fadeIn">
@@ -35,10 +40,10 @@ const RefundPolicy = () => {
             <div className="mt-2 flex items-center">
               <FaEnvelope className="text-[#af0505] mr-2" />
               <a
-                href="mailto:hello@kolkatachessacademy.in"
+                href={`mailto:${contactEmail}`}
                 className="text-[#461fa3] font-semibold underline hover:text-[#7646eb] transition-colors"
               >
-                hello@kolkatachessacademy.in
+                {contactEmail}
               </a>
             </div>
           </div>

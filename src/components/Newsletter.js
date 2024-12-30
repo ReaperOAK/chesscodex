@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 
 const Newsletter = ({ position, theme }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(true);
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/KCA_PNG.png';
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,10 +67,10 @@ const Newsletter = ({ position, theme }) => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex items-center space-x-2">
             <h2 className={`text-xl font-bold ${textColor}`}>Join Our Newsletter</h2>
-            <img src="/KCA_PNG.png" alt="Logo" className="w-8 h-8" />
+            <img src={logoSrc} alt="Logo" className="w-8 h-8" />
           </div>
           <p className={`text-sm mt-1 ${textColor}`}>
-            Stay updated with our latest news and events.
+            Stay updated with our latest news and events from {siteName}.
           </p>
 
           {/* Email Input */}

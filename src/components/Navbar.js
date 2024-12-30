@@ -1,21 +1,25 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/AspireChess_PNG.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { to: "/about", label: "About" },
-    { to: "/courses", label: "Admission & Courses" },
-    { to: "/exclusives", label: "Exclusives" },
-    { to: "/events-blogs", label: "Events & Blogs" },
-    { to: "/achievements-testimonials", label: "Achievements & Testimonials" },
-    { to: "/collaborate-with-us", label: "Collaboration" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/contact", label: "Contact & FAQs" },
+    { to: isChessCodex ? "/chesscodex/about" : "/aspirechess/about", label: "About" },
+    { to: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses", label: "Admission & Courses" },
+    { to: isChessCodex ? "/chesscodex/exclusives" : "/aspirechess/exclusives", label: "Exclusives" },
+    { to: isChessCodex ? "/chesscodex/events-blogs" : "/aspirechess/events-blogs", label: "Events & Blogs" },
+    { to: isChessCodex ? "/chesscodex/achievements-testimonials" : "/aspirechess/achievements-testimonials", label: "Achievements & Testimonials" },
+    { to: isChessCodex ? "/chesscodex/collaborate-with-us" : "/aspirechess/collaborate-with-us", label: "Collaboration" },
+    { to: isChessCodex ? "/chesscodex/gallery" : "/aspirechess/gallery", label: "Gallery" },
+    { to: isChessCodex ? "/chesscodex/contact" : "/aspirechess/contact", label: "Contact & FAQs" },
   ];
 
   return (
@@ -24,9 +28,9 @@ function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <Link to="/" className="flex items-center text-2xl font-bold" aria-label="ChessCodex Home">
-              <img src="/KCA_PNG.png" alt="ChessCodex Logo" className="h-10 w-auto mr-2" />
-              ChessCodex
+            <Link to={isChessCodex ? "/chesscodex" : "/aspirechess"} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
+              <img src={logoSrc} alt={`${siteName} Logo`} className="h-10 w-auto mr-2" />
+              {siteName}
             </Link>
           </div>
 
@@ -47,7 +51,7 @@ function Navbar() {
               </NavLink>
             ))}
             <a
-              href="/dashboard"
+              href={isChessCodex ? "/chesscodex/dashboard" : "/aspirechess/dashboard"}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#e3e1f7] transition-colors duration-300 mx-2"
@@ -88,7 +92,7 @@ function Navbar() {
             ))}
             <li className="w-full">
               <a
-                href="/dashboard"
+                href={isChessCodex ? "/chesscodex/dashboard" : "/aspirechess/dashboard"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-white hover:text-[#e3e1f7] text-center"
