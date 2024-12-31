@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt, FaYoutube } from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Newsletter from './Newsletter';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
   const contactEmail = isChessCodex ? 'info@kolkatachessacademy.in' : 'info@kolkatachessacademy.in';
-  const contactPhone = isChessCodex ? '+91 98301 49852' : '+91 98301 49852 67890';
+  const contactPhone = isChessCodex ? '+91 98301 49852' : '+91 98301 49852';
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -52,6 +52,14 @@ const Footer = () => {
                     <li><a href="https://new.uschess.org/play-chess" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#461fa3]">US</a></li>
                   </ul>
                 )}
+              </li>
+              <li>
+              <Link
+              to={isChessCodex ? "/aspirechess" : "/chesscodex"}
+              className="text-[#af0505] hover:underline"
+            >
+              Switch to {isChessCodex ? "AspireChess" : "ChessCodex"}
+            </Link>
               </li>
             </ul>
           </div>

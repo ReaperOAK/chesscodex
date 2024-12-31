@@ -7,7 +7,7 @@ function Navbar() {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/KCA_PNG.png';
+  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/aca.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -30,7 +30,7 @@ function Navbar() {
           <div className="flex items-center flex-shrink-0">
             <Link to={isChessCodex ? "/chesscodex" : "/aspirechess"} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
               <img src={logoSrc} alt={`${siteName} Logo`} className="h-10 w-auto mr-2" />
-              {siteName}
+              {isChessCodex ? 'ChessCodex' : ''}
             </Link>
           </div>
 

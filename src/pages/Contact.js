@@ -14,6 +14,7 @@ const Contact = () => {
     age: "",
     email: "",
     phone_number: "",
+    country_code: "+91", // Default country code
     message: "",
     subscribe_newsletter: false,
     agree_privacy_policy: false,
@@ -93,6 +94,7 @@ const Contact = () => {
           age: "",
           email: "",
           phone_number: "",
+          country_code: "+91", // Reset country code
           message: "",
           subscribe_newsletter: false,
           agree_privacy_policy: false,
@@ -117,7 +119,7 @@ const Contact = () => {
         <div className="text-center px-6 md:px-12 lg:px-24">
           <h1 className="text-6xl font-extrabold mb-4">Get In Touch</h1>
           <p className="text-lg max-w-4xl mx-auto">
-            Seek further insights into the offerings of Kolkata Chess Academy, we\'re here to assist you with grace and expertise. Feel free to connect with us. Your curiosity and interest are highly valued.
+            Seek further insights into the offerings of Kolkata Chess Academy, we're here to assist you with grace and expertise. Feel free to connect with us. Your curiosity and interest are highly valued.
           </p>
         </div>
       </section>
@@ -153,6 +155,7 @@ const Contact = () => {
                           <option value="">-- Select --</option>
                           <option value="student">Student</option>
                           <option value="teacher">Teacher</option>
+                          <option value="parent">Parent</option>
                           <option value="interested">Interested Person</option>
                           <option value="other">Other</option>
                         </select>
@@ -171,20 +174,22 @@ const Contact = () => {
                           className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
                         />
                       </div>
-                      <div>
-                        <label htmlFor="age" className="block font-medium mb-2 text-[#270185]">
-                          Age
-                        </label>
-                        <input
-                          type="number"
-                          id="age"
-                          name="age"
-                          value={formData.age}
-                          onChange={handleChange}
-                          required
-                          className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
-                        />
-                      </div>
+                      {(formData.role === "student" || formData.role === "parent") && (
+                        <div>
+                          <label htmlFor="age" className="block font-medium mb-2 text-[#270185]">
+                            Student's Age
+                          </label>
+                          <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            value={formData.age}
+                            onChange={handleChange}
+                            required
+                            className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                          />
+                        </div>
+                      )}
                       <div>
                         <label htmlFor="email" className="block font-medium mb-2 text-[#270185]">
                           Email
@@ -203,15 +208,26 @@ const Contact = () => {
                         <label htmlFor="phone_number" className="block font-medium mb-2 text-[#270185]">
                           Phone Number
                         </label>
-                        <input
-                          type="tel"
-                          id="phone_number"
-                          name="phone_number"
-                          value={formData.phone_number}
-                          onChange={handleChange}
-                          required
-                          className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
-                        />
+                        <div className="flex">
+                          <input
+                            type="text"
+                            id="country_code"
+                            name="country_code"
+                            value={formData.country_code}
+                            onChange={handleChange}
+                            required
+                            className="w-1/3  border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3] mr-2"
+                          />
+                          <input
+                            type="tel"
+                            id="phone_number"
+                            name="phone_number"
+                            value={formData.phone_number}
+                            onChange={handleChange}
+                            required
+                            className="w-2/3 border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div className="mt-4">
@@ -273,15 +289,15 @@ const Contact = () => {
                   <ul className="space-y-4 text-[#270185]">
                     <li className="flex items-center space-x-2">
                       <FaPhoneAlt className="text-[#af0505]" />
-                      <span>{contactPhone}</span>
+                      <a href={`tel:${contactPhone}`} className="hover:underline">{contactPhone}</a>
                     </li>
                     <li className="flex items-center space-x-2">
                       <FaEnvelope className="text-[#af0505]" />
-                      <span>{contactEmail}</span>
+                      <a href={`mailto:${contactEmail}`} className="hover:underline">{contactEmail}</a>
                     </li>
                     <li className="flex items-center space-x-2">
                       <FaMapMarkerAlt className="text-[#af0505]" />
-                      <span>{contactAddress}</span>
+                      <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{contactAddress}</a>
                     </li>
                   </ul>
                 </div>

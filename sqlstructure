@@ -292,7 +292,7 @@ tables:
                 type: timestamp
                 nullable: YES
                 default: current_timestamp()
-
+   
     - name: contact_submissions
         columns:
             - name: id
@@ -300,19 +300,40 @@ tables:
                 nullable: NO
                 key: PRI
                 extra: auto_increment
+            - name: role
+                type: enum('student','teacher','parent','interested','other')
+                nullable: NO
             - name: name
                 type: varchar(255)
+                nullable: NO
+            - name: age
+                type: int(3)
                 nullable: NO
             - name: email
                 type: varchar(255)
                 nullable: NO
+            - name: country_code
+                type: varchar(10)
+                nullable: NO
+            - name: phone_number
+                type: varchar(20)
+                nullable: NO
             - name: message
                 type: text
                 nullable: NO
+            - name: subscribe_newsletter
+                type: tinyint(1)
+                nullable: YES
+                default: 0
+            - name: agree_privacy_policy
+                type: tinyint(1)
+                nullable: YES
+                default: 0
             - name: created_at
                 type: timestamp
                 nullable: YES
                 default: current_timestamp()
+
 
     - name: applications
         columns:
