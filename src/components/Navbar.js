@@ -23,7 +23,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-l from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white sticky top-0 shadow-lg z-50 w-full">
+    <nav className={`${isChessCodex ? 'bg-gradient-to-l from-[#200e4a] via-[#461fa3] to-[#7646eb]' : 'bg-gradient-to-r from-white via-[#461fa3] to-[#7646eb]'} text-white sticky top-0 shadow-lg z-50 w-full`}>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}

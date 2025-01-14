@@ -58,7 +58,16 @@ const Footer = () => {
               to={isChessCodex ? "/aspirechess" : "/chesscodex"}
               className="text-[#af0505] hover:underline"
             >
-              Switch to {isChessCodex ? "AspireChess" : "ChessCodex"}
+              {isChessCodex ? "AspireChess" : "ChessCodex"}
+            </Link>
+            
+              </li>
+              <li>
+              <Link
+              to="/"
+              className="text-[#af0505] hover:underline"
+            >
+              Home
             </Link>
               </li>
             </ul>
