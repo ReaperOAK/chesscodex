@@ -11,7 +11,7 @@ const admissionSteps = [
 ];
 
 const FAQs = [
-  { question: 'What is the age limit for joining?', answer: 'Students aged 6 years and above can join our courses.' },
+  { question: 'What is the age limit for joining?', answer: 'Students aged 4 years and above can join our courses.' },
   { question: 'Do I need prior experience in chess?', answer: 'No, beginners are welcome to join our introductory courses.' },
   { question: 'How do I pay for the course?', answer: 'Payments can be made online through our secure payment gateway.' },
   {
@@ -51,42 +51,42 @@ const AdmissionCourses = () => {
     : 'AspireChess, chess courses, chess training, chess admission, chess coaching, chess academy';
 
   const [expandedIndex, setExpandedIndex] = useState(null);
-  const [formData, setFormData] = useState({
-    full_name: '',
-    email: '',
-    phone_number: '',
-    course: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  // const [formData, setFormData] = useState({
+  //   full_name: '',
+  //   email: '',
+  //   phone_number: '',
+  //   course: '',
+  // });
+  // const [submitted, setSubmitted] = useState(false);
 
   const toggleFAQ = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/php/application_form.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (data.success) {
-        setSubmitted(true);
-        setFormData({ full_name: '', email: '', phone_number: '', course: '' });
-      } else {
-        console.error('Error:', data.message);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch('/php/application_form.php', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await response.json();
+  //     if (data.success) {
+  //       setSubmitted(true);
+  //       setFormData({ full_name: '', email: '', phone_number: '', course: '' });
+  //     } else {
+  //       console.error('Error:', data.message);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //   }
+  // };
 
   return (
     <div>
@@ -140,6 +140,8 @@ const AdmissionCourses = () => {
       <section className="py-16 bg-[#f3f1f9]">
         <div className="max-w-6xl mx-auto px-4" id='application-form'>
           <h2 className="text-4xl font-bold text-[#200e4a] mb-12 text-center">Application Form</h2>
+          {/* Commented out the current form */}
+          {/*
           {submitted ? (
             <p className="text-center text-[#af0505] text-xl font-medium">
               Thank you! Your application has been received. We'll get back to you soon.
@@ -205,6 +207,19 @@ const AdmissionCourses = () => {
               </button>
             </form>
           )}
+          */}
+          <div className="bg-white p-8 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-semibold text-[#200e4a] mb-4">Apply Now</h3>
+            <p className="text-lg text-[#270185] mb-6">Click the button below to fill out the application form on Google Forms.</p>
+            <a
+              href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
+            >
+              Go to Application Form
+            </a>
+          </div>
         </div>
       </section>
 

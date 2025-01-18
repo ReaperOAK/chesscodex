@@ -29,11 +29,11 @@ const Scholarships = () => {
       ],
     },
     {
-      category: "Additional Incentives to both Categories:",
+      category: "Additional Incentives to all Categories:",
       benefits: [
         "Achievement Highlight on all our Social Media Platforms",
         "Personalized Merchandize Gifts",
-        "Selected One free Tournament Registration",
+        "Selected One Kolkata Chess free Registration",
       ],
     },
   ];

@@ -6,8 +6,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/aca.png';
+  const logoSrc = isChessCodex ? '/KCA_PNG.png' : isAspireChess ? '/aca.png' : 'KCA_PNG.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
