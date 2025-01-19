@@ -12,6 +12,7 @@ const Exclusives = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
   const siteDescription = isChessCodex
     ? 'Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans.'
@@ -75,7 +76,7 @@ const Exclusives = () => {
             >
               <option value="pro-membership">Pro Membership</option>
               <option value="game-analysis">Game Analysis</option>
-              <option value="scholarships">Scholarships</option>
+              {(isChessCodex || isAspireChess) && (<option value="scholarships">Scholarships</option>)}
             </select>
           </div>
           <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
@@ -99,6 +100,7 @@ const Exclusives = () => {
             >
               Game Analysis
             </NavLink>
+            {(isChessCodex || isAspireChess) && (
             <NavLink
               to="scholarships"
               className={({ isActive }) =>
@@ -109,6 +111,7 @@ const Exclusives = () => {
             >
               Scholarships
             </NavLink>
+          )}
           </div>
         </div>
       </nav>

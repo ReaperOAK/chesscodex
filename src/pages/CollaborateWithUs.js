@@ -13,6 +13,7 @@ const CollaborateWithUs = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
   const siteDescription = isChessCodex
     ? 'Partner with ChessCodex to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies.'
@@ -74,23 +75,26 @@ const CollaborateWithUs = () => {
               onChange={handleDropdownChange}
               className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
             >
-              <option value="referral-programme">Referral Programme</option>
+              {(isChessCodex || isAspireChess) && (<option value="referral-programme">Referral Programme</option>)}
               <option value="chess-in-schools">Chess in Schools</option>
               <option value="chess-in-workspaces">Chess in Workspaces</option>
               <option value="chess-academies">Chess Academies</option>
             </select>
           </div>
           <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
-            <NavLink
-              to="referral-programme"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
-              }
-            >
-              Referral Programme
-            </NavLink>
+            {(isChessCodex || isAspireChess) && (
+                        <NavLink
+                        to="referral-programme"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
+                            : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                        }
+                      >
+                        Referral Programme
+                      </NavLink>
+                      )}
+            
             <NavLink
               to="chess-in-schools"
               className={({ isActive }) =>
@@ -127,7 +131,7 @@ const CollaborateWithUs = () => {
 
       {/* Routes */}
       <Routes>
-        <Route path="/" element={<Navigate to="referral-programme" />} />
+        <Route path="/" element={<Navigate to="chess-in-schools" />} />
         <Route path="referral-programme" element={<ReferralProgramme />} />
         <Route path="chess-in-schools" element={<ChessInSchools />} />
         <Route path="chess-in-workspaces" element={<ChessInWorkspaces />} />

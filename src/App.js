@@ -30,8 +30,8 @@ function AppContent() {
   return (
     <>
       <Helmet>
-        <title>{isChessCodex ? 'ChessCodex - Elevate Your Chess Skills' : 'AspireChess - Elevate Your Chess Skills'}</title>
-        <meta name="description" content={isChessCodex ? 'Join ChessCodex to elevate your chess skills with expert training and comprehensive courses.' : 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.'} />
+        <title>{isChessCodex ? 'ChessCodex - Elevate Your Chess Skills' : isAspireChess ? 'AspireChess - Elevate Your Chess Skills' : 'Chess Academy - Elevate Your Chess Skills'}</title>
+        <meta name="description" content={isChessCodex ? 'Join ChessCodex to elevate your chess skills with expert training and comprehensive courses.' : isAspireChess ? 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.' : 'Join our Chess Academy to elevate your chess skills with expert training and comprehensive courses.'} />
       </Helmet>
       <Navbar />
       <BenefitsSlider />
@@ -41,6 +41,15 @@ function AppContent() {
           {/* Home Route */}
           <Route path="/" element={<WelcomePage />} />
           <Route path="/dashboard" element={<Maintenance />} />
+
+          {/* Default Routes */}
+          <Route path="/about" element={<About />} />
+          <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/exclusives/*" element={<Exclusives />} />
+          <Route path="/collaborate-with-us/*" element={<CollaborateWithUs />} />
 
           {/* ChessCodex Routes */}
           {isChessCodex && (
