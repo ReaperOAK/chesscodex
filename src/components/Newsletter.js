@@ -38,18 +38,7 @@ const Newsletter = ({ position, theme }) => {
     position === 'footer'
       ? 'w-full mx-auto my-6'
       : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
-
-  const textColor = theme === 'contact' 
-    ? isChessCodex 
-      ? 'text-codex-text-dark' 
-      : isAspireChess 
-      ? 'text-aspire-text-dark' 
-      : 'text-kca-text-dark'
-    : isChessCodex 
-      ? 'text-codex-text-dark' 
-      : isAspireChess 
-      ? 'text-aspire-text-dark' 
-      : 'text-kca-text-dark';
+  const textColor = 'text-brand-text';
       
   const buttonClasses = isChessCodex 
     ? 'bg-codex-highlight text-white hover:bg-codex-highlight/80' 
@@ -57,11 +46,7 @@ const Newsletter = ({ position, theme }) => {
     ? 'bg-aspire-highlight text-white hover:bg-aspire-highlight/80' 
     : 'bg-kca-highlight text-white hover:bg-kca-highlight/80';
     
-  const inputClasses = isChessCodex 
-    ? 'border-codex-gray-light text-codex-text-dark placeholder-codex-text-dark focus:ring-codex-secondary border-2' 
-    : isAspireChess 
-    ? 'border-aspire-gray-light text-aspire-text-dark placeholder-aspire-text-dark focus:ring-aspire-secondary border-2' 
-    : 'border-kca-gray-light text-kca-text-dark placeholder-kca-text-dark focus:ring-kca-secondary border-2';
+  const inputClasses = 'border-brand-light text-brand-text placeholder-brand-text focus:ring-brand-secondary border-2';
 
   return (
     <div
@@ -72,7 +57,7 @@ const Newsletter = ({ position, theme }) => {
       {/* Close Button */}
       <button
         onClick={handleClose}
-        className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-transform transform hover:scale-110"
+        className="absolute top-2 right-2 text-brand-text hover:text-brand-dark transition-transform transform hover:scale-110"
         aria-label="Close"
       >
         <FaTimes size={18} />

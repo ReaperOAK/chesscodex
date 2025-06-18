@@ -122,30 +122,11 @@ const WhyChooseUs = () => {
         },
       },
     ],
-  };
-  return (
-    <section className={`py-20 ${
-      isChessCodex 
-        ? 'bg-gradient-to-r from-codex-bg-light via-white to-codex-bg-light' 
-        : isAspireChess 
-        ? 'bg-gradient-to-r from-aspire-bg-light via-white to-aspire-bg-light' 
-        : 'bg-gradient-to-r from-kca-bg-light via-white to-kca-bg-light'
-    }`}>
+  };  return (
+    <section className="py-20 bg-gradient-to-r from-brand-light via-white to-brand-light">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className={`text-4xl font-extrabold mb-6 ${
-          isChessCodex 
-            ? 'text-codex-primary' 
-            : isAspireChess 
-            ? 'text-aspire-primary' 
-            : 'text-kca-primary'
-        }`}>Why Choose {siteName}?</h1>
-        <p className={`text-lg mb-12 ${
-          isChessCodex 
-            ? 'text-codex-text-dark' 
-            : isAspireChess 
-            ? 'text-aspire-text-dark' 
-            : 'text-kca-text-dark'
-        }`}>
+        <h1 className="text-4xl font-extrabold mb-6 text-brand-primary">Why Choose {siteName}?</h1>
+        <p className="text-lg mb-12 text-brand-text">
           At {siteName}, we empower chess enthusiasts with unparalleled coaching, a world-class curriculum, and the tools needed to succeed at any level.
         </p>
 
@@ -158,21 +139,8 @@ const WhyChooseUs = () => {
               className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full"
             >              <div className="flex justify-center items-center mb-2">
                 {feature.icon}
-              </div>
-              <h2 className={`text-lg font-semibold ${
-                isChessCodex 
-                  ? 'text-codex-primary' 
-                  : isAspireChess 
-                  ? 'text-aspire-primary' 
-                  : 'text-kca-primary'
-              } mb-2`}>{feature.title}</h2>
-              <p className={`${
-                isChessCodex 
-                  ? 'text-codex-text-dark' 
-                  : isAspireChess 
-                  ? 'text-aspire-text-dark' 
-                  : 'text-kca-text-dark'
-              } text-center text-sm`}>{feature.description}</p>
+              </div>              <h2 className="text-lg font-semibold text-brand-primary mb-2">{feature.title}</h2>
+              <p className="text-brand-text text-center text-sm">{feature.description}</p>
             </NavLink>
           ))}
         </div>
@@ -194,14 +162,7 @@ const WhyChooseUs = () => {
                   : isAspireChess 
                   ? 'text-aspire-primary' 
                   : 'text-kca-primary'
-              } mb-2`}>{feature.title}</h2>
-              <p className={`${
-                isChessCodex 
-                  ? 'text-codex-text-dark' 
-                  : isAspireChess 
-                  ? 'text-aspire-text-dark' 
-                  : 'text-kca-text-dark'
-              } text-center text-sm`}>{feature.description}</p>
+              } mb-2`}>{feature.title}</h2>              <p className="text-brand-text text-center text-sm">{feature.description}</p>
             </NavLink>
           ))}
         </Slider>

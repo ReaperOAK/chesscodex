@@ -74,28 +74,9 @@ const coursesData = [
 const Modal = ({ course, onClose, isChessCodex, isAspireChess }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">
-        <h3 className={`text-2xl font-bold mb-4 ${
-          isChessCodex 
-            ? 'text-codex-text-dark' 
-            : isAspireChess 
-            ? 'text-aspire-text-dark' 
-            : 'text-kca-text-dark'
-        }`}>{course.title}</h3>
-        <p className={`${
-          isChessCodex 
-            ? 'text-codex-text-dark' 
-            : isAspireChess 
-            ? 'text-aspire-text-dark' 
-            : 'text-kca-text-dark'
-        } mb-2 font-medium`}>Duration: {course.duration}</p>
-        <ul className={`list-disc pl-5 space-y-2 ${
-          isChessCodex 
-            ? 'text-codex-text-dark' 
-            : isAspireChess 
-            ? 'text-aspire-text-dark' 
-            : 'text-kca-text-dark'
-        }`}>
+      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">        <h3 className="text-2xl font-bold mb-4 text-brand-text">{course.title}</h3>
+        <p className="text-brand-text mb-2 font-medium">Duration: {course.duration}</p>
+        <ul className="list-disc pl-5 space-y-2 text-brand-text">
           {course.description.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
@@ -161,31 +142,12 @@ const CoursesList = () => {
                     : isAspireChess 
                     ? 'text-aspire-primary' 
                     : 'text-kca-primary'
-                } mb-4`}>{course.title}</h2>
-                <p className={`${
-                  isChessCodex 
-                    ? 'text-codex-text-dark' 
-                    : isAspireChess 
-                    ? 'text-aspire-text-dark' 
-                    : 'text-kca-text-dark'
-                } font-medium mb-2`}>Duration: {course.duration}</p>
-                <ul className={`list-disc pl-4 ${
-                  isChessCodex 
-                    ? 'text-codex-text-dark' 
-                    : isAspireChess 
-                    ? 'text-aspire-text-dark' 
-                    : 'text-kca-text-dark'
-                } space-y-1 text-sm`}>
+                } mb-4`}>{course.title}</h2>                <p className="text-brand-text font-medium mb-2">Duration: {course.duration}</p>
+                <ul className="list-disc pl-4 text-brand-text space-y-1 text-sm">
                   {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
-                  <li className={`${
-                    isChessCodex 
-                      ? 'text-codex-accent' 
-                      : isAspireChess 
-                      ? 'text-aspire-accent' 
-                      : 'text-kca-accent'
-                  } italic group-hover:hidden`}>...Read more</li>
+                  <li className="text-brand-accent italic group-hover:hidden">...Read more</li>
                   {course.description.slice(3).map((item, idx) => (
                     <li key={idx} className="hidden group-hover:list-item">{item}</li>
                   ))}

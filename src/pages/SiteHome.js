@@ -146,16 +146,9 @@ const SiteHome = () => {
               `"${siteName} made learning chess accessible and enjoyable. Highly recommended!" - Sarah K.`,
               `"The online sessions are engaging, and the tutors are exceptional!" - David L.`,
               `"${siteName} helped me master chess without leaving my home!" - Emily R.`,
-            ].map((testimonial, index) => (
-              <blockquote
+            ].map((testimonial, index) => (              <blockquote
                 key={index}
-                className={`italic ${
-                  isChessCodex 
-                    ? 'text-codex-text-dark' 
-                    : isAspireChess 
-                    ? 'text-aspire-text-dark' 
-                    : 'text-kca-text-dark'
-                } bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300`}
+                className="italic text-brand-text bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
               >
                 {testimonial}
               </blockquote>

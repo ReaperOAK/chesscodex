@@ -112,16 +112,15 @@ const AdmissionCourses = () => {
               Explore Courses
             </a>
           </div>
-          <div className="lg:flex-1 flex justify-center">
-            <div className="relative bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+          <div className="lg:flex-1 flex justify-center">            <div className="relative bg-white text-brand-text p-6 rounded-lg shadow-lg">
               <img
                 src="/Team/niaz.jpg"
                 alt="GM Niaz Murshed"
                 className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-brand-primary"
               />
-              <h3 className="text-2xl font-semibold text-center">GM Niaz Murshed</h3>
-              <p className="text-center text-gray-500 mb-4">Chess Mentor & Grandmaster</p>
-              <p className="text-center text-gray-600">
+              <h3 className="text-2xl font-semibold text-center text-brand-dark">GM Niaz Murshed</h3>
+              <p className="text-center text-brand-text mb-4">Chess Mentor & Grandmaster</p>
+              <p className="text-center text-brand-text">
                 Guiding chess enthusiasts with unparalleled expertise and passion for the game.
               </p>
             </div>

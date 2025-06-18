@@ -219,14 +219,7 @@ const FAQItem = ({ question, answer, isOpen, toggle, isChessCodex, isAspireChess
         }`} />
       )}
     </div>
-    {isOpen && (
-      <p className={`mt-4 ${
-        isChessCodex 
-          ? 'text-codex-text-dark' 
-          : isAspireChess 
-          ? 'text-aspire-text-dark' 
-          : 'text-kca-text-dark'
-      } transition-opacity duration-300 ease-in-out`}>
+    {isOpen && (      <p className="mt-4 text-brand-text transition-opacity duration-300 ease-in-out">
         {answer}
       </p>
     )}
@@ -305,16 +298,9 @@ const FAQs = () => {
         </h2>
 
         {/* Search Bar */}
-        <div className="mb-8">
-          <input
+        <div className="mb-8">          <input
             type="text"
-            className={`w-full p-3 rounded-lg border ${
-              isChessCodex 
-                ? 'border-codex-gray-light text-codex-text-dark' 
-                : isAspireChess 
-                ? 'border-aspire-gray-light text-aspire-text-dark' 
-                : 'border-kca-gray-light text-kca-text-dark'
-            }`}
+            className="w-full p-3 rounded-lg border border-brand-light text-brand-text"
             placeholder="Search for a question..."
             value={searchTerm}
             onChange={handleSearchChange}

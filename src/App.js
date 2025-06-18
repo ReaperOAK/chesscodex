@@ -35,13 +35,7 @@ function AppContent() {
       </Helmet>
       <Navbar />
       <BenefitsSlider />
-      <div className={`relative ${
-        isChessCodex 
-          ? 'bg-codex-bg-light text-codex-text-dark' 
-          : isAspireChess 
-          ? 'bg-aspire-bg-light text-aspire-text-dark' 
-          : 'bg-kca-bg-light text-kca-text-dark'
-      }`}>
+      <div className="relative bg-brand-light text-brand-text">
         <Newsletter position="left" theme={theme} />
         <Routes>
           {/* Home Route */}
