@@ -7,7 +7,7 @@ function Navbar() {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : '';
+  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
   const logoSrc = isChessCodex ? '/kca.png' : isAspireChess ? '/aca.png' : '/kca.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
