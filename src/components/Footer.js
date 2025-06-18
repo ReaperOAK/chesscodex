@@ -36,27 +36,15 @@ const Footer = () => {
           {/* Quick Links Section */}
           <div>
             <h2 className="text-2xl font-bold mb-4 text-white">Quick Links</h2>            <ul className="space-y-2 text-white">
-              <li><a href={isChessCodex ? "/chesscodex/exclusives" : isAspireChess ? "/aspirechess/exclusives" : "/exclusives"} className={`hover:${
-                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-              }`}>Pro Members</a></li>
-              <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-              }`}>Latest Games</a></li>
-              <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-              }`}>FIDE Ratings</a></li>
-              <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-              }`}>Play Online</a></li>
-              <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-              }`}>Solve Puzzles</a></li>
+              <li><a href={isChessCodex ? "/chesscodex/exclusives" : isAspireChess ? "/aspirechess/exclusives" : "/exclusives"} className="hover:text-yellow-300">Pro Members</a></li>
+              <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">Latest Games</a></li>
+              <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">FIDE Ratings</a></li>
+              <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">Play Online</a></li>
+              <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">Solve Puzzles</a></li>
               <li className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className={`hover:${
-                    isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
-                  } focus:outline-none`}
+                  className="hover:text-yellow-300 focus:outline-none"
                   aria-label="Tournaments"
                 >
                   Tournaments

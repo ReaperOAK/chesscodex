@@ -2,8 +2,19 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'media',
   theme: {
-    extend: {
-      colors: {
+    extend: {      colors: {
+        // Dynamic Brand Colors - Switch based on current site
+        brand: {
+          // These will be the primary colors used across all sites
+          // They map to KCA colors by default but can be overridden via CSS custom properties
+          primary: '#17412F',      // Deep Pine Green (KCA)
+          secondary: '#3A6351',    // Moss Green (KCA)
+          accent: '#F7C873',       // Gold Ochre (KCA)
+          dark: '#10241B',         // Evergreen Black (KCA)
+          light: '#F5F7F2',        // Ivory Mist (KCA)
+          highlight: '#E4572E',    // Vivid Red (KCA)
+          text: '#1B2A24',         // Charcoal (KCA)
+        },
         // Main KCA Website - Timeless Prestige
         kca: {
           primary: '#17412F',      // Deep Pine Green

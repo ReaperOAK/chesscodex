@@ -48,23 +48,10 @@ function Navbar() {
             {filteredNavLinks.map((link) => (
               <NavLink
                 key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
+                to={link.to}                className={({ isActive }) =>
                   isActive
-                    ? `${
-                        isChessCodex 
-                          ? 'text-brand-accent' 
-                          : isAspireChess 
-                          ? 'text-brand-accent' 
-                          : 'text-brand-accent'
-                      } font-semibold transition-colors duration-300 mx-2`
-                    : `hover:${
-                        isChessCodex 
-                          ? 'text-brand-text-light' 
-                          : isAspireChess 
-                          ? 'text-brand-text-light' 
-                          : 'text-brand-text-light'
-                      } transition-colors duration-300 mx-2`
+                    ? 'text-yellow-300 font-semibold transition-colors duration-300 mx-2'
+                    : 'text-white hover:text-yellow-200 transition-colors duration-300 mx-2'
                 }
                 aria-label={link.label}
               >
@@ -73,14 +60,7 @@ function Navbar() {
             ))}            <a
               href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
               target="_blank"
-              rel="noopener noreferrer"
-              className={`hover:${
-                isChessCodex 
-                  ? 'text-brand-text-light' 
-                  : isAspireChess 
-                  ? 'text-brand-text-light' 
-                  : 'text-brand-text-light'
-              } transition-colors duration-300 mx-2`}
+              rel="noopener noreferrer"              className="text-white hover:text-yellow-200 transition-colors duration-300 mx-2"
               aria-label="Dashboard"
             >
               Dashboard
@@ -109,23 +89,10 @@ function Navbar() {
             {filteredNavLinks.map((link) => (
               <li key={link.to} className="w-full">
                 <NavLink
-                  to={link.to}
-                  className={({ isActive }) =>
+                  to={link.to}                  className={({ isActive }) =>
                     isActive
-                      ? `block ${
-                          isChessCodex 
-                            ? 'text-brand-accent' 
-                            : isAspireChess 
-                            ? 'text-brand-accent' 
-                            : 'text-brand-accent'
-                        } font-semibold text-center`
-                      : `block text-white hover:${
-                          isChessCodex 
-                            ? 'text-brand-text-light' 
-                            : isAspireChess 
-                            ? 'text-brand-text-light' 
-                            : 'text-brand-text-light'
-                        } text-center`
+                      ? 'block text-yellow-300 font-semibold text-center'
+                      : 'block text-white hover:text-yellow-200 text-center'
                   }
                   onClick={toggleMenu}
                   aria-label={link.label}
@@ -138,14 +105,7 @@ function Navbar() {
               <a
                 href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
                 target="_blank"
-                rel="noopener noreferrer"
-                className={`block text-white hover:${
-                  isChessCodex 
-                    ? 'text-brand-text-light' 
-                    : isAspireChess 
-                    ? 'text-brand-text-light' 
-                    : 'text-brand-text-light'
-                } text-center`}
+                rel="noopener noreferrer"                className="block text-white hover:text-yellow-200 text-center"
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

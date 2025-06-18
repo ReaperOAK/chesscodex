@@ -32,16 +32,9 @@ const SiteHome = () => {
           : isAspireChess 
           ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
           : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent'
-      } text-white py-24 text-center`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-5xl font-bold mb-6">Welcome to {siteName}</h1>          <p className={`text-lg mb-4 ${
-              isChessCodex 
-              ? 'text-brand-highlight' 
-              : isAspireChess 
-              ? 'text-brand-highlight' 
-              : 'text-brand-highlight'
-          }`}>{isChessCodex ? 'Striving for 100% Rated Players' : isAspireChess ? 'Aspiring for 100% Titled Players' : 'Striving for 100% Rated Players'}</p>
-          <p className="text-md mb-6 max-w-3xl mx-auto">
+      } text-white py-24 text-center`}>        <div className="max-w-6xl mx-auto px-6">
+          <h1 className="text-5xl font-bold mb-6 text-white">Welcome to {siteName}</h1>          <p className="text-lg mb-4 text-yellow-200">{isChessCodex ? 'Striving for 100% Rated Players' : isAspireChess ? 'Aspiring for 100% Titled Players' : 'Striving for 100% Rated Players'}</p>
+          <p className="text-md mb-6 max-w-3xl mx-auto text-white">
             {isChessCodex
               ? 'Started with Kolkata Chess Academy, we now strive to create a community of rated players, enhancing their skills through world-class coaching and resources.'
               : isAspireChess
