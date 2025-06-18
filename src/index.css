@@ -1,6 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS Custom Properties for Brand Themes */
+:root {
+  --brand-primary: #1D4ED8;
+  --brand-secondary: #B91C1C;
+  --brand-accent: #FBBF24;
+  --brand-dark: #1E3A8A;
+  --brand-light: #FEF7F0;
+  --brand-highlight: #DC2626;
+  --brand-text: #1F2937;
+  --brand-gradient: linear-gradient(135deg, #1D4ED8 0%, #B91C1C 100%);
+}
+
+/* Theme-specific styling */
+.theme-chesscodex {
+  --shadow-brand: 0 4px 14px 0 rgba(30, 64, 175, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(30, 64, 175, 0.2);
+}
+
+.theme-aspirechess {
+  --shadow-brand: 0 4px 14px 0 rgba(71, 85, 105, 0.1);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(71, 85, 105, 0.15);
+}
+
+.theme-kca {
+  --shadow-brand: 0 4px 14px 0 rgba(29, 78, 216, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(29, 78, 216, 0.2);
+}
+
+/* Brand-specific button styles */
+.btn-brand {
+  background: var(--brand-gradient);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-brand);
+}
+
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-lg);
+}
+
+/* Brand-specific card styles */
+.card-brand {
+  background: var(--brand-light);
+  border: 1px solid var(--brand-accent);
+  border-radius: 12px;
+  box-shadow: var(--shadow-brand);
+  transition: all 0.3s ease;
+}
+
+.card-brand:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-brand-lg);
+}
+
 @layer utilities {
   @keyframes fadeIn {
     from {
@@ -14,6 +74,22 @@
   }
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Brand-specific gradient animations */
+  @keyframes brandPulse {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animate-brand-pulse {
+    background: var(--brand-gradient);
+    background-size: 200% 200%;
+    animation: brandPulse 3s ease-in-out infinite;
   }
 }
 @keyframes slideIn {

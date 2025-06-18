@@ -12,48 +12,47 @@ module.exports = {
           light: 'var(--brand-light)',
           highlight: 'var(--brand-highlight)',
           text: 'var(--brand-text)',
-        },
-        // Main KCA Website - Timeless Prestige
+        },        // Main KCA Website - Traditional Royal Blue & Red
         kca: {
-          primary: '#17412F',      // Deep Pine Green
-          secondary: '#3A6351',    // Moss Green
-          accent: '#F7C873',       // Gold Ochre
-          'bg-dark': '#10241B',    // Evergreen Black
-          'bg-light': '#F5F7F2',   // Ivory Mist
-          highlight: '#E4572E',    // Vivid Red
-          'text-dark': '#1B2A24',  // Charcoal
-          'text-light': '#F5F7F2', // Ivory Mist
+          primary: '#1D4ED8',      // Royal Blue
+          secondary: '#B91C1C',    // Classic Red
+          accent: '#FBBF24',       // Gold Accent
+          'bg-dark': '#1E3A8A',    // Deep Blue
+          'bg-light': '#FEF7F0',   // Warm Ivory
+          highlight: '#DC2626',    // Rich Red
+          'text-dark': '#1F2937',  // Elegant Gray
+          'text-light': '#FEF7F0', // Warm Ivory
           'text-neutral': '#FFFFFF', // White
-          'gray-light': '#D9E4DD', // Pale Sage
-          'gray-dark': '#4B5D52',  // Olive Gray
+          'gray-light': '#DBEAFE', // Light Blue
+          'gray-dark': '#3730A3',  // Deep Purple
         },
-        // AspireChess - Energetic & Modern
+        // AspireChess - White Marble & Stone Theme
         aspire: {
-          primary: '#1A56DB',      // Vivid Royal Blue
-          secondary: '#3DDC97',    // Fresh Mint
-          accent: '#FFD600',       // Electric Yellow
-          'bg-dark': '#0B1B3A',    // Midnight Navy
-          'bg-light': '#F6FAFF',   // Ice Blue
-          highlight: '#FF4C60',    // Hot Pink Red
-          'text-dark': '#1A1A2E',  // Deep Indigo
-          'text-light': '#F6FAFF', // Ice Blue
-          'text-neutral': '#FFFFFF', // White
-          'gray-light': '#E3E8F0', // Cloud Gray
-          'gray-dark': '#3A506B',  // Slate Blue
+          primary: '#F8FAFC',      // Pure White Marble
+          secondary: '#E2E8F0',    // Light Stone
+          accent: '#CBD5E1',       // Soft Gray
+          'bg-dark': '#475569',    // Charcoal Stone
+          'bg-light': '#FFFFFF',   // Pure White
+          highlight: '#64748B',    // Slate Gray
+          'text-dark': '#1E293B',  // Dark Stone
+          'text-light': '#FFFFFF', // Pure White
+          'text-neutral': '#F1F5F9', // Off White
+          'gray-light': '#F1F5F9', // Lightest Gray
+          'gray-dark': '#334155',  // Medium Stone
         },
-        // ChessCodex - Premium & Tech-Forward
+        // ChessCodex - Modern Tech Blue & Red
         codex: {
-          primary: '#7C2D12',      // Rich Burgundy
-          secondary: '#FF6F3C',    // Vivid Orange
-          accent: '#FFD166',       // Gold Highlight
-          'bg-dark': '#2D1B12',    // Espresso
-          'bg-light': '#FDF6F0',   // Cream
-          highlight: '#E63946',    // Crimson
-          'text-dark': '#3D2C29',  // Coffee Brown
-          'text-light': '#FDF6F0', // Cream
+          primary: '#1E40AF',      // Strong Blue
+          secondary: '#DC2626',    // Modern Red
+          accent: '#3B82F6',       // Bright Blue
+          'bg-dark': '#1E293B',    // Slate Dark
+          'bg-light': '#F8FAFC',   // Clean White
+          highlight: '#EF4444',    // Vibrant Red
+          'text-dark': '#334155',  // Cool Gray
+          'text-light': '#F8FAFC', // Clean White
           'text-neutral': '#FFFFFF', // White
-          'gray-light': '#E9CFCF', // Rose Sand
-          'gray-dark': '#6B4F4F',  // Warm Gray
+          'gray-light': '#E2E8F0', // Light Slate
+          'gray-dark': '#475569',  // Dark Slate
         },
       },
     },

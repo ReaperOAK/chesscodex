@@ -31,34 +31,44 @@ function AppContent() {
   // Set CSS custom properties based on the current site
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
+    
+    // Remove existing theme classes
+    body.classList.remove('theme-chesscodex', 'theme-aspirechess', 'theme-kca');
     
     if (isChessCodex) {
-      // ChessCodex - Premium & Tech-Forward
-      root.style.setProperty('--brand-primary', '#7C2D12');    // Rich Burgundy
-      root.style.setProperty('--brand-secondary', '#FF6F3C');  // Vivid Orange
-      root.style.setProperty('--brand-accent', '#FFD166');     // Gold Highlight
-      root.style.setProperty('--brand-dark', '#2D1B12');       // Espresso
-      root.style.setProperty('--brand-light', '#FDF6F0');      // Cream
-      root.style.setProperty('--brand-highlight', '#E63946');  // Crimson
-      root.style.setProperty('--brand-text', '#3D2C29');       // Coffee Brown
+      // ChessCodex - Modern Tech Blue & Red Theme
+      body.classList.add('theme-chesscodex');
+      root.style.setProperty('--brand-primary', '#1E40AF');    // Strong Blue
+      root.style.setProperty('--brand-secondary', '#DC2626');  // Modern Red
+      root.style.setProperty('--brand-accent', '#3B82F6');     // Bright Blue
+      root.style.setProperty('--brand-dark', '#1E293B');       // Slate Dark
+      root.style.setProperty('--brand-light', '#F8FAFC');      // Clean White
+      root.style.setProperty('--brand-highlight', '#EF4444');  // Vibrant Red
+      root.style.setProperty('--brand-text', '#334155');       // Cool Gray
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1E40AF 0%, #DC2626 100%)');
     } else if (isAspireChess) {
-      // AspireChess - Energetic & Modern
-      root.style.setProperty('--brand-primary', '#1A56DB');    // Vivid Royal Blue
-      root.style.setProperty('--brand-secondary', '#3DDC97');  // Fresh Mint
-      root.style.setProperty('--brand-accent', '#FFD600');     // Electric Yellow
-      root.style.setProperty('--brand-dark', '#0B1B3A');       // Midnight Navy
-      root.style.setProperty('--brand-light', '#F6FAFF');      // Ice Blue
-      root.style.setProperty('--brand-highlight', '#FF4C60');  // Hot Pink Red
-      root.style.setProperty('--brand-text', '#1A1A2E');       // Deep Indigo
+      // AspireChess - White Marble & Stone Theme (like chess pieces)
+      body.classList.add('theme-aspirechess');
+      root.style.setProperty('--brand-primary', '#F8FAFC');    // Pure White Marble
+      root.style.setProperty('--brand-secondary', '#E2E8F0');  // Light Stone
+      root.style.setProperty('--brand-accent', '#CBD5E1');     // Soft Gray
+      root.style.setProperty('--brand-dark', '#475569');       // Charcoal Stone
+      root.style.setProperty('--brand-light', '#FFFFFF');      // Pure White
+      root.style.setProperty('--brand-highlight', '#64748B');  // Slate Gray
+      root.style.setProperty('--brand-text', '#1E293B');       // Dark Stone
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)');
     } else {
-      // KCA - Timeless Prestige (default)
-      root.style.setProperty('--brand-primary', '#17412F');    // Deep Pine Green
-      root.style.setProperty('--brand-secondary', '#3A6351');  // Moss Green
-      root.style.setProperty('--brand-accent', '#F7C873');     // Gold Ochre
-      root.style.setProperty('--brand-dark', '#10241B');       // Evergreen Black
-      root.style.setProperty('--brand-light', '#F5F7F2');      // Ivory Mist
-      root.style.setProperty('--brand-highlight', '#E4572E');  // Vivid Red
-      root.style.setProperty('--brand-text', '#1B2A24');       // Charcoal
+      // KCA - Traditional Royal Blue & Red Theme
+      body.classList.add('theme-kca');
+      root.style.setProperty('--brand-primary', '#1D4ED8');    // Royal Blue
+      root.style.setProperty('--brand-secondary', '#B91C1C');  // Classic Red
+      root.style.setProperty('--brand-accent', '#FBBF24');     // Gold Accent
+      root.style.setProperty('--brand-dark', '#1E3A8A');       // Deep Blue
+      root.style.setProperty('--brand-light', '#FEF7F0');      // Warm Ivory
+      root.style.setProperty('--brand-highlight', '#DC2626');  // Rich Red
+      root.style.setProperty('--brand-text', '#1F2937');       // Elegant Gray
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1D4ED8 0%, #B91C1C 100%)');
     }
   }, [isChessCodex, isAspireChess]);
 

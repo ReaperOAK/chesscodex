@@ -1,107 +1,104 @@
-# Three Distinct Color Schemes for KCA Website Suite (2025 Refresh)
+# Chess Academy Theme Guide
 
-## 🏛️ **Scheme 1: Main KCA Website – Timeless Prestige**
-*Classic, trustworthy, academic*
+## Overview
+Three distinct themes have been created for the chess academies, each with its own unique visual identity and color palette.
 
-### Color Palette
-1. **Primary Color**: `#17412F` (Deep Pine Green)
-   - Main headers, primary buttons, navigation highlights
-2. **Secondary Color**: `#3A6351` (Moss Green)
-   - Secondary buttons, navigation links, card headers
-3. **Accent Color**: `#F7C873` (Gold Ochre)
-   - Hover states, CTAs, success indicators
-4. **Background Colors**:
-   - **Dark Background**: `#10241B` (Evergreen Black)
-   - **Light Background**: `#F5F7F2` (Ivory Mist)
-5. **Highlight/Alert Color**: `#E4572E` (Vivid Red)
-   - Warnings, important notifications
-6. **Text Colors**:
-   - **Dark Text**: `#1B2A24` (Charcoal)
-   - **Light Text**: `#F5F7F2` (Ivory Mist)
-   - **Neutral Text**: `#FFFFFF` (White)
-7. **Neutral Colors**:
-   - **Gray Light**: `#D9E4DD` (Pale Sage)
-   - **Gray Dark**: `#4B5D52` (Olive Gray)
+## 🎯 ChessCodex - Modern Tech Blue & Red Theme
+**Brand Identity:** Modern, tech-forward, innovative chess education
+**Target Audience:** Tech-savvy chess enthusiasts, competitive players
 
----
+### Color Palette:
+- **Primary:** `#1E40AF` - Strong Blue (modern, reliable)
+- **Secondary:** `#DC2626` - Modern Red (energy, passion)
+- **Accent:** `#3B82F6` - Bright Blue (innovation, clarity)
+- **Dark:** `#1E293B` - Slate Dark (sophistication)
+- **Light:** `#F8FAFC` - Clean White (minimalism)
+- **Highlight:** `#EF4444` - Vibrant Red (call-to-action)
+- **Text:** `#334155` - Cool Gray (readability)
 
-## ⚡ **Scheme 2: AspireChess – Energetic & Modern**
-*Youthful, bold, inspiring*
-
-### Color Palette
-1. **Primary Color**: `#1A56DB` (Vivid Royal Blue)
-   - Main headers, primary buttons, key elements
-2. **Secondary Color**: `#3DDC97` (Fresh Mint)
-   - Secondary buttons, navigation, highlights
-3. **Accent Color**: `#FFD600` (Electric Yellow)
-   - Hover states, achievements, call-to-actions
-4. **Background Colors**:
-   - **Dark Background**: `#0B1B3A` (Midnight Navy)
-   - **Light Background**: `#F6FAFF` (Ice Blue)
-5. **Highlight/Alert Color**: `#FF4C60` (Hot Pink Red)
-   - Alerts, deadlines, important notices
-6. **Text Colors**:
-   - **Dark Text**: `#1A1A2E` (Deep Indigo)
-   - **Light Text**: `#F6FAFF` (Ice Blue)
-   - **Neutral Text**: `#FFFFFF` (White)
-7. **Neutral Colors**:
-   - **Gray Light**: `#E3E8F0` (Cloud Gray)
-   - **Gray Dark**: `#3A506B` (Slate Blue)
+### Design Characteristics:
+- Clean, minimalist design
+- Sharp edges and modern typography
+- Tech-inspired gradients
+- Bold blue-red contrasts
+- Shadow effects with blue tints
 
 ---
 
-## 🎯 **Scheme 3: ChessCodex – Premium & Tech-Forward**
-*Exclusive, innovative, sophisticated*
+## ♛ AspireChess - White Marble & Stone Theme
+**Brand Identity:** Elegant, premium like chess pieces, sophisticated
+**Target Audience:** Luxury chess enthusiasts, traditional players
 
-### Color Palette
-1. **Primary Color**: `#7C2D12` (Rich Burgundy)
-   - Main headers, primary buttons, premium elements
-2. **Secondary Color**: `#FF6F3C` (Vivid Orange)
-   - Secondary buttons, navigation, accents
-3. **Accent Color**: `#FFD166` (Gold Highlight)
-   - Hover states, premium features, highlights
-4. **Background Colors**:
-   - **Dark Background**: `#2D1B12` (Espresso)
-   - **Light Background**: `#FDF6F0` (Cream)
-5. **Highlight/Alert Color**: `#E63946` (Crimson)
-   - Warnings, urgent notifications
-6. **Text Colors**:
-   - **Dark Text**: `#3D2C29` (Coffee Brown)
-   - **Light Text**: `#FDF6F0` (Cream)
-   - **Neutral Text**: `#FFFFFF` (White)
-7. **Neutral Colors**:
-   - **Gray Light**: `#E9CFCF` (Rose Sand)
-   - **Gray Dark**: `#6B4F4F` (Warm Gray)
+### Color Palette:
+- **Primary:** `#F8FAFC` - Pure White Marble (elegance, purity)
+- **Secondary:** `#E2E8F0` - Light Stone (natural, refined)
+- **Accent:** `#CBD5E1` - Soft Gray (subtle sophistication)
+- **Dark:** `#475569` - Charcoal Stone (depth, mystery)
+- **Light:** `#FFFFFF` - Pure White (perfection)
+- **Highlight:** `#64748B` - Slate Gray (understated luxury)
+- **Text:** `#1E293B` - Dark Stone (classic readability)
+
+### Design Characteristics:
+- Marble-like textures and gradients
+- Elegant, classic typography
+- Subtle shadows mimicking stone depth
+- Monochromatic sophistication
+- Clean, gallery-like presentation
 
 ---
 
-## 🎨 **Visual Brand Identity Summary**
+## 👑 Kolkata Chess Academy (KCA) - Traditional Royal Blue & Red
+**Brand Identity:** Traditional, royal, heritage chess institution
+**Target Audience:** Classical chess learners, institutional training
 
-| Website         | Primary Theme         | Personality                | Target Audience           |
-|-----------------|----------------------|----------------------------|---------------------------|
-| **Main KCA**    | 🏛️ Pine Green + Gold | Classic, Trustworthy       | Parents, Serious Students |
-| **AspireChess** | ⚡ Blue + Mint + Yellow | Energetic, Modern, Youthful | Young, Ambitious Players  |
-| **ChessCodex**  | 🎯 Burgundy + Orange | Premium, Tech-forward      | Advanced, Pro Players     |
+### Color Palette:
+- **Primary:** `#1D4ED8` - Royal Blue (tradition, trust)
+- **Secondary:** `#B91C1C` - Classic Red (heritage, strength)
+- **Accent:** `#FBBF24` - Gold Accent (achievement, excellence)
+- **Dark:** `#1E3A8A` - Deep Blue (stability, depth)
+- **Light:** `#FEF7F0` - Warm Ivory (warmth, comfort)
+- **Highlight:** `#DC2626` - Rich Red (importance, action)
+- **Text:** `#1F2937` - Elegant Gray (traditional readability)
+
+### Design Characteristics:
+- Traditional royal color combinations
+- Classic blue-red-gold palette
+- Warm, welcoming backgrounds
+- Heritage-inspired design elements
+- Balanced, institutional feel
 
 ---
 
-## 📱 **Implementation Guidelines**
+## Technical Implementation
 
-### Visual Differentiation Strategy:
-1. **Green = Main Authority** (KCA - The trusted foundation)
-2. **Blue = Aspiration** (AspireChess - Reaching for excellence)
-3. **Burgundy = Premium** (ChessCodex - Elite expertise)
+### CSS Custom Properties
+Each theme dynamically sets CSS custom properties when the route changes:
+```css
+:root {
+  --brand-primary: /* Theme-specific color */
+  --brand-secondary: /* Theme-specific color */
+  --brand-accent: /* Theme-specific color */
+  --brand-gradient: /* Theme-specific gradient */
+  /* ... more properties */
+}
+```
 
-### Consistent Elements Across All Three:
-- Same typography hierarchy
-- Similar component layouts
-- Consistent navigation patterns
-- Unified user experience flow
+### Theme Classes
+Body element gets theme-specific classes:
+- `.theme-chesscodex` - For ChessCodex styling
+- `.theme-aspirechess` - For AspireChess styling  
+- `.theme-kca` - For KCA styling
 
-### Unique Visual Cues:
-- **Different color-coded navigation bars**
-- **Distinct button styles and hover effects**
-- **Brand-specific accent colors**
-- **Themed background patterns/textures**
+### Tailwind Integration
+All themes are integrated with Tailwind CSS using the `brand.*` color utilities that reference CSS custom properties, ensuring consistency across components.
 
-This approach ensures users can instantly recognize which section of the KCA ecosystem they're in while maintaining professional cohesion across all three platforms.
+## Usage Guidelines
+
+1. **ChessCodex**: Use for modern, tech-focused chess content
+2. **AspireChess**: Use for premium, elegant chess experiences
+3. **KCA**: Use for traditional, institutional chess education
+
+Each theme automatically applies when navigating to the respective routes:
+- `/chesscodex/*` → ChessCodex theme
+- `/aspirechess/*` → AspireChess theme
+- Default routes → KCA theme
