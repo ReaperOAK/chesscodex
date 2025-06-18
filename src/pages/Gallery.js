@@ -106,11 +106,11 @@ const Gallery = () => {
         <meta name="description" content={siteDescription} />
         <meta name="keywords" content={siteKeywords} />
       </Helmet>
-      <div className="bg-[#f3f1f9] min-h-screen p-6 md:p-12">
+      <div className="bg-brand-light min-h-screen p-6 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-extrabold text-brand-dark">Gallery</h1>
-          <p className="text-lg text-[#270185] mt-4">
+          <p className="text-lg text-brand-text mt-4">
             Dive into the vibrant moments from our academy's events, tournaments, and training sessions.
           </p>
         </div>
@@ -119,11 +119,10 @@ const Gallery = () => {
         <div className="flex justify-center mb-8 space-x-4">
           {['all', 'image', 'video', 'youtube'].map((type) => (
             <button
-              key={type}
-              className={`px-6 py-2 rounded-full font-semibold text-sm ${
+              key={type}              className={`px-6 py-2 rounded-full font-semibold text-sm ${
                 filter === type
-                  ? 'bg-[#461fa3] text-white'
-                  : 'bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white'
+                  ? 'bg-brand-primary text-white'
+                  : 'bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white'
               } transition duration-300`}
               onClick={() => setFilter(type)}
             >
@@ -176,9 +175,8 @@ const Gallery = () => {
         ))}
 
         {/* Pagination */}
-        <div className="flex justify-center mt-8">
-          <button
-            className="px-4 py-2 mx-1 rounded-full bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white transition duration-300"
+        <div className="flex justify-center mt-8">          <button
+            className="px-4 py-2 mx-1 rounded-full bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white transition duration-300"
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
           >
@@ -186,19 +184,17 @@ const Gallery = () => {
           </button>
           {Array.from({ length: totalPages }, (_, i) => (
             <button
-              key={i}
-              className={`px-4 py-2 mx-1 rounded-full ${
+              key={i}              className={`px-4 py-2 mx-1 rounded-full ${
                 currentPage === i + 1
-                  ? 'bg-[#461fa3] text-white'
-                  : 'bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white'
+                  ? 'bg-brand-primary text-white'
+                  : 'bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white'
               } transition duration-300`}
               onClick={() => setCurrentPage(i + 1)}
             >
               {i + 1}
             </button>
-          ))}
-          <button
-            className="px-4 py-2 mx-1 rounded-full bg-[#c2c1d3] text-[#3b3a52] hover:bg-[#3b3a52] hover:text-white transition duration-300"
+          ))}          <button
+            className="px-4 py-2 mx-1 rounded-full bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white transition duration-300"
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage === totalPages}
           >

@@ -129,15 +129,15 @@ const Events = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-[#f3f1f9] border-t">
+      <section className="py-8 bg-brand-light border-t">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold text-[#200e4a] mb-6">
+          <h2 className="text-3xl font-semibold text-brand-text mb-6">
             Explore Events
           </h2>
           <div className="inline-block relative">
             <label
               htmlFor="filter"
-              className="absolute -top-3 left-3 bg-[#f3f1f9] px-2 text-[#270185]"
+              className="absolute -top-3 left-3 bg-brand-light px-2 text-brand-text"
             >
               Filter by Mode
             </label>
@@ -153,16 +153,13 @@ const Events = () => {
             </select>
           </div>
         </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="py-16 bg-[#f3f1f9]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#200e4a] mb-10 text-center">
+      </section>      {/* Events Section */}
+      <section className="py-16 bg-brand-light">
+        <div className="max-w-6xl mx-auto px-6">          <h2 className="text-4xl font-bold text-brand-text mb-10 text-center">
             Event Schedule
           </h2>
           {filteredEvents.length === 0 ? (
-            <p className="text-center text-[#270185]">
+            <p className="text-center text-brand-text">
               No events available for the selected mode.
             </p>
           ) : (
@@ -181,10 +178,10 @@ const Events = () => {
                     <h3 className="text-2xl font-semibold text-brand-secondary mb-3">
                       {event.title}
                     </h3>
-                    <p className="text-[#270185] mb-1">
+                    <p className="text-brand-text mb-1">
                       <strong>Date:</strong> {event.date}
                     </p>
-                    <p className="text-[#270185] mb-4">
+                    <p className="text-brand-text mb-4">
                       <strong>Mode:</strong> {event.mode}
                     </p>
                     {event.link && !isLinkExpired(event.date) ? (
@@ -195,7 +192,7 @@ const Events = () => {
                         Register Now
                       </a>
                     ) : (
-                      <p className="text-center text-[#270185]">
+                      <p className="text-center text-brand-text">
                         Registration link unavailable/expired
                       </p>
                     )}
@@ -205,12 +202,9 @@ const Events = () => {
             </div>
           )}
         </div>
-      </section>
-
-      {/* Blogs Section */}
-      <section className="py-16 bg-[#f3f1f9]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-[#200e4a] mb-10 text-center">
+      </section>      {/* Blogs Section */}
+      <section className="py-16 bg-brand-light">
+        <div className="max-w-6xl mx-auto px-6">          <h2 className="text-4xl font-bold text-brand-text mb-10 text-center">
             Latest Blogs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -227,14 +221,13 @@ const Events = () => {
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-brand-secondary mb-3">
                     {blog.title}
-                  </h3>
-                  <p className="text-[#270185] mb-1">
+                  </h3>                  <p className="text-brand-text mb-1">
                     <strong>Date:</strong> {blog.date}
                   </p>
-                  <p className="text-[#270185] mb-1">
+                  <p className="text-brand-text mb-1">
                     <strong>Author:</strong> {blog.author}
                   </p>
-                  <p className="text-[#270185] mb-4">
+                  <p className="text-brand-text mb-4">
                     {blog.content.length > 100
                       ? `${blog.content.substring(0, 100)}...`
                       : blog.content}

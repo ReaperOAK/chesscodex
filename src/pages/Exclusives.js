@@ -66,7 +66,7 @@ const Exclusives = () => {
       <div ref={sentinelRef} className="h-1"></div>
 
       {/* Navigation Links */}
-      <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
+      <nav ref={menuRef} className={`bg-brand-light py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="md:hidden">
             <select

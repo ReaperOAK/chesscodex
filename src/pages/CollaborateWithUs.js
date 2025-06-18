@@ -67,12 +67,12 @@ const CollaborateWithUs = () => {
       <div ref={sentinelRef} className="h-1"></div>
 
       {/* Navigation Links */}
-      <nav ref={menuRef} className={`bg-[#f3f1f9] py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
+      <nav ref={menuRef} className={`bg-brand-light py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="md:hidden">
             <select
               onChange={handleDropdownChange}
-              className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+              className="w-full px-4 py-2 bg-brand-primary text-white font-semibold rounded-lg shadow-md focus:outline-none"
             >
               {(isChessCodex || isAspireChess) && (<option value="referral-programme">Referral Programme</option>)}
               <option value="chess-in-schools">Chess in Schools</option>

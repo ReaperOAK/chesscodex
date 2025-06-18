@@ -73,13 +73,12 @@ const Modal = ({ achievement, onClose }) => {
           src={achievement.image}
           alt={achievement.title}
           className="w-full h-48 object-cover rounded-md mb-4"
-        />
-        <h3 className="text-2xl font-bold mb-4 text-[#270185]">{achievement.title}</h3>
-        <p className="text-[#270185] mb-2 font-medium">{achievement.description}</p>
+        />        <h3 className="text-2xl font-bold mb-4 text-brand-text">{achievement.title}</h3>
+        <p className="text-brand-text mb-2 font-medium">{achievement.description}</p>
         <div className="mt-6 text-right">
           <button
             onClick={onClose}
-            className="bg-[#af0505] text-white px-4 py-2 rounded hover:bg-[#8c0404] transition-colors duration-300"
+            className="bg-brand-primary text-white px-4 py-2 rounded hover:bg-brand-secondary transition-colors duration-300"
           >
             Close
           </button>
@@ -126,7 +125,7 @@ const AchievementsTestimonials = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-16 bg-[#f3f1f9]">        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-16 bg-brand-light">        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-brand-dark mb-12">
             Celebrating Notable Achievements
           </h2>
@@ -143,20 +142,20 @@ const AchievementsTestimonials = () => {
                     alt={achievement.title}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />
-                  <h3 className="text-xl font-semibold text-[#461fa3] group-hover:text-[#7646eb]">
+                  <h3 className="text-xl font-semibold text-brand-primary group-hover:text-brand-secondary">
                     {achievement.title}
                   </h3>
-                  <p className="text-[#270185] mt-2 group-hover:hidden">
+                  <p className="text-brand-text mt-2 group-hover:hidden">
                     {achievement.description.length > 120
                       ? `${achievement.description.substring(0, 120)}...`
                       : achievement.description}
                   </p>
-                  <p className="hidden group-hover:block text-[#270185] mt-2">
+                  <p className="hidden group-hover:block text-brand-text mt-2">
                     {achievement.description}
                   </p>
                 </div>
                 <div className="mt-4">
-                  <button className="text-[#7646eb] hover:underline font-medium">
+                  <button className="text-brand-secondary hover:underline font-medium">
                     Read More
                   </button>
                 </div>
@@ -167,7 +166,7 @@ const AchievementsTestimonials = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gradient-to-r from-[#f3f1f9] via-[#e3e1f7] to-[#f3f1f9] py-16">
+      <section className="bg-gradient-to-r from-brand-light via-brand-accent to-brand-light py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">          <h2 className="text-4xl font-bold text-center text-brand-dark mb-12">
             What Our Students Say
           </h2>
@@ -199,10 +198,10 @@ const AchievementsTestimonials = () => {
                       <h4 className="text-xl font-bold text-brand-dark">
                         {testimonial.name}
                       </h4>
-                      <p className="text-[#461fa3]">{testimonial.role}</p>
+                      <p className="text-brand-primary">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-[#270185]">{testimonial.quote}</p>
+                  <p className="text-brand-text">{testimonial.quote}</p>
                 </div>
               </SwiperSlide>
             ))}

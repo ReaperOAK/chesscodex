@@ -100,14 +100,14 @@ const AdmissionCourses = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:flex-1 text-center lg:text-left">
             <h1 className="text-5xl font-extrabold mb-6">
-              Elevate Your Chess Skills with <span className="text-[#af0505]">Expert Training</span>
+              Elevate Your Chess Skills with <span className="text-brand-primary">Expert Training</span>
             </h1>
             <p className="text-lg leading-relaxed mb-8">
               Learn from the best with courses curated by Grandmaster Niaz Murshed, the first Grandmaster in Asia.
             </p>
             <a
               href="#courses"
-              className="inline-block bg-[#af0505] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#8c0404] transition"
+              className="inline-block bg-brand-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-brand-secondary transition"
             >
               Explore Courses
             </a>
@@ -117,7 +117,7 @@ const AdmissionCourses = () => {
               <img
                 src="/Team/niaz.jpg"
                 alt="GM Niaz Murshed"
-                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-[#af0505]"
+                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-brand-primary"
               />
               <h3 className="text-2xl font-semibold text-center">GM Niaz Murshed</h3>
               <p className="text-center text-gray-500 mb-4">Chess Mentor & Grandmaster</p>
@@ -127,69 +127,65 @@ const AdmissionCourses = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#af0505] opacity-30 blur-lg"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#461fa3] opacity-20 blur-lg"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-brand-primary opacity-30 blur-lg"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-primary opacity-20 blur-lg"></div>
       </section>
 
       {/* Courses Section */}
-      <section id="courses" className="py-16 bg-[#f3f1f9]">
+      <section id="courses" className="py-16 bg-brand-light">
         <CoursesList />
       </section>
 
       {/* Application Form Section */}
-      <section className="py-16 bg-[#f3f1f9]">
+      <section className="py-16 bg-brand-light">
         <div className="max-w-6xl mx-auto px-4" id='application-form'>
           <h2 className="text-4xl font-bold text-brand-dark mb-12 text-center">Application Form</h2>
           {/* Commented out the current form */}
           {/*
           {submitted ? (
-            <p className="text-center text-[#af0505] text-xl font-medium">
+            <p className="text-center text-brand-primary text-xl font-medium">
               Thank you! Your application has been received. We'll get back to you soon.
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block mb-2 text-sm font-medium text-[#270185]">Full Name</label>
+                <div>                  <label className="block mb-2 text-sm font-medium text-brand-text">Full Name</label>
                   <input
                     type="text"
                     name="full_name"
                     value={formData.full_name}
                     onChange={handleChange}
                     required
-                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                    className="block w-full p-2 border border-brand-light rounded-md focus:outline-none focus:ring focus:ring-brand-primary"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-[#270185]">Email Address</label>
-                  <input
+                  <label className="block mb-2 text-sm font-medium text-brand-text">Email Address</label>                  <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                    className="block w-full p-2 border border-brand-light rounded-md focus:outline-none focus:ring focus:ring-brand-primary"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-[#270185]">Phone Number</label>
-                  <input
+                  <label className="block mb-2 text-sm font-medium text-brand-text">Phone Number</label>                  <input
                     type="tel"
                     name="phone_number"
                     value={formData.phone_number}
                     onChange={handleChange}
                     required
-                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                    className="block w-full p-2 border border-brand-light rounded-md focus:outline-none focus:ring focus:ring-brand-primary"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-[#270185]">Select Course</label>
-                  <select
+                  <label className="block mb-2 text-sm font-medium text-brand-text">Select Course</label>                  <select
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
                     required
-                    className="block w-full p-2 border border-[#c2c1d3] rounded-md focus:outline-none focus:ring focus:ring-[#461fa3]"
+                    className="block w-full p-2 border border-brand-light rounded-md focus:outline-none focus:ring focus:ring-brand-primary"
                   >
                     <option value="">-- Choose a Course --</option>
                     <option value="beginner">Beginner</option>
@@ -201,7 +197,7 @@ const AdmissionCourses = () => {
               </div>
               <button
                 type="submit"
-                className="mt-4 w-full bg-[#af0505] text-white py-2 px-4 rounded hover:bg-[#8c0404] transition-colors duration-300"
+                className="mt-4 w-full bg-brand-primary text-white py-2 px-4 rounded hover:bg-brand-secondary transition-colors duration-300"
               >
                 Submit Application
               </button>
@@ -209,13 +205,12 @@ const AdmissionCourses = () => {
           )}
           */}
           <div className="bg-white p-8 rounded-lg shadow-md text-center">
-            <h3 className="text-2xl font-semibold text-brand-dark mb-4">Apply Now</h3>
-            <p className="text-lg text-[#270185] mb-6">Click the button below to fill out the application form on Google Forms.</p>
+            <h3 className="text-2xl font-semibold text-brand-dark mb-4">Apply Now</h3>            <p className="text-lg text-brand-text mb-6">Click the button below to fill out the application form on Google Forms.</p>
             <a
               href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#af0505] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#8c0404] transition duration-300"
+              className="bg-brand-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-brand-secondary transition duration-300"
             >
               Go to Application Form
             </a>
@@ -231,17 +226,17 @@ const AdmissionCourses = () => {
             {FAQs.map((faq, index) => (
               <div
                 key={index}
-                className="p-4 bg-[#f3f1f9] rounded-lg shadow-md cursor-pointer hover:bg-[#e3e1f7] transition"
+                className="p-4 bg-brand-light rounded-lg shadow-md cursor-pointer hover:bg-brand-accent transition"
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold text-brand-dark">{faq.question}</h3>
-                  <span className="text-[#270185]">
+                  <span className="text-brand-text">
                     {expandedIndex === index ? '-' : '+'}
                   </span>
                 </div>
                 <div
-                  className={`mt-2 text-[#270185] transition-max-height duration-300 ease-in-out ${
+                  className={`mt-2 text-brand-text transition-max-height duration-300 ease-in-out ${
                     expandedIndex === index ? 'max-h-screen' : 'max-h-0 overflow-hidden'
                   }`}
                 >

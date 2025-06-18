@@ -327,7 +327,7 @@ const FAQs = () => {
             <div className="md:hidden">
               <select
                 onChange={handleCategoryChange}
-                className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+                className="w-full px-4 py-2 bg-brand-primary text-white font-semibold rounded-lg shadow-md focus:outline-none"
                 value={activeCategory}
               >
                 {siteFAQs.map((section, index) => (
@@ -341,7 +341,7 @@ const FAQs = () => {
               {siteFAQs.map((section, index) => (
                 <li key={index}>
                   <button
-                    className={`px-4 py-2 rounded-lg ${activeCategory === section.category ? 'bg-[#461fa3] text-white' : 'bg-white text-[#200e4a]'} hover:bg-[#7646eb] transition`}
+                    className={`px-4 py-2 rounded-lg ${activeCategory === section.category ? 'bg-brand-primary text-white' : 'bg-white text-brand-text'} hover:bg-brand-secondary transition`}
                     onClick={() => setActiveCategory(section.category)}
                   >
                     {section.category}
@@ -363,10 +363,9 @@ const FAQs = () => {
                   answer={faq.answer}
                   isOpen={openIndex[faq.question]}
                   toggle={() => toggleFAQ(faq.question, index)}
-                />
-              ))
+                />              ))
             ) : (
-              <p className="text-[#270185]">No FAQs match your search.</p>
+              <p className="text-brand-text">No FAQs match your search.</p>
             )}
           </div>
         ) : (
@@ -385,7 +384,7 @@ const FAQs = () => {
                       />
                     ))
                   ) : (
-                    <p className="text-[#270185]">No FAQs match your search.</p>
+                    <p className="text-brand-text">No FAQs match your search.</p>
                   )}
                 </div>
               )}
