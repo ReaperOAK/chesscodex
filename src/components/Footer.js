@@ -17,10 +17,10 @@ const Footer = () => {
   return (
     <footer className={`${
       isChessCodex 
-        ? 'bg-codex-bg-dark' 
+        ? 'bg-brand-dark' 
         : isAspireChess 
-        ? 'bg-aspire-bg-dark' 
-        : 'bg-kca-bg-dark'
+        ? 'bg-brand-dark' 
+        : 'bg-brand-dark'
     } text-white py-12`}>
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -37,25 +37,25 @@ const Footer = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4 text-white">Quick Links</h2>            <ul className="space-y-2 text-white">
               <li><a href={isChessCodex ? "/chesscodex/exclusives" : isAspireChess ? "/aspirechess/exclusives" : "/exclusives"} className={`hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               }`}>Pro Members</a></li>
               <li><a href="https://theweekinchess.com/twic" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               }`}>Latest Games</a></li>
               <li><a href="https://ratings.fide.com/" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               }`}>FIDE Ratings</a></li>
               <li><a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               }`}>Play Online</a></li>
               <li><a href="https://lichess.org/training" target="_blank" rel="noopener noreferrer" className={`hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               }`}>Solve Puzzles</a></li>
               <li className="relative">
                 <button
                   onClick={toggleDropdown}
                   className={`hover:${
-                    isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                    isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
                   } focus:outline-none`}
                   aria-label="Tournaments"
                 >
@@ -63,21 +63,21 @@ const Footer = () => {
                 </button>
                 {isDropdownOpen && (
                   <ul className={`absolute mt-2 ${
-                    isChessCodex ? 'bg-codex-primary' : isAspireChess ? 'bg-aspire-primary' : 'bg-kca-primary'
+                    isChessCodex ? 'bg-brand-primary' : isAspireChess ? 'bg-brand-primary' : 'bg-brand-primary'
                   } text-white rounded shadow-lg`}>
                     <li><a href="https://tournaments/kolkatachessacademy.in/" target="_blank" rel="noopener noreferrer" className={`block px-4 py-2 hover:${
-                      isChessCodex ? 'bg-codex-secondary' : isAspireChess ? 'bg-aspire-secondary' : 'bg-kca-secondary'
+                      isChessCodex ? 'bg-brand-secondary' : isAspireChess ? 'bg-brand-secondary' : 'bg-brand-secondary'
                     }`}>Kolkata Chess Academy</a></li>
                     <li><a href="https://www.fide.com/calendar" target="_blank" rel="noopener noreferrer" className={`block px-4 py-2 hover:${
-                      isChessCodex ? 'bg-codex-secondary' : isAspireChess ? 'bg-aspire-secondary' : 'bg-kca-secondary'
+                      isChessCodex ? 'bg-brand-secondary' : isAspireChess ? 'bg-brand-secondary' : 'bg-brand-secondary'
                     }`}>World</a></li>
                     <li><a href="https://aicf.in/all-events/" target="_blank" rel="noopener noreferrer" className={`block px-4 py-2 hover:${
-                      isChessCodex ? 'bg-codex-secondary' : isAspireChess ? 'bg-aspire-secondary' : 'bg-kca-secondary'
+                      isChessCodex ? 'bg-brand-secondary' : isAspireChess ? 'bg-brand-secondary' : 'bg-brand-secondary'
                     }`}>India</a></li>                    <li><a href="https://www.sbdschess.in/state_events.php" target="_blank" rel="noopener noreferrer" className={`block px-4 py-2 hover:${
-                      isChessCodex ? 'bg-codex-secondary' : isAspireChess ? 'bg-aspire-secondary' : 'bg-kca-secondary'
+                      isChessCodex ? 'bg-brand-secondary' : isAspireChess ? 'bg-brand-secondary' : 'bg-brand-secondary'
                     }`}>Bengal</a></li>
                     <li><a href="https://new.uschess.org/play-chess" target="_blank" rel="noopener noreferrer" className={`block px-4 py-2 hover:${
-                      isChessCodex ? 'bg-codex-secondary' : isAspireChess ? 'bg-aspire-secondary' : 'bg-kca-secondary'
+                      isChessCodex ? 'bg-brand-secondary' : isAspireChess ? 'bg-brand-secondary' : 'bg-brand-secondary'
                     }`}>US</a></li>
                   </ul>
                 )}
@@ -86,7 +86,7 @@ const Footer = () => {
               <Link
               to={isChessCodex ? "/aspirechess" : "/chesscodex"}
               className={`${
-                isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+                isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
               } hover:underline`}
             >
               {isChessCodex ? "AspireChess" : "ChessCodex"}
@@ -97,7 +97,7 @@ const Footer = () => {
               <Link
               to="/"
               className={`${
-                isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+                isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
               } hover:underline`}
             >
               Home
@@ -112,19 +112,19 @@ const Footer = () => {
             <ul className="space-y-2 text-white">
               <li className="flex items-center space-x-2">
                 <FaEnvelope className={`${
-                  isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+                  isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
                 } flex-shrink-0`} />
                 <a href={`mailto:${contactEmail}`} className="hover:underline">{contactEmail}</a>
               </li>
               <li className="flex items-center space-x-2">
                 <FaPhoneAlt className={`${
-                  isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+                  isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
                 } flex-shrink-0`} />
                 <a href={`tel:${contactPhone}`} className="hover:underline">{contactPhone}</a>
               </li>
             </ul>
             <a href={isChessCodex ? "/chesscodex/contact#refund-policy" : isAspireChess ? "/aspirechess/contact#refund-policy" : "/contact#refund-policy"} className={`inline-block mt-4 ${
-              isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+              isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
             } hover:underline`}>
               Refund Policy
             </a>
@@ -135,27 +135,27 @@ const Footer = () => {
             <h2 className="text-2xl font-bold mb-4 text-white">Follow Us</h2>
             <div className="flex space-x-4 mb-6">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={`text-white hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               } text-2xl`}>
                 <FaFacebook />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`text-white hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               } text-2xl`}>
                 <FaInstagram />
               </a>
               <a href="https://www.linkedin.com/company/kolkatachessacademy/" target="_blank" rel="noopener noreferrer" className={`text-white hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               } text-2xl`}>
                 <FaLinkedin />
               </a>
               <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className={`text-white hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               } text-2xl`}>
                 <FaWhatsapp />
               </a>
               <a href="https://www.youtube.com/@kolkatachessacademy" target="_blank" rel="noopener noreferrer" className={`text-white hover:${
-                isChessCodex ? 'text-codex-accent' : isAspireChess ? 'text-aspire-accent' : 'text-kca-accent'
+                isChessCodex ? 'text-brand-accent' : isAspireChess ? 'text-brand-accent' : 'text-brand-accent'
               } text-2xl`}>
                 <FaYoutube />
               </a>
@@ -170,7 +170,7 @@ const Footer = () => {
             © {new Date().getFullYear()} {siteName}. All Rights Reserved.
             <br />
             Made with <span className={`${
-              isChessCodex ? 'text-codex-highlight' : isAspireChess ? 'text-aspire-highlight' : 'text-kca-highlight'
+              isChessCodex ? 'text-brand-highlight' : isAspireChess ? 'text-brand-highlight' : 'text-brand-highlight'
             }`}>♥</span> by <a href="https://www.instagram.com/being._owais/profilecard/?igsh=MWo5Nm45cjFuNzVobA==" target="_blank" rel="noopener noreferrer" className="hover:underline">Owais Khan</a>
           </p>
         </div>

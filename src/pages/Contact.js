@@ -119,13 +119,13 @@ const Contact = () => {
         <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
-      <section className={`relative ${
-        isChessCodex 
-          ? 'bg-gradient-to-br from-codex-primary via-codex-secondary to-codex-accent' 
+      <section        className={`relative ${
+          isChessCodex 
+          ? 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent' 
           : isAspireChess 
-          ? 'bg-gradient-to-br from-aspire-primary via-aspire-secondary to-aspire-accent' 
-          : 'bg-gradient-to-br from-kca-primary via-kca-secondary to-kca-accent'
-      } text-white py-20`}>
+          ? 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent' 
+          : 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent'
+        }text-white py-20`}>
         <div className="text-center px-6 md:px-12 lg:px-24">
           <h1 className="text-6xl font-extrabold mb-4">Get In Touch</h1>
           <p className="text-lg max-w-4xl mx-auto">
@@ -156,14 +156,13 @@ const Contact = () => {
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                       <div>                        <label htmlFor="role" className="block font-medium mb-2 text-brand-text">
                           I am
-                        </label>
-                        <select
+                        </label>                        <select
                           id="role"
                           name="role"
                           value={formData.role}
                           onChange={handleChange}
                           required
-                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                          className="w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         >
                           <option value="">-- Select --</option>
                           <option value="student">Student</option>
@@ -175,43 +174,40 @@ const Contact = () => {
                       </div>
                       <div>                        <label htmlFor="name" className="block font-medium mb-2 text-brand-text">
                           Name
-                        </label>
-                        <input
+                        </label>                        <input
                           type="text"
                           id="name"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                          className="w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         />
                       </div>
                       {(formData.role === "student" || formData.role === "parent") && (
                         <div>                          <label htmlFor="age" className="block font-medium mb-2 text-brand-text">
                             Student's Age
-                          </label>
-                          <input
+                          </label>                          <input
                             type="number"
                             id="age"
                             name="age"
                             value={formData.age}
                             onChange={handleChange}
                             required
-                            className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                            className="w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                           />
                         </div>
                       )}
                       <div>                        <label htmlFor="email" className="block font-medium mb-2 text-brand-text">
                           Email
-                        </label>
-                        <input
+                        </label>                        <input
                           type="email"
                           id="email"
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                          className="w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         />
                       </div>
                       <div>                        <label htmlFor="phone_number" className="block font-medium mb-2 text-brand-text">
@@ -225,7 +221,7 @@ const Contact = () => {
                             value={formData.country_code}
                             onChange={handleChange}
                             required
-                            className="w-1/3  border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary mr-2"
+                            className="w-1/3  border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary mr-2"
                           />
                           <input
                             type="tel"
@@ -234,22 +230,21 @@ const Contact = () => {
                             value={formData.phone_number}
                             onChange={handleChange}
                             required
-                            className="w-2/3 border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                            className="w-2/3 border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                           />
                         </div>
                       </div>
                     </div>
                     <div className="mt-4">                      <label htmlFor="message" className="block font-medium mb-2 text-brand-text">
                         Message
-                      </label>
-                      <textarea
+                      </label>                      <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
                         rows="5"
-                        className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
+                        className="w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                       />
                     </div>
                     <div className="mt-4">

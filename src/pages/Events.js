@@ -145,7 +145,7 @@ const Events = () => {
               id="filter"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="block appearance-none w-56 py-3 pl-3 pr-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary text-brand-text"
+              className="block appearance-none w-56 py-3 pl-3 pr-4 border border-brand-light rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary text-brand-text"
             >
               <option value="All">All</option>
               <option value="Offline">Offline</option>

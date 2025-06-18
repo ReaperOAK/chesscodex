@@ -83,14 +83,13 @@ const Modal = ({ course, onClose, isChessCodex, isAspireChess }) => {
         </ul>
         <div className="mt-6 text-right">
           <button
-            onClick={onClose}
-            className={`${
+            onClick={onClose}            className={`${
               isChessCodex 
-                ? 'bg-codex-highlight hover:bg-codex-highlight/80' 
+                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
                 : isAspireChess 
-                ? 'bg-aspire-highlight hover:bg-aspire-highlight/80' 
-                : 'bg-kca-highlight hover:bg-kca-highlight/80'
-            } text-white px-4 py-2 rounded transition-colors duration-300`}
+                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
+                : 'bg-brand-highlight hover:bg-brand-highlight/80'
+            }text-white px-4 py-2 rounded transition-colors duration-300`}
           >
             Close
           </button>
@@ -115,13 +114,12 @@ const CoursesList = () => {
     (isChessCodex && course.site === 'chesscodex') || 
     (isAspireChess && course.site === 'aspirechess')
   );
-  return (
-    <section id="courses" className={`py-16 ${
+  return (    <section id="courses" className={`py-16 ${
       isChessCodex 
-        ? 'bg-codex-bg-dark' 
+        ? 'bg-brand-dark' 
         : isAspireChess 
-        ? 'bg-aspire-bg-dark' 
-        : 'bg-kca-bg-dark'
+        ? 'bg-brand-dark' 
+        : 'bg-brand-dark'
     }`}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -135,14 +133,13 @@ const CoursesList = () => {
               className="group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               onClick={() => openModal(course)}
             >
-              <div>
-                <h2 className={`text-2xl font-semibold ${
+              <div>                <h2 className={`text-2xl font-semibold ${
                   isChessCodex 
-                    ? 'text-codex-primary' 
+                    ? 'text-brand-primary' 
                     : isAspireChess 
-                    ? 'text-aspire-primary' 
-                    : 'text-kca-primary'
-                } mb-4`}>{course.title}</h2>                <p className="text-brand-text font-medium mb-2">Duration: {course.duration}</p>
+                    ? 'text-brand-primary' 
+                    : 'text-brand-primary'
+                }mb-4`}>{course.title}</h2>                <p className="text-brand-text font-medium mb-2">Duration: {course.duration}</p>
                 <ul className="list-disc pl-4 text-brand-text space-y-1 text-sm">
                   {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
@@ -164,10 +161,10 @@ const CoursesList = () => {
                   rel="noopener noreferrer"
                   className={`block text-center ${
                     isChessCodex 
-                      ? 'bg-codex-secondary hover:bg-codex-accent' 
+                      ? 'bg-brand-secondary hover:bg-brand-accent' 
                       : isAspireChess 
-                      ? 'bg-aspire-secondary hover:bg-aspire-accent' 
-                      : 'bg-kca-secondary hover:bg-kca-accent'
+                      ? 'bg-brand-secondary hover:bg-brand-accent' 
+                      : 'bg-brand-secondary hover:bg-brand-accent'
                   } text-white py-2 px-4 rounded transition duration-300`}
                 >
                   {course.title === 'Private Classes' ? 'Contact Us' : 'Enroll Now'}

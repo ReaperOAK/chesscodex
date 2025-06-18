@@ -58,7 +58,7 @@ const About = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">            {/* Mission */}
-            <div className="flex-1 bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="flex-1 bg-brand-light p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <FaChessKing className="mx-auto text-6xl text-brand-primary mb-6" />              <h3 className="text-2xl font-bold text-brand-dark mb-4">Our Mission</h3>
               <p className="text-brand-text">
                 <span className="font-semibold text-brand-primary">{isChessCodex
@@ -69,7 +69,7 @@ const About = () => {
                 : ' While we understand chess can be very costly at the advanced level, considering the tournament and coaching expenses, we envision a world where chess education is accessible and where every student has the opportunity to shine. Aspire Chess Academy is here to turn that vision into reality by providing the highest standard of chess coaching and fostering a community of passionate players.'}     
               </p>
             </div>            {/* Vision */}
-            <div className="flex-1 bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="flex-1 bg-brand-light p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <FaTrophy className="mx-auto text-6xl text-brand-primary mb-6" />              <h3 className="text-2xl font-bold text-brand-dark mb-4">Our Vision</h3>
               <p className="text-brand-text">
                 <span className="font-semibold text-brand-primary">

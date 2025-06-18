@@ -10,10 +10,10 @@ const CTA = () => {
   return (
     <section className={`${
       isChessCodex 
-        ? 'bg-gradient-to-br from-codex-primary via-codex-secondary to-codex-accent' 
+        ? 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent' 
         : isAspireChess 
-        ? 'bg-gradient-to-br from-aspire-primary via-aspire-secondary to-aspire-accent' 
-        : 'bg-gradient-to-br from-kca-primary via-kca-secondary to-kca-accent'
+        ? 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent' 
+        : 'bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent'
     } text-white py-16 sm:py-20 px-6`}>
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
@@ -27,10 +27,10 @@ const CTA = () => {
             aria-label="Enroll Now"
             className={`inline-flex items-center justify-center gap-2 ${
               isChessCodex 
-                ? 'bg-codex-highlight hover:bg-codex-highlight/80' 
+                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
                 : isAspireChess 
-                ? 'bg-aspire-highlight hover:bg-aspire-highlight/80' 
-                : 'bg-kca-highlight hover:bg-kca-highlight/80'
+                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
+                : 'bg-brand-highlight hover:bg-brand-highlight/80'
             } text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300`}
           >
             <span>🎓 Enroll Now</span>
@@ -40,10 +40,10 @@ const CTA = () => {
             aria-label="Contact Us"
             className={`inline-flex items-center justify-center gap-2 ${
               isChessCodex 
-                ? 'bg-codex-secondary hover:bg-codex-accent' 
+                ? 'bg-brand-secondary hover:bg-brand-accent' 
                 : isAspireChess 
-                ? 'bg-aspire-secondary hover:bg-aspire-accent' 
-                : 'bg-kca-secondary hover:bg-kca-accent'
+                ? 'bg-brand-secondary hover:bg-brand-accent' 
+                : 'bg-brand-secondary hover:bg-brand-accent'
             } text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300`}
           >
             <span>📞 Contact Us</span>

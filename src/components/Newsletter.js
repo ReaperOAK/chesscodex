@@ -41,10 +41,10 @@ const Newsletter = ({ position, theme }) => {
   const textColor = 'text-brand-text';
       
   const buttonClasses = isChessCodex 
-    ? 'bg-codex-highlight text-white hover:bg-codex-highlight/80' 
+    ? 'bg-brand-highlight text-white hover:bg-brand-highlight/80' 
     : isAspireChess 
-    ? 'bg-aspire-highlight text-white hover:bg-aspire-highlight/80' 
-    : 'bg-kca-highlight text-white hover:bg-kca-highlight/80';
+    ? 'bg-brand-highlight text-white hover:bg-brand-highlight/80' 
+    : 'bg-brand-highlight text-white hover:bg-brand-highlight/80';
     
   const inputClasses = 'border-brand-light text-brand-text placeholder-brand-text focus:ring-brand-secondary border-2';
 

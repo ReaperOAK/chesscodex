@@ -196,26 +196,26 @@ const FAQItem = ({ question, answer, isOpen, toggle, isChessCodex, isAspireChess
     >
       <h3 className={`text-lg font-medium ${
         isChessCodex 
-          ? 'text-codex-primary' 
+          ? 'text-brand-primary' 
           : isAspireChess 
-          ? 'text-aspire-primary' 
-          : 'text-kca-primary'
+          ? 'text-brand-primary' 
+          : 'text-brand-primary'
       }`}>{question}</h3>
       {isOpen ? (
         <FaChevronUp className={`${
           isChessCodex 
-            ? 'text-codex-secondary' 
+            ? 'text-brand-secondary' 
             : isAspireChess 
-            ? 'text-aspire-secondary' 
-            : 'text-kca-secondary'
+            ? 'text-brand-secondary' 
+            : 'text-brand-secondary'
         }`} />
       ) : (
         <FaChevronDown className={`${
           isChessCodex 
-            ? 'text-codex-secondary' 
+            ? 'text-brand-secondary' 
             : isAspireChess 
-            ? 'text-aspire-secondary' 
-            : 'text-kca-secondary'
+            ? 'text-brand-secondary' 
+            : 'text-brand-secondary'
         }`} />
       )}
     </div>
@@ -289,10 +289,10 @@ const FAQs = () => {
       <div className="max-w-5xl mx-auto px-4">
         <h2 className={`text-4xl font-bold text-center ${
           isChessCodex 
-            ? 'text-codex-primary' 
+            ? 'text-brand-primary' 
             : isAspireChess 
-            ? 'text-aspire-primary' 
-            : 'text-kca-primary'
+            ? 'text-brand-primary' 
+            : 'text-brand-primary'
         } mb-12`}>
           Frequently Asked Questions
         </h2>

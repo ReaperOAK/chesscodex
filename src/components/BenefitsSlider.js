@@ -29,14 +29,13 @@ const BenefitsSlider = () => {
     arrows: false,
   };
 
-  return (
-    <div className={`${
+  return (    <div className={`${
       isChessCodex 
-        ? 'bg-codex-bg-dark' 
+        ? 'bg-brand-dark' 
         : isAspireChess 
-        ? 'bg-aspire-bg-dark' 
-        : 'bg-kca-bg-dark'
-    } text-white py-2`}>
+        ? 'bg-brand-dark' 
+        : 'bg-brand-dark'
+    }text-white py-2`}>
       <Slider {...sliderSettings}>
         {benefits.map((benefit, index) => (
           <div key={index} className="text-center">

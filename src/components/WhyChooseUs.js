@@ -12,83 +12,61 @@ const WhyChooseUs = () => {
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
-  const highlightedFeatures = [    {
-      icon: <FaBook className={`${
-        isChessCodex 
-          ? 'text-codex-secondary' 
-          : isAspireChess 
-          ? 'text-aspire-secondary' 
-          : 'text-kca-secondary'
-      } text-4xl mb-2`} />,
+  const highlightedFeatures = [    {      icon: <FaBook className="text-brand-secondary text-4xl mb-2" />,
       title: "Comprehensive Curriculum",
       description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.",
       link: isChessCodex ? "/chesscodex/courses" : isAspireChess ? "/aspirechess/courses" : "/contact",
     },
-    {
-      icon: <FaChalkboardTeacher className={`${
-        isChessCodex 
-          ? 'text-codex-accent' 
-          : isAspireChess 
-          ? 'text-aspire-accent' 
-          : 'text-kca-accent'
-      } text-4xl mb-2`} />,
+    {      icon: <FaChalkboardTeacher className="text-brand-accent text-4xl mb-2" />,
       title: "Top Tier Guidance",
       description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.",
       link: isChessCodex ? "/chesscodx/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team",
     },
-    {
-      icon: <FaCrown className={`${
-        isChessCodex 
-          ? 'text-codex-highlight' 
-          : isAspireChess 
-          ? 'text-aspire-highlight' 
-          : 'text-kca-highlight'
-      } text-4xl mb-2`} />,
+    {      icon: <FaCrown className="text-brand-highlight text-4xl mb-2" />,
       title: "Expert Coaching Panel",
       description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.",
       link: isChessCodex ? "/chesscodex/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team",
     },
   ];
 
-  const features = [
-    {
-      icon: <FaTasks className="text-red-500 text-4xl mb-2" />,
+  const features = [    {
+      icon: <FaTasks className="text-brand-secondary text-4xl mb-2" />,
       title: "Weekly Practice Classes",
       description: "Interactive sessions to refine your strategies and enhance performance.",
       link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses",
     },
     {
-      icon: <FaClipboardCheck className="text-purple-500 text-4xl mb-2" />,
+      icon: <FaClipboardCheck className="text-brand-accent text-4xl mb-2" />,
       title: "Regular Homeworks",
       description: "Engaging assignments and puzzles to keep you challenged and motivated.",
       link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses",
     },
     {
-      icon: <FaFileAlt className="text-indigo-500 text-4xl mb-2" />,
+      icon: <FaFileAlt className="text-brand-primary text-4xl mb-2" />,
       title: "Internal Assessments",
       description: "Track progress through structured assessments and advance to higher batches.",
       link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses",
     },
     {
-      icon: <FaFileAlt className="text-pink-500 text-4xl mb-2" />,
+      icon: <FaFileAlt className="text-brand-highlight text-4xl mb-2" />,
       title: "Detailed Report Card",
       description: "Receive personalized feedback to identify strengths and areas for growth.",
       link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses",
     },
     {
-      icon: <FaMedal className="text-orange-500 text-4xl mb-2" />,
+      icon: <FaMedal className="text-brand-secondary text-4xl mb-2" />,
       title: "Achievement Recognition",
       description: "Celebrate your milestones and achievements with certificates and awards.",
       link: isChessCodex ? "/chesscodex/achievements-testimonials" : "/aspirechess/achievements-testimonials",
     },
     {
-      icon: <FaUsers className="text-teal-500 text-4xl mb-2" />,
+      icon: <FaUsers className="text-brand-accent text-4xl mb-2" />,
       title: "Community Support",
       description: "Join our community forum to discuss ideas, share experiences, and get support.",
       link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI",
     },
     {
-      icon: <FaTrophy className="text-gold-500 text-4xl mb-2" />,
+      icon: <FaTrophy className="text-brand-primary text-4xl mb-2" />,
       title: "Tournament Participation",
       description: "Participate in local and international tournaments to test your skills and gain experience.",
       link: isChessCodex ? "/chesscodex/events-blogs" : "/aspirechess/events-blogs",
@@ -155,14 +133,7 @@ const WhyChooseUs = () => {
             >
               <div className="flex justify-center items-center mb-2">
                 {feature.icon}
-              </div>
-              <h2 className={`text-lg font-semibold ${
-                isChessCodex 
-                  ? 'text-codex-primary' 
-                  : isAspireChess 
-                  ? 'text-aspire-primary' 
-                  : 'text-kca-primary'
-              } mb-2`}>{feature.title}</h2>              <p className="text-brand-text text-center text-sm">{feature.description}</p>
+              </div>              <h2 className="text-lg font-semibold text-brand-primary mb-2">{feature.title}</h2><p className="text-brand-text text-center text-sm">{feature.description}</p>
             </NavLink>
           ))}
         </Slider>
