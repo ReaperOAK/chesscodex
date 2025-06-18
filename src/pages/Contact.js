@@ -145,19 +145,16 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white p-8 rounded-lg shadow-lg relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-4xl font-bold mb-8 text-[#200e4a]">
+              <div>                <h2 className="text-4xl font-bold mb-8 text-brand-dark">
                   Drop Us a Message
                 </h2>
-                {submitted ? (
-                  <p className="text-center text-[#af0505] text-xl font-medium">
+                {submitted ? (                  <p className="text-center text-brand-primary text-xl font-medium">
                     Thank you! Your message has been received. We'll get back to you soon.
                   </p>
                 ) : (
                   <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                      <div>
-                        <label htmlFor="role" className="block font-medium mb-2 text-[#270185]">
+                      <div>                        <label htmlFor="role" className="block font-medium mb-2 text-brand-text">
                           I am
                         </label>
                         <select
@@ -166,7 +163,7 @@ const Contact = () => {
                           value={formData.role}
                           onChange={handleChange}
                           required
-                          className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         >
                           <option value="">-- Select --</option>
                           <option value="student">Student</option>
@@ -176,8 +173,7 @@ const Contact = () => {
                           <option value="other">Other</option>
                         </select>
                       </div>
-                      <div>
-                        <label htmlFor="name" className="block font-medium mb-2 text-[#270185]">
+                      <div>                        <label htmlFor="name" className="block font-medium mb-2 text-brand-text">
                           Name
                         </label>
                         <input
@@ -187,12 +183,11 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         />
                       </div>
                       {(formData.role === "student" || formData.role === "parent") && (
-                        <div>
-                          <label htmlFor="age" className="block font-medium mb-2 text-[#270185]">
+                        <div>                          <label htmlFor="age" className="block font-medium mb-2 text-brand-text">
                             Student's Age
                           </label>
                           <input
@@ -202,12 +197,11 @@ const Contact = () => {
                             value={formData.age}
                             onChange={handleChange}
                             required
-                            className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                            className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                           />
                         </div>
                       )}
-                      <div>
-                        <label htmlFor="email" className="block font-medium mb-2 text-[#270185]">
+                      <div>                        <label htmlFor="email" className="block font-medium mb-2 text-brand-text">
                           Email
                         </label>
                         <input
@@ -217,11 +211,10 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                          className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                         />
                       </div>
-                      <div>
-                        <label htmlFor="phone_number" className="block font-medium mb-2 text-[#270185]">
+                      <div>                        <label htmlFor="phone_number" className="block font-medium mb-2 text-brand-text">
                           Phone Number
                         </label>
                         <div className="flex">
@@ -232,7 +225,7 @@ const Contact = () => {
                             value={formData.country_code}
                             onChange={handleChange}
                             required
-                            className="w-1/3  border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3] mr-2"
+                            className="w-1/3  border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary mr-2"
                           />
                           <input
                             type="tel"
@@ -241,13 +234,12 @@ const Contact = () => {
                             value={formData.phone_number}
                             onChange={handleChange}
                             required
-                            className="w-2/3 border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                            className="w-2/3 border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="mt-4">
-                      <label htmlFor="message" className="block font-medium mb-2 text-[#270185]">
+                    <div className="mt-4">                      <label htmlFor="message" className="block font-medium mb-2 text-brand-text">
                         Message
                       </label>
                       <textarea
@@ -257,39 +249,36 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         rows="5"
-                        className="w-full border border-[#c2c1d3] rounded-md shadow-sm p-3 focus:ring focus:ring-[#461fa3]"
+                        className="w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary"
                       />
                     </div>
                     <div className="mt-4">
-                      <label className="inline-flex items-center">
-                        <input
+                      <label className="inline-flex items-center">                        <input
                           type="checkbox"
                           name="subscribe_newsletter"
                           checked={formData.subscribe_newsletter}
                           onChange={handleChange}
-                          className="form-checkbox h-5 w-5 text-[#af0505]"
+                          className="form-checkbox h-5 w-5 text-brand-primary"
                         />
-                        <span className="ml-2 text-[#270185]">Subscribe to our newsletter</span>
+                        <span className="ml-2 text-brand-text">Subscribe to our newsletter</span>
                       </label>
                     </div>
                     <div className="mt-4">
-                      <label className="inline-flex items-center">
-                        <input
+                      <label className="inline-flex items-center">                        <input
                           type="checkbox"
                           name="agree_privacy_policy"
                           checked={formData.agree_privacy_policy}
                           onChange={handleChange}
                           required
-                          className="form-checkbox h-5 w-5 text-[#af0505]"
+                          className="form-checkbox h-5 w-5 text-brand-primary"
                         />
-                        <span className="ml-2 text-[#270185]">
-                          I agree to the <a href="/privacy-policy" className="text-[#461fa3] underline">privacy policy</a>
+                        <span className="ml-2 text-brand-text">
+                          I agree to the <a href="/privacy-policy" className="text-brand-secondary underline">privacy policy</a>
                         </span>
                       </label>
-                    </div>
-                    <button
+                    </div>                    <button
                       type="submit"
-                      className="mt-6 w-full py-3 bg-[#461fa3] text-white font-medium rounded-lg shadow-lg hover:bg-[#7646eb] transition duration-300"
+                      className="mt-6 w-full py-3 bg-brand-secondary text-white font-medium rounded-lg shadow-lg hover:bg-brand-primary transition duration-300"
                     >
                       Send Message
                     </button>
@@ -298,28 +287,25 @@ const Contact = () => {
               </div>
 
               <div className="space-y-8">
-                <div>
-                  <h2 className="text-4xl font-bold mb-4 text-[#200e4a]">
+                <div>                  <h2 className="text-4xl font-bold mb-4 text-brand-dark">
                     Contact Details
                   </h2>
-                  <ul className="space-y-4 text-[#270185]">
-                    <li className="flex items-center space-x-2">
-                      <FaPhoneAlt className="text-[#af0505]" />
+                  <ul className="space-y-4 text-brand-text">                    <li className="flex items-center space-x-2">
+                      <FaPhoneAlt className="text-brand-primary" />
                       <a href={`tel:${contactPhone}`} className="hover:underline">{contactPhone}</a>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <FaEnvelope className="text-[#af0505]" />
+                      <FaEnvelope className="text-brand-primary" />
                       <a href={`mailto:${contactEmail}`} className="hover:underline">{contactEmail}</a>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <FaMapMarkerAlt className="text-[#af0505]" />
+                      <FaMapMarkerAlt className="text-brand-primary" />
                       <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{contactAddress}</a>
                     </li>
                   </ul>
                 </div>
 
-                <div>
-                  <h2 className="text-4xl font-bold mb-4 text-[#200e4a]">
+                <div>                  <h2 className="text-4xl font-bold mb-4 text-brand-dark">
                     Connect With Us
                   </h2>
                   <div className="flex space-x-4">
@@ -342,8 +328,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map Section */}
-                <div>
-                  <h2 className="text-4xl font-bold mb-4 text-[#200e4a]">
+                <div>                  <h2 className="text-4xl font-bold mb-4 text-brand-dark">
                     Visit Us
                   </h2>
                   <div id="map" className="w-full h-72 rounded-lg shadow-lg relative z-0"></div>
