@@ -26,13 +26,7 @@ const SiteHome = () => {
         <meta name="description" content={siteDescription} />
         <meta name="keywords" content={siteKeywords} />
       </Helmet>      {/* Hero Section */}
-      <section className={`${
-        isChessCodex 
-          ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-          : isAspireChess 
-          ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-          : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent'
-      } text-white py-24 text-center`}>        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white py-24 text-center">        <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6 text-white">Welcome to {siteName}</h1>          <p className="text-lg mb-4 text-yellow-200">{isChessCodex ? 'Striving for 100% Rated Players' : isAspireChess ? 'Aspiring for 100% Titled Players' : 'Striving for 100% Rated Players'}</p>
           <p className="text-md mb-6 max-w-3xl mx-auto text-white">
             {isChessCodex
@@ -42,13 +36,7 @@ const SiteHome = () => {
               : 'Started as Kolkata Chess Academy, we strive to create a community of rated players, enhancing their skills through world-class coaching and resources.'}
           </p>          <a
             href={isChessCodex ? "/chesscodex/admission" : isAspireChess ? "/aspirechess/admission" : "/contact"}
-            className={`${
-              isChessCodex 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : isAspireChess 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : 'bg-brand-highlight hover:bg-brand-highlight/80'
-            } text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300`}
+            className="bg-brand-highlight hover:bg-brand-highlight/80 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
           >
             Join {siteName} Today
           </a>
@@ -71,14 +59,7 @@ const SiteHome = () => {
             Recognizing talent and hard work, we offer scholarships to support dedicated students with exceptional potential in chess.
           </p>
           <a
-            href={isChessCodex ? "/chesscodex/exclusives/scholarships" : isAspireChess ? "/aspirechess/exclusives/scholarships" : "/contact"}
-            className={`${
-              isChessCodex 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : isAspireChess 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : 'bg-brand-highlight hover:bg-brand-highlight/80'
-            } text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300`}
+            href={isChessCodex ? "/chesscodex/exclusives/scholarships" : isAspireChess ? "/aspirechess/exclusives/scholarships" : "/contact"}            className="bg-brand-highlight hover:bg-brand-highlight/80 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
           >
             Learn More
           </a>
@@ -86,13 +67,7 @@ const SiteHome = () => {
       </section>
 
       {/* Collaboration Section */}
-      <section className={`${
-        isChessCodex 
-          ? 'bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary' 
-          : isAspireChess 
-          ? 'bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary' 
-          : 'bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary'
-      } text-white py-20`}>
+      <section className="bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Collaborate with Us</h2>
           <p className="text-lg mb-6">
@@ -111,24 +86,10 @@ const SiteHome = () => {
             Learn More
           </a>
         </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className={`${
-        isChessCodex 
-          ? 'bg-codex-bg-light' 
-          : isAspireChess 
-          ? 'bg-aspire-bg-light' 
-          : 'bg-kca-bg-light'
-      } py-20`}>
+      </section>      {/* Testimonials Section */}
+      <section className="bg-brand-light py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className={`text-4xl font-bold mb-6 ${
-            isChessCodex 
-              ? 'text-brand-primary' 
-              : isAspireChess 
-              ? 'text-brand-primary' 
-              : 'text-brand-primary'
-          }`}>What Our Students Say</h2>
+          <h2 className="text-4xl font-bold mb-6 text-brand-primary">What Our Students Say</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {[
               `"${siteName} made learning chess accessible and enjoyable. Highly recommended!" - Sarah K.`,
@@ -143,16 +104,8 @@ const SiteHome = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Pro Members Section */}
-      <section className={`${
-        isChessCodex 
-          ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-          : isAspireChess 
-          ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-          : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent'
-      } text-white py-20`}>
+      </section>      {/* Pro Members Section */}
+      <section className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Pro Members</h2>
           <p className="text-lg mb-6">
@@ -160,13 +113,7 @@ const SiteHome = () => {
           </p>
           <a
             href={isChessCodex ? "/chesscodex/exclusives/pro-membership" : isAspireChess ? "/aspirechess/exclusives/pro-membership" : "/contact"}
-            className={`${
-              isChessCodex 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : isAspireChess 
-                ? 'bg-brand-highlight hover:bg-brand-highlight/80' 
-                : 'bg-brand-highlight hover:bg-brand-highlight/80'
-            } text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300`}
+            className="bg-brand-highlight hover:bg-brand-highlight/80 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
           >
             Join Pro Membership
           </a>

@@ -25,14 +25,7 @@ function Navbar() {
 
   const filteredNavLinks = navLinks.filter(link => link.to !== "");
 
-  return (
-    <nav className={`${
-      isChessCodex 
-        ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-        : isAspireChess 
-        ? 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent' 
-        : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent'
-    } text-white sticky top-0 shadow-lg z-50 w-full`}>
+  return (    <nav className="bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white sticky top-0 shadow-lg z-50 w-full">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -51,7 +44,7 @@ function Navbar() {
                 to={link.to}                className={({ isActive }) =>
                   isActive
                     ? 'text-yellow-300 font-semibold transition-colors duration-300 mx-2'
-                    : 'text-white hover:text-yellow-200 transition-colors duration-300 mx-2'
+                    : 'text-white hover:text-yellow-300 transition-colors duration-300 mx-2'
                 }
                 aria-label={link.label}
               >
@@ -60,7 +53,7 @@ function Navbar() {
             ))}            <a
               href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
               target="_blank"
-              rel="noopener noreferrer"              className="text-white hover:text-yellow-200 transition-colors duration-300 mx-2"
+              rel="noopener noreferrer"              className="text-white hover:text-yellow-300 transition-colors duration-300 mx-2"
               aria-label="Dashboard"
             >
               Dashboard
@@ -92,7 +85,7 @@ function Navbar() {
                   to={link.to}                  className={({ isActive }) =>
                     isActive
                       ? 'block text-yellow-300 font-semibold text-center'
-                      : 'block text-white hover:text-yellow-200 text-center'
+                      : 'block text-white hover:text-yellow-300 text-center'
                   }
                   onClick={toggleMenu}
                   aria-label={link.label}
@@ -105,7 +98,7 @@ function Navbar() {
               <a
                 href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
                 target="_blank"
-                rel="noopener noreferrer"                className="block text-white hover:text-yellow-200 text-center"
+                rel="noopener noreferrer"                className="block text-white hover:text-yellow-300 text-center"
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

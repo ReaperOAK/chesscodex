@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import SiteHome from './pages/SiteHome';
 import About from './pages/About';
 import AchievementsTestimonials from './pages/AchievementsTestimonials';
@@ -26,6 +27,40 @@ function AppContent() {
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const isContactPage = location.pathname.endsWith('/contact');
   const theme = isContactPage ? 'contact' : 'default';
+
+  // Set CSS custom properties based on the current site
+  useEffect(() => {
+    const root = document.documentElement;
+    
+    if (isChessCodex) {
+      // ChessCodex - Premium & Tech-Forward
+      root.style.setProperty('--brand-primary', '#7C2D12');    // Rich Burgundy
+      root.style.setProperty('--brand-secondary', '#FF6F3C');  // Vivid Orange
+      root.style.setProperty('--brand-accent', '#FFD166');     // Gold Highlight
+      root.style.setProperty('--brand-dark', '#2D1B12');       // Espresso
+      root.style.setProperty('--brand-light', '#FDF6F0');      // Cream
+      root.style.setProperty('--brand-highlight', '#E63946');  // Crimson
+      root.style.setProperty('--brand-text', '#3D2C29');       // Coffee Brown
+    } else if (isAspireChess) {
+      // AspireChess - Energetic & Modern
+      root.style.setProperty('--brand-primary', '#1A56DB');    // Vivid Royal Blue
+      root.style.setProperty('--brand-secondary', '#3DDC97');  // Fresh Mint
+      root.style.setProperty('--brand-accent', '#FFD600');     // Electric Yellow
+      root.style.setProperty('--brand-dark', '#0B1B3A');       // Midnight Navy
+      root.style.setProperty('--brand-light', '#F6FAFF');      // Ice Blue
+      root.style.setProperty('--brand-highlight', '#FF4C60');  // Hot Pink Red
+      root.style.setProperty('--brand-text', '#1A1A2E');       // Deep Indigo
+    } else {
+      // KCA - Timeless Prestige (default)
+      root.style.setProperty('--brand-primary', '#17412F');    // Deep Pine Green
+      root.style.setProperty('--brand-secondary', '#3A6351');  // Moss Green
+      root.style.setProperty('--brand-accent', '#F7C873');     // Gold Ochre
+      root.style.setProperty('--brand-dark', '#10241B');       // Evergreen Black
+      root.style.setProperty('--brand-light', '#F5F7F2');      // Ivory Mist
+      root.style.setProperty('--brand-highlight', '#E4572E');  // Vivid Red
+      root.style.setProperty('--brand-text', '#1B2A24');       // Charcoal
+    }
+  }, [isChessCodex, isAspireChess]);
 
   return (
     <>
