@@ -62,25 +62,42 @@ Three distinct themes have been created for the chess academies, each with its o
 
 ---
 
-## 👑 Kolkata Chess Academy (KCA) - Traditional Royal Blue & Red
-**Brand Identity:** Traditional, royal, heritage chess institution
-**Target Audience:** Classical chess learners, institutional training
+## 👑 Kolkata Chess Academy (KCA) - Royal Heritage & Elegance
+**Brand Identity:** Traditional, royal, heritage chess institution with modern elegance
+**Target Audience:** Classical chess learners, institutional training, heritage enthusiasts
 
 ### Color Palette:
-- **Primary:** `#1D4ED8` - Royal Blue (tradition, trust)
-- **Secondary:** `#B91C1C` - Classic Red (heritage, strength)
-- **Accent:** `#FBBF24` - Gold Accent (achievement, excellence)
-- **Dark:** `#1E3A8A` - Deep Blue (stability, depth)
-- **Light:** `#FEF7F0` - Warm Ivory (warmth, comfort)
-- **Highlight:** `#DC2626` - Rich Red (importance, action)
-- **Text:** `#1F2937` - Elegant Gray (traditional readability)
+- **Primary:** `#1A365D` - Deep Royal Blue (trust, wisdom, tradition)
+- **Secondary:** `#C53030` - Rich Burgundy Red (passion, strength, heritage)
+- **Accent:** `#D69E2E` - Royal Gold (achievement, excellence, prestige)
+- **Dark:** `#0A1929` - Midnight Navy (depth, sophistication)
+- **Light:** `#FBF8F3` - Warm Cream (elegance, comfort)
+- **Highlight:** `#E53E3E` - Vibrant Crimson (importance, action)
+- **Text:** `#2D3748` - Charcoal Gray (professional readability)
+
+### Extended Colors:
+- **Light Text:** `#F7FAFC` - Soft White (for dark backgrounds)
+- **Neutral Text:** `#FFFFFF` - Pure White (highest contrast)
+- **Gray Light:** `#E2E8F0` - Light Silver (dividers, subtle elements)
+- **Gray Dark:** `#4A5568` - Steel Gray (borders, secondary text)
+- **Accent Light:** `#FAF089` - Champagne Gold (light accents)
+- **Secondary Light:** `#FED7D7` - Rose Blush (soft highlights)
 
 ### Design Characteristics:
-- Traditional royal color combinations
-- Classic blue-red-gold palette
-- Warm, welcoming backgrounds
-- Heritage-inspired design elements
-- Balanced, institutional feel
+- Rich royal heritage color combinations
+- Deep blue and burgundy with golden accents
+- Warm cream backgrounds for elegance
+- Traditional yet modern aesthetic
+- Sophisticated gradient combinations
+- Heritage-inspired luxury feel
+
+### Usage Guidelines:
+- Use **midnight navy** (`#0A1929`) for dramatic, premium sections
+- Use **warm cream** (`#FBF8F3`) for content areas and backgrounds
+- Combine **royal blue** (`#1A365D`) with **royal gold** (`#D69E2E`) for headers
+- Use **burgundy red** (`#C53030`) for call-to-action elements
+- Apply **champagne gold** (`#FAF089`) for subtle highlights
+- Ensure elegant contrast with **charcoal gray** (`#2D3748`) text
 
 ---
 

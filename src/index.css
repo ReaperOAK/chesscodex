@@ -20,30 +20,32 @@
 
 /* CSS Custom Properties for Brand Themes */
 :root {
-  --brand-primary: #1D4ED8;
-  --brand-secondary: #B91C1C;
-  --brand-accent: #FBBF24;
-  --brand-dark: #1E3A8A;
-  --brand-light: #FEF7F0;
-  --brand-highlight: #DC2626;
-  --brand-text: #1F2937;
-  --brand-gradient: linear-gradient(135deg, #1D4ED8 0%, #B91C1C 100%);
+  --brand-primary: #1A365D;
+  --brand-secondary: #C53030;
+  --brand-accent: #D69E2E;
+  --brand-dark: #0A1929;
+  --brand-light: #FBF8F3;
+  --brand-highlight: #E53E3E;
+  --brand-text: #2D3748;
+  --brand-gradient: linear-gradient(135deg, #1A365D 0%, #C53030 50%, #D69E2E 100%);
 }
 
 /* Theme-specific styling */
 .theme-chesscodex {
-  --shadow-brand: 0 4px 14px 0 rgba(30, 64, 175, 0.15);
-  --shadow-brand-lg: 0 10px 25px -3px rgba(30, 64, 175, 0.2);
+  --shadow-brand: 0 4px 14px 0 rgba(32, 14, 74, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(32, 14, 74, 0.2);
+  --shadow-brand-purple: 0 4px 14px 0 rgba(118, 70, 235, 0.25);
 }
 
 .theme-aspirechess {
-  --shadow-brand: 0 4px 14px 0 rgba(55, 65, 81, 0.15);
-  --shadow-brand-lg: 0 10px 25px -3px rgba(55, 65, 81, 0.2);
+  --shadow-brand: 0 4px 14px 0 rgba(71, 85, 105, 0.1);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(71, 85, 105, 0.15);
 }
 
 .theme-kca {
-  --shadow-brand: 0 4px 14px 0 rgba(29, 78, 216, 0.15);
-  --shadow-brand-lg: 0 10px 25px -3px rgba(29, 78, 216, 0.2);
+  --shadow-brand: 0 4px 14px 0 rgba(26, 54, 93, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(26, 54, 93, 0.2);
+  --shadow-brand-gold: 0 4px 14px 0 rgba(214, 158, 46, 0.25);
 }
 
 /* Brand-specific button styles */
@@ -73,6 +75,40 @@
   background: linear-gradient(135deg, #8b5cf6 0%, #5b21b6 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px -3px rgba(118, 70, 235, 0.4);
+}
+
+/* KCA specific royal heritage button variant */
+.theme-kca .btn-brand-royal {
+  background: linear-gradient(135deg, #1A365D 0%, #D69E2E 100%);
+  box-shadow: var(--shadow-brand-gold);
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.theme-kca .btn-brand-royal:hover {
+  background: linear-gradient(135deg, #2A4A6D 0%, #E6B844 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -3px rgba(214, 158, 46, 0.4);
+}
+
+.theme-kca .card-heritage {
+  background: linear-gradient(145deg, #FBF8F3 0%, #F7FAFC 100%);
+  border: 1px solid #D69E2E;
+  border-radius: 16px;
+  box-shadow: var(--shadow-brand-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-kca .card-heritage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1A365D 0%, #C53030 50%, #D69E2E 100%);
 }
 
 /* Brand-specific card styles */

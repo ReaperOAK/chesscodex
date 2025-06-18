@@ -12,20 +12,22 @@ module.exports = {
           light: 'var(--brand-light)',
           highlight: 'var(--brand-highlight)',
           text: 'var(--brand-text)',
-        },        // Main KCA Website - Traditional Royal Blue & Red
+        },        // Main KCA Website - Royal Heritage & Elegance
         kca: {
-          primary: '#1D4ED8',      // Royal Blue
-          secondary: '#B91C1C',    // Classic Red
-          accent: '#FBBF24',       // Gold Accent
-          'bg-dark': '#1E3A8A',    // Deep Blue
-          'bg-light': '#FEF7F0',   // Warm Ivory
-          highlight: '#DC2626',    // Rich Red
-          'text-dark': '#1F2937',  // Elegant Gray
-          'text-light': '#FEF7F0', // Warm Ivory
-          'text-neutral': '#FFFFFF', // White
-          'gray-light': '#DBEAFE', // Light Blue
-          'gray-dark': '#3730A3',  // Deep Purple
-        },        // AspireChess - Marble & Stone Theme with Better Contrast
+          primary: '#1A365D',      // Deep Royal Blue
+          secondary: '#C53030',    // Rich Burgundy Red
+          accent: '#D69E2E',       // Royal Gold
+          'bg-dark': '#0A1929',    // Midnight Navy
+          'bg-light': '#FBF8F3',   // Warm Cream
+          highlight: '#E53E3E',    // Vibrant Crimson
+          'text-dark': '#2D3748',  // Charcoal Gray
+          'text-light': '#F7FAFC', // Soft White
+          'text-neutral': '#FFFFFF', // Pure White
+          'gray-light': '#E2E8F0', // Light Silver
+          'gray-dark': '#4A5568',  // Steel Gray
+          'accent-light': '#FAF089', // Champagne Gold
+          'secondary-light': '#FED7D7', // Rose Blush
+        },// AspireChess - Marble & Stone Theme with Better Contrast
         aspire: {
           primary: '#374151',      // Dark Stone Gray
           secondary: '#6B7280',    // Medium Stone

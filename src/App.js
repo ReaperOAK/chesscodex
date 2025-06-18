@@ -63,16 +63,22 @@ function AppContent() {
       root.style.setProperty('--brand-text', '#111827');       // Almost Black
       root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #374151 0%, #6B7280 100%)');
     } else {
-      // KCA - Traditional Royal Blue & Red Theme
+      // KCA - Royal Heritage & Elegance Theme
       body.classList.add('theme-kca');
-      root.style.setProperty('--brand-primary', '#1D4ED8');    // Royal Blue
-      root.style.setProperty('--brand-secondary', '#B91C1C');  // Classic Red
-      root.style.setProperty('--brand-accent', '#FBBF24');     // Gold Accent
-      root.style.setProperty('--brand-dark', '#1E3A8A');       // Deep Blue
-      root.style.setProperty('--brand-light', '#FEF7F0');      // Warm Ivory
-      root.style.setProperty('--brand-highlight', '#DC2626');  // Rich Red
-      root.style.setProperty('--brand-text', '#1F2937');       // Elegant Gray
-      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1D4ED8 0%, #B91C1C 100%)');
+      root.style.setProperty('--brand-primary', '#1A365D');    // Deep Royal Blue
+      root.style.setProperty('--brand-secondary', '#C53030');  // Rich Burgundy Red
+      root.style.setProperty('--brand-accent', '#D69E2E');     // Royal Gold
+      root.style.setProperty('--brand-dark', '#0A1929');       // Midnight Navy
+      root.style.setProperty('--brand-light', '#FBF8F3');      // Warm Cream
+      root.style.setProperty('--brand-highlight', '#E53E3E');  // Vibrant Crimson
+      root.style.setProperty('--brand-text', '#2D3748');       // Charcoal Gray
+      root.style.setProperty('--brand-text-light', '#F7FAFC'); // Soft White
+      root.style.setProperty('--brand-text-neutral', '#FFFFFF'); // Pure White
+      root.style.setProperty('--brand-gray-light', '#E2E8F0'); // Light Silver
+      root.style.setProperty('--brand-gray-dark', '#4A5568');  // Steel Gray
+      root.style.setProperty('--brand-accent-light', '#FAF089'); // Champagne Gold
+      root.style.setProperty('--brand-secondary-light', '#FED7D7'); // Rose Blush
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1A365D 0%, #C53030 50%, #D69E2E 100%)');
     }
   }, [isChessCodex, isAspireChess]);
 
