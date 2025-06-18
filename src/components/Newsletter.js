@@ -8,7 +8,7 @@ const Newsletter = ({ position, theme }) => {
   const [visible, setVisible] = useState(true);
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
-  const logoSrc = isChessCodex ? '/KCA_PNG.png' : '/KCA_PNG.png';
+  const logoSrc = isChessCodex ? '/kca.png' : '/kca.png';
   const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
 
   const handleSubmit = async (e) => {
