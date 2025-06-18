@@ -52,9 +52,8 @@ const Exclusives = () => {
         <title>Exclusives - {siteName}</title>
         <meta name="description" content={siteDescription} />
         <meta name="keywords" content={siteKeywords} />
-      </Helmet>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-16">
+      </Helmet>      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-extrabold mb-4">Exclusives</h1>
           <p className="text-lg">
@@ -72,41 +71,38 @@ const Exclusives = () => {
           <div className="md:hidden">
             <select
               onChange={handleDropdownChange}
-              className="w-full px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md focus:outline-none"
+              className="w-full px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md focus:outline-none"
             >
               <option value="pro-membership">Pro Membership</option>
               <option value="game-analysis">Game Analysis</option>
               {(isChessCodex || isAspireChess) && (<option value="scholarships">Scholarships</option>)}
             </select>
           </div>
-          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
-            <NavLink
+          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">            <NavLink
               to="pro-membership"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Pro Membership
-            </NavLink>
-            <NavLink
+            </NavLink>            <NavLink
               to="game-analysis"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Game Analysis
             </NavLink>
             {(isChessCodex || isAspireChess) && (
             <NavLink
-              to="scholarships"
-              className={({ isActive }) =>
+              to="scholarships"              className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Scholarships

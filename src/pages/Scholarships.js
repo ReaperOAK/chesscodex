@@ -37,18 +37,17 @@ const Scholarships = () => {
       ],
     },
   ];
-
   return (
-    <section className="py-16 bg-[#f3f1f9]">
+    <section className="py-16 bg-brand-subtle">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-[#200e4a] mb-8">Scholarships</h2>
+        <h2 className="text-3xl font-bold text-brand-dark mb-8">Scholarships</h2>
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-2xl font-bold mb-4 text-[#200e4a]">Scholarships Categories</h3>
+          <h3 className="text-2xl font-bold mb-4 text-brand-dark">Scholarships Categories</h3>
           <div className="text-left space-y-6">
             {scholarshipDetails.map((item, idx) => (
               <div key={idx}>
-                <h4 className="text-xl font-semibold text-[#200e4a] mb-2">{item.category}</h4>
-                <ul className="list-disc list-inside text-[#270185] space-y-1">
+                <h4 className="text-xl font-semibold text-brand-dark mb-2">{item.category}</h4>
+                <ul className="list-disc list-inside text-brand-text space-y-1">
                   {item.benefits.map((benefit, index) => (
                     <li key={index}>{benefit}</li>
                   ))}

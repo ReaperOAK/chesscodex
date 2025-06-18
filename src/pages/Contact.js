@@ -20,16 +20,20 @@ const Contact = () => {
     agree_privacy_policy: false,
   });
   const [submitted, setSubmitted] = useState(false);
-  const mapRef = useRef(null);
-  const location = useLocation();
+  const mapRef = useRef(null);  const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
-  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
   const siteDescription = isChessCodex
     ? 'Get in touch with ChessCodex. Send us a message or find our location.'
-    : 'Get in touch with AspireChess. Send us a message or find our location.';
+    : isAspireChess
+    ? 'Get in touch with AspireChess. Send us a message or find our location.'
+    : 'Get in touch with Kolkata Chess Academy. Send us a message or find our location.';
   const siteKeywords = isChessCodex
     ? 'ChessCodex, contact, chess academy, chess training, chess coaching'
-    : 'AspireChess, contact, chess academy, chess training, chess coaching';
+    : isAspireChess
+    ? 'AspireChess, contact, chess academy, chess training, chess coaching'
+    : 'Kolkata Chess Academy, contact, chess academy, chess training, chess coaching';
   const contactEmail = isChessCodex ? 'info@kolkatachessacademy.in' : 'info@kolkatachessacademy.in';
   const contactPhone = isChessCodex ? '+91 98301 49852' : '+91 98301 49852';
   const contactAddress = isChessCodex
@@ -115,7 +119,13 @@ const Contact = () => {
         <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
+      <section className={`relative ${
+        isChessCodex 
+          ? 'bg-gradient-to-br from-codex-primary via-codex-secondary to-codex-accent' 
+          : isAspireChess 
+          ? 'bg-gradient-to-br from-aspire-primary via-aspire-secondary to-aspire-accent' 
+          : 'bg-gradient-to-br from-kca-primary via-kca-secondary to-kca-accent'
+      } text-white py-20`}>
         <div className="text-center px-6 md:px-12 lg:px-24">
           <h1 className="text-6xl font-extrabold mb-4">Get In Touch</h1>
           <p className="text-lg max-w-4xl mx-auto">
@@ -125,7 +135,13 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-[#f3f1f9]">
+      <section className={`py-16 ${
+        isChessCodex 
+          ? 'bg-codex-bg-light' 
+          : isAspireChess 
+          ? 'bg-aspire-bg-light' 
+          : 'bg-kca-bg-light'
+      }`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white p-8 rounded-lg shadow-lg relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

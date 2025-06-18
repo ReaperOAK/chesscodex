@@ -96,7 +96,7 @@ const AdmissionCourses = () => {
         <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
-      <section id="hero" className="relative bg-gradient-to-br from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20">
+      <section id="hero" className="relative bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:flex-1 text-center lg:text-left">
             <h1 className="text-5xl font-extrabold mb-6">
@@ -139,7 +139,7 @@ const AdmissionCourses = () => {
       {/* Application Form Section */}
       <section className="py-16 bg-[#f3f1f9]">
         <div className="max-w-6xl mx-auto px-4" id='application-form'>
-          <h2 className="text-4xl font-bold text-[#200e4a] mb-12 text-center">Application Form</h2>
+          <h2 className="text-4xl font-bold text-brand-dark mb-12 text-center">Application Form</h2>
           {/* Commented out the current form */}
           {/*
           {submitted ? (
@@ -209,7 +209,7 @@ const AdmissionCourses = () => {
           )}
           */}
           <div className="bg-white p-8 rounded-lg shadow-md text-center">
-            <h3 className="text-2xl font-semibold text-[#200e4a] mb-4">Apply Now</h3>
+            <h3 className="text-2xl font-semibold text-brand-dark mb-4">Apply Now</h3>
             <p className="text-lg text-[#270185] mb-6">Click the button below to fill out the application form on Google Forms.</p>
             <a
               href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
@@ -226,7 +226,7 @@ const AdmissionCourses = () => {
       {/* FAQs Section */}
       <section id="admission" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-[#200e4a] mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-brand-dark mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {FAQs.map((faq, index) => (
               <div
@@ -235,7 +235,7 @@ const AdmissionCourses = () => {
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-[#200e4a]">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-brand-dark">{faq.question}</h3>
                   <span className="text-[#270185]">
                     {expandedIndex === index ? '-' : '+'}
                   </span>

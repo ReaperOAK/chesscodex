@@ -25,9 +25,14 @@ function Navbar() {
 
   const filteredNavLinks = navLinks.filter(link => link.to !== "");
 
-
   return (
-    <nav className={`${isChessCodex ? 'bg-gradient-to-l from-[#200e4a] via-[#461fa3] to-[#7646eb]' : isAspireChess ? 'bg-gradient-to-r from-white via-[#461fa3] to-[#7646eb]' : 'bg-gradient-to-r from-white via-[#461fa3] to-[#7646eb]'} text-white sticky top-0 shadow-lg z-50 w-full`}>
+    <nav className={`${
+      isChessCodex 
+        ? 'bg-gradient-to-r from-codex-primary via-codex-secondary to-codex-accent' 
+        : isAspireChess 
+        ? 'bg-gradient-to-r from-aspire-primary via-aspire-secondary to-aspire-accent' 
+        : 'bg-gradient-to-r from-kca-primary via-kca-secondary to-kca-accent'
+    } text-white sticky top-0 shadow-lg z-50 w-full`}>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -46,19 +51,36 @@ function Navbar() {
                 to={link.to}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#FFD700] font-semibold transition-colors duration-300 mx-2"
-                    : "hover:text-[#e3e1f7] transition-colors duration-300 mx-2"
+                    ? `${
+                        isChessCodex 
+                          ? 'text-codex-accent' 
+                          : isAspireChess 
+                          ? 'text-aspire-accent' 
+                          : 'text-kca-accent'
+                      } font-semibold transition-colors duration-300 mx-2`
+                    : `hover:${
+                        isChessCodex 
+                          ? 'text-codex-text-light' 
+                          : isAspireChess 
+                          ? 'text-aspire-text-light' 
+                          : 'text-kca-text-light'
+                      } transition-colors duration-300 mx-2`
                 }
                 aria-label={link.label}
               >
                 {link.label}
               </NavLink>
-            ))}
-            <a
+            ))}            <a
               href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#e3e1f7] transition-colors duration-300 mx-2"
+              className={`hover:${
+                isChessCodex 
+                  ? 'text-codex-text-light' 
+                  : isAspireChess 
+                  ? 'text-aspire-text-light' 
+                  : 'text-kca-text-light'
+              } transition-colors duration-300 mx-2`}
               aria-label="Dashboard"
             >
               Dashboard
@@ -76,7 +98,13 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden bg-[#200e4a] absolute top-16 left-0 w-full z-50">
+        <div className={`lg:hidden ${
+          isChessCodex 
+            ? 'bg-codex-bg-dark' 
+            : isAspireChess 
+            ? 'bg-aspire-bg-dark' 
+            : 'bg-kca-bg-dark'
+        } absolute top-16 left-0 w-full z-50`}>
           <ul className="flex flex-col items-center space-y-4 px-4 py-6">
             {filteredNavLinks.map((link) => (
               <li key={link.to} className="w-full">
@@ -84,8 +112,20 @@ function Navbar() {
                   to={link.to}
                   className={({ isActive }) =>
                     isActive
-                      ? "block text-[#FFD700] font-semibold text-center"
-                      : "block text-white hover:text-[#e3e1f7] text-center"
+                      ? `block ${
+                          isChessCodex 
+                            ? 'text-codex-accent' 
+                            : isAspireChess 
+                            ? 'text-aspire-accent' 
+                            : 'text-kca-accent'
+                        } font-semibold text-center`
+                      : `block text-white hover:${
+                          isChessCodex 
+                            ? 'text-codex-text-light' 
+                            : isAspireChess 
+                            ? 'text-aspire-text-light' 
+                            : 'text-kca-text-light'
+                        } text-center`
                   }
                   onClick={toggleMenu}
                   aria-label={link.label}
@@ -99,7 +139,13 @@ function Navbar() {
                 href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white hover:text-[#e3e1f7] text-center"
+                className={`block text-white hover:${
+                  isChessCodex 
+                    ? 'text-codex-text-light' 
+                    : isAspireChess 
+                    ? 'text-aspire-text-light' 
+                    : 'text-kca-text-light'
+                } text-center`}
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

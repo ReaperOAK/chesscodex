@@ -71,13 +71,31 @@ const coursesData = [
 ];
 
 // Modal Component
-const Modal = ({ course, onClose }) => {
+const Modal = ({ course, onClose, isChessCodex, isAspireChess }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-2xl animate-fadeIn">
-        <h3 className="text-2xl font-bold mb-4 text-[#270185]">{course.title}</h3>
-        <p className="text-[#270185] mb-2 font-medium">Duration: {course.duration}</p>
-        <ul className="list-disc pl-5 space-y-2 text-[#270185]">
+        <h3 className={`text-2xl font-bold mb-4 ${
+          isChessCodex 
+            ? 'text-codex-text-dark' 
+            : isAspireChess 
+            ? 'text-aspire-text-dark' 
+            : 'text-kca-text-dark'
+        }`}>{course.title}</h3>
+        <p className={`${
+          isChessCodex 
+            ? 'text-codex-text-dark' 
+            : isAspireChess 
+            ? 'text-aspire-text-dark' 
+            : 'text-kca-text-dark'
+        } mb-2 font-medium`}>Duration: {course.duration}</p>
+        <ul className={`list-disc pl-5 space-y-2 ${
+          isChessCodex 
+            ? 'text-codex-text-dark' 
+            : isAspireChess 
+            ? 'text-aspire-text-dark' 
+            : 'text-kca-text-dark'
+        }`}>
           {course.description.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
@@ -85,7 +103,13 @@ const Modal = ({ course, onClose }) => {
         <div className="mt-6 text-right">
           <button
             onClick={onClose}
-            className="bg-[#af0505] text-white px-4 py-2 rounded hover:bg-[#8c0404] transition-colors duration-300"
+            className={`${
+              isChessCodex 
+                ? 'bg-codex-highlight hover:bg-codex-highlight/80' 
+                : isAspireChess 
+                ? 'bg-aspire-highlight hover:bg-aspire-highlight/80' 
+                : 'bg-kca-highlight hover:bg-kca-highlight/80'
+            } text-white px-4 py-2 rounded transition-colors duration-300`}
           >
             Close
           </button>
@@ -110,9 +134,14 @@ const CoursesList = () => {
     (isChessCodex && course.site === 'chesscodex') || 
     (isAspireChess && course.site === 'aspirechess')
   );
-
   return (
-    <section id="courses" className="py-16 bg-[#14092e]">
+    <section id="courses" className={`py-16 ${
+      isChessCodex 
+        ? 'bg-codex-bg-dark' 
+        : isAspireChess 
+        ? 'bg-aspire-bg-dark' 
+        : 'bg-kca-bg-dark'
+    }`}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <h1 className="text-4xl font-extrabold text-white text-center mb-10">Explore Our Chess Courses</h1>
@@ -126,13 +155,37 @@ const CoursesList = () => {
               onClick={() => openModal(course)}
             >
               <div>
-                <h2 className="text-2xl font-semibold text-[#200e4a] mb-4">{course.title}</h2>
-                <p className="text-[#270185] font-medium mb-2">Duration: {course.duration}</p>
-                <ul className="list-disc pl-4 text-[#270185] space-y-1 text-sm">
+                <h2 className={`text-2xl font-semibold ${
+                  isChessCodex 
+                    ? 'text-codex-primary' 
+                    : isAspireChess 
+                    ? 'text-aspire-primary' 
+                    : 'text-kca-primary'
+                } mb-4`}>{course.title}</h2>
+                <p className={`${
+                  isChessCodex 
+                    ? 'text-codex-text-dark' 
+                    : isAspireChess 
+                    ? 'text-aspire-text-dark' 
+                    : 'text-kca-text-dark'
+                } font-medium mb-2`}>Duration: {course.duration}</p>
+                <ul className={`list-disc pl-4 ${
+                  isChessCodex 
+                    ? 'text-codex-text-dark' 
+                    : isAspireChess 
+                    ? 'text-aspire-text-dark' 
+                    : 'text-kca-text-dark'
+                } space-y-1 text-sm`}>
                   {course.description.slice(0, 3).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
-                  <li className="text-[#7646eb] italic group-hover:hidden">...Read more</li>
+                  <li className={`${
+                    isChessCodex 
+                      ? 'text-codex-accent' 
+                      : isAspireChess 
+                      ? 'text-aspire-accent' 
+                      : 'text-kca-accent'
+                  } italic group-hover:hidden`}>...Read more</li>
                   {course.description.slice(3).map((item, idx) => (
                     <li key={idx} className="hidden group-hover:list-item">{item}</li>
                   ))}
@@ -147,7 +200,13 @@ const CoursesList = () => {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-[#461fa3] text-white py-2 px-4 rounded hover:bg-[#7646eb] transition duration-300"
+                  className={`block text-center ${
+                    isChessCodex 
+                      ? 'bg-codex-secondary hover:bg-codex-accent' 
+                      : isAspireChess 
+                      ? 'bg-aspire-secondary hover:bg-aspire-accent' 
+                      : 'bg-kca-secondary hover:bg-kca-accent'
+                  } text-white py-2 px-4 rounded transition duration-300`}
                 >
                   {course.title === 'Private Classes' ? 'Contact Us' : 'Enroll Now'}
                 </a>
@@ -158,7 +217,7 @@ const CoursesList = () => {
       </div>
 
       {/* Modal */}
-      {selectedCourse && <Modal course={selectedCourse} onClose={closeModal} />}
+      {selectedCourse && <Modal course={selectedCourse} onClose={closeModal} isChessCodex={isChessCodex} isAspireChess={isAspireChess} />}
     </section>
   );
 };

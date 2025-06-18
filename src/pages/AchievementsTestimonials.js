@@ -116,7 +116,7 @@ const AchievementsTestimonials = () => {
         <meta name="keywords" content={siteKeywords} />
       </Helmet>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-20 text-center">
+      <section className="bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-20 text-center">
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">Achievements & Testimonials</h1>
           <p className="text-lg">
@@ -126,9 +126,8 @@ const AchievementsTestimonials = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-16 bg-[#f3f1f9]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
+      <section className="py-16 bg-[#f3f1f9]">        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-brand-dark mb-12">
             Celebrating Notable Achievements
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -169,8 +168,7 @@ const AchievementsTestimonials = () => {
 
       {/* Testimonials Section */}
       <section className="bg-gradient-to-r from-[#f3f1f9] via-[#e3e1f7] to-[#f3f1f9] py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">          <h2 className="text-4xl font-bold text-center text-brand-dark mb-12">
             What Our Students Say
           </h2>
 
@@ -198,7 +196,7 @@ const AchievementsTestimonials = () => {
                       alt={`${testimonial.name}'s avatar`}
                     />
                     <div>
-                      <h4 className="text-xl font-bold text-[#200e4a]">
+                      <h4 className="text-xl font-bold text-brand-dark">
                         {testimonial.name}
                       </h4>
                       <p className="text-[#461fa3]">{testimonial.role}</p>

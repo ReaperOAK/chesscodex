@@ -182,21 +182,51 @@ const faqs = {
   ],
 };
 
-const FAQItem = ({ question, answer, isOpen, toggle }) => (
-  <div className="border-b border-[#c2c1d3] py-4">
+const FAQItem = ({ question, answer, isOpen, toggle, isChessCodex, isAspireChess }) => (
+  <div className={`border-b ${
+    isChessCodex 
+      ? 'border-codex-gray-light' 
+      : isAspireChess 
+      ? 'border-aspire-gray-light' 
+      : 'border-kca-gray-light'
+  } py-4`}>
     <div
       className="flex justify-between items-center cursor-pointer"
       onClick={toggle}
     >
-      <h3 className="text-lg font-medium text-[#200e4a]">{question}</h3>
+      <h3 className={`text-lg font-medium ${
+        isChessCodex 
+          ? 'text-codex-primary' 
+          : isAspireChess 
+          ? 'text-aspire-primary' 
+          : 'text-kca-primary'
+      }`}>{question}</h3>
       {isOpen ? (
-        <FaChevronUp className="text-[#461fa3]" />
+        <FaChevronUp className={`${
+          isChessCodex 
+            ? 'text-codex-secondary' 
+            : isAspireChess 
+            ? 'text-aspire-secondary' 
+            : 'text-kca-secondary'
+        }`} />
       ) : (
-        <FaChevronDown className="text-[#461fa3]" />
+        <FaChevronDown className={`${
+          isChessCodex 
+            ? 'text-codex-secondary' 
+            : isAspireChess 
+            ? 'text-aspire-secondary' 
+            : 'text-kca-secondary'
+        }`} />
       )}
     </div>
     {isOpen && (
-      <p className="mt-4 text-[#270185] transition-opacity duration-300 ease-in-out">
+      <p className={`mt-4 ${
+        isChessCodex 
+          ? 'text-codex-text-dark' 
+          : isAspireChess 
+          ? 'text-aspire-text-dark' 
+          : 'text-kca-text-dark'
+      } transition-opacity duration-300 ease-in-out`}>
         {answer}
       </p>
     )}
@@ -206,6 +236,7 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => (
 const FAQs = () => {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteFAQs = isChessCodex ? faqs.chesscodex : faqs.aspirechess;
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -249,16 +280,27 @@ const FAQs = () => {
   }, [siteFAQs]);
 
   const isSearching = searchTerm.trim().length > 0;
-
   return (
-    <section className="bg-[#f3f1f9] py-12">
+    <section className={`${
+      isChessCodex 
+        ? 'bg-codex-bg-light' 
+        : isAspireChess 
+        ? 'bg-aspire-bg-light' 
+        : 'bg-kca-bg-light'
+    } py-12`}>
       <Helmet>
-        <title>FAQs - {isChessCodex ? 'ChessCodex' : 'AspireChess'}</title>
-        <meta name="description" content={`Find answers to frequently asked questions about ${isChessCodex ? 'ChessCodex' : 'AspireChess'}. Learn about our courses, policies, and more.`} />
-        <meta name="keywords" content={`${isChessCodex ? 'ChessCodex' : 'AspireChess'}, FAQs, chess courses, chess policies, chess training, chess coaching`} />
+        <title>FAQs - {isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}</title>
+        <meta name="description" content={`Find answers to frequently asked questions about ${isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}. Learn about our courses, policies, and more.`} />
+        <meta name="keywords" content={`${isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}, FAQs, chess courses, chess policies, chess training, chess coaching`} />
       </Helmet>
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-[#200e4a] mb-12">
+        <h2 className={`text-4xl font-bold text-center ${
+          isChessCodex 
+            ? 'text-codex-primary' 
+            : isAspireChess 
+            ? 'text-aspire-primary' 
+            : 'text-kca-primary'
+        } mb-12`}>
           Frequently Asked Questions
         </h2>
 
@@ -266,7 +308,13 @@ const FAQs = () => {
         <div className="mb-8">
           <input
             type="text"
-            className="w-full p-3 rounded-lg border border-[#c2c1d3] text-[#270185]"
+            className={`w-full p-3 rounded-lg border ${
+              isChessCodex 
+                ? 'border-codex-gray-light text-codex-text-dark' 
+                : isAspireChess 
+                ? 'border-aspire-gray-light text-aspire-text-dark' 
+                : 'border-kca-gray-light text-kca-text-dark'
+            }`}
             placeholder="Search for a question..."
             value={searchTerm}
             onChange={handleSearchChange}

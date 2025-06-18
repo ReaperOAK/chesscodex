@@ -117,9 +117,8 @@ const Events = () => {
         <title>Upcoming Events & Blogs - {siteName}</title>
         <meta name="description" content={siteDescription} />
         <meta name="keywords" content={siteKeywords} />
-      </Helmet>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-24">
+      </Helmet>      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-24">
         <div className="absolute inset-0 opacity-20 bg-pattern"></div>
         <div className="max-w-6xl mx-auto px-6 relative text-center">
           <h1 className="text-5xl font-extrabold mb-4">Upcoming Events & Blogs</h1>
@@ -146,7 +145,7 @@ const Events = () => {
               id="filter"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="block appearance-none w-56 py-3 pl-3 pr-4 border border-[#c2c1d3] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#461fa3] focus:border-[#461fa3] text-[#270185]"
+              className="block appearance-none w-56 py-3 pl-3 pr-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary text-brand-text"
             >
               <option value="All">All</option>
               <option value="Offline">Offline</option>
@@ -179,7 +178,7 @@ const Events = () => {
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
-                    <h3 className="text-2xl font-semibold text-[#461fa3] mb-3">
+                    <h3 className="text-2xl font-semibold text-brand-secondary mb-3">
                       {event.title}
                     </h3>
                     <p className="text-[#270185] mb-1">
@@ -191,7 +190,7 @@ const Events = () => {
                     {event.link && !isLinkExpired(event.date) ? (
                       <a
                         href={event.link}
-                        className="block bg-[#461fa3] text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-[#7646eb] transition-colors duration-300"
+                        className="block bg-brand-secondary text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-brand-primary transition-colors duration-300"
                       >
                         Register Now
                       </a>
@@ -226,7 +225,7 @@ const Events = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-[#461fa3] mb-3">
+                  <h3 className="text-2xl font-semibold text-brand-secondary mb-3">
                     {blog.title}
                   </h3>
                   <p className="text-[#270185] mb-1">
@@ -242,7 +241,7 @@ const Events = () => {
                   </p>
                   <a
                     href={blog.link}
-                    className="block bg-[#461fa3] text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-[#7646eb] transition-colors duration-300"
+                    className="block bg-brand-secondary text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-brand-primary transition-colors duration-300"
                   >
                     Read More
                   </a>

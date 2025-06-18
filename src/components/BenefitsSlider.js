@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -13,6 +14,10 @@ const benefits = [
 ];
 
 const BenefitsSlider = () => {
+  const location = useLocation();
+  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+  
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -25,7 +30,13 @@ const BenefitsSlider = () => {
   };
 
   return (
-    <div className="bg-[#14092e] text-white py-2">
+    <div className={`${
+      isChessCodex 
+        ? 'bg-codex-bg-dark' 
+        : isAspireChess 
+        ? 'bg-aspire-bg-dark' 
+        : 'bg-kca-bg-dark'
+    } text-white py-2`}>
       <Slider {...sliderSettings}>
         {benefits.map((benefit, index) => (
           <div key={index} className="text-center">

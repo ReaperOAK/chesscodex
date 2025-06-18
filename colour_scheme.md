@@ -1,111 +1,95 @@
-# Three Distinct Color Schemes for KCA Website Suite
+# Three Distinct Color Schemes for KCA Website Suite (2025 Refresh)
 
-## 🏛️ **Scheme 1: Main KCA Website - Royal Chess Authority**
-*Professional, prestigious, traditional chess academy feel*
+## 🏛️ **Scheme 1: Main KCA Website – Timeless Prestige**
+*Classic, trustworthy, academic*
 
 ### Color Palette
-1. **Primary Color**: `#1a472a` (Deep Forest Green)
+1. **Primary Color**: `#17412F` (Deep Pine Green)
    - Main headers, primary buttons, navigation highlights
-
-2. **Secondary Color**: `#2d5530` (Rich Emerald)
+2. **Secondary Color**: `#3A6351` (Moss Green)
    - Secondary buttons, navigation links, card headers
-
-3. **Accent Color**: `#4ade80` (Bright Green)
+3. **Accent Color**: `#F7C873` (Gold Ochre)
    - Hover states, CTAs, success indicators
-
 4. **Background Colors**:
-   - **Dark Background**: `#0f2419` (Deep Forest)
-   - **Light Background**: `#f0fdf4` (Soft Green Mint)
-
-5. **Highlight/Alert Color**: `#dc2626` (Classic Red)
+   - **Dark Background**: `#10241B` (Evergreen Black)
+   - **Light Background**: `#F5F7F2` (Ivory Mist)
+5. **Highlight/Alert Color**: `#E4572E` (Vivid Red)
    - Warnings, important notifications
-
 6. **Text Colors**:
-   - **Dark Text**: `#15803d` (Forest Text)
-   - **Light Text**: `#dcfce7` (Light Green)
-   - **Neutral Text**: `#ffffff` (White)
-
+   - **Dark Text**: `#1B2A24` (Charcoal)
+   - **Light Text**: `#F5F7F2` (Ivory Mist)
+   - **Neutral Text**: `#FFFFFF` (White)
 7. **Neutral Colors**:
-   - **Gray Light**: `#d1fae5` (Mint Gray)
-   - **Gray Dark**: `#374151` (Charcoal)
+   - **Gray Light**: `#D9E4DD` (Pale Sage)
+   - **Gray Dark**: `#4B5D52` (Olive Gray)
 
 ---
 
-## ⚡ **Scheme 2: AspireChess - Dynamic Youth Energy**
-*Modern, energetic, inspiring for ambitious players*
+## ⚡ **Scheme 2: AspireChess – Energetic & Modern**
+*Youthful, bold, inspiring*
 
 ### Color Palette
-1. **Primary Color**: `#1e40af` (Royal Blue)
+1. **Primary Color**: `#1A56DB` (Vivid Royal Blue)
    - Main headers, primary buttons, key elements
-
-2. **Secondary Color**: `#3b82f6` (Bright Blue)
+2. **Secondary Color**: `#3DDC97` (Fresh Mint)
    - Secondary buttons, navigation, highlights
-
-3. **Accent Color**: `#f59e0b` (Golden Amber)
+3. **Accent Color**: `#FFD600` (Electric Yellow)
    - Hover states, achievements, call-to-actions
-
 4. **Background Colors**:
-   - **Dark Background**: `#0c1e3d` (Deep Navy)
-   - **Light Background**: `#eff6ff` (Sky Blue Light)
-
-5. **Highlight/Alert Color**: `#ef4444` (Vibrant Red)
+   - **Dark Background**: `#0B1B3A` (Midnight Navy)
+   - **Light Background**: `#F6FAFF` (Ice Blue)
+5. **Highlight/Alert Color**: `#FF4C60` (Hot Pink Red)
    - Alerts, deadlines, important notices
-
 6. **Text Colors**:
-   - **Dark Text**: `#1e3a8a` (Navy Text)
-   - **Light Text**: `#dbeafe` (Light Blue)
-   - **Neutral Text**: `#ffffff` (White)
-
+   - **Dark Text**: `#1A1A2E` (Deep Indigo)
+   - **Light Text**: `#F6FAFF` (Ice Blue)
+   - **Neutral Text**: `#FFFFFF` (White)
 7. **Neutral Colors**:
-   - **Gray Light**: `#e0e7ff` (Blue Gray Light)
-   - **Gray Dark**: `#475569` (Slate Gray)
+   - **Gray Light**: `#E3E8F0` (Cloud Gray)
+   - **Gray Dark**: `#3A506B` (Slate Blue)
 
 ---
 
-## 🎯 **Scheme 3: ChessCodex - Premium Innovation**
-*Sophisticated, tech-forward, exclusive feel*
+## 🎯 **Scheme 3: ChessCodex – Premium & Tech-Forward**
+*Exclusive, innovative, sophisticated*
 
 ### Color Palette
-1. **Primary Color**: `#7c2d12` (Rich Burgundy)
+1. **Primary Color**: `#7C2D12` (Rich Burgundy)
    - Main headers, primary buttons, premium elements
-
-2. **Secondary Color**: `#c2410c` (Burnt Orange)
+2. **Secondary Color**: `#FF6F3C` (Vivid Orange)
    - Secondary buttons, navigation, accents
-
-3. **Accent Color**: `#fbbf24` (Golden Yellow)
+3. **Accent Color**: `#FFD166` (Gold Highlight)
    - Hover states, premium features, highlights
-
 4. **Background Colors**:
-   - **Dark Background**: `#431407` (Deep Mahogany)
-   - **Light Background**: `#fef7ed` (Warm Cream)
-
-5. **Highlight/Alert Color**: `#dc2626` (Alert Red)
+   - **Dark Background**: `#2D1B12` (Espresso)
+   - **Light Background**: `#FDF6F0` (Cream)
+5. **Highlight/Alert Color**: `#E63946` (Crimson)
    - Warnings, urgent notifications
-
 6. **Text Colors**:
-   - **Dark Text**: `#92400e` (Amber Brown)
-   - **Light Text**: `#fed7aa` (Light Peach)
-   - **Neutral Text**: `#ffffff` (White)
-
+   - **Dark Text**: `#3D2C29` (Coffee Brown)
+   - **Light Text**: `#FDF6F0` (Cream)
+   - **Neutral Text**: `#FFFFFF` (White)
 7. **Neutral Colors**:
-   - **Gray Light**: `#fde68a` (Warm Gray)
-   - **Gray Dark**: `#6b7280` (Cool Gray)
+   - **Gray Light**: `#E9CFCF` (Rose Sand)
+   - **Gray Dark**: `#6B4F4F` (Warm Gray)
 
 ---
 
 ## 🎨 **Visual Brand Identity Summary**
 
-| Website | Primary Theme | Personality | Target Audience |
-|---------|---------------|-------------|-----------------|
-| **Main KCA** | 🏛️ Forest Green | Professional, Established, Trustworthy | Parents, Serious Students |
-| **AspireChess** | ⚡ Royal Blue + Gold | Dynamic, Ambitious, Modern | Young Players, Competitive |
-| **ChessCodex** | 🎯 Burgundy + Orange | Premium, Innovative, Exclusive | Advanced Players, Professionals |
+| Website         | Primary Theme         | Personality                | Target Audience           |
+|-----------------|----------------------|----------------------------|---------------------------|
+| **Main KCA**    | 🏛️ Pine Green + Gold | Classic, Trustworthy       | Parents, Serious Students |
+| **AspireChess** | ⚡ Blue + Mint + Yellow | Energetic, Modern, Youthful | Young, Ambitious Players  |
+| **ChessCodex**  | 🎯 Burgundy + Orange | Premium, Tech-forward      | Advanced, Pro Players     |
+
+---
 
 ## 📱 **Implementation Guidelines**
 
 ### Visual Differentiation Strategy:
 1. **Green = Main Authority** (KCA - The trusted foundation)
-2. **Blue = Aspiration** (AspireChess - Reaching for excellence)  
+2. **Blue = Aspiration** (AspireChess - Reaching for excellence)
 3. **Burgundy = Premium** (ChessCodex - Elite expertise)
 
 ### Consistent Elements Across All Three:

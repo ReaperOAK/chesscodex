@@ -70,49 +70,47 @@ const Team = () => {
   const toggleDescription = (index) => {
     setExpandedCoach(expandedCoach === index ? null : index);
   };
-
   const highlightTitle = (name) => {
     const titleRegex = /^(GM|IM|FM)/;
     const match = name.match(titleRegex);
     if (match) {
       return (
         <>
-          <span className="text-[#af0505]">{match[0]}</span> {name.replace(titleRegex, '').trim()}
+          <span className="text-brand-primary">{match[0]}</span> {name.replace(titleRegex, '').trim()}
         </>
       );
     }
     return name;
   };
-
   return (
-    <section className="bg-[#f3f1f9] py-16">
+    <section className="bg-brand-subtle py-16">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="text-4xl font-extrabold text-[#200e4a] mb-10">Meet Our Expert Chess Coaches</h1>
+        <h1 className="text-4xl font-extrabold text-brand-dark mb-10">Meet Our Expert Chess Coaches</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {coaches.map((coach, index) => (
             <div
               key={index}
               className="relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-[#461fa3] to-transparent opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary to-transparent opacity-20"></div>
               <img
                 className="w-full h-64 object-cover"
                 src={coach.image}
                 alt={coach.name}
               />
               <div className="p-6 relative z-10">
-                <h2 className="text-2xl font-bold text-[#200e4a] mb-2">
+                <h2 className="text-2xl font-bold text-brand-dark mb-2">
                   {highlightTitle(coach.name)}
                 </h2>
-                <p className="text-[#461fa3] font-semibold mb-4">{coach.role}</p>
-                <p className="text-[#270185] text-sm leading-relaxed mb-4">
+                <p className="text-brand-secondary font-semibold mb-4">{coach.role}</p>
+                <p className="text-brand-text text-sm leading-relaxed mb-4">
                   {expandedCoach === index
                     ? coach.description
                     : `${coach.description.substring(0, 120)}...`}
                 </p>
                 <button
                   onClick={() => toggleDescription(index)}
-                  className="text-[#7646eb] hover:underline font-medium"
+                  className="text-brand-primary hover:underline font-medium"
                 >
                   {expandedCoach === index ? 'Read Less' : 'Read More'}
                 </button>

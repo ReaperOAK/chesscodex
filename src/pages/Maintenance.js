@@ -29,11 +29,11 @@ const Maintenance = () => {
   }, [maintenanceEndTime]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#f3f1f9] text-center px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-brand-subtle text-center px-4">
       <div className="max-w-md p-6 bg-white rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-4 text-[#200e4a]">Under Maintenance</h1>
-        <p className="text-lg mb-8 text-[#270185]">Our site is currently undergoing maintenance. We’ll be back soon!</p>
-        <div className="flex justify-around text-2xl font-semibold text-[#461fa3]">
+        <h1 className="text-4xl font-bold mb-4 text-brand-dark">Under Maintenance</h1>
+        <p className="text-lg mb-8 text-brand-text">Our site is currently undergoing maintenance. We'll be back soon!</p>
+        <div className="flex justify-around text-2xl font-semibold text-brand-secondary">
           <div>
             <span className="block text-5xl">{timeLeft.days}</span>
             <span className="text-sm uppercase">Days</span>
@@ -52,9 +52,9 @@ const Maintenance = () => {
           </div>
         </div>
       </div>
-      <p className="text-[#3b3a52] mt-8">
+      <p className="text-brand-text mt-8">
         Thank you for your patience! If you have any questions, please contact us at 
-        <a href="mailto:info@chessacademy.com" className="text-[#af0505] underline ml-1">info@chessacademy.com</a>.
+        <a href="mailto:info@chessacademy.com" className="text-brand-primary underline ml-1">info@chessacademy.com</a>.
       </p>
     </div>
   );

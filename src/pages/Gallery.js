@@ -109,7 +109,7 @@ const Gallery = () => {
       <div className="bg-[#f3f1f9] min-h-screen p-6 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-[#200e4a]">Gallery</h1>
+          <h1 className="text-5xl font-extrabold text-brand-dark">Gallery</h1>
           <p className="text-lg text-[#270185] mt-4">
             Dive into the vibrant moments from our academy's events, tournaments, and training sessions.
           </p>
@@ -135,7 +135,7 @@ const Gallery = () => {
         {/* Media Sliders */}
         {paginatedFolders.map((folder, idx) => (
           <div key={idx} className="mb-12">
-            <h2 className="text-3xl font-bold text-[#200e4a] mb-6">{folder}</h2>
+            <h2 className="text-3xl font-bold text-brand-dark mb-6">{folder}</h2>
             <Slider {...sliderSettings}>
               {groupedMedia[folder].map((item, idx) => (
                 <div

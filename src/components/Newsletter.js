@@ -8,8 +8,9 @@ const Newsletter = ({ position, theme }) => {
   const [visible, setVisible] = useState(true);
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
   const logoSrc = isChessCodex ? '/kca.png' : '/kca.png';
-  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,9 +39,29 @@ const Newsletter = ({ position, theme }) => {
       ? 'w-full mx-auto my-6'
       : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
 
-  const textColor = theme === 'contact' ? 'text-[#270185]' : 'text-[#270185]';
-  const buttonClasses = 'bg-[#af0505] text-white hover:bg-[#8c0404]';
-  const inputClasses = 'border-[#c2c1d3] text-[#270185] placeholder-[#270185] focus:ring-[#461fa3] border-2';
+  const textColor = theme === 'contact' 
+    ? isChessCodex 
+      ? 'text-codex-text-dark' 
+      : isAspireChess 
+      ? 'text-aspire-text-dark' 
+      : 'text-kca-text-dark'
+    : isChessCodex 
+      ? 'text-codex-text-dark' 
+      : isAspireChess 
+      ? 'text-aspire-text-dark' 
+      : 'text-kca-text-dark';
+      
+  const buttonClasses = isChessCodex 
+    ? 'bg-codex-highlight text-white hover:bg-codex-highlight/80' 
+    : isAspireChess 
+    ? 'bg-aspire-highlight text-white hover:bg-aspire-highlight/80' 
+    : 'bg-kca-highlight text-white hover:bg-kca-highlight/80';
+    
+  const inputClasses = isChessCodex 
+    ? 'border-codex-gray-light text-codex-text-dark placeholder-codex-text-dark focus:ring-codex-secondary border-2' 
+    : isAspireChess 
+    ? 'border-aspire-gray-light text-aspire-text-dark placeholder-aspire-text-dark focus:ring-aspire-secondary border-2' 
+    : 'border-kca-gray-light text-kca-text-dark placeholder-kca-text-dark focus:ring-kca-secondary border-2';
 
   return (
     <div

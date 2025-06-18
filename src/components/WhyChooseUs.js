@@ -9,26 +9,44 @@ import { NextArrow, PrevArrow } from './CustomArrows';
 const WhyChooseUs = () => {
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
-  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
-  const highlightedFeatures = [
-    {
-      icon: <FaBook className="text-blue-500 text-4xl mb-2" />,
+  const highlightedFeatures = [    {
+      icon: <FaBook className={`${
+        isChessCodex 
+          ? 'text-codex-secondary' 
+          : isAspireChess 
+          ? 'text-aspire-secondary' 
+          : 'text-kca-secondary'
+      } text-4xl mb-2`} />,
       title: "Comprehensive Curriculum",
       description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.",
-      link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses",
+      link: isChessCodex ? "/chesscodex/courses" : isAspireChess ? "/aspirechess/courses" : "/contact",
     },
     {
-      icon: <FaChalkboardTeacher className="text-green-500 text-4xl mb-2" />,
+      icon: <FaChalkboardTeacher className={`${
+        isChessCodex 
+          ? 'text-codex-accent' 
+          : isAspireChess 
+          ? 'text-aspire-accent' 
+          : 'text-kca-accent'
+      } text-4xl mb-2`} />,
       title: "Top Tier Guidance",
       description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.",
-      link: isChessCodex ? "/chesscodex/about#team" : "/aspirechess/about#team",
+      link: isChessCodex ? "/chesscodx/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team",
     },
     {
-      icon: <FaCrown className="text-yellow-500 text-4xl mb-2" />,
+      icon: <FaCrown className={`${
+        isChessCodex 
+          ? 'text-codex-highlight' 
+          : isAspireChess 
+          ? 'text-aspire-highlight' 
+          : 'text-kca-highlight'
+      } text-4xl mb-2`} />,
       title: "Expert Coaching Panel",
       description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.",
-      link: isChessCodex ? "/chesscodex/about#team" : "/aspirechess/about#team",
+      link: isChessCodex ? "/chesscodex/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team",
     },
   ];
 
@@ -105,12 +123,29 @@ const WhyChooseUs = () => {
       },
     ],
   };
-
   return (
-    <section className="py-20 bg-gradient-to-r from-[#f3f1f9] via-white to-[#f3f1f9]">
+    <section className={`py-20 ${
+      isChessCodex 
+        ? 'bg-gradient-to-r from-codex-bg-light via-white to-codex-bg-light' 
+        : isAspireChess 
+        ? 'bg-gradient-to-r from-aspire-bg-light via-white to-aspire-bg-light' 
+        : 'bg-gradient-to-r from-kca-bg-light via-white to-kca-bg-light'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="text-4xl font-extrabold mb-6 text-[#200e4a]">Why Choose {siteName}?</h1>
-        <p className="text-lg mb-12 text-[#270185]">
+        <h1 className={`text-4xl font-extrabold mb-6 ${
+          isChessCodex 
+            ? 'text-codex-primary' 
+            : isAspireChess 
+            ? 'text-aspire-primary' 
+            : 'text-kca-primary'
+        }`}>Why Choose {siteName}?</h1>
+        <p className={`text-lg mb-12 ${
+          isChessCodex 
+            ? 'text-codex-text-dark' 
+            : isAspireChess 
+            ? 'text-aspire-text-dark' 
+            : 'text-kca-text-dark'
+        }`}>
           At {siteName}, we empower chess enthusiasts with unparalleled coaching, a world-class curriculum, and the tools needed to succeed at any level.
         </p>
 
@@ -121,12 +156,23 @@ const WhyChooseUs = () => {
               key={index}
               to={feature.link}
               className="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full"
-            >
-              <div className="flex justify-center items-center mb-2">
+            >              <div className="flex justify-center items-center mb-2">
                 {feature.icon}
               </div>
-              <h2 className="text-lg font-semibold text-[#200e4a] mb-2">{feature.title}</h2>
-              <p className="text-[#270185] text-center text-sm">{feature.description}</p>
+              <h2 className={`text-lg font-semibold ${
+                isChessCodex 
+                  ? 'text-codex-primary' 
+                  : isAspireChess 
+                  ? 'text-aspire-primary' 
+                  : 'text-kca-primary'
+              } mb-2`}>{feature.title}</h2>
+              <p className={`${
+                isChessCodex 
+                  ? 'text-codex-text-dark' 
+                  : isAspireChess 
+                  ? 'text-aspire-text-dark' 
+                  : 'text-kca-text-dark'
+              } text-center text-sm`}>{feature.description}</p>
             </NavLink>
           ))}
         </div>
@@ -142,8 +188,20 @@ const WhyChooseUs = () => {
               <div className="flex justify-center items-center mb-2">
                 {feature.icon}
               </div>
-              <h2 className="text-lg font-semibold text-[#200e4a] mb-2">{feature.title}</h2>
-              <p className="text-[#270185] text-center text-sm">{feature.description}</p>
+              <h2 className={`text-lg font-semibold ${
+                isChessCodex 
+                  ? 'text-codex-primary' 
+                  : isAspireChess 
+                  ? 'text-aspire-primary' 
+                  : 'text-kca-primary'
+              } mb-2`}>{feature.title}</h2>
+              <p className={`${
+                isChessCodex 
+                  ? 'text-codex-text-dark' 
+                  : isAspireChess 
+                  ? 'text-aspire-text-dark' 
+                  : 'text-kca-text-dark'
+              } text-center text-sm`}>{feature.description}</p>
             </NavLink>
           ))}
         </Slider>

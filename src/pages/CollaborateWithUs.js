@@ -53,9 +53,8 @@ const CollaborateWithUs = () => {
         <title>Collaborate With Us - {siteName}</title>
         <meta name="description" content={siteDescription} />
         <meta name="keywords" content={siteKeywords} />
-      </Helmet>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#200e4a] via-[#461fa3] to-[#7646eb] text-white py-16">
+      </Helmet>      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-extrabold mb-4">Collaborate With Us</h1>
           <p className="text-lg">
@@ -82,45 +81,41 @@ const CollaborateWithUs = () => {
             </select>
           </div>
           <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
-            {(isChessCodex || isAspireChess) && (
-                        <NavLink
+            {(isChessCodex || isAspireChess) && (                        <NavLink
                         to="referral-programme"
                         className={({ isActive }) =>
                           isActive
-                            ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                            : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                            ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                            : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
                         }
                       >
                         Referral Programme
                       </NavLink>
                       )}
-            
-            <NavLink
+              <NavLink
               to="chess-in-schools"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Chess in Schools
-            </NavLink>
-            <NavLink
+            </NavLink>            <NavLink
               to="chess-in-workspaces"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Chess in Workspaces
-            </NavLink>
-            <NavLink
+            </NavLink>            <NavLink
               to="chess-academies"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-[#200e4a] text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-[#461fa3] text-white font-semibold rounded-lg shadow-md hover:bg-[#200e4a] transition duration-300"
+                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
+                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
               }
             >
               Chess Academies
