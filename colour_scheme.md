@@ -1,46 +1,123 @@
-### Expanded Color Palette
+# Three Distinct Color Schemes for KCA Website Suite
 
-1. **Primary Color**: `#200e4a`  
-   - Still used as the main color for headers, buttons, and key elements.
+## 🏛️ **Scheme 1: Main KCA Website - Royal Chess Authority**
+*Professional, prestigious, traditional chess academy feel*
 
-2. **Secondary Color**: `#461fa3`  
-   - Complementary to the primary, used for navigation links and secondary buttons.
+### Color Palette
+1. **Primary Color**: `#1a472a` (Deep Forest Green)
+   - Main headers, primary buttons, navigation highlights
 
-3. **Accent Color**: `#7646eb`  
-   - For hover states and call-to-action elements.
+2. **Secondary Color**: `#2d5530` (Rich Emerald)
+   - Secondary buttons, navigation links, card headers
 
-4. **Background Colors**:  
-   - **Dark Background**: `#14092e` (original)  
-   - **Light Background**: `#f3f1f9`  
-     Use the light background where higher contrast is needed.
+3. **Accent Color**: `#4ade80` (Bright Green)
+   - Hover states, CTAs, success indicators
 
-5. **Highlight/Alert Color**: `#af0505`  
-   - For warnings and important notifications.
+4. **Background Colors**:
+   - **Dark Background**: `#0f2419` (Deep Forest)
+   - **Light Background**: `#f0fdf4` (Soft Green Mint)
 
-6. **Text Colors**:  
-   - **Dark Text**: `#270185` (original, for light backgrounds)  
-   - **Light Text**: `#e3e1f7` (new, for dark backgrounds)  
-   - **Neutral Text**: `#ffffff` (pure white, for highest contrast).
+5. **Highlight/Alert Color**: `#dc2626` (Classic Red)
+   - Warnings, important notifications
 
-7. **Neutral Colors**:  
-   - **Gray Light**: `#c2c1d3` (for subtle dividers or inactive elements).  
-   - **Gray Dark**: `#3b3a52` (for borders or secondary text).  
+6. **Text Colors**:
+   - **Dark Text**: `#15803d` (Forest Text)
+   - **Light Text**: `#dcfce7` (Light Green)
+   - **Neutral Text**: `#ffffff` (White)
 
-### Updated Color Palette Preview
-- **Primary**: ![#200e4a](https://via.placeholder.com/15/200e4a/200e4a.png) `#200e4a`  
-- **Secondary**: ![#461fa3](https://via.placeholder.com/15/461fa3/461fa3.png) `#461fa3`  
-- **Accent**: ![#7646eb](https://via.placeholder.com/15/7646eb/7646eb.png) `#7646eb`  
-- **Dark Background**: ![#14092e](https://via.placeholder.com/15/14092e/14092e.png) `#14092e`  
-- **Light Background**: ![#f3f1f9](https://via.placeholder.com/15/f3f1f9/f3f1f9.png) `#f3f1f9`  
-- **Highlight**: ![#af0505](https://via.placeholder.com/15/af0505/af0505.png) `#af0505`  
-- **Dark Text**: ![#270185](https://via.placeholder.com/15/270185/270185.png) `#270185`  
-- **Light Text**: ![#e3e1f7](https://via.placeholder.com/15/e3e1f7/e3e1f7.png) `#e3e1f7`  
-- **Neutral Text (White)**: ![#ffffff](https://via.placeholder.com/15/ffffff/ffffff.png) `#ffffff`  
-- **Gray Light**: ![#c2c1d3](https://via.placeholder.com/15/c2c1d3/c2c1d3.png) `#c2c1d3`  
-- **Gray Dark**: ![#3b3a52](https://via.placeholder.com/15/3b3a52/3b3a52.png) `#3b3a52`
+7. **Neutral Colors**:
+   - **Gray Light**: `#d1fae5` (Mint Gray)
+   - **Gray Dark**: `#374151` (Charcoal)
 
-### Usage Suggestions
-- Use **dark background** for dramatic sections and **light background** for content-heavy areas.  
-- Use **light text** or **neutral text** on dark backgrounds and **dark text** on light backgrounds.  
-- Utilize **gray light** for dividers and **gray dark** for subtle emphasis.  
-- Ensure contrast ratios meet accessibility standards for readability.
+---
+
+## ⚡ **Scheme 2: AspireChess - Dynamic Youth Energy**
+*Modern, energetic, inspiring for ambitious players*
+
+### Color Palette
+1. **Primary Color**: `#1e40af` (Royal Blue)
+   - Main headers, primary buttons, key elements
+
+2. **Secondary Color**: `#3b82f6` (Bright Blue)
+   - Secondary buttons, navigation, highlights
+
+3. **Accent Color**: `#f59e0b` (Golden Amber)
+   - Hover states, achievements, call-to-actions
+
+4. **Background Colors**:
+   - **Dark Background**: `#0c1e3d` (Deep Navy)
+   - **Light Background**: `#eff6ff` (Sky Blue Light)
+
+5. **Highlight/Alert Color**: `#ef4444` (Vibrant Red)
+   - Alerts, deadlines, important notices
+
+6. **Text Colors**:
+   - **Dark Text**: `#1e3a8a` (Navy Text)
+   - **Light Text**: `#dbeafe` (Light Blue)
+   - **Neutral Text**: `#ffffff` (White)
+
+7. **Neutral Colors**:
+   - **Gray Light**: `#e0e7ff` (Blue Gray Light)
+   - **Gray Dark**: `#475569` (Slate Gray)
+
+---
+
+## 🎯 **Scheme 3: ChessCodex - Premium Innovation**
+*Sophisticated, tech-forward, exclusive feel*
+
+### Color Palette
+1. **Primary Color**: `#7c2d12` (Rich Burgundy)
+   - Main headers, primary buttons, premium elements
+
+2. **Secondary Color**: `#c2410c` (Burnt Orange)
+   - Secondary buttons, navigation, accents
+
+3. **Accent Color**: `#fbbf24` (Golden Yellow)
+   - Hover states, premium features, highlights
+
+4. **Background Colors**:
+   - **Dark Background**: `#431407` (Deep Mahogany)
+   - **Light Background**: `#fef7ed` (Warm Cream)
+
+5. **Highlight/Alert Color**: `#dc2626` (Alert Red)
+   - Warnings, urgent notifications
+
+6. **Text Colors**:
+   - **Dark Text**: `#92400e` (Amber Brown)
+   - **Light Text**: `#fed7aa` (Light Peach)
+   - **Neutral Text**: `#ffffff` (White)
+
+7. **Neutral Colors**:
+   - **Gray Light**: `#fde68a` (Warm Gray)
+   - **Gray Dark**: `#6b7280` (Cool Gray)
+
+---
+
+## 🎨 **Visual Brand Identity Summary**
+
+| Website | Primary Theme | Personality | Target Audience |
+|---------|---------------|-------------|-----------------|
+| **Main KCA** | 🏛️ Forest Green | Professional, Established, Trustworthy | Parents, Serious Students |
+| **AspireChess** | ⚡ Royal Blue + Gold | Dynamic, Ambitious, Modern | Young Players, Competitive |
+| **ChessCodex** | 🎯 Burgundy + Orange | Premium, Innovative, Exclusive | Advanced Players, Professionals |
+
+## 📱 **Implementation Guidelines**
+
+### Visual Differentiation Strategy:
+1. **Green = Main Authority** (KCA - The trusted foundation)
+2. **Blue = Aspiration** (AspireChess - Reaching for excellence)  
+3. **Burgundy = Premium** (ChessCodex - Elite expertise)
+
+### Consistent Elements Across All Three:
+- Same typography hierarchy
+- Similar component layouts
+- Consistent navigation patterns
+- Unified user experience flow
+
+### Unique Visual Cues:
+- **Different color-coded navigation bars**
+- **Distinct button styles and hover effects**
+- **Brand-specific accent colors**
+- **Themed background patterns/textures**
+
+This approach ensures users can instantly recognize which section of the KCA ecosystem they're in while maintaining professional cohesion across all three platforms.
