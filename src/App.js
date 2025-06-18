@@ -48,16 +48,16 @@ function AppContent() {
       root.style.setProperty('--brand-text', '#334155');       // Cool Gray
       root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1E40AF 0%, #DC2626 100%)');
     } else if (isAspireChess) {
-      // AspireChess - White Marble & Stone Theme (like chess pieces)
+      // AspireChess - Marble & Stone Theme with better contrast
       body.classList.add('theme-aspirechess');
-      root.style.setProperty('--brand-primary', '#F8FAFC');    // Pure White Marble
-      root.style.setProperty('--brand-secondary', '#E2E8F0');  // Light Stone
-      root.style.setProperty('--brand-accent', '#CBD5E1');     // Soft Gray
-      root.style.setProperty('--brand-dark', '#475569');       // Charcoal Stone
-      root.style.setProperty('--brand-light', '#FFFFFF');      // Pure White
-      root.style.setProperty('--brand-highlight', '#64748B');  // Slate Gray
-      root.style.setProperty('--brand-text', '#1E293B');       // Dark Stone
-      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)');
+      root.style.setProperty('--brand-primary', '#374151');    // Dark Stone Gray
+      root.style.setProperty('--brand-secondary', '#6B7280');  // Medium Stone
+      root.style.setProperty('--brand-accent', '#D1D5DB');     // Light Stone
+      root.style.setProperty('--brand-dark', '#1F2937');       // Deep Charcoal
+      root.style.setProperty('--brand-light', '#F9FAFB');      // Off White
+      root.style.setProperty('--brand-highlight', '#4B5563');  // Stone Highlight
+      root.style.setProperty('--brand-text', '#111827');       // Almost Black
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #374151 0%, #6B7280 100%)');
     } else {
       // KCA - Traditional Royal Blue & Red Theme
       body.classList.add('theme-kca');

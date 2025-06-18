@@ -25,18 +25,18 @@ Three distinct themes have been created for the chess academies, each with its o
 
 ---
 
-## ♛ AspireChess - White Marble & Stone Theme
+## ♛ AspireChess - Marble & Stone Theme (Updated for Visibility)
 **Brand Identity:** Elegant, premium like chess pieces, sophisticated
 **Target Audience:** Luxury chess enthusiasts, traditional players
 
 ### Color Palette:
-- **Primary:** `#F8FAFC` - Pure White Marble (elegance, purity)
-- **Secondary:** `#E2E8F0` - Light Stone (natural, refined)
-- **Accent:** `#CBD5E1` - Soft Gray (subtle sophistication)
-- **Dark:** `#475569` - Charcoal Stone (depth, mystery)
-- **Light:** `#FFFFFF` - Pure White (perfection)
-- **Highlight:** `#64748B` - Slate Gray (understated luxury)
-- **Text:** `#1E293B` - Dark Stone (classic readability)
+- **Primary:** `#475569` - Charcoal Stone (strength, sophistication)
+- **Secondary:** `#F8FAFC` - Pure White Marble (elegance, purity)
+- **Accent:** `#94A3B8` - Medium Stone (balanced contrast)
+- **Dark:** `#1E293B` - Deep Charcoal (authority, depth)
+- **Light:** `#F1F5F9` - Off-White Marble (subtle warmth)
+- **Highlight:** `#64748B` - Slate Gray (refined emphasis)
+- **Text:** `#0F172A` - Obsidian Black (maximum readability)
 
 ### Design Characteristics:
 - Marble-like textures and gradients

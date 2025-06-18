@@ -25,20 +25,19 @@ module.exports = {
           'text-neutral': '#FFFFFF', // White
           'gray-light': '#DBEAFE', // Light Blue
           'gray-dark': '#3730A3',  // Deep Purple
-        },
-        // AspireChess - White Marble & Stone Theme
+        },        // AspireChess - Marble & Stone Theme with Better Contrast
         aspire: {
-          primary: '#F8FAFC',      // Pure White Marble
-          secondary: '#E2E8F0',    // Light Stone
-          accent: '#CBD5E1',       // Soft Gray
-          'bg-dark': '#475569',    // Charcoal Stone
-          'bg-light': '#FFFFFF',   // Pure White
-          highlight: '#64748B',    // Slate Gray
-          'text-dark': '#1E293B',  // Dark Stone
-          'text-light': '#FFFFFF', // Pure White
-          'text-neutral': '#F1F5F9', // Off White
-          'gray-light': '#F1F5F9', // Lightest Gray
-          'gray-dark': '#334155',  // Medium Stone
+          primary: '#374151',      // Dark Stone Gray
+          secondary: '#6B7280',    // Medium Stone
+          accent: '#D1D5DB',       // Light Stone
+          'bg-dark': '#1F2937',    // Deep Charcoal
+          'bg-light': '#F9FAFB',   // Off White
+          highlight: '#4B5563',    // Stone Highlight
+          'text-dark': '#111827',  // Almost Black
+          'text-light': '#F9FAFB', // Off White
+          'text-neutral': '#FFFFFF', // Pure White
+          'gray-light': '#E5E7EB', // Light Gray
+          'gray-dark': '#374151',  // Dark Stone
         },
         // ChessCodex - Modern Tech Blue & Red
         codex: {

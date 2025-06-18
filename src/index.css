@@ -21,8 +21,8 @@
 }
 
 .theme-aspirechess {
-  --shadow-brand: 0 4px 14px 0 rgba(71, 85, 105, 0.1);
-  --shadow-brand-lg: 0 10px 25px -3px rgba(71, 85, 105, 0.15);
+  --shadow-brand: 0 4px 14px 0 rgba(55, 65, 81, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(55, 65, 81, 0.2);
 }
 
 .theme-kca {
