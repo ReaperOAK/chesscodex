@@ -3,7 +3,7 @@
   "name": "ChessCodex - Your Chess Companion",
   "icons": [
     {
-      "src": "KCA_PNG.png",
+      "src": "kca.png",
       "type": "image/png",
       "sizes": "192x192"
     }
