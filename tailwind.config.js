@@ -38,20 +38,19 @@ module.exports = {
           'text-neutral': '#FFFFFF', // Pure White
           'gray-light': '#E5E7EB', // Light Gray
           'gray-dark': '#374151',  // Dark Stone
-        },
-        // ChessCodex - Modern Tech Blue & Red
+        },        // ChessCodex - Modern Purple & Dark Theme
         codex: {
-          primary: '#1E40AF',      // Strong Blue
-          secondary: '#DC2626',    // Modern Red
-          accent: '#3B82F6',       // Bright Blue
-          'bg-dark': '#1E293B',    // Slate Dark
-          'bg-light': '#F8FAFC',   // Clean White
-          highlight: '#EF4444',    // Vibrant Red
-          'text-dark': '#334155',  // Cool Gray
-          'text-light': '#F8FAFC', // Clean White
-          'text-neutral': '#FFFFFF', // White
-          'gray-light': '#E2E8F0', // Light Slate
-          'gray-dark': '#475569',  // Dark Slate
+          primary: '#200e4a',      // Deep Purple
+          secondary: '#461fa3',    // Medium Purple
+          accent: '#7646eb',       // Bright Purple
+          'bg-dark': '#14092e',    // Very Dark Purple
+          'bg-light': '#f3f1f9',   // Light Purple Tint
+          highlight: '#af0505',    // Alert Red
+          'text-dark': '#270185',  // Dark Purple Text
+          'text-light': '#e3e1f7', // Light Purple Text
+          'text-neutral': '#ffffff', // Pure White
+          'gray-light': '#c2c1d3', // Light Gray
+          'gray-dark': '#3b3a52',  // Dark Gray
         },
       },
     },

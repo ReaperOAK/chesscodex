@@ -3,25 +3,40 @@
 ## Overview
 Three distinct themes have been created for the chess academies, each with its own unique visual identity and color palette.
 
-## 🎯 ChessCodex - Modern Tech Blue & Red Theme
+## 🎯 ChessCodex - Modern Purple & Dark Theme
 **Brand Identity:** Modern, tech-forward, innovative chess education
 **Target Audience:** Tech-savvy chess enthusiasts, competitive players
 
 ### Color Palette:
-- **Primary:** `#1E40AF` - Strong Blue (modern, reliable)
-- **Secondary:** `#DC2626` - Modern Red (energy, passion)
-- **Accent:** `#3B82F6` - Bright Blue (innovation, clarity)
-- **Dark:** `#1E293B` - Slate Dark (sophistication)
-- **Light:** `#F8FAFC` - Clean White (minimalism)
-- **Highlight:** `#EF4444` - Vibrant Red (call-to-action)
-- **Text:** `#334155` - Cool Gray (readability)
+- **Primary:** `#200e4a` - Deep Purple (main brand color, sophistication)
+- **Secondary:** `#461fa3` - Medium Purple (navigation, secondary elements)
+- **Accent:** `#7646eb` - Bright Purple (hover states, call-to-action)
+- **Dark:** `#14092e` - Very Dark Purple (dark backgrounds)
+- **Light:** `#f3f1f9` - Light Purple Tint (light backgrounds)
+- **Highlight:** `#af0505` - Alert Red (warnings, notifications)
+- **Text:** `#270185` - Dark Purple Text (for light backgrounds)
+
+### Extended Colors:
+- **Light Text:** `#e3e1f7` - Light Purple Text (for dark backgrounds)
+- **Neutral Text:** `#ffffff` - Pure White (highest contrast)
+- **Gray Light:** `#c2c1d3` - Light Gray (dividers, inactive elements)
+- **Gray Dark:** `#3b3a52` - Dark Gray (borders, secondary text)
 
 ### Design Characteristics:
-- Clean, minimalist design
-- Sharp edges and modern typography
-- Tech-inspired gradients
-- Bold blue-red contrasts
-- Shadow effects with blue tints
+- Modern purple gradient theme
+- Dark and light background variants
+- High contrast text options
+- Tech-inspired purple palette
+- Sophisticated dark mode support
+- Accessibility-focused contrast ratios
+
+### Usage Guidelines:
+- Use **dark background** (`#14092e`) for dramatic sections
+- Use **light background** (`#f3f1f9`) for content-heavy areas
+- Use **light text** (`#e3e1f7`) or **neutral text** (`#ffffff`) on dark backgrounds
+- Use **dark text** (`#270185`) on light backgrounds
+- Utilize **gray light** (`#c2c1d3`) for dividers and **gray dark** (`#3b3a52`) for subtle emphasis
+- Ensure contrast ratios meet accessibility standards for readability
 
 ---
 

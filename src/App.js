@@ -37,16 +37,20 @@ function AppContent() {
     body.classList.remove('theme-chesscodex', 'theme-aspirechess', 'theme-kca');
     
     if (isChessCodex) {
-      // ChessCodex - Modern Tech Blue & Red Theme
+      // ChessCodex - Modern Purple & Dark Theme
       body.classList.add('theme-chesscodex');
-      root.style.setProperty('--brand-primary', '#1E40AF');    // Strong Blue
-      root.style.setProperty('--brand-secondary', '#DC2626');  // Modern Red
-      root.style.setProperty('--brand-accent', '#3B82F6');     // Bright Blue
-      root.style.setProperty('--brand-dark', '#1E293B');       // Slate Dark
-      root.style.setProperty('--brand-light', '#F8FAFC');      // Clean White
-      root.style.setProperty('--brand-highlight', '#EF4444');  // Vibrant Red
-      root.style.setProperty('--brand-text', '#334155');       // Cool Gray
-      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #1E40AF 0%, #DC2626 100%)');
+      root.style.setProperty('--brand-primary', '#200e4a');    // Deep Purple
+      root.style.setProperty('--brand-secondary', '#461fa3');  // Medium Purple
+      root.style.setProperty('--brand-accent', '#7646eb');     // Bright Purple
+      root.style.setProperty('--brand-dark', '#14092e');       // Very Dark Purple
+      root.style.setProperty('--brand-light', '#f3f1f9');      // Light Purple Tint
+      root.style.setProperty('--brand-highlight', '#af0505');  // Alert Red
+      root.style.setProperty('--brand-text', '#270185');       // Dark Purple Text
+      root.style.setProperty('--brand-text-light', '#e3e1f7'); // Light Purple Text
+      root.style.setProperty('--brand-text-neutral', '#ffffff'); // Pure White
+      root.style.setProperty('--brand-gray-light', '#c2c1d3'); // Light Gray
+      root.style.setProperty('--brand-gray-dark', '#3b3a52');  // Dark Gray
+      root.style.setProperty('--brand-gradient', 'linear-gradient(135deg, #200e4a 0%, #7646eb 100%)');
     } else if (isAspireChess) {
       // AspireChess - Marble & Stone Theme with better contrast
       body.classList.add('theme-aspirechess');

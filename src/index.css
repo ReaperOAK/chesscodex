@@ -1,6 +1,22 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+
+/* Theme-specific styling */
+.theme-chesscodex {
+  --shadow-brand: 0 4px 14px 0 rgba(32, 14, 74, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(32, 14, 74, 0.2);
+  --shadow-brand-purple: 0 4px 14px 0 rgba(118, 70, 235, 0.25);
+}
+
+.theme-aspirechess {
+  --shadow-brand: 0 4px 14px 0 rgba(71, 85, 105, 0.1);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(71, 85, 105, 0.15);
+}
+
+.theme-kca {
+  --shadow-brand: 0 4px 14px 0 rgba(29, 78, 216, 0.15);
+  --shadow-brand-lg: 0 10px 25px -3px rgba(29, 78, 216, 0.2);
+}
 
 /* CSS Custom Properties for Brand Themes */
 :root {
@@ -45,6 +61,18 @@
 .btn-brand:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-brand-lg);
+}
+
+/* ChessCodex specific purple button variant */
+.theme-chesscodex .btn-brand-accent {
+  background: linear-gradient(135deg, #7646eb 0%, #461fa3 100%);
+  box-shadow: var(--shadow-brand-purple);
+}
+
+.theme-chesscodex .btn-brand-accent:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #5b21b6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -3px rgba(118, 70, 235, 0.4);
 }
 
 /* Brand-specific card styles */
