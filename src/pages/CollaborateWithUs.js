@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { NavLink, Route, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
 import ChessInWorkspaces from './ChessInWorkspaces';
 import ChessAcademies from './ChessAcademies';
-
+// ...removed duplicate import...
 const CollaborateWithUs = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
-  const navigate = useNavigate();
+  // ...removed unused navigate...
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
@@ -27,7 +27,7 @@ const CollaborateWithUs = () => {
     };
   }, []);
 
-  const handleDropdownChange = (event) => navigate(event.target.value);
+  // ...removed unused handleDropdownChange...
 
   // --- Theme-Aware Class Definitions ---
   const heroClasses = isAspireChess 

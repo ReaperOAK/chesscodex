@@ -54,7 +54,7 @@ const Gallery = () => {
         currentPage * ITEMS_PER_PAGE
     );
 
-    const slides = filteredMedia.map(item => ({ src: item.src, type: item.type, alt: item.alt }));
+    // ...removed unused slides variable...
 
     const sliderSettings = {
         dots: true,

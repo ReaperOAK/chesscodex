@@ -35,7 +35,7 @@ const Events = () => {
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
 
-  const [filter, setFilter] = useState("All");
+  const [filter] = useState("All");
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
