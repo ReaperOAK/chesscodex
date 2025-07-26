@@ -81,7 +81,35 @@ function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className={`lg:hidden ${isAspireChess ? 'bg-black bg-opacity-80 backdrop-blur-lg' : 'bg-brand-dark'} absolute top-16 left-0 w-full z-50`}>
-          {/* Mobile menu content remains the same */}
+          
+          <ul className="flex flex-col items-center space-y-4 px-4 py-6">
+            {filteredNavLinks.map((link) => (
+              <li key={link.to} className="w-full">
+                <NavLink
+                  to={link.to}                  className={({ isActive }) =>
+                    isActive
+                      ? 'block text-yellow-300 font-semibold text-center'
+                      : 'block text-white hover:text-yellow-300 text-center'
+                  }
+                  onClick={toggleMenu}
+                  aria-label={link.label}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+            <li className="w-full">
+              <a
+                href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
+                target="_blank"
+                rel="noopener noreferrer"                className="block text-white hover:text-yellow-300 text-center"
+                onClick={toggleMenu}
+                aria-label="Dashboard"
+              >
+                Dashboard
+              </a>
+            </li>
+          </ul>
         </div>
       )}
     </nav>
