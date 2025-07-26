@@ -11,117 +11,79 @@ const Exclusives = () => {
   const sentinelRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const siteDescription = isChessCodex
-    ? 'Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans.'
-    : 'Unlock exclusive benefits with our Pro Membership and Scholarships. Learn more about our exclusive offers and pricing plans.';
-  const siteKeywords = isChessCodex
-    ? 'ChessCodex, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing'
-    : 'AspireChess, Pro Membership, chess scholarships, chess exclusives, chess benefits, chess pricing';
+  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
 
   useEffect(() => {
-    const currentSentinelRef = sentinelRef.current;
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSticky(!entry.isIntersecting);
-      },
-      { threshold: 0 }
+      ([entry]) => setIsSticky(!entry.isIntersecting),
+      { rootMargin: "-1px 0px 0px 0px", threshold: 1 }
     );
-
-    if (currentSentinelRef) {
-      observer.observe(currentSentinelRef);
-    }
-
+    const currentSentinel = sentinelRef.current;
+    if (currentSentinel) observer.observe(currentSentinel);
     return () => {
-      if (currentSentinelRef) {
-        observer.unobserve(currentSentinelRef);
-      }
+      if (currentSentinel) observer.unobserve(currentSentinel);
     };
   }, []);
 
-  const handleDropdownChange = (event) => {
-    navigate(event.target.value);
-  };
+  const handleDropdownChange = (event) => navigate(event.target.value);
+
+  // --- Theme-Aware Class Definitions ---
+  const heroClasses = isAspireChess 
+    ? "py-24" 
+    : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
+  
+  const navClasses = isAspireChess
+    ? `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`
+    : `bg-brand-light py-4 shadow-md`;
+  
+  const navLinkActiveClasses = isAspireChess
+    ? "bg-amber-500 text-gray-900"
+    : "bg-brand-dark text-white";
+
+  const navLinkIdleClasses = isAspireChess
+    ? "bg-gray-700/50 text-white hover:bg-gray-600/50"
+    : "bg-brand-secondary text-white hover:bg-brand-dark";
 
   return (
     <div>
       <Helmet>
         <title>Exclusives - {siteName}</title>
-        <meta name="description" content={siteDescription} />
-        <meta name="keywords" content={siteKeywords} />
-      </Helmet>      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16">
+        {/* Meta tags */}
+      </Helmet>
+      
+      {/* Hero Section */}
+      <section className={heroClasses}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h1 className="text-4xl font-extrabold mb-4">Exclusives</h1>
-          <p className="text-lg">
-            Unlock exclusive benefits with our Pro Membership and Scholarships.
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Exclusives</h1>
+          <p className="text-lg text-gray-300">
+            Unlock premium benefits with our Pro Membership, Game Analysis, and Scholarship programs.
           </p>
         </div>
       </section>
 
-      {/* Sentinel Element */}
-      <div ref={sentinelRef} className="h-1"></div>
+      {/* Sentinel Element for sticky nav */}
+      <div ref={sentinelRef}></div>
 
       {/* Navigation Links */}
-      <nav ref={menuRef} className={`bg-brand-light py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
+      <nav ref={menuRef} className={`${navClasses} ${isSticky ? 'sticky top-16 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="md:hidden">
-            <select
-              onChange={handleDropdownChange}
-              className="w-full px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md focus:outline-none"
-            >
-              <option value="pro-membership">Pro Membership</option>
-              <option value="game-analysis">Game Analysis</option>
-              {(isChessCodex || isAspireChess) && (<option value="scholarships">Scholarships</option>)}
-            </select>
-          </div>
-          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">            <NavLink
-              to="pro-membership"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Pro Membership
-            </NavLink>            <NavLink
-              to="game-analysis"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Game Analysis
-            </NavLink>
-            {(isChessCodex || isAspireChess) && (
-            <NavLink
-              to="scholarships"              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Scholarships
-            </NavLink>
-          )}
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
+            <NavLink to="pro-membership" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Pro Membership</NavLink>
+            <NavLink to="game-analysis" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Game Analysis</NavLink>
+            <NavLink to="scholarships" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Scholarships</NavLink>
           </div>
         </div>
       </nav>
 
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Navigate to="pro-membership" />} />
-        <Route path="pro-membership" element={<ProMembership />} />
-        <Route path="game-analysis" element={<GameAnalysis />} />
-        <Route path="scholarships" element={<Scholarships />} />
-      </Routes>
-
-      {/* Add padding at the bottom to prevent overlay */}
-      <div className="pb-20"></div>
+      <div className={isAspireChess ? "py-16 sm:py-24" : ""}>
+        <Routes>
+          <Route path="/" element={<Navigate to="pro-membership" />} />
+          <Route path="pro-membership" element={<ProMembership />} />
+          <Route path="game-analysis" element={<GameAnalysis />} />
+          <Route path="scholarships" element={<Scholarships />} />
+        </Routes>
+      </div>
     </div>
   );
 };

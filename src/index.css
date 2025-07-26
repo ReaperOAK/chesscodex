@@ -208,3 +208,35 @@ code {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3; /* Limit to 3 lines */
 }
+
+/* This targets the body ONLY when the aspirechess theme is active. */
+
+body.theme-aspirechess {
+  /* A fallback background color from your theme variables, in case the image fails to load */
+  background-color: #1F2937; 
+}
+
+/* This `::before` pseudo-element creates a layer that sits behind all your content.
+  It holds the background image and a semi-transparent black overlay for readability.
+  It's fixed, so it stays in place during scroll, creating a parallax effect.
+*/
+body.theme-aspirechess::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* The background image */
+  background-image: url('/public/backgrounds/aca_bg.png');
+  background-size: cover;
+  background-position: center;
+  
+  /* The dark overlay for text contrast */
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+
+  /* This ensures it stays behind your actual website content */
+  z-index: -1; 
+}

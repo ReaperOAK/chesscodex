@@ -15,11 +15,10 @@ const benefits = [
 
 const BenefitsSlider = () => {
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   
   const sliderSettings = {
-    dots: true,
+    dots: false, // Dots can be distracting on a dark bg, removed for aspire
     infinite: true,
     speed: 600,
     slidesToShow: 1,
@@ -29,17 +28,20 @@ const BenefitsSlider = () => {
     arrows: false,
   };
 
-  return (    <div className={`${
-      isChessCodex 
-        ? 'bg-brand-dark' 
-        : isAspireChess 
-        ? 'bg-brand-dark' 
-        : 'bg-brand-dark'
-    }text-white py-2`}>
+  const sliderClasses = isAspireChess 
+    ? "bg-black bg-opacity-10 py-2" 
+    : "bg-brand-dark text-white py-2";
+  
+  const textClasses = isAspireChess 
+    ? "text-lg text-amber-300 font-light"
+    : "text-lg text-white";
+
+  return (
+    <div className={sliderClasses}>
       <Slider {...sliderSettings}>
         {benefits.map((benefit, index) => (
-          <div key={index} className="text-center">
-            <p className="text-lg">{benefit}</p>
+          <div key={index} className="text-center px-4">
+            <p className={textClasses}>{benefit}</p>
           </div>
         ))}
       </Slider>

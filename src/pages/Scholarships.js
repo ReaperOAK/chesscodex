@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 
 const Scholarships = () => {
+  const location = useLocation();
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+
   const scholarshipDetails = [
     {
       category: "For our Young FIDE rated & USCF 1200+ rated Stars:",
@@ -37,20 +41,28 @@ const Scholarships = () => {
       ],
     },
   ];
+
+  // --- Theme-Aware Class Definitions ---
+  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-subtle";
+  const cardClasses = isAspireChess 
+    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg"
+    : "bg-white rounded-lg shadow-md p-6";
+  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
+  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
+  const categoryTitleClasses = isAspireChess ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-brand-dark mb-2";
+
   return (
-    <section className="py-16 bg-brand-subtle">
+    <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-brand-dark mb-8">Scholarships</h2>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-2xl font-bold mb-4 text-brand-dark">Scholarships Categories</h3>
+        <h2 className={`text-3xl font-bold mb-8 ${titleClasses}`}>Scholarships</h2>
+        <div className={cardClasses}>
+          <h3 className={`text-2xl font-bold mb-6 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Scholarship Categories</h3>
           <div className="text-left space-y-6">
             {scholarshipDetails.map((item, idx) => (
               <div key={idx}>
-                <h4 className="text-xl font-semibold text-brand-dark mb-2">{item.category}</h4>
-                <ul className="list-disc list-inside text-brand-text space-y-1">
-                  {item.benefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
-                  ))}
+                <h4 className={categoryTitleClasses}>{item.category}</h4>
+                <ul className={`list-disc list-inside space-y-1 ${textClasses}`}>
+                  {item.benefits.map((benefit, index) => <li key={index}>{benefit}</li>)}
                 </ul>
               </div>
             ))}

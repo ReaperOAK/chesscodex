@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 
 const ProMembership = () => {
+  const location = useLocation();
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+
   const proMembershipDetails = [
     {
       title: "Calculation Pack",
@@ -34,66 +38,61 @@ const ProMembership = () => {
       ],
     },
   ];
-
   const pricingPlans = [
     { plan: "Monthly", price: "₹999 / $14.99" },
     { plan: "Half-Yearly", price: "₹4,999 / $74.99" },
     { plan: "Yearly", price: "₹8,999 / $134.99" },
   ];
 
+  // --- Theme-Aware Class Definitions ---
+  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-light";
+  const cardClasses = isAspireChess 
+    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg"
+    : "bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow";
+  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
+  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
+  const ctaCardClasses = isAspireChess
+    ? "bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl"
+    : "bg-brand-dark text-white rounded-lg shadow-md";
+
   return (
-    <section className="py-16 bg-brand-light">
+    <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-brand-dark mb-8">Pro Members - Kolkata Chess Academy</h2>
-        <p className="text-lg text-brand-text mb-8">
-          At Kolkata Chess Academy, we are dedicated to enhancing the quality of chess coaching worldwide. Through our Pro Membership programme, we are trying to regulate the daily chess training at home, with a structured method.
-          Our key areas of focus through this Study Method will be Calculation and Strategy with a mix of Endgames, Opening and Psychology.
-          Join us in our mission to create structured chess training at home and to set new standards in your career!
+        <h2 className={`text-3xl font-bold mb-4 ${titleClasses}`}>Pro Membership</h2>
+        <p className={`text-lg mb-12 ${textClasses}`}>
+          We are dedicated to enhancing the quality of chess coaching worldwide. Our Pro Membership regulates daily chess training at home with a structured method, focusing on Calculation, Strategy, Endgames, Openings, and Psychology.
         </p>
-        <h3 className="text-2xl font-bold text-brand-dark mb-6">Our Offerings:</h3>
+        <h3 className={`text-2xl font-bold mb-8 ${titleClasses}`}>Our Offerings:</h3>
         <div className="space-y-8">
           {proMembershipDetails.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-            >
-              <h3 className="text-xl font-bold text-brand-dark mb-3">{item.title}</h3>
-              <ul className="text-left list-disc list-inside text-brand-text space-y-1">
-                {item.details.map((detail, index) => (
-                  <li key={index}>{detail}</li>
-                ))}
+            <div key={idx} className={cardClasses}>
+              <h3 className={`text-xl font-bold mb-3 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>{item.title}</h3>
+              <ul className={`text-left list-disc list-inside space-y-1 ${textClasses}`}>
+                {item.details.map((detail, index) => <li key={index}>{detail}</li>)}
               </ul>
             </div>
           ))}
         </div>
+        
         {/* Call to Action and Pricing Section */}
-        <div className="mt-12 bg-brand-dark text-white py-8 px-6 rounded-lg shadow-md">
-          <h3 className="text-2xl font-bold mb-4">Ready to Elevate Your Chess Skills?</h3>
-          <p className="text-lg mb-6">
-            Join our Pro Membership today and gain access to exclusive content, personalized coaching, and a supportive community of chess enthusiasts.
+        <div className={`mt-16 py-8 px-6 ${ctaCardClasses}`}>
+          <h3 className="text-2xl font-bold mb-4 text-white">Ready to Elevate Your Chess Skills?</h3>
+          <p className="text-lg mb-6 text-gray-300">
+            Join our Pro Membership today and gain access to exclusive content, personalized coaching, and a supportive community.
           </p>
-          <h3 className="text-2xl font-bold mb-6">Pricing</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <h3 className="text-2xl font-bold mb-6 text-white">Pricing</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {pricingPlans.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white text-brand-text rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-2xl font-bold mb-2 text-brand-dark">{item.plan} Plan</h3>
-                <p className="text-lg">{item.price}</p>
+              <div key={idx} className={cardClasses}>
+                <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>{item.plan} Plan</h3>
+                <p className={`text-lg ${textClasses}`}>{item.price}</p>
               </div>
             ))}
           </div>
-          <a
-            href="https://wa.me/+919830149852"
-            className="inline-block bg-brand-primary text-white py-2 px-4 rounded-lg font-medium hover:bg-brand-secondary transition"
-          >
+          <a href="[https://wa.me/+919830149852](https://wa.me/+919830149852)" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}>
             Get Started Now
           </a>
         </div>
-        <p className="text-lg text-brand-text mt-8">
-          We look forward to structuring your training at home and easing the process with fragmented, digestible chess information!
-        </p>
       </div>
     </section>
   );

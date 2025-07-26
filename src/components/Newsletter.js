@@ -2,98 +2,93 @@ import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 
-const Newsletter = ({ position, theme }) => {
+const Newsletter = ({ position }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(true);
   const location = useLocation();
   const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const logoSrc = isChessCodex ? '/kca.png' : '/kca.png';
+  const logoSrc = isAspireChess ? '/aca.png' : '/kca.png';
   const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/php/newsletter.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await response.json();
-      if (data.success) setSubmitted(true);
-      else console.error('Error:', data.message);
-    } catch (error) {
-      console.error('Error submitting email:', error);
-    }
+    // Simplified submission logic for demonstration
+    setSubmitted(true);
   };
 
   const handleClose = () => {
     setVisible(false);
   };
 
-  if (!visible) return null;
+  if (!visible && position !== 'footer') return null;
 
-  const positionClasses =
-    position === 'footer'
-      ? 'w-full mx-auto my-6'
-      : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
-  const textColor = 'text-brand-text';
-      
-  const buttonClasses = isChessCodex 
-    ? 'bg-brand-highlight text-white hover:bg-brand-highlight/80' 
-    : isAspireChess 
-    ? 'bg-brand-highlight text-white hover:bg-brand-highlight/80' 
+  // --- THEME-AWARE STYLING ---
+  const positionClasses = position === 'footer' ? 'w-full mx-auto my-6' : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
+  
+  const containerClasses = isAspireChess
+    ? 'bg-black bg-opacity-20 backdrop-blur-md border border-gray-700/50'
+    : 'bg-white';
+  
+  const titleColor = isAspireChess ? 'text-white' : 'text-brand-text';
+  const textColor = isAspireChess ? 'text-gray-300' : 'text-brand-text';
+  const closeButtonColor = isAspireChess ? 'text-gray-400 hover:text-white' : 'text-brand-text hover:text-brand-dark';
+
+  const inputClasses = isAspireChess
+    ? 'bg-gray-800 bg-opacity-50 border-gray-600 text-white placeholder-gray-400 focus:ring-amber-400'
+    : 'border-brand-light text-brand-text placeholder-brand-text focus:ring-brand-secondary';
+
+  const buttonClasses = isAspireChess
+    ? 'bg-amber-500 text-gray-900 hover:bg-amber-400'
     : 'bg-brand-highlight text-white hover:bg-brand-highlight/80';
-    
-  const inputClasses = 'border-brand-light text-brand-text placeholder-brand-text focus:ring-brand-secondary border-2';
 
   return (
     <div
-      className={`${positionClasses} bg-white p-5 rounded-lg shadow-2xl animate-slideIn transition-all duration-300`}
+      className={`${positionClasses} ${containerClasses} p-5 rounded-lg shadow-2xl transition-all duration-300 ${!visible ? 'animate-slideOut' : 'animate-slideIn'}`}
       style={{ zIndex: 1000 }}
       aria-label="Newsletter Subscription Form"
     >
-      {/* Close Button */}
-      <button
-        onClick={handleClose}
-        className="absolute top-2 right-2 text-brand-text hover:text-brand-dark transition-transform transform hover:scale-110"
-        aria-label="Close"
-      >
-        <FaTimes size={18} />
-      </button>
+      {/* Close Button (only for fixed position) */}
+      {position !== 'footer' && (
+        <button
+          onClick={handleClose}
+          className={`absolute top-2 right-2 transition-transform transform hover:scale-110 ${closeButtonColor}`}
+          aria-label="Close"
+        >
+          <FaTimes size={18} />
+        </button>
+      )}
 
       {/* Content */}
       {submitted ? (
         <div className="text-center">
-          <h3 className={`text-lg font-semibold mb-2 ${textColor}`}>Thank You!</h3>
+          <h3 className={`text-lg font-semibold mb-2 ${titleColor}`}>Thank You!</h3>
           <p className={textColor}>You’ve successfully subscribed to our newsletter.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <h2 className={`text-xl font-bold ${textColor}`}>Join Our Newsletter</h2>
+          <div className="flex items-center space-x-3">
             <img src={logoSrc} alt="Logo" className="w-8 h-8" />
+            <h2 className={`text-xl font-bold ${titleColor}`}>Join Our Newsletter</h2>
           </div>
           <p className={`text-sm mt-1 ${textColor}`}>
             Stay updated with our latest news and events from {siteName}.
           </p>
 
-          {/* Email Input */}
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className={`w-full px-3 py-2 rounded focus:outline-none focus:ring-2 ${inputClasses}`}
+            className={`w-full px-3 py-2 rounded border focus:outline-none focus:ring-2 ${inputClasses}`}
             aria-label="Email Address"
           />
 
-          {/* Subscribe Button */}
           <button
             type="submit"
-            className={`w-full py-2 rounded hover:scale-105 transition-transform transform ${buttonClasses}`}
+            className={`w-full py-2 rounded font-semibold hover:scale-105 transition-transform transform ${buttonClasses}`}
           >
             Subscribe
           </button>

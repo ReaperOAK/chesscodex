@@ -12,126 +12,81 @@ const CollaborateWithUs = () => {
   const sentinelRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : 'AspireChess';
-  const siteDescription = isChessCodex
-    ? 'Partner with ChessCodex to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies.'
-    : 'Partner with AspireChess to promote chess, foster creativity, and make a meaningful impact in your community. Learn about our referral program, chess in schools, workspaces, and academies.';
-  const siteKeywords = isChessCodex
-    ? 'ChessCodex, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies'
-    : 'AspireChess, chess collaboration, chess referral program, chess in schools, chess in workspaces, chess academies';
+  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
 
   useEffect(() => {
-    const currentSentinelRef = sentinelRef.current;
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSticky(!entry.isIntersecting);
-      },
-      { threshold: 0 }
+      ([entry]) => setIsSticky(!entry.isIntersecting),
+      { rootMargin: "-1px 0px 0px 0px", threshold: 1 }
     );
-
-    if (currentSentinelRef) {
-      observer.observe(currentSentinelRef);
-    }
-
+    const currentSentinel = sentinelRef.current;
+    if (currentSentinel) observer.observe(currentSentinel);
     return () => {
-      if (currentSentinelRef) {
-        observer.unobserve(currentSentinelRef);
-      }
+      if (currentSentinel) observer.unobserve(currentSentinel);
     };
   }, []);
 
-  const handleDropdownChange = (event) => {
-    navigate(event.target.value);
-  };
+  const handleDropdownChange = (event) => navigate(event.target.value);
+
+  // --- Theme-Aware Class Definitions ---
+  const heroClasses = isAspireChess 
+    ? "py-24" 
+    : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
+  
+  const navClasses = isAspireChess
+    ? `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`
+    : `bg-brand-light py-4 shadow-md`;
+  
+  const navLinkActiveClasses = isAspireChess
+    ? "bg-amber-500 text-gray-900"
+    : "bg-brand-dark text-white";
+
+  const navLinkIdleClasses = isAspireChess
+    ? "bg-gray-700/50 text-white hover:bg-gray-600/50"
+    : "bg-brand-secondary text-white hover:bg-brand-dark";
 
   return (
     <div>
       <Helmet>
         <title>Collaborate With Us - {siteName}</title>
-        <meta name="description" content={siteDescription} />
-        <meta name="keywords" content={siteKeywords} />
-      </Helmet>      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16">
+        {/* Meta tags */}
+      </Helmet>
+      
+      {/* Hero Section */}
+      <section className={heroClasses}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h1 className="text-4xl font-extrabold mb-4">Collaborate With Us</h1>
-          <p className="text-lg">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Collaborate With Us</h1>
+          <p className="text-lg text-gray-300">
             Partner with us to promote chess, foster creativity, and make a meaningful impact in your community.
           </p>
         </div>
       </section>
 
-      {/* Sentinel Element */}
-      <div ref={sentinelRef} className="h-1"></div>
+      {/* Sentinel Element for sticky nav */}
+      <div ref={sentinelRef}></div>
 
       {/* Navigation Links */}
-      <nav ref={menuRef} className={`bg-brand-light py-4 shadow-md ${isSticky ? 'sticky top-10 z-40' : ''}`}>
+      <nav ref={menuRef} className={`${navClasses} ${isSticky ? 'sticky top-16 z-40' : ''}`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="md:hidden">
-            <select
-              onChange={handleDropdownChange}
-              className="w-full px-4 py-2 bg-brand-primary text-white font-semibold rounded-lg shadow-md focus:outline-none"
-            >
-              {(isChessCodex || isAspireChess) && (<option value="referral-programme">Referral Programme</option>)}
-              <option value="chess-in-schools">Chess in Schools</option>
-              <option value="chess-in-workspaces">Chess in Workspaces</option>
-              <option value="chess-academies">Chess Academies</option>
-            </select>
-          </div>
-          <div className="hidden md:flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0">
-            {(isChessCodex || isAspireChess) && (                        <NavLink
-                        to="referral-programme"
-                        className={({ isActive }) =>
-                          isActive
-                            ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                            : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-                        }
-                      >
-                        Referral Programme
-                      </NavLink>
-                      )}
-              <NavLink
-              to="chess-in-schools"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Chess in Schools
-            </NavLink>            <NavLink
-              to="chess-in-workspaces"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Chess in Workspaces
-            </NavLink>            <NavLink
-              to="chess-academies"
-              className={({ isActive }) =>
-                isActive
-                  ? "px-4 py-2 bg-brand-dark text-white font-semibold rounded-lg shadow-md transition duration-300"
-                  : "px-4 py-2 bg-brand-secondary text-white font-semibold rounded-lg shadow-md hover:bg-brand-dark transition duration-300"
-              }
-            >
-              Chess Academies
-            </NavLink>
+          <div className="hidden md:flex flex-wrap justify-center gap-4">
+            <NavLink to="referral-programme" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Referral Programme</NavLink>
+            <NavLink to="chess-in-schools" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Chess in Schools</NavLink>
+            <NavLink to="chess-in-workspaces" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Chess in Workspaces</NavLink>
+            <NavLink to="chess-academies" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Chess Academies</NavLink>
           </div>
         </div>
       </nav>
 
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Navigate to="chess-in-schools" />} />
-        <Route path="referral-programme" element={<ReferralProgramme />} />
-        <Route path="chess-in-schools" element={<ChessInSchools />} />
-        <Route path="chess-in-workspaces" element={<ChessInWorkspaces />} />
-        <Route path="chess-academies" element={<ChessAcademies />} />
-      </Routes>
+      <div className={isAspireChess ? "py-16 sm:py-24" : ""}>
+        <Routes>
+          <Route path="/" element={<Navigate to="referral-programme" />} />
+          <Route path="referral-programme" element={<ReferralProgramme />} />
+          <Route path="chess-in-schools" element={<ChessInSchools />} />
+          <Route path="chess-in-workspaces" element={<ChessInWorkspaces />} />
+          <Route path="chess-academies" element={<ChessAcademies />} />
+        </Routes>
+      </div>
     </div>
   );
 };

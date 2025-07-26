@@ -1,62 +1,37 @@
 <?php
-include 'config.php';
+// FILE: public/php/contact.php
+// ACTION: Rewritten to use MySQLi Prepared Statements.
 
-// Set the Content-Type header to application/json
-header('Content-Type: application/json');
+require 'config.php';
 
-// Get the raw POST data
-$rawData = file_get_contents("php://input");
-$data = json_decode($rawData, true);
+// Get data from POST request
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$message = $_POST['message'] ?? '';
 
-// Get the form data from the decoded data
-$role = $data['role'] ?? '';
-$name = $data['name'] ?? '';
-$age = $data['age'] ?? '';
-$email = $data['email'] ?? '';
-$country_code = $data['country_code'] ?? '';
-$phone_number = $data['phone_number'] ?? '';
-$message = $data['message'] ?? '';
-$subscribe_newsletter = isset($data['subscribe_newsletter']) ? 1 : 0;
-$agree_privacy_policy = isset($data['agree_privacy_policy']) ? 1 : 0;
+// Prepare SQL with placeholders
+$sql = "INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)";
 
-// Validate the form data
-if (!empty($role) && !empty($name) && !empty($age) && filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($country_code) && !empty($phone_number) && !empty($message) && $agree_privacy_policy) {
-    // Prepare the SQL statement for contact submissions
-    $stmt = $conn->prepare("INSERT INTO contact_submissions (role, name, age, email, country_code, phone_number, message, subscribe_newsletter, agree_privacy_policy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    if ($stmt === false) {
-        echo json_encode(['success' => false, 'message' => 'Prepare failed: ' . $conn->error]);
-        exit;
-    }
-    $stmt->bind_param("ssisssiii", $role, $name, $age, $email, $country_code, $phone_number, $message, $subscribe_newsletter, $agree_privacy_policy);
+// Create prepared statement
+$stmt = $conn->prepare($sql);
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        // If the user subscribed to the newsletter, add their email to the newsletters table
-        if ($subscribe_newsletter) {
-            $newsletter_stmt = $conn->prepare("INSERT INTO newsletters (email) VALUES (?)");
-            if ($newsletter_stmt === false) {
-                echo json_encode(['success' => false, 'message' => 'Newsletter prepare failed: ' . $conn->error]);
-                exit;
-            }
-            $newsletter_stmt->bind_param("s", $email);
-            if ($newsletter_stmt->execute()) {
-                $newsletter_stmt->close();
-            } else {
-                echo json_encode(['success' => false, 'message' => 'Newsletter execute failed: ' . $newsletter_stmt->error]);
-                exit;
-            }
-        }
-        echo json_encode(['success' => true, 'message' => 'Message sent successfully.']);
-    } else {
-        echo json_encode(['success' => false, 'message' => 'Execute failed: ' . $stmt->error]);
-    }
-
-    // Close the statement
-    $stmt->close();
-} else {
-    echo json_encode(['success' => false, 'message' => 'Invalid form data.']);
+if ($stmt === false) {
+    echo json_encode(['status' => 'error', 'message' => 'SQL prepare failed: ' . $conn->error]);
+    exit();
 }
 
-// Close the connection
+// Bind parameters (s = string, s = string, s = string)
+$stmt->bind_param('sss', $name, $email, $message);
+
+// Execute and respond
+if ($stmt->execute()) {
+    echo json_encode(['status' => 'success', 'message' => 'Message sent successfully!']);
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Execution failed: ' . $stmt->error]);
+}
+
+// Clean up
+$stmt->close();
 $conn->close();
+
 ?>

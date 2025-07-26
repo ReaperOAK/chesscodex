@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from 'react-helmet';
+import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 
@@ -182,204 +181,79 @@ const faqs = {
   ],
 };
 
-const FAQItem = ({ question, answer, isOpen, toggle, isChessCodex, isAspireChess }) => (
-  <div className={`border-b ${
-    isChessCodex 
-      ? 'border-codex-gray-light' 
-      : isAspireChess 
-      ? 'border-aspire-gray-light' 
-      : 'border-kca-gray-light'
-  } py-4`}>
-    <div
-      className="flex justify-between items-center cursor-pointer"
-      onClick={toggle}
-    >
-      <h3 className={`text-lg font-medium ${
-        isChessCodex 
-          ? 'text-brand-primary' 
-          : isAspireChess 
-          ? 'text-brand-primary' 
-          : 'text-brand-primary'
-      }`}>{question}</h3>
-      {isOpen ? (
-        <FaChevronUp className={`${
-          isChessCodex 
-            ? 'text-brand-secondary' 
-            : isAspireChess 
-            ? 'text-brand-secondary' 
-            : 'text-brand-secondary'
-        }`} />
-      ) : (
-        <FaChevronDown className={`${
-          isChessCodex 
-            ? 'text-brand-secondary' 
-            : isAspireChess 
-            ? 'text-brand-secondary' 
-            : 'text-brand-secondary'
-        }`} />
-      )}
-    </div>
-    {isOpen && (      <p className="mt-4 text-brand-text transition-opacity duration-300 ease-in-out">
-        {answer}
-      </p>
-    )}
-  </div>
-);
+const FAQItem = ({ question, answer, isOpen, toggle, isAspireChess }) => {
+    const itemClasses = isAspireChess ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg" : "border-b border-codex-gray-light py-4";
+    const questionClasses = isAspireChess ? "text-lg font-medium text-white" : "text-lg font-medium text-brand-primary";
+    const answerClasses = isAspireChess ? "pt-4 text-gray-300" : "mt-4 text-brand-text";
+
+    return (
+        <div className={itemClasses}>
+            <div className="flex justify-between items-center cursor-pointer p-4" onClick={toggle}>
+                <h3 className={questionClasses}>{question}</h3>
+                {isOpen ? <FaChevronUp className={isAspireChess ? "text-amber-400" : "text-brand-secondary"} /> : <FaChevronDown className={isAspireChess ? "text-amber-400" : "text-brand-secondary"} />}
+            </div>
+            {isOpen && (
+                <div className={`px-4 pb-4 ${isAspireChess ? 'border-t border-gray-700/50' : ''}`}>
+                    <p className={answerClasses}>{answer}</p>
+                </div>
+            )}
+        </div>
+    );
+};
 
 const FAQs = () => {
-  const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteFAQs = isChessCodex ? faqs.chesscodex : faqs.aspirechess;
+    const location = useLocation();
+    const isAspireChess = location.pathname.startsWith('/aspirechess');
+    const siteFAQs = isAspireChess ? faqs.aspirechess : faqs.chesscodex;
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [openIndex, setOpenIndex] = useState({ General: 0 });
-  const [activeCategory, setActiveCategory] = useState("General");
+    const [activeCategory, setActiveCategory] = useState("General");
+    const [openIndices, setOpenIndices] = useState({});
 
-  const toggleFAQ = (category, index) => {
-    setOpenIndex((prev) => ({
-      ...prev,
-      [category]: prev[category] === index ? null : index,
-    }));
-  };
+    const toggleFAQ = (category, index) => {
+        setOpenIndices(prev => ({ ...prev, [category]: prev[category] === index ? null : index }));
+    };
 
-  const filteredFAQs = siteFAQs.map((section) => ({
-    ...section,
-    items: section.items.filter((faq) =>
-      faq.question.toLowerCase().includes(searchTerm.toLowerCase())
-    ),
-  }));
+    // --- Theme-Aware Class Definitions ---
+    const sectionClasses = isAspireChess ? "" : "py-12 bg-codex-bg-light";
+    const titleClasses = isAspireChess ? "text-4xl font-bold text-center text-amber-400 mb-12" : "text-4xl font-bold text-center text-brand-primary mb-12";
+    const categoryButtonActive = isAspireChess ? "bg-amber-500 text-gray-900" : "bg-brand-primary text-white";
+    const categoryButtonIdle = isAspireChess ? "bg-gray-700/50 text-white hover:bg-gray-600/50" : "bg-white text-brand-text hover:bg-brand-secondary";
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleCategoryChange = (e) => {
-    setActiveCategory(e.target.value);
-  };
-
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#refund-policy") {
-      const refundPolicyIndex = siteFAQs.findIndex(section =>
-        section.items.some(faq => faq.question.toLowerCase().includes("refund policy"))
-      );
-      if (refundPolicyIndex !== -1) {
-        setActiveCategory("Policies & Refunds");
-        setOpenIndex({ "Policies & Refunds": refundPolicyIndex });
-        document.getElementById("refund-policy").scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [siteFAQs]);
-
-  const isSearching = searchTerm.trim().length > 0;
-  return (
-    <section className={`${
-      isChessCodex 
-        ? 'bg-codex-bg-light' 
-        : isAspireChess 
-        ? 'bg-aspire-bg-light' 
-        : 'bg-kca-bg-light'
-    } py-12`}>
-      <Helmet>
-        <title>FAQs - {isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}</title>
-        <meta name="description" content={`Find answers to frequently asked questions about ${isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}. Learn about our courses, policies, and more.`} />
-        <meta name="keywords" content={`${isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy'}, FAQs, chess courses, chess policies, chess training, chess coaching`} />
-      </Helmet>
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className={`text-4xl font-bold text-center ${
-          isChessCodex 
-            ? 'text-brand-primary' 
-            : isAspireChess 
-            ? 'text-brand-primary' 
-            : 'text-brand-primary'
-        } mb-12`}>
-          Frequently Asked Questions
-        </h2>
-
-        {/* Search Bar */}
-        <div className="mb-8">          <input
-            type="text"
-            className="w-full p-3 rounded-lg border border-brand-light text-brand-text"
-            placeholder="Search for a question..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-        </div>
-
-        {/* FAQ Categories Menu */}
-        {!isSearching && (
-          <div className="mb-8">
-            <div className="md:hidden">
-              <select
-                onChange={handleCategoryChange}
-                className="w-full px-4 py-2 bg-brand-primary text-white font-semibold rounded-lg shadow-md focus:outline-none"
-                value={activeCategory}
-              >
-                {siteFAQs.map((section, index) => (
-                  <option key={index} value={section.category}>
-                    {section.category}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <ul className="hidden md:flex justify-center space-x-4">
-              {siteFAQs.map((section, index) => (
-                <li key={index}>
-                  <button
-                    className={`px-4 py-2 rounded-lg ${activeCategory === section.category ? 'bg-brand-primary text-white' : 'bg-white text-brand-text'} hover:bg-brand-secondary transition`}
-                    onClick={() => setActiveCategory(section.category)}
-                  >
-                    {section.category}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* FAQ List */}
-        {isSearching ? (
-          <div className="space-y-4">
-            {filteredFAQs.flatMap(section => section.items).length > 0 ? (
-              filteredFAQs.flatMap(section => section.items).map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openIndex[faq.question]}
-                  toggle={() => toggleFAQ(faq.question, index)}
-                />              ))
-            ) : (
-              <p className="text-brand-text">No FAQs match your search.</p>
-            )}
-          </div>
-        ) : (
-          filteredFAQs.map((section, i) => (
-            <div key={i} className="mb-8">
-              {activeCategory === section.category && (
-                <div className="space-y-4">
-                  {section.items.length > 0 ? (
-                    section.items.map((faq, index) => (
-                      <FAQItem
-                        key={index}
-                        question={faq.question}
-                        answer={faq.answer}
-                        isOpen={openIndex[section.category] === index}
-                        toggle={() => toggleFAQ(section.category, index)}
-                      />
-                    ))
-                  ) : (
-                    <p className="text-brand-text">No FAQs match your search.</p>
-                  )}
+    return (
+        <section className={sectionClasses}>
+            <div className="max-w-5xl mx-auto px-4">
+                <h2 className={titleClasses}>Frequently Asked Questions</h2>
+                {/* Category Menu */}
+                <div className="mb-8">
+                    <ul className="flex flex-wrap justify-center gap-2 sm:gap-4">
+                        {siteFAQs.map((section) => (
+                            <li key={section.category}>
+                                <button
+                                    className={`px-4 py-2 rounded-lg font-semibold transition duration-300 ${activeCategory === section.category ? categoryButtonActive : categoryButtonIdle}`}
+                                    onClick={() => setActiveCategory(section.category)}
+                                >
+                                    {section.category}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-              )}
+                {/* FAQ List */}
+                <div className="space-y-4">
+                    {siteFAQs.find(s => s.category === activeCategory)?.items.map((faq, index) => (
+                        <FAQItem
+                            key={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                            isOpen={openIndices[activeCategory] === index}
+                            toggle={() => toggleFAQ(activeCategory, index)}
+                            isAspireChess={isAspireChess}
+                        />
+                    ))}
+                </div>
             </div>
-          ))
-        )}
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default FAQs;

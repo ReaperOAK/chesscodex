@@ -1,46 +1,58 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 
 const GameAnalysis = () => {
+  const location = useLocation();
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
+
+  // --- Theme-Aware Class Definitions ---
+  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-light";
+  const cardClasses = isAspireChess 
+    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg"
+    : "bg-white rounded-lg shadow-md p-6";
+  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
+  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
+  const ctaCardClasses = isAspireChess
+    ? "bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl"
+    : "bg-brand-dark text-white rounded-lg shadow-md";
+
   return (
-    <section className="py-16 bg-brand-light">
+    <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-brand-dark mb-8">Game Analysis</h2>
-        <p className="text-lg text-brand-text mb-8">
-          The game analysis will be done individually by FMs & IMs or sometimes even a GM.
+        <h2 className={`text-3xl font-bold mb-4 ${titleClasses}`}>Game Analysis</h2>
+        <p className={`text-lg mb-8 ${textClasses}`}>
+          Individual game analysis by FMs, IMs, or even a GM to provide deep insights into your play.
         </p>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-2xl font-bold text-brand-dark mb-4">Service:</h3>
-          <ul className="list-disc list-inside text-left text-brand-text space-y-2">
-            <li>In-depth Game Analysis with overview of each game.</li>
-            <li>Overview on Player’s Playing Style and Areas of Improvement.</li>
-            <li>Suggestions on Specific areas that needs immediate attention.</li>
-            <li>Book Recommendations.</li>
+        <div className={cardClasses}>
+          <h3 className={`text-2xl font-bold mb-4 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Service Includes:</h3>
+          <ul className={`list-disc list-inside text-left space-y-2 ${textClasses}`}>
+            <li>In-depth analysis with an overview of each game.</li>
+            <li>Assessment of your playing style and areas for improvement.</li>
+            <li>Suggestions on specific areas needing immediate attention.</li>
+            <li>Personalized book and resource recommendations.</li>
           </ul>
-          <h3 className="text-2xl font-bold text-brand-dark mt-6 mb-4">Time Frame:</h3>
-          <p className="text-left text-brand-text">Approximately one week.</p>
+          <h3 className={`text-2xl font-bold mt-6 mb-4 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Time Frame:</h3>
+          <p className={`text-left ${textClasses}`}>Approximately one week per batch of games.</p>
         </div>
+
         {/* Call to Action and Pricing Section */}
-        <div className="mt-12 bg-brand-dark text-white py-8 px-6 rounded-lg shadow-md">
-          <h3 className="text-2xl font-bold mb-4">Ready to Improve Your Game?</h3>
-          <p className="text-lg mb-6">
-            Register for our Game Analysis service today and get personalized feedback from experienced FMs, IMs, and GMs.
+        <div className={`mt-12 py-8 px-6 ${ctaCardClasses}`}>
+          <h3 className="text-2xl font-bold mb-4 text-white">Ready to Improve Your Game?</h3>
+          <p className="text-lg mb-6 text-gray-300">
+            Register for our Game Analysis service today for personalized feedback.
           </p>
-          <h3 className="text-2xl font-bold mb-6">Pricing</h3>          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-white text-brand-text rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold mb-2 text-brand-dark">5 Games</h3>
-              <p className="text-lg">₹1000</p>
+          <h3 className="text-2xl font-bold mb-6 text-white">Pricing</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className={cardClasses}>
+              <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>5 Games</h3>
+              <p className={`text-lg ${textClasses}`}>₹1000</p>
             </div>
-            <div className="bg-white text-brand-text rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold mb-2 text-brand-dark">10 Games</h3>
-              <p className="text-lg">₹1800</p>
+            <div className={cardClasses}>
+              <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>10 Games</h3>
+              <p className={`text-lg ${textClasses}`}>₹1800</p>
             </div>
           </div>
-          <a
-            href="https://forms.gle/6Tb4CTK7sRLW7n1E6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-primary text-white py-2 px-4 rounded-lg font-medium hover:bg-brand-secondary transition"
-          >
+          <a href="https://forms.gle/6Tb4CTK7sRLW7n1E6" target="_blank" rel="noopener noreferrer" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}>
             Register Now
           </a>
         </div>
