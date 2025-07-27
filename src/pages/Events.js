@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 // Data for events
 const eventsData = {
-  chesscodex: [
+  kolkata: [
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-10-02", mode: "Offline", link: null, image: "/events/2024-10-02.jpg" },
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-11-15", mode: "Offline", link: "https://forms.gle/zBsTohCXppUNCWjU6", image: "/events/2024-11-15.jpg" },
   ],
@@ -20,7 +20,7 @@ const eventsData = {
 
 // Data for blogs
 const blogsData = {
-  chesscodex: [
+  kolkata: [
     { title: "The Benefits of Chess for Cognitive Development", date: "2023-09-01", author: "John Doe", link: "/blog/benefits-of-chess", image: "https://placehold.co/600x400/7646eb/FFF?text=Blog", content: "Chess has been shown to improve cognitive abilities, enhance problem-solving skills, and boost memory..." },
     { title: "Top 10 Chess Strategies for Beginners", date: "2023-08-15", author: "Jane Smith", link: "/blog/top-10-chess-strategies", image: "https://placehold.co/600x400/461fa3/FFF?text=Blog", content: "Starting out in chess can be daunting, but with the right strategies, you can quickly improve your game..." },
   ],
@@ -33,7 +33,7 @@ const blogsData = {
 const Events = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const [filter] = useState("All");
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -43,8 +43,8 @@ const Events = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const events = isAspireChess ? eventsData.aspirechess : eventsData.chesscodex;
-  const blogs = isAspireChess ? blogsData.aspirechess : blogsData.chesscodex;
+  const events = isAspireChess ? eventsData.aspirechess : eventsData.kolkata;
+  const blogs = isAspireChess ? blogsData.aspirechess : blogsData.kolkata;
 
   const filteredEvents = events.filter(event => filter === "All" || event.mode === filter);
   const isLinkExpired = (date) => new Date(date) < currentDate;

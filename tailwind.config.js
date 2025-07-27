@@ -40,20 +40,7 @@ module.exports = {
           'text-neutral': '#FFFFFF', // Pure White
           'gray-light': '#E5E7EB', // Light Gray
           'gray-dark': '#374151',  // Dark Stone
-        },        // ChessCodex - Modern Purple & Dark Theme
-        codex: {
-          primary: '#200e4a',      // Deep Purple
-          secondary: '#461fa3',    // Medium Purple
-          accent: '#7646eb',       // Bright Purple
-          'bg-dark': '#14092e',    // Very Dark Purple
-          'bg-light': '#f3f1f9',   // Light Purple Tint
-          highlight: '#af0505',    // Alert Red
-          'text-dark': '#270185',  // Dark Purple Text
-          'text-light': '#e3e1f7', // Light Purple Text
-          'text-neutral': '#ffffff', // Pure White
-          'gray-light': '#c2c1d3', // Light Gray
-          'gray-dark': '#3b3a52',  // Dark Gray
-        },
+        }, 
       },
     },
   },

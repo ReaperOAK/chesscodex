@@ -23,7 +23,7 @@ const Contact = () => {
   const mapRef = useRef(null);
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
   const contactAddress = 'Cross Road, Purba Sinthee, Dumdum, Kolkata:700030';

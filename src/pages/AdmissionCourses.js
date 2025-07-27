@@ -24,7 +24,7 @@ const FAQs = [
 const AdmissionCourses = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
   
   const [expandedIndex, setExpandedIndex] = useState(null);
 

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import SiteHome from './pages/SiteHome';
 import About from './pages/About';
 import AchievementsTestimonials from './pages/AchievementsTestimonials';
 import Gallery from './pages/Gallery';
@@ -10,111 +9,76 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Maintenance from './pages/Maintenance';
 import AdmissionCourses from './pages/AdmissionCourses';
+import WelcomePage from './pages/WelcomePage';
+import Newsletter from './components/Newsletter';
+import BenefitsSlider from './components/BenefitsSlider';
 import Exclusives from './pages/Exclusives';
 import CollaborateWithUs from './pages/CollaborateWithUs';
-import Newsletter from './components/Newsletter';
 import WhatsAppButton from './components/WhatsAppButton';
+import CTA from './components/CTA';
 import NotFound from './pages/NotFound';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import CTA from './components/CTA';
-import BenefitsSlider from './components/BenefitsSlider';
 import ScrollToTop from './components/ScrollToTop';
-import WelcomePage from './pages/WelcomePage'; // Import the WelcomePage component
+import SiteHome from './pages/SiteHome';
 
 function AppContent() {
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const isContactPage = location.pathname.endsWith('/contact');
-  const theme = isContactPage ? 'contact' : 'default';
-
-  // Set CSS custom properties based on the current site
   useEffect(() => {
-    // ...removed unused variable 'root'...
     const body = document.body;
-    
-    // Remove existing theme classes
-    body.classList.remove('theme-chesscodex', 'theme-aspirechess', 'theme-kca');
-    
-    if (isChessCodex) {
-      // ... (no changes here)
-      body.classList.add('theme-chesscodex');
-    } else if (isAspireChess) {
-      // ... (no changes here)
+    body.classList.remove('theme-aspirechess', 'theme-kca');
+    if (isAspireChess) {
       body.classList.add('theme-aspirechess');
     } else {
-      // ... (no changes here)
       body.classList.add('theme-kca');
     }
-  }, [isChessCodex, isAspireChess]);
+  }, [isAspireChess]);
 
   return (
-    <>
+    <div>
       <Helmet>
-        <title>{isChessCodex ? 'ChessCodex - Elevate Your Chess Skills' : isAspireChess ? 'AspireChess - Elevate Your Chess Skills' : 'Chess Academy - Elevate Your Chess Skills'}</title>
-        <meta name="description" content={isChessCodex ? 'Join ChessCodex to elevate your chess skills with expert training and comprehensive courses.' : isAspireChess ? 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.' : 'Join our Chess Academy to elevate your chess skills with expert training and comprehensive courses.'} />
+        <title>{isAspireChess ? 'AspireChess - Elevate Your Chess Skills' : 'Chess Academy - Elevate Your Chess Skills'}</title>
+        <meta name="description" content={isAspireChess ? 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.' : 'Join our Chess Academy to elevate your chess skills with expert training and comprehensive courses.'} />
       </Helmet>
       <Navbar />
       <BenefitsSlider />
-      {/* *** THE CRITICAL CHANGE IS HERE ***
-        We use a template literal to conditionally change the background.
-        For all other themes, it uses the default `bg-brand-light`.
-        For `aspirechess`, it becomes `bg-transparent`, allowing the body's new background to show through.
-      */}
       <div className={`relative ${isAspireChess ? 'bg-transparent' : 'bg-brand-light'} text-brand-text`}>
-        <Newsletter position="left" theme={theme} />
+        <Newsletter position="left" theme={isAspireChess ? 'aspirechess' : 'default'} />
         <Routes>
-          {/* ... all your routes remain unchanged ... */}
-            <Route path="/" element={<WelcomePage />} />
-            <Route path="/dashboard" element={<Maintenance />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/exclusives/*" element={<Exclusives />} />
-            <Route path="/collaborate-with-us/*" element={<CollaborateWithUs />} />
-            {isChessCodex && (
-              <>
-                <Route path="/chesscodex" element={<SiteHome />} />
-                <Route path="/chesscodex/about" element={<About />} />
-                <Route path="/chesscodex/courses" element={<AdmissionCourses />} />
-                <Route path="/chesscodex/admission" element={<AdmissionCourses />} />
-                <Route path="/chesscodex/achievements-testimonials" element={<AchievementsTestimonials />} />
-                <Route path="/chesscodex/gallery" element={<Gallery />} />
-                <Route path="/chesscodex/events-blogs" element={<Events />} />
-                <Route path="/chesscodex/faqs" element={<Contact />} />
-                <Route path="/chesscodex/refund-policy" element={<Navigate to="/chesscodex/contact#refund-policy" />} />
-                <Route path="/chesscodex/contact" element={<Contact />} />
-                <Route path="/chesscodex/dashboard" element={<Maintenance />} />
-                <Route path="/chesscodex/exclusives/*" element={<Exclusives />} />
-                <Route path="/chesscodex/collaborate-with-us/*" element={<CollaborateWithUs />} />
-              </>
-            )}
-            {isAspireChess && (
-              <>
-                <Route path="/aspirechess" element={<SiteHome />} />
-                <Route path="/aspirechess/about" element={<About />} />
-                <Route path="/aspirechess/courses" element={<AdmissionCourses />} />
-                <Route path="/aspirechess/admission" element={<AdmissionCourses />} />
-                <Route path="/aspirechess/achievements-testimonials" element={<AchievementsTestimonials />} />
-                <Route path="/aspirechess/gallery" element={<Gallery />} />
-                <Route path="/aspirechess/events-blogs" element={<Events />} />
-                <Route path="/aspirechess/faqs" element={<Contact />} />
-                <Route path="/aspirechess/refund-policy" element={<Navigate to="/aspirechess/contact#refund-policy" />} />
-                <Route path="/aspirechess/contact" element={<Contact />} />
-                <Route path="/aspirechess/dashboard" element={<Maintenance />} />
-                <Route path="/aspirechess/exclusives/*" element={<Exclusives />} />
-                <Route path="/aspirechess/collaborate-with-us/*" element={<CollaborateWithUs />} />
-              </>
-            )}
-            <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/dashboard" element={<Maintenance />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/exclusives/*" element={<Exclusives />} />
+          <Route path="/collaborate-with-us/*" element={<CollaborateWithUs />} />
+          {/* AspireChess and Kolkata Chess Academy are now the only brands. */}
+          {isAspireChess && (
+            <>
+              <Route path="/aspirechess" element={<SiteHome />} />
+              <Route path="/aspirechess/about" element={<About />} />
+              <Route path="/aspirechess/courses" element={<AdmissionCourses />} />
+              <Route path="/aspirechess/admission" element={<AdmissionCourses />} />
+              <Route path="/aspirechess/achievements-testimonials" element={<AchievementsTestimonials />} />
+              <Route path="/aspirechess/gallery" element={<Gallery />} />
+              <Route path="/aspirechess/events-blogs" element={<Events />} />
+              <Route path="/aspirechess/faqs" element={<Contact />} />
+              <Route path="/aspirechess/refund-policy" element={<Navigate to="/aspirechess/contact#refund-policy" />} />
+              <Route path="/aspirechess/contact" element={<Contact />} />
+              <Route path="/aspirechess/dashboard" element={<Maintenance />} />
+              <Route path="/aspirechess/exclusives/*" element={<Exclusives />} />
+              <Route path="/aspirechess/collaborate-with-us/*" element={<CollaborateWithUs />} />
+            </>
+          )}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
       </div>
       {!location.pathname.startsWith('/collaborate-with-us') && <CTA />}
       <Footer />
-    </>
+    </div>
   );
 }
 

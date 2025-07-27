@@ -8,24 +8,23 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const WhyChooseUs = () => {
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const highlightedFeatures = [
-    { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Comprehensive Curriculum", description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.", link: isChessCodex ? "/chesscodex/courses" : isAspireChess ? "/aspirechess/courses" : "/contact" },
-    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: isChessCodex ? "/chesscodx/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team" },
-    { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: isChessCodex ? "/chesscodex/about#team" : isAspireChess ? "/aspirechess/about#team" : "/about#team" },
+    { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Comprehensive Curriculum", description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.", link: isAspireChess ? "/aspirechess/courses" : "/contact" },
+    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: isAspireChess ? "/aspirechess/about#team" : "/about#team" },
+    { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: isAspireChess ? "/aspirechess/about#team" : "/about#team" },
   ];
 
   const features = [
-    { icon: <FaTasks className="text-amber-400 text-4xl mb-2" />, title: "Weekly Practice Classes", description: "Interactive sessions to refine your strategies and enhance performance.", link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses" },
-    { icon: <FaClipboardCheck className="text-amber-400 text-4xl mb-2" />, title: "Regular Homeworks", description: "Engaging assignments and puzzles to keep you challenged and motivated.", link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses" },
-    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Internal Assessments", description: "Track progress through structured assessments and advance to higher batches.", link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses" },
-    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Detailed Report Card", description: "Receive personalized feedback to identify strengths and areas for growth.", link: isChessCodex ? "/chesscodex/courses" : "/aspirechess/courses" },
-    { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: isChessCodex ? "/chesscodex/achievements-testimonials" : "/aspirechess/achievements-testimonials" },
-    { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: "[https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI](https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI)" },
-    { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: isChessCodex ? "/chesscodex/events-blogs" : "/aspirechess/events-blogs" },
+    { icon: <FaTasks className="text-amber-400 text-4xl mb-2" />, title: "Weekly Practice Classes", description: "Interactive sessions to refine your strategies and enhance performance.", link: "/aspirechess/courses" },
+    { icon: <FaClipboardCheck className="text-amber-400 text-4xl mb-2" />, title: "Regular Homeworks", description: "Engaging assignments and puzzles to keep you challenged and motivated.", link: "/aspirechess/courses" },
+    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Internal Assessments", description: "Track progress through structured assessments and advance to higher batches.", link: "/aspirechess/courses" },
+    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Detailed Report Card", description: "Receive personalized feedback to identify strengths and areas for growth.", link: "/aspirechess/courses" },
+    { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: "/aspirechess/achievements-testimonials" },
+    { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI" },
+    { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: "/aspirechess/events-blogs" },
   ];
 
   const sliderSettings = { /* ... slider settings remain the same ... */ };

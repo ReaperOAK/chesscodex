@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const CTA = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = location.pathname.startsWith('/chesscodex') ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const sectionClasses = isAspireChess
     ? "py-16 sm:py-20 px-6"
@@ -25,14 +25,14 @@ const CTA = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <a
-            href={isAspireChess ? "/aspirechess/admission" : "/chesscodex/admission"}
+            href={isAspireChess ? "/aspirechess/admission" : "/admission"}
             aria-label="Enroll Now"
             className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
           >
             <span>🎓 Enroll Now</span>
           </a>
           <a
-            href={isAspireChess ? "/aspirechess/contact" : "/chesscodex/contact"}
+            href={isAspireChess ? "/aspirechess/contact" : "/contact"}
             aria-label="Contact Us"
             className="inline-flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
           >

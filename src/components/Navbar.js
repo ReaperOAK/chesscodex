@@ -1,34 +1,47 @@
+
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
+
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
+  // Determine brand by route
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
-  const logoSrc = isChessCodex ? '/kca.png' : isAspireChess ? '/aca.png' : '/kca.png';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const logoSrc = isAspireChess ? '/aca.png' : '/kca.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navLinks = [
-    { to: isChessCodex ? "/chesscodex/about" : isAspireChess ? "/aspirechess/about" : "/about", label: "About" },
-    { to: isChessCodex ? "/chesscodex/courses" : isAspireChess ? "/aspirechess/courses" : "", label: "Admission & Courses" },
-    { to: isChessCodex ? "/chesscodex/exclusives" : isAspireChess ? "/aspirechess/exclusives" : "/exclusives", label: "Exclusives" },
-    { to: isChessCodex ? "/chesscodex/events-blogs" : isAspireChess ? "/aspirechess/events-blogs" : "", label: "Events & Blogs" },
-    { to: isChessCodex ? "/chesscodex/achievements-testimonials" : isAspireChess ? "/aspirechess/achievements-testimonials" : "/achievements-testimonials", label: "Achievements & Testimonials" },
-    { to: isChessCodex ? "/chesscodex/collaborate-with-us" : isAspireChess ? "/aspirechess/collaborate-with-us" : "/collaborate-with-us", label: "Collaboration" },
-    { to: isChessCodex ? "/chesscodex/gallery" : isAspireChess ? "/aspirechess/gallery" : "/gallery", label: "Gallery" },
-    { to: isChessCodex ? "/chesscodex/contact" : isAspireChess ? "/aspirechess/contact" : "/contact", label: "Contact & FAQs" },
-  ];
+  // Navigation links for each brand
+  const navLinks = isAspireChess
+    ? [
+        { to: '/aspirechess/about', label: 'About' },
+        { to: '/aspirechess/courses', label: 'Admission & Courses' },
+        { to: '/aspirechess/exclusives', label: 'Exclusives' },
+        { to: '/aspirechess/events-blogs', label: 'Events & Blogs' },
+        { to: '/aspirechess/achievements-testimonials', label: 'Achievements & Testimonials' },
+        { to: '/aspirechess/collaborate-with-us', label: 'Collaboration' },
+        { to: '/aspirechess/gallery', label: 'Gallery' },
+        { to: '/aspirechess/contact', label: 'Contact & FAQs' },
+      ]
+    : [
+        { to: '/about', label: 'About' },
+        { to: '/courses', label: 'Admission & Courses' },
+        { to: '/exclusives', label: 'Exclusives' },
+        { to: '/events-blogs', label: 'Events & Blogs' },
+        { to: '/achievements-testimonials', label: 'Achievements & Testimonials' },
+        { to: '/collaborate-with-us', label: 'Collaboration' },
+        { to: '/gallery', label: 'Gallery' },
+        { to: '/contact', label: 'Contact & FAQs' },
+      ];
 
-  const filteredNavLinks = navLinks.filter(link => link.to !== "");
-
-  // Conditional classes for the navbar based on the theme
+  // Navbar classes for each brand
   const navClasses = isAspireChess
-    ? "bg-black bg-opacity-20 backdrop-blur-md border-b border-gray-700/50"
-    : "bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent";
+    ? 'bg-black bg-opacity-20 backdrop-blur-md border-b border-gray-700/50'
+    : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent';
 
   return (
     <nav className={`${navClasses} text-white sticky top-0 shadow-lg z-50 w-full`}>
@@ -36,22 +49,21 @@ function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <Link to={isChessCodex ? "/chesscodex" : isAspireChess ? "/aspirechess" : "/"} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
+            <Link to={isAspireChess ? '/aspirechess' : '/'} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
               <img src={logoSrc} alt={`${siteName} Logo`} className="h-10 w-auto mr-2" />
               {siteName}
             </Link>
           </div>
-
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end flex-nowrap">
-            {filteredNavLinks.map((link) => (
+          <div className="hidden lg:flex items-center space-x-4">
+            {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-amber-300 font-semibold transition-colors duration-300 mx-2'
-                    : 'text-white hover:text-amber-300 transition-colors duration-300 mx-2'
+                    ? 'text-yellow-300 font-semibold'
+                    : 'text-white hover:text-yellow-300 transition-colors duration-300'
                 }
                 aria-label={link.label}
               >
@@ -59,7 +71,7 @@ function Navbar() {
               </NavLink>
             ))}
             <a
-              href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
+              href={isAspireChess ? '/aspirechess/dashboard' : '/dashboard'}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-amber-300 transition-colors duration-300 mx-2"
@@ -68,7 +80,6 @@ function Navbar() {
               Dashboard
             </a>
           </div>
-
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none" aria-label="Toggle Menu">
@@ -77,16 +88,15 @@ function Navbar() {
           </div>
         </div>
       </div>
-
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className={`lg:hidden ${isAspireChess ? 'bg-black bg-opacity-80 backdrop-blur-lg' : 'bg-brand-dark'} absolute top-16 left-0 w-full z-50`}>
-          
+        <div className={isAspireChess ? 'lg:hidden bg-black bg-opacity-80 backdrop-blur-lg absolute top-16 left-0 w-full z-50' : 'lg:hidden bg-brand-dark absolute top-16 left-0 w-full z-50'}>
           <ul className="flex flex-col items-center space-y-4 px-4 py-6">
-            {filteredNavLinks.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.to} className="w-full">
                 <NavLink
-                  to={link.to}                  className={({ isActive }) =>
+                  to={link.to}
+                  className={({ isActive }) =>
                     isActive
                       ? 'block text-yellow-300 font-semibold text-center'
                       : 'block text-white hover:text-yellow-300 text-center'
@@ -100,9 +110,10 @@ function Navbar() {
             ))}
             <li className="w-full">
               <a
-                href={isChessCodex ? "/chesscodex/dashboard" : isAspireChess ? "/aspirechess/dashboard" : "/dashboard"}
+                href={isAspireChess ? '/aspirechess/dashboard' : '/dashboard'}
                 target="_blank"
-                rel="noopener noreferrer"                className="block text-white hover:text-yellow-300 text-center"
+                rel="noopener noreferrer"
+                className="block text-white hover:text-yellow-300 text-center"
                 onClick={toggleMenu}
                 aria-label="Dashboard"
               >

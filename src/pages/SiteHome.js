@@ -5,17 +5,12 @@ import WhyChooseUs from '../components/WhyChooseUs';
 
 const SiteHome = () => {
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
-  const siteDescription = isChessCodex
-    ? 'Welcome to ChessCodex. Elevate your chess skills with expert training and comprehensive courses.'
-    : isAspireChess
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteDescription = isAspireChess
     ? 'Welcome to AspireChess. Elevate your chess skills with expert training and comprehensive courses.'
     : 'Welcome to Kolkata Chess Academy. Elevate your chess skills with expert training and comprehensive courses.';
-  const siteKeywords = isChessCodex
-    ? 'ChessCodex, chess training, chess courses, chess coaching, chess academy'
-    : isAspireChess
+  const siteKeywords = isAspireChess
     ? 'AspireChess, chess training, chess courses, chess coaching, chess academy'
     : 'Kolkata Chess Academy, chess training, chess courses, chess coaching, chess academy';
 
@@ -41,31 +36,22 @@ const SiteHome = () => {
       <section className={isAspireChess ? "" : "py-24 text-center"}>
         <div className={`${isAspireChess ? "max-w-6xl mx-auto text-center p-10 " + sectionClass : "max-w-6xl mx-auto px-6"}`}>
           <h1 className="text-5xl font-bold mb-6 text-white">Welcome to {siteName}</h1>
-          <p className="text-lg mb-4 text-amber-300">{isChessCodex ? 'Striving for 100% Rated Players' : isAspireChess ? 'Aspiring for 100% Titled Players' : 'Striving for 100% Rated Players'}</p>
+          <p className="text-lg mb-4 text-amber-300">{isAspireChess ? 'Aspiring for 100% Titled Players' : 'Striving for 100% Rated Players'}</p>
           <p className="text-md mb-6 max-w-3xl mx-auto text-gray-200">
-            {isChessCodex
-              ? 'Started with Kolkata Chess Academy, we now strive to create a community of rated players, enhancing their skills through world-class coaching and resources.'
-              : isAspireChess
+            {isAspireChess
               ? 'AspireChess aims to create a community of rated players, enhancing their skills through world-class coaching and resources.'
               : 'Started as Kolkata Chess Academy, we strive to create a community of rated players, enhancing their skills through world-class coaching and resources.'}
           </p>
-          <a
-            href={isChessCodex ? "/chesscodex/admission" : isAspireChess ? "/aspirechess/admission" : "/contact"}
-            className="bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
-          >
-            Join {siteName} Today
-          </a>
+          <span>{isAspireChess ? 'AspireChess: Modern Chess Education' : 'Kolkata Chess Academy: Modern Chess Education'}</span>
         </div>
       </section>
-
-      {/* About Section */}
       <WhyChooseUs />
 
       {/* Scholarship, Collaboration, and Pro Members Sections */}
-      {[
-        { title: "Scholarship Programs", description: "Recognizing talent and hard work, we offer scholarships to support dedicated students with exceptional potential in chess.", link: isChessCodex ? "/chesscodex/exclusives/scholarships" : isAspireChess ? "/aspirechess/exclusives/scholarships" : "/contact", cta: "Learn More" },
-        { title: "Collaborate with Us", description: `Partner with ${siteName} to promote chess and create a meaningful impact in the community.`, link: isChessCodex ? "/chesscodex/collaborate-with-us" : isAspireChess ? "/aspirechess/collaborate-with-us" : "/collaborate-with-us", cta: "Learn More" },
-        { title: "Pro Members", description: "Unlock premium benefits such as exclusive content, personalized coaching, and advanced resources by becoming a Pro Member.", link: isChessCodex ? "/chesscodex/exclusives/pro-membership" : isAspireChess ? "/aspirechess/exclusives/pro-membership" : "/contact", cta: "Join Pro Membership" }
+      {[ 
+        { title: "Scholarship Programs", description: "Recognizing talent and hard work, we offer scholarships to support dedicated students with exceptional potential in chess.", link: isAspireChess ? "/aspirechess/exclusives/scholarships" : "/contact", cta: "Learn More" },
+        { title: "Collaborate with Us", description: `Partner with ${siteName} to promote chess and create a meaningful impact in the community.`, link: isAspireChess ? "/aspirechess/collaborate-with-us" : "/collaborate-with-us", cta: "Learn More" },
+        { title: "Pro Members", description: "Unlock premium benefits such as exclusive content, personalized coaching, and advanced resources by becoming a Pro Member.", link: isAspireChess ? "/aspirechess/exclusives/pro-membership" : "/contact", cta: "Join Pro Membership" }
       ].map((item, index) => (
         <section key={index} className={isAspireChess ? "" : "text-white py-20 " + sectionClass}>
           <div className={`${isAspireChess ? "max-w-6xl mx-auto text-center p-10 " + sectionClass : "max-w-6xl mx-auto px-6 text-center"}`}>

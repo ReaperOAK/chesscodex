@@ -1,10 +1,10 @@
-# ChessCodex - Premier Chess Academy Platform
+# AspireChess - Premier Chess Academy Platform
 
-ChessCodex is a comprehensive web platform for a premier chess academy, providing educational resources, course offerings, tournament information, and community engagement for chess enthusiasts of all skill levels.
+AspireChess is a comprehensive web platform for a premier chess academy, providing educational resources, course offerings, tournament information, and community engagement for chess enthusiasts of all skill levels.
 
 ## 🏆 Project Overview
 
-This modern web application serves as the digital presence for ChessCodex Chess Academy, featuring:
+This modern web application serves as the digital presence for AspireChess Chess Academy, featuring:
 
 - **Multi-service Chess Education**: Online courses, in-school programs, workplace training
 - **Tournament Management**: Monthly tournaments and competitive events
@@ -24,7 +24,7 @@ This modern web application serves as the digital presence for ChessCodex Chess 
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd chesscodex
+cd aspirechess
 
 # Install dependencies
 npm install
@@ -67,7 +67,7 @@ The application will open at `http://localhost:3000`
 ## 📁 Project Structure
 
 ```
-chesscodex/
+aspirechess/
 ├── public/                    # Static assets and PHP backend
 │   ├── php/                  # Backend API endpoints
 │   ├── galleryPics/          # Image galleries
@@ -251,7 +251,7 @@ For technical support or questions:
 
 ## 📄 License
 
-This project is proprietary software for ChessCodex Chess Academy.
+This project is proprietary software for AspireChess Academy.
 
 ---
 

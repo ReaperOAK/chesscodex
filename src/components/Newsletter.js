@@ -7,10 +7,9 @@ const Newsletter = ({ position }) => {
   const [submitted, setSubmitted] = useState(false);
   const [visible, setVisible] = useState(true);
   const location = useLocation();
-  const isChessCodex = location.pathname.startsWith('/chesscodex');
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const logoSrc = isAspireChess ? '/aca.png' : '/kca.png';
-  const siteName = isChessCodex ? 'ChessCodex' : isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

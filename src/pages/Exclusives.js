@@ -12,7 +12,7 @@ const Exclusives = () => {
   // ...removed unused navigate...
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   useEffect(() => {
     const observer = new IntersectionObserver(

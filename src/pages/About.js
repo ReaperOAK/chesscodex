@@ -8,7 +8,7 @@ import Team from '../components/Team';
 const About = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   // --- Theme-Aware Class Definitions ---
   const heroSectionClasses = isAspireChess
@@ -62,7 +62,7 @@ const About = () => {
               <p className={`text-lg leading-relaxed mb-6 ${textClasses}`}>
                 {isAspireChess
                   ? 'Situated in Dumdum, Aspire Chess Academy was established with a singular, audacious goal: to make India the most title-heavy country in the chess world. We are not just a coaching center; we are an incubator for future champions. Our structured, professional chess education focuses on personalized growth, transforming raw talent into tournament-ready masters.'
-                  : 'Started out with Kolkata Chess Academy our singular goal was of making India the leading nation in chess titles, ChessCodex is now dedicated to building a community packed with rated players who are prepared for success. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.'}
+                  : 'Started out with Kolkata Chess Academy our singular goal was of making India the leading nation in chess titles. Our academy provides structured, professional chess education that supports each student’s unique growth, whether they are absolute beginners or seasoned tournament players.'}
               </p>
               <p className={`text-lg leading-relaxed ${textClasses}`}>
                 At {siteName}, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.

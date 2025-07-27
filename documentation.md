@@ -253,7 +253,7 @@ The application is built with React Router for client-side routing and supports 
 
 #### Main App Component (`App.js`)
 **Multi-Brand Support:**
-- **ChessCodex**: Routes prefixed with `/chesscodex`
+// ...existing code...
 - **AspireChess**: Routes prefixed with `/aspirechess`
 - **Default Brand**: Standard routes without prefix
 
@@ -329,7 +329,7 @@ The application features 13 reusable React components that provide consistent fu
 ### Navigation & Layout Components
 
 #### Navbar (`Navbar.js`)
-- **Multi-brand Support**: Dynamically switches between ChessCodex, AspireChess, and default branding
+// Multi-brand support removed. Only AspireChess and Kolkata Chess Academy remain.
 - **Responsive Design**: Desktop navigation with mobile hamburger menu
 - **Dynamic Logo**: Logo changes based on current brand
 - **Brand-specific Routing**: All navigation links adapt to current brand prefix
@@ -378,7 +378,7 @@ The application features 13 reusable React components that provide consistent fu
 
 #### Team (`Team.js`)
 - **Coach Profiles**: Displays detailed information about chess coaches
-- **Brand-specific Data**: Different coach sets for ChessCodex vs AspireChess
+// ...existing code...
 - **Interactive Cards**: Expandable descriptions with "Read More" functionality
 - **Title Highlighting**: Special styling for chess titles (GM, IM, FM)
 - **Professional Layout**: Grid-based responsive design
@@ -400,7 +400,7 @@ The application features 13 reusable React components that provide consistent fu
 
 #### FAQs (`FAQs.js`)
 - **Comprehensive FAQ System**: Organized by categories with search functionality
-- **Brand-specific Content**: Different FAQ sets for ChessCodex and AspireChess
+// ...existing code...
 - **Category Navigation**: Desktop tabs and mobile dropdown for category selection
 - **Search Functionality**: Real-time search across all FAQ items
 - **Collapsible Interface**: Accordion-style expanding answers
@@ -452,7 +452,7 @@ The application includes 17 page components providing complete functionality for
 
 #### WelcomePage (`WelcomePage.js`)
 - **Landing Page**: Default route that presents brand selection
-- **Dual Brand Access**: Links to both ChessCodex and AspireChess
+// ...existing code...
 - **Simple Design**: Clean card-based layout for brand selection
 - **Call-to-Action**: Direct navigation to specific brand experiences
 
@@ -640,7 +640,7 @@ The application includes 17 page components providing complete functionality for
 
 This is a comprehensive, production-ready chess academy website built with React.js featuring:
 
-- **Multi-brand Support**: ChessCodex and AspireChess with shared infrastructure
+// ...existing code...
 - **Full-Stack Architecture**: React frontend with PHP backend and MySQL database
 - **Modern UI/UX**: Tailwind CSS with custom animations and responsive design
 - **SEO Optimized**: Dynamic meta tags, structured data, and search-friendly URLs
@@ -701,7 +701,7 @@ The project demonstrates enterprise-level architecture with proper separation of
 
 #### Events (`Events.js`)
 - **Tournament Management**: Complete event listing and registration system
-- **Multi-brand Content**: Separate events for ChessCodex and AspireChess
+// ...existing code...
 - **Blog Integration**: Chess strategy articles and educational content
 - **Date Filtering**: Past, current, and upcoming event categorization
 - **External Registration**: Google Forms integration for event signups
@@ -744,7 +744,7 @@ The project demonstrates enterprise-level architecture with proper separation of
 
 #### PWA Configuration
 - **Manifest.json**: Complete Progressive Web App configuration
-- **App Branding**: ChessCodex theming with proper icons and colors
+// ...existing code...
 - **Standalone Mode**: Full app-like experience when installed
 - **Theme Integration**: Consistent brand colors throughout PWA experience
 

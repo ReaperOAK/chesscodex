@@ -17,7 +17,7 @@ const ITEMS_PER_PAGE = 8;
 const Gallery = () => {
     const location = useLocation();
     const isAspireChess = location.pathname.startsWith('/aspirechess');
-    const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+    const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
     const [index, setIndex] = useState(-1);
     const [filter, setFilter] = useState('all');

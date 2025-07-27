@@ -10,25 +10,25 @@ import { useLocation } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
 const achievementsData = {
-  chesscodex: [
-    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" },
-  ],
   aspirechess: [
-    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" },
+    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
   ],
+  kolkata: [
+    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
+  ]
 };
 
 const testimonials = {
-  chesscodex: [
-    { quote: "The Chess Academy transformed my skills. I went from beginner to tournament winner in months!", name: "John Doe", role: "Chess Enthusiast", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { quote: "I love the personalized attention here. The supportive community is a game changer!", name: "Jane Smith", role: "Student", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { quote: "This academy gave me tools to excel in competitions and beyond. Highly recommended!", name: "Michael Lee", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/50.jpg" },
-  ],
   aspirechess: [
     { quote: "AspireChess Academy has been a game changer for me. The coaches are top-notch!", name: "Alice Johnson", role: "Chess Enthusiast", avatar: "https://randomuser.me/api/portraits/women/45.jpg" },
     { quote: "The community at AspireChess is incredibly supportive. I've learned so much!", name: "Bob Brown", role: "Student", avatar: "https://randomuser.me/api/portraits/men/46.jpg" },
-    { quote: "Thanks to AspireChess, I've improved my game and won several tournaments!", name: "Charlie Davis", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/47.jpg" },
+    { quote: "Thanks to AspireChess, I've improved my game and won several tournaments!", name: "Charlie Davis", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/47.jpg" }
   ],
+  kolkata: [
+    { quote: "The Chess Academy transformed my skills. I went from beginner to tournament winner in months!", name: "John Doe", role: "Chess Enthusiast", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+    { quote: "I love the personalized attention here. The supportive community is a game changer!", name: "Jane Smith", role: "Student", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+    { quote: "This academy gave me tools to excel in competitions and beyond. Highly recommended!", name: "Michael Lee", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/50.jpg" }
+  ]
 };
 
 const Modal = ({ achievement, onClose, isAspireChess }) => {
@@ -60,15 +60,15 @@ const Modal = ({ achievement, onClose, isAspireChess }) => {
 const AchievementsTestimonials = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'ChessCodex';
+  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   const [selectedAchievement, setSelectedAchievement] = useState(null);
 
   const openModal = (achievement) => setSelectedAchievement(achievement);
   const closeModal = () => setSelectedAchievement(null);
 
-  const currentAchievements = isAspireChess ? achievementsData.aspirechess : achievementsData.chesscodex;
-  const currentTestimonials = isAspireChess ? testimonials.aspirechess : testimonials.chesscodex;
+  const currentAchievements = isAspireChess ? achievementsData.aspirechess : achievementsData.kolkata;
+  const currentTestimonials = isAspireChess ? testimonials.aspirechess : testimonials.kolkata;
 
   // --- Theme-Aware Class Definitions ---
   const heroClasses = isAspireChess ? "py-20 text-center" : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-20 text-center";

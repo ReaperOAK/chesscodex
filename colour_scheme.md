@@ -3,7 +3,7 @@
 ## Overview
 Three distinct themes have been created for the chess academies, each with its own unique visual identity and color palette.
 
-## 🎯 ChessCodex - Modern Purple & Dark Theme
+## 🎯 AspireChess & Kolkata Chess Academy - Theme Reference
 **Brand Identity:** Modern, tech-forward, innovative chess education
 **Target Audience:** Tech-savvy chess enthusiasts, competitive players
 
@@ -117,7 +117,7 @@ Each theme dynamically sets CSS custom properties when the route changes:
 
 ### Theme Classes
 Body element gets theme-specific classes:
-- `.theme-chesscodex` - For ChessCodex styling
+// ...existing code...
 - `.theme-aspirechess` - For AspireChess styling  
 - `.theme-kca` - For KCA styling
 
@@ -126,11 +126,11 @@ All themes are integrated with Tailwind CSS using the `brand.*` color utilities 
 
 ## Usage Guidelines
 
-1. **ChessCodex**: Use for modern, tech-focused chess content
+// ...existing code...
 2. **AspireChess**: Use for premium, elegant chess experiences
 3. **KCA**: Use for traditional, institutional chess education
 
 Each theme automatically applies when navigating to the respective routes:
-- `/chesscodex/*` → ChessCodex theme
+// ...existing code...
 - `/aspirechess/*` → AspireChess theme
 - Default routes → KCA theme

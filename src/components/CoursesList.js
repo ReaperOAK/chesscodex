@@ -16,7 +16,7 @@ const coursesData = [
       'Basics of Endgames',
     ],
     duration: '12 months',
-    site: 'common', // Specific to ChessCodex
+        site: 'aspirechess', // Unified for AspireChess
   },
   {
     title: 'Intermediate Course',
@@ -29,7 +29,7 @@ const coursesData = [
       'Fundamental Strategies (Open File, Outpost, Center, Space & Exchanges)',
     ],
     duration: '18 months',
-    site: 'common', // Common to both sites
+        site: 'aspirechess', // Unified for AspireChess
   },
   {
     title: 'Advanced Course',
@@ -40,7 +40,7 @@ const coursesData = [
       'Colour Complex Piece Play',
     ],
     duration: '24 months',
-    site: 'common', // Specific to AspireChess
+        site: 'aspirechess', // Unified for AspireChess
   },
   {
     title: 'Expert Course',
@@ -52,7 +52,7 @@ const coursesData = [
       'Building a Tailored Opening Repertoire',
     ],
     duration: 'Ongoing',
-    site: 'common', // Common to both sites
+        site: 'aspirechess', // Unified for AspireChess
   },
   {
     title: 'Private Classes',
@@ -66,7 +66,7 @@ const coursesData = [
       'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
     ],
     duration: 'Flexible',
-    site: 'common', // Specific to ChessCodex
+        site: 'aspirechess', // Unified for AspireChess
   },
 ];
 

@@ -10,9 +10,9 @@ const WelcomePage = () => {
           Join us to elevate your chess skills with expert training and comprehensive courses.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
-          <Link to="/chesscodex" className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            <h2 className="text-3xl font-bold text-brand-dark mb-4">ChessCodex</h2>
-            <p className="text-lg text-brand-text">Elevate your chess skills with expert training and comprehensive courses at ChessCodex.</p>
+          <Link to="/" className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <h2 className="text-3xl font-bold text-brand-dark mb-4">Kolkata Chess Academy</h2>
+            <p className="text-lg text-brand-text">Join Kolkata Chess Academy to elevate your chess skills with expert training and comprehensive courses.</p>
           </Link>
           <Link to="/aspirechess" className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
             <h2 className="text-3xl font-bold text-brand-dark mb-4">AspireChess</h2>
