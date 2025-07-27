@@ -6,17 +6,21 @@ const CTA = () => {
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
-  const sectionClasses = isAspireChess
-    ? "py-16 sm:py-20 px-6"
-    : "bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent text-white py-16 sm:py-20 px-6";
+  // Visually distinct background for CTA section
+  const sectionClasses =
+    "relative py-16 sm:py-20 px-6 flex justify-center items-center";
 
-  const containerClasses = isAspireChess
-    ? "bg-black bg-opacity-20 backdrop-blur-sm rounded-xl p-10"
-    : "";
+  const containerClasses =
+    "max-w-4xl mx-auto text-center rounded-2xl p-10 shadow-xl border-2 border-amber-400" +
+    (isAspireChess
+      ? " bg-white bg-opacity-5 backdrop-blur-sm rounded-xl"
+      : "");
 
   return (
     <section className={sectionClasses}>
-      <div className={`max-w-4xl mx-auto text-center ${containerClasses}`}>
+      {/* Gradient overlay for highlight effect */}
+
+      <div className={containerClasses} style={{ position: "relative", zIndex: 1 }}>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-white">
           Unleash Your Inner Grandmaster
         </h1>
