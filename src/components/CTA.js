@@ -7,13 +7,14 @@ const CTA = () => {
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   // Visually distinct background for CTA section
-  const sectionClasses =
-    "relative py-16 sm:py-20 px-6 flex justify-center items-center";
+ const sectionClasses = isAspireChess
+    ? "py-16 sm:py-20 px-relative py-16 sm:py-20 px-6 flex justify-center items-center"
+    : "bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent text-white py-16 sm:py-20 px-6";
 
   const containerClasses =
-    "max-w-4xl mx-auto text-center rounded-2xl p-10 shadow-xl border-2 border-amber-400" +
+    "max-w-4xl mx-auto text-center " +
     (isAspireChess
-      ? " bg-white bg-opacity-5 backdrop-blur-sm rounded-xl"
+      ? " bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border-2 border-amber-400 rounded-2xl p-10 shadow-xl"
       : "");
 
   return (
