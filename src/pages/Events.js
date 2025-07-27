@@ -7,31 +7,26 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
 // Data for events
-const eventsData = {
-  kolkata: [
+const eventsData = [
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-10-02", mode: "Offline", link: null, image: "/events/2024-10-02.jpg" },
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-11-15", mode: "Offline", link: "https://forms.gle/zBsTohCXppUNCWjU6", image: "/events/2024-11-15.jpg" },
-  ],
-  aspirechess: [
-    { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-10-02", mode: "Offline", link: null, image: "/events/2024-10-02.jpg" },
-    { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-11-15", mode: "Offline", link: "https://forms.gle/zBsTohCXppUNCWjU6", image: "/events/2024-11-15.jpg" },
-  ],
-};
+   ];
 
 // Data for blogs
-const blogsData = {
-  kolkata: [
-    { title: "The Benefits of Chess for Cognitive Development", date: "2023-09-01", author: "John Doe", link: "/blog/benefits-of-chess", image: "https://placehold.co/600x400/7646eb/FFF?text=Blog", content: "Chess has been shown to improve cognitive abilities, enhance problem-solving skills, and boost memory..." },
-    { title: "Top 10 Chess Strategies for Beginners", date: "2023-08-15", author: "Jane Smith", link: "/blog/top-10-chess-strategies", image: "https://placehold.co/600x400/461fa3/FFF?text=Blog", content: "Starting out in chess can be daunting, but with the right strategies, you can quickly improve your game..." },
-  ],
-  aspirechess: [
-    { title: "How to Improve Your Chess Rating", date: "2023-10-01", author: "Alice Johnson", link: "/blog/improve-chess-rating", image: "https://placehold.co/600x400/374151/FFF?text=Blog", content: "Improving your chess rating requires dedication, practice, and the right strategies..." },
-    { title: "The Importance of Endgame Knowledge", date: "2023-11-20", author: "Bob Brown", link: "/blog/endgame-knowledge", image: "https://placehold.co/600x400/6B7280/FFF?text=Blog", content: "Endgame knowledge is crucial for success in chess. In this blog, we discuss the importance of understanding endgame principles..." },
-  ],
-};
+const blogsData = [
+  {
+    title: "Chess Blog: PDF Insight",
+    date: "2025-07-28",
+    author: "ChessCodex",
+    link: "/blogs/1.pdf",
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    content: "View the full blog in PDF format."
+  }
+];
 
 const Events = () => {
   const location = useLocation();
+  // Theme detection only for style, not for data
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
@@ -43,8 +38,9 @@ const Events = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const events = isAspireChess ? eventsData.aspirechess : eventsData.kolkata;
-  const blogs = isAspireChess ? blogsData.aspirechess : blogsData.kolkata;
+  // Universal data usage
+  const events = eventsData;
+  const blogs = blogsData;
 
   const filteredEvents = events.filter(event => filter === "All" || event.mode === filter);
   const isLinkExpired = (date) => new Date(date) < currentDate;
@@ -123,11 +119,9 @@ const Events = () => {
                     <h3 className={`text-2xl font-semibold mb-3 ${cardTitleClasses}`}>{blog.title}</h3>
                     <p className={`${cardTextClasses} mb-1`}><strong>Date:</strong> {blog.date}</p>
                     <p className={`${cardTextClasses} mb-4`}><strong>Author:</strong> {blog.author}</p>
-                    <p className={`${cardTextClasses} mb-4`}>
-                      {blog.content.length > 100 ? `${blog.content.substring(0, 100)}...` : blog.content}
-                    </p>
-                    <a href={blog.link} className={`block text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonClasses}`}>
-                      Read More
+                    <p className={`${cardTextClasses} mb-4`}>{blog.content}</p>
+                    <a href={blog.link} target="_blank" rel="noopener noreferrer" className={`block text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonClasses}`}>
+                      View PDF
                     </a>
                   </div>
                 </div>

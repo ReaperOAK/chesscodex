@@ -9,27 +9,15 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import { useLocation } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
-const achievementsData = {
-  aspirechess: [
-    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
-  ],
-  kolkata: [
-    { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
-  ]
-};
+// Universal achievements and testimonials
+const achievementsData = [
+  { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
+];
 
-const testimonials = {
-  aspirechess: [
-    { quote: "AspireChess Academy has been a game changer for me. The coaches are top-notch!", name: "Alice Johnson", role: "Chess Enthusiast", avatar: "https://randomuser.me/api/portraits/women/45.jpg" },
-    { quote: "The community at AspireChess is incredibly supportive. I've learned so much!", name: "Bob Brown", role: "Student", avatar: "https://randomuser.me/api/portraits/men/46.jpg" },
-    { quote: "Thanks to AspireChess, I've improved my game and won several tournaments!", name: "Charlie Davis", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/47.jpg" }
-  ],
-  kolkata: [
-    { quote: "The Chess Academy transformed my skills. I went from beginner to tournament winner in months!", name: "John Doe", role: "Chess Enthusiast", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { quote: "I love the personalized attention here. The supportive community is a game changer!", name: "Jane Smith", role: "Student", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { quote: "This academy gave me tools to excel in competitions and beyond. Highly recommended!", name: "Michael Lee", role: "Chess Competitor", avatar: "https://randomuser.me/api/portraits/men/50.jpg" }
-  ]
-};
+const testimonials = [
+  { quote: "If you’re serious about improving your chess skills, I wholeheartedly recommend Arpan Sir and Joydeep Sir [Aspire Chess Academy]. None came close to what I’ve gained under Arpan Sir and Joydeep Sir. Before them, I struggled with positional understanding, planning, and other fundamentals. Here, I’m learning these every day along with so much more. What sets them apart is their friendly and approachable teaching style, which bridges the usual gap between a coach and a student, which makes learning enjoyable and breaks the usual coach-student barrier. They also provide practice sessions that have helped me a lot. I’m truly grateful for their guidance.", name: "Dhruv Kar", role: "Chess Enthusiast", avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUPrloGLYTtuRAB7qTnRTnQ35fAmk1NEaxWqTQhbUML5qX5Ovg=w108-h108-p-rp-mo-br100" },
+  { quote: "Players get wonderful exposure here and get a chance to play with quality players who are high rated who also frequently visit the sessions. The sessions are conducted in a friendly environment and constant learning. My experience was wonderful. Highly recommended.", name: "Megha Patra", role: "Chess Enthusiast", avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXGUStEJ5_047_ExA4qYJj3KThVcb6HJ9aSLMdoEFxw6WvUFLI=w108-h108-p-rp-mo-br100" }
+];
 
 const Modal = ({ achievement, onClose, isAspireChess }) => {
     const modalBgClasses = isAspireChess
@@ -67,8 +55,9 @@ const AchievementsTestimonials = () => {
   const openModal = (achievement) => setSelectedAchievement(achievement);
   const closeModal = () => setSelectedAchievement(null);
 
-  const currentAchievements = isAspireChess ? achievementsData.aspirechess : achievementsData.kolkata;
-  const currentTestimonials = isAspireChess ? testimonials.aspirechess : testimonials.kolkata;
+  // Use universal data for both variants
+  const currentAchievements = achievementsData;
+  const currentTestimonials = testimonials;
 
   // --- Theme-Aware Class Definitions ---
   const heroClasses = isAspireChess ? "py-20 text-center" : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-20 text-center";
