@@ -61,7 +61,7 @@ const Footer = () => {
                   </ul>
                 )}
               </li>
-              <li><Link to={isAspireChess ? "/aspirechess" : "/"} className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
+              <li><Link to="/aspirechess" className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
               <li><Link to="/" className={`${highlightClass} hover:underline`}>Home</Link></li>
             </ul>
           </div>
