@@ -25,17 +25,45 @@ const WhyChooseUs = () => {
     { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: "/aspirechess/achievements-testimonials" },
     { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI" },
     { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: "/aspirechess/events-blogs" },
+    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Student Dashboard", description: "A personalized dashboard to track your learning journey, achievements, and upcoming classes at a glance.", link: "/aspirechess/dashboard" },
+    { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Learning Management System", description: "Access structured lessons, assignments, and resources in one seamless platform designed for effective learning.", link: "/aspirechess/lms" },
   ];
 
-  const sliderSettings = { /* ... slider settings remain the same ... */ };
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   // Define classes based on the theme
   const sectionClasses = isAspireChess ? "py-20" : "py-20 bg-gradient-to-r from-brand-light via-white to-brand-light";
   const titleClasses = isAspireChess ? "text-4xl font-extrabold mb-6 text-amber-400" : "text-4xl font-extrabold mb-6 text-brand-primary";
   const descriptionClasses = isAspireChess ? "text-lg mb-12 text-gray-300" : "text-lg mb-12 text-brand-text";
   const cardClasses = isAspireChess 
-    ? "flex flex-col items-center justify-start bg-black bg-opacity-30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full"
-    : "flex flex-col items-center justify-start bg-white p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full";
+    ? "flex flex-col items-center justify-start bg-black bg-opacity-30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]"
+    : "flex flex-col items-center justify-start bg-white p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]";
   const cardTitleClasses = isAspireChess ? "text-lg font-semibold text-white mb-2" : "text-lg font-semibold text-brand-primary mb-2";
   const cardDescriptionClasses = isAspireChess ? "text-gray-300 text-center text-sm" : "text-brand-text text-center text-sm";
 
@@ -59,17 +87,19 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Slider for Other Features */}
-        <Slider {...sliderSettings}>
-          {features.map((feature, index) => (
-            <div className="px-2 h-full"> {/* Added padding for slider items */}
-              <NavLink key={index} to={feature.link} className={cardClasses}>
-                <div className="flex justify-center items-center mb-2">{feature.icon}</div>
-                <h2 className={cardTitleClasses}>{feature.title}</h2>
-                <p className={cardDescriptionClasses}>{feature.description}</p>
-              </NavLink>
-            </div>
-          ))}
-        </Slider>
+        <div className="relative">
+          <Slider {...sliderSettings}>
+            {features.map((feature, index) => (
+              <div key={index} className="px-4 py-6 h-full flex items-stretch">
+                <NavLink to={feature.link} className={cardClasses + " w-full"}>
+                  <div className="flex justify-center items-center mb-2">{feature.icon}</div>
+                  <h2 className={cardTitleClasses}>{feature.title}</h2>
+                  <p className={cardDescriptionClasses}>{feature.description}</p>
+                </NavLink>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );
