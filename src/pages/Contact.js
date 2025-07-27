@@ -26,7 +26,7 @@ const Contact = () => {
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
-  const contactAddress = 'Cross Road, Purba Sinthee, Dumdum, Kolkata:700030';
+  const contactAddress = 'Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030';
 
   useEffect(() => {
     if (document.getElementById('map') && !mapRef.current) {
@@ -37,13 +37,21 @@ const Contact = () => {
       });
       mapRef.current = map;
 
+      // Use a golden-themed map for AspireChess, fallback to default for KCA
       const tileLayerUrl = isAspireChess
-        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
         : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       
       L.tileLayer(tileLayerUrl, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       }).addTo(map);
+
+      // Add golden border and glow to map container
+      const mapDiv = document.getElementById('map');
+      if (mapDiv) {
+        mapDiv.style.border = '4px solid #FFD700';
+        mapDiv.style.boxShadow = '0 0 24px 4px #FFD70088';
+      }
 
       const customIcon = new L.Icon({
         iconUrl: "/marker-icon.png",
@@ -175,9 +183,9 @@ const Contact = () => {
                   <div>
                     <h2 className={`text-4xl font-bold mb-4 ${titleClasses}`}>Connect With Us</h2>
                     <div className="flex space-x-4">
-                      <a href="https://www.facebook.com" className="text-gray-400 hover:text-white"><FaFacebook size={32} /></a>
-                      <a href="https://www.instagram.com" className="text-gray-400 hover:text-white"><FaInstagram size={32} /></a>
-                      <a href="https://www.linkedin.com/company/kolkatachessacademy/" className="text-gray-400 hover:text-white"><FaLinkedin size={32} /></a>
+                      <a href="https://www.facebook.com/profile.php?id=61576362964556" className="text-gray-400 hover:text-white"><FaFacebook size={32} /></a>
+                      <a href="https://www.instagram.com/kolkatachessacademy/" className="text-gray-400 hover:text-white"><FaInstagram size={32} /></a>
+                      <a href="https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true" className="text-gray-400 hover:text-white"><FaLinkedin size={32} /></a>
                       <a href="https://wa.me/+919830149852" className="text-gray-400 hover:text-white"><FaWhatsapp size={32} /></a>
                       <a href="https://www.youtube.com/@kolkatachessacademy" className="text-gray-400 hover:text-white"><FaYoutube size={32} /></a>
                     </div>

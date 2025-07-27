@@ -88,11 +88,11 @@ const Footer = () => {
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>Follow Us</h2>
             <div className="flex space-x-4 mb-6">
-              <a href="[https://facebook.com](https://facebook.com)" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaFacebook /></a>
-              <a href="[https://instagram.com](https://instagram.com)" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaInstagram /></a>
-              <a href="[https://www.linkedin.com/company/kolkatachessacademy/](https://www.linkedin.com/company/kolkatachessacademy/)" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaLinkedin /></a>
-              <a href="[https://wa.me/+919830149852](https://wa.me/+919830149852)" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaWhatsapp /></a>
-              <a href="[https://www.youtube.com/@kolkatachessacademy](https://www.youtube.com/@kolkatachessacademy)" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaYoutube /></a>
+              <a href="https://www.facebook.com/profile.php?id=61576362964556" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaFacebook /></a>
+              <a href="https://www.instagram.com/kolkatachessacademy/" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaInstagram /></a>
+              <a href="https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaLinkedin /></a>
+              <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaWhatsapp /></a>
+              <a href="https://www.youtube.com/@kolkatachessacademy" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaYoutube /></a>
             </div>
             <Newsletter position="footer" />
           </div>
