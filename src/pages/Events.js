@@ -17,7 +17,7 @@ const blogsData = [
   {
     title: "Chess Blog: PDF Insight",
     date: "2025-07-28",
-    author: "ChessCodex",
+    author: "AspireChess Team",
     link: "/blogs/1.pdf",
     image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content: "View the full blog in PDF format."
