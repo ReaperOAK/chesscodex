@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { FaChessKing, FaTrophy, FaQuoteLeft } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -33,10 +33,22 @@ const About = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>About Us - {siteName}</title>
-        {/* Meta tags remain the same */}
-      </Helmet>
+      <SEO
+        title={`About Us - ${siteName}`}
+        description={`Learn about ${siteName}, our mission, vision, and the expert team behind our chess academy.`}
+        keywords={isAspireChess ? 'AspireChess, about, chess academy, mentors, mission, vision' : 'Kolkata Chess Academy, about, chess academy, mentors, mission, vision'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/about' : 'https://kolkatachessacademy.in/about'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/about' : 'https://kolkatachessacademy.in/about'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: siteName,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/about' : 'https://kolkatachessacademy.in/about',
+          description: `Learn about ${siteName}, our mission, vision, and the expert team behind our chess academy.`
+        }}
+      />
 
       {/* Hero Section */}
       <section className={heroSectionClasses}>

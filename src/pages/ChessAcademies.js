@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from 'react';
 
 const collaborationModels = [
@@ -83,7 +84,24 @@ const PricingCard = ({ title, price, details }) => (
 
 const ChessAcademies = () => {
   return (
-    <section>
+    <>
+      <SEO
+        title="Chess Academies - Kolkata Chess Academy"
+        description="Discover Kolkata Chess Academy's network and approach to chess education. Find the best chess academies for your growth."
+        keywords="chess, chess academies, Kolkata Chess Academy, education, training"
+        image="https://kolkatachessacademy.in/kca.png"
+        url="https://kolkatachessacademy.in/chess-academies"
+        type="article"
+        canonical="https://kolkatachessacademy.in/chess-academies"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'EducationalOrganization',
+          name: 'Kolkata Chess Academy',
+          url: 'https://kolkatachessacademy.in/chess-academies',
+          description: 'Discover Kolkata Chess Academy\'s network and approach to chess education. Find the best chess academies for your growth.'
+        }}
+      />
+      <section>
       <div className="max-w-7xl mx-auto px-6 text-center space-y-20">
         
         <div>
@@ -121,7 +139,8 @@ const ChessAcademies = () => {
         </div>
 
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

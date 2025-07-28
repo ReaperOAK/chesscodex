@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
     { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: "/aspirechess/achievements-testimonials" },
     { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI" },
     { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: "/aspirechess/events-blogs" },
-    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Student Dashboard", description: "A personalized dashboard to track your learning journey, achievements, and upcoming classes at a glance.", link: "/aspirechess/dashboard" },
+    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Student Dashboard", description: "A personalized dashboard to track your learning journey, achievements, and upcoming classes at a glance.", link: "https://dashboard.kolkatachessacademy.in" },
     { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Learning Management System", description: "Access structured lessons, assignments, and resources in one seamless platform designed for effective learning.", link: "/aspirechess/lms" },
   ];
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const GameAnalysis = () => {
   const location = useLocation();
@@ -23,6 +24,22 @@ const GameAnalysis = () => {
         <p className={`text-lg mb-8 ${textClasses}`}>
           Individual game analysis by FMs, IMs, or even a GM to provide deep insights into your play.
         </p>
+        <SEO
+          title="Game Analysis - Kolkata Chess Academy"
+          description="Deep dive into chess game analysis, strategies, and lessons from Kolkata Chess Academy."
+          keywords="chess, game analysis, strategy, lessons, Kolkata Chess Academy"
+          image="https://kolkatachessacademy.in/kca.png"
+          url="https://kolkatachessacademy.in/exclusives/game-analysis"
+          type="article"
+          canonical="https://kolkatachessacademy.in/exclusives/game-analysis"
+          structuredData={{
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            name: 'Game Analysis',
+            url: 'https://kolkatachessacademy.in/exclusives/game-analysis',
+            description: 'Deep dive into chess game analysis, strategies, and lessons from Kolkata Chess Academy.'
+          }}
+        />
         <div className={cardClasses}>
           <h3 className={`text-2xl font-bold mb-4 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Service Includes:</h3>
           <ul className={`list-disc list-inside text-left space-y-2 ${textClasses}`}>

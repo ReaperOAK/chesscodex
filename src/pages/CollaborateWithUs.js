@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
@@ -47,11 +47,23 @@ const CollaborateWithUs = () => {
     : "bg-brand-secondary text-white hover:bg-brand-dark";
 
   return (
-    <div>
-      <Helmet>
-        <title>Collaborate With Us - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+    <>
+      <SEO
+        title={`Collaborate With Us - ${siteName}`}
+        description={`Partner with ${siteName} to promote chess, foster creativity, and make a meaningful impact in your community.`}
+        keywords={isAspireChess ? 'AspireChess, collaborate, partnership, chess, community' : 'Kolkata Chess Academy, collaborate, partnership, chess, community'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us'}
+        type="website"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: `Collaborate With Us - ${siteName}`,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us',
+          description: `Partner with ${siteName} to promote chess, foster creativity, and make a meaningful impact in your community.`
+        }}
+      />
       
       {/* Hero Section */}
       <section className={heroClasses}>
@@ -87,7 +99,7 @@ const CollaborateWithUs = () => {
           <Route path="chess-academies" element={<ChessAcademies />} />
         </Routes>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -71,7 +71,7 @@ function Navbar() {
               </NavLink>
             ))}
             <a
-              href={isAspireChess ? '/aspirechess/dashboard' : '/dashboard'}
+              href="https://dashboard.kolkatachessacademy.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-amber-300 transition-colors duration-300 mx-2"
@@ -110,7 +110,7 @@ function Navbar() {
             ))}
             <li className="w-full">
               <a
-                href={isAspireChess ? '/aspirechess/dashboard' : '/dashboard'}
+                href="https://dashboard.kolkatachessacademy.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-white hover:text-yellow-300 text-center"

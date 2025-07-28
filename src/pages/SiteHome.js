@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { useLocation } from 'react-router-dom';
 import WhyChooseUs from '../components/WhyChooseUs';
 
@@ -26,11 +26,29 @@ const SiteHome = () => {
 
   return (
     <div className={isAspireChess ? "space-y-16 py-16 px-4" : ""}>
-      <Helmet>
-        <title>Home - {siteName}</title>
-        <meta name="description" content={siteDescription} />
-        <meta name="keywords" content={siteKeywords} />
-      </Helmet>
+      <SEO
+        title={`Home - ${siteName}`}
+        description={siteDescription}
+        keywords={siteKeywords}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess' : 'https://kolkatachessacademy.in/'}
+        type="website"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess' : 'https://kolkatachessacademy.in/'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: siteName,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess' : 'https://kolkatachessacademy.in/',
+          logo: isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png',
+          sameAs: [
+            'https://www.facebook.com/profile.php?id=61576362964556',
+            'https://www.instagram.com/kolkatachessacademy/',
+            'https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true',
+            'https://www.youtube.com/@kolkatachessacademy'
+          ],
+          description: siteDescription
+        }}
+      />
 
       {/* Hero Section */}
       <section className={isAspireChess ? "" : "py-24 text-center"}>

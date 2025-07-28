@@ -7,7 +7,7 @@ import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Maintenance from './pages/Maintenance';
+// import Maintenance from './pages/Maintenance';
 import AdmissionCourses from './pages/AdmissionCourses';
 import WelcomePage from './pages/WelcomePage';
 import Newsletter from './components/Newsletter';
@@ -46,7 +46,7 @@ function AppContent() {
         <Newsletter position="left" theme={isAspireChess ? 'aspirechess' : 'default'} />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/dashboard" element={<Maintenance />} />
+          <Route path="/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -67,7 +67,7 @@ function AppContent() {
               <Route path="/aspirechess/faqs" element={<Contact />} />
               <Route path="/aspirechess/refund-policy" element={<Navigate to="/aspirechess/contact#refund-policy" />} />
               <Route path="/aspirechess/contact" element={<Contact />} />
-              <Route path="/aspirechess/dashboard" element={<Maintenance />} />
+              <Route path="/aspirechess/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
               <Route path="/aspirechess/exclusives/*" element={<Exclusives />} />
               <Route path="/aspirechess/collaborate-with-us/*" element={<CollaborateWithUs />} />
             </>

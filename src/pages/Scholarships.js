@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from "react";
 import { useLocation } from 'react-router-dom';
 
@@ -52,7 +53,24 @@ const Scholarships = () => {
   const categoryTitleClasses = isAspireChess ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-brand-dark mb-2";
 
   return (
-    <section className={sectionClasses}>
+    <>
+      <SEO
+        title={isAspireChess ? 'Scholarships - AspireChess' : 'Scholarships - Kolkata Chess Academy'}
+        description={isAspireChess ? 'AspireChess scholarship programs for young chess talents and achievers.' : 'Kolkata Chess Academy scholarship programs for young chess talents and achievers.'}
+        keywords={isAspireChess ? 'AspireChess, scholarships, chess, pro membership, awards' : 'Kolkata Chess Academy, scholarships, chess, pro membership, awards'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/scholarships' : 'https://kolkatachessacademy.in/exclusives/scholarships'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/scholarships' : 'https://kolkatachessacademy.in/exclusives/scholarships'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'EducationalOccupationalProgram',
+          name: isAspireChess ? 'AspireChess Scholarships' : 'Kolkata Chess Academy Scholarships',
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/scholarships' : 'https://kolkatachessacademy.in/exclusives/scholarships',
+          description: isAspireChess ? 'AspireChess scholarship programs for young chess talents and achievers.' : 'Kolkata Chess Academy scholarship programs for young chess talents and achievers.'
+        }}
+      />
+      <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className={`text-3xl font-bold mb-8 ${titleClasses}`}>Scholarships</h2>
         <div className={cardClasses}>
@@ -70,6 +88,7 @@ const Scholarships = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

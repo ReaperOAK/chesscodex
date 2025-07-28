@@ -1,9 +1,27 @@
+import SEO from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const WelcomePage = () => {
   return (
-    <section className="bg-gradient-to-r from-brand-subtle via-white to-brand-subtle py-20">
+    <>
+      <SEO
+        title="Welcome - Kolkata Chess Academy & AspireChess"
+        description="Choose your chess journey: Kolkata Chess Academy or AspireChess. Elevate your skills with expert training and courses."
+        keywords="chess, Kolkata Chess Academy, AspireChess, training, courses, welcome"
+        image="https://kolkatachessacademy.in/aca.png"
+        url="https://kolkatachessacademy.in/"
+        type="website"
+        canonical="https://kolkatachessacademy.in/"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Welcome',
+          url: 'https://kolkatachessacademy.in/',
+          description: 'Choose your chess journey: Kolkata Chess Academy or AspireChess. Elevate your skills with expert training and courses.'
+        }}
+      />
+      <section className="bg-gradient-to-r from-brand-subtle via-white to-brand-subtle py-20">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h1 className="text-5xl font-bold mb-10 text-brand-dark">Welcome to Our Chess Academy</h1>
         <p className="text-lg text-brand-text mb-12">
@@ -21,6 +39,7 @@ const WelcomePage = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

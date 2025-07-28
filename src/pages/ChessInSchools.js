@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -22,7 +23,24 @@ const ChessInSchools = () => {
     : "bg-brand-dark text-white rounded-lg shadow-md";
 
   return (
-    <section className={sectionClasses}>
+    <>
+      <SEO
+        title={isAspireChess ? 'Chess in Schools - AspireChess' : 'Chess in Schools - Kolkata Chess Academy'}
+        description={isAspireChess ? 'AspireChess brings chess to schools, enriching students with cognitive and strategic skills.' : 'Kolkata Chess Academy brings chess to schools, enriching students with cognitive and strategic skills.'}
+        keywords={isAspireChess ? 'AspireChess, chess in schools, education, cognitive skills, strategy' : 'Kolkata Chess Academy, chess in schools, education, cognitive skills, strategy'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-schools' : 'https://kolkatachessacademy.in/chess-in-schools'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-schools' : 'https://kolkatachessacademy.in/chess-in-schools'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'EducationalOrganization',
+          name: isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy',
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-schools' : 'https://kolkatachessacademy.in/chess-in-schools',
+          description: isAspireChess ? 'AspireChess brings chess to schools, enriching students with cognitive and strategic skills.' : 'Kolkata Chess Academy brings chess to schools, enriching students with cognitive and strategic skills.'
+        }}
+      />
+      <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className={`text-3xl font-bold mb-4 ${titleClasses}`}>Chess in Schools</h2>
         <p className={`text-lg mb-12 ${textClasses}`}>
@@ -49,7 +67,8 @@ const ChessInSchools = () => {
           </a>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

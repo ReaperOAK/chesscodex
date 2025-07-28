@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -23,7 +24,24 @@ const ChessInWorkspaces = () => {
     : "bg-brand-dark text-white rounded-lg shadow-md";
 
   return (
-    <section className={sectionClasses}>
+    <>
+      <SEO
+        title={isAspireChess ? 'Chess in Workspaces - AspireChess' : 'Chess in Workspaces - Kolkata Chess Academy'}
+        description={isAspireChess ? 'AspireChess brings chess to workspaces, boosting employee focus, strategy, and teamwork.' : 'Kolkata Chess Academy brings chess to workspaces, boosting employee focus, strategy, and teamwork.'}
+        keywords={isAspireChess ? 'AspireChess, chess in workspaces, corporate, team building, strategy' : 'Kolkata Chess Academy, chess in workspaces, corporate, team building, strategy'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-workspaces' : 'https://kolkatachessacademy.in/chess-in-workspaces'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-workspaces' : 'https://kolkatachessacademy.in/chess-in-workspaces'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy',
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/chess-in-workspaces' : 'https://kolkatachessacademy.in/chess-in-workspaces',
+          description: isAspireChess ? 'AspireChess brings chess to workspaces, boosting employee focus, strategy, and teamwork.' : 'Kolkata Chess Academy brings chess to workspaces, boosting employee focus, strategy, and teamwork.'
+        }}
+      />
+      <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className={`text-3xl font-bold mb-4 ${titleClasses}`}>Chess in Workspaces</h2>
         <p className={`text-lg mb-12 ${textClasses}`}>
@@ -50,7 +68,8 @@ const ChessInWorkspaces = () => {
           </a>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

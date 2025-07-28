@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { useLocation } from 'react-router-dom';
 import CoursesList from '../components/CoursesList';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
@@ -56,11 +56,23 @@ const AdmissionCourses = () => {
   const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
 
   return (
-    <div>
-      <Helmet>
-        <title>Admission & Courses - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+    <>
+      <SEO
+        title={`Admission & Courses - ${siteName}`}
+        description={`Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`}
+        keywords={isAspireChess ? 'AspireChess, admission, chess courses, GM Niaz Murshed, training' : 'Kolkata Chess Academy, admission, chess courses, GM Niaz Murshed, training'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/courses' : 'https://kolkatachessacademy.in/admission-courses'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/courses' : 'https://kolkatachessacademy.in/admission-courses'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Course',
+          name: `Chess Courses at ${siteName}`,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/courses' : 'https://kolkatachessacademy.in/admission-courses',
+          description: `Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`
+        }}
+      />
 
       {/* Hero Section */}
       <section id="hero" className={heroSectionClasses}>
@@ -148,7 +160,7 @@ const AdmissionCourses = () => {
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

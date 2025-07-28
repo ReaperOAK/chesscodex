@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
@@ -47,10 +47,22 @@ const Exclusives = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Exclusives - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+      <SEO
+        title={`Exclusives - ${siteName}`}
+        description={`Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`}
+        keywords={isAspireChess ? 'AspireChess, exclusives, pro membership, game analysis, scholarships' : 'Kolkata Chess Academy, exclusives, pro membership, game analysis, scholarships'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives'}
+        type="website"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: `${siteName} Exclusives`,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives',
+          description: `Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`
+        }}
+      />
       
       {/* Hero Section */}
       <section className={heroClasses}>

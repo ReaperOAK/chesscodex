@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -90,10 +90,28 @@ const Contact = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Contact Us - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+      <SEO
+        title={`Contact Us - ${siteName}`}
+        description={`Contact ${siteName} for chess coaching, queries, and support. Reach us by phone, email, or visit our academy.`}
+        keywords={isAspireChess ? 'AspireChess, contact, chess academy, chess coaching, support' : 'Kolkata Chess Academy, contact, chess academy, chess coaching, support'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact'}
+        type="contact"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: siteName,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact',
+          contactPoint: [{
+            '@type': 'ContactPoint',
+            telephone: contactPhone,
+            contactType: 'customer support',
+            email: contactEmail
+          }],
+          address: contactAddress
+        }}
+      />
 
       <section className={heroClasses}>
         <div className="text-center px-6">

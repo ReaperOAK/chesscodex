@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -23,7 +24,24 @@ const ReferralProgramme = () => {
     : "bg-brand-dark text-white rounded-lg shadow-md";
 
   return (
-    <section className={sectionClasses}>
+    <>
+      <SEO
+        title={isAspireChess ? 'Referral Programme - AspireChess' : 'Referral Programme - Kolkata Chess Academy'}
+        description={isAspireChess ? 'AspireChess referral programme: share chess, earn rewards, and grow the community.' : 'Kolkata Chess Academy referral programme: share chess, earn rewards, and grow the community.'}
+        keywords={isAspireChess ? 'AspireChess, referral, rewards, chess, community' : 'Kolkata Chess Academy, referral, rewards, chess, community'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us/referral-programme' : 'https://kolkatachessacademy.in/collaborate-with-us/referral-programme'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us/referral-programme' : 'https://kolkatachessacademy.in/collaborate-with-us/referral-programme'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Offer',
+          name: isAspireChess ? 'AspireChess Referral Programme' : 'Kolkata Chess Academy Referral Programme',
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us/referral-programme' : 'https://kolkatachessacademy.in/collaborate-with-us/referral-programme',
+          description: isAspireChess ? 'AspireChess referral programme: share chess, earn rewards, and grow the community.' : 'Kolkata Chess Academy referral programme: share chess, earn rewards, and grow the community.'
+        }}
+      />
+      <section className={sectionClasses}>
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className={`text-3xl font-bold mb-4 ${titleClasses}`}>Referral Programme</h2>
         <p className={`text-lg mb-12 ${textClasses}`}>
@@ -45,12 +63,13 @@ const ReferralProgramme = () => {
               </div>
             ))}
           </div>
-          <a href="/dashboard" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}>
+          <a href="https://dashboard.kolkatachessacademy.in" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}> 
             Refer Now
           </a>
         </div>
       </div>
     </section>
+    </>
   );
 };
 

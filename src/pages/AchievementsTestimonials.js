@@ -3,7 +3,7 @@
 // 'aspirechess' glassy aesthetic to all sections, cards, and the modal.
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { useLocation } from 'react-router-dom';
@@ -71,10 +71,24 @@ const AchievementsTestimonials = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Achievements & Testimonials - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+      <SEO
+        title={`Achievements & Testimonials - ${siteName}`}
+        description={`See achievements and testimonials from students and parents at ${siteName}. Success stories and reviews.`}
+        keywords={isAspireChess ? 'AspireChess, achievements, testimonials, chess success stories' : 'Kolkata Chess Academy, achievements, testimonials, chess success stories'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/achievements-testimonials' : 'https://kolkatachessacademy.in/achievements-testimonials'}
+        type="article"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/achievements-testimonials' : 'https://kolkatachessacademy.in/achievements-testimonials'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Review',
+          itemReviewed: {
+            '@type': 'Organization',
+            name: siteName
+          },
+          reviewBody: 'See achievements and testimonials from students and parents at ' + siteName + '. Success stories and reviews.'
+        }}
+      />
 
       {/* Hero Section */}
       <section className={heroClasses}>

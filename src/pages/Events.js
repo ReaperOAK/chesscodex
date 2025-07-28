@@ -3,7 +3,7 @@
 // 'aspirechess' glassy aesthetic to all sections, cards, and filters.
 
 import React, { useState, useEffect } from "react";
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { useLocation } from 'react-router-dom';
 
 // Data for events
@@ -58,10 +58,22 @@ const Events = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Upcoming Events & Blogs - {siteName}</title>
-        {/* Meta tags */}
-      </Helmet>
+      <SEO
+        title={`Upcoming Events & Blogs - ${siteName}`}
+        description={`See upcoming chess events, tournaments, and latest blogs from ${siteName}. Register and stay updated!`}
+        keywords={isAspireChess ? 'AspireChess, events, chess tournaments, chess blogs' : 'Kolkata Chess Academy, events, chess tournaments, chess blogs'}
+        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events'}
+        type="event"
+        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Event',
+          name: `${siteName} Events`,
+          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events',
+          description: `See upcoming chess events, tournaments, and latest blogs from ${siteName}. Register and stay updated!`
+        }}
+      />
 
       {/* Hero Section */}
       <section className={heroClasses}>

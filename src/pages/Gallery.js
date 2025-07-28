@@ -3,7 +3,7 @@
 // glassy aesthetic to all sections, cards, and filters.
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../components/SEO';
 import { useLocation } from 'react-router-dom';
 import Slider from 'react-slick';
 import Lightbox from "yet-another-react-lightbox";
@@ -93,10 +93,22 @@ const Gallery = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Gallery - {siteName}</title>
-                {/* Meta tags */}
-            </Helmet>
+            <SEO
+                title={`Gallery - ${siteName}`}
+                description={`Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`}
+                keywords={isAspireChess ? 'AspireChess, gallery, chess events, chess photos, chess videos' : 'Kolkata Chess Academy, gallery, chess events, chess photos, chess videos'}
+                image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
+                url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery'}
+                type="gallery"
+                canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery'}
+                structuredData={{
+                  '@context': 'https://schema.org',
+                  '@type': 'ImageGallery',
+                  name: `${siteName} Gallery`,
+                  url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery',
+                  description: `Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`
+                }}
+            />
             <div className={pageClasses}>
                  {/* Header */}
                 <div className={isAspireChess ? "text-center py-24" : "text-center p-6 md:p-12 mb-12"}>
