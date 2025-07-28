@@ -2,29 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/kca.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <title>Kolkata Chess Academy | Chess Training, Courses & Coaching</title>
+    <meta name="description" content="Elevate your chess skills with expert training, courses, and coaching at Kolkata Chess Academy. Join our community for tournaments, events, and more." />
+    <meta name="keywords" content="chess, chess academy, chess training, chess courses, chess coaching, Kolkata, tournaments, events" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="%PUBLIC_URL%/kca.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/kca.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="canonical" href="https://kolkatachessacademy.in/" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kolkata Chess Academy | Chess Training, Courses & Coaching" />
+    <meta property="og:description" content="Elevate your chess skills with expert training, courses, and coaching at Kolkata Chess Academy. Join our community for tournaments, events, and more." />
+    <meta property="og:url" content="https://kolkatachessacademy.in/" />
+    <meta property="og:image" content="https://kolkatachessacademy.in/aca.png" />
+    <meta property="og:site_name" content="Kolkata Chess Academy" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kolkata Chess Academy | Chess Training, Courses & Coaching" />
+    <meta name="twitter:description" content="Elevate your chess skills with expert training, courses, and coaching at Kolkata Chess Academy. Join our community for tournaments, events, and more." />
+    <meta name="twitter:image" content="https://kolkatachessacademy.in/aca.png" />
+    <meta name="twitter:site" content="@KolkataChess" />
+    <!-- Structured Data: Organization & Website -->
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kolkata Chess Academy",
+      "url": "https://kolkatachessacademy.in/",
+      "logo": "https://kolkatachessacademy.in/aca.png",
+      "sameAs": [
+        "https://www.facebook.com/kolkatachessacademy",
+        "https://twitter.com/KolkataChess",
+        "https://www.instagram.com/kolkatachessacademy/"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "Customer Service"
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      }
+    }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://kolkatachessacademy.in/",
+      "name": "Kolkata Chess Academy",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://kolkatachessacademy.in/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }</script>
+    <!-- Accessibility & Performance -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://kolkatachessacademy.in; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self'; font-src 'self' https://fonts.gstatic.com;" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <!-- Add CORS headers -->
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <meta http-equiv="Access-Control-Allow-Methods" content="GET, POST, OPTIONS">
-    <meta http-equiv="Access-Control-Allow-Headers" content="Content-Type, Authorization">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="cross-origin">
-    <meta http-equiv="Cross-Origin-Resource-Policy" content="cross-origin">
-    <title>AspireChess</title>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" defer></script>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
