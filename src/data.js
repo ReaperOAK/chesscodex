@@ -1,4 +1,196 @@
+// Features for WhyChooseUs (shared for both sites unless split later)
+import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers, FaTrophy } from 'react-icons/fa';
+
+export const highlightedFeatures = [
+  { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Comprehensive Curriculum", description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.", link: null },
+  { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: null },
+  { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: null },
+];
+
+export const features = [
+  { icon: <FaTasks className="text-amber-400 text-4xl mb-2" />, title: "Weekly Practice Classes", description: "Interactive sessions to refine your strategies and enhance performance.", link: null },
+  { icon: <FaClipboardCheck className="text-amber-400 text-4xl mb-2" />, title: "Regular Homeworks", description: "Engaging assignments and puzzles to keep you challenged and motivated.", link: null },
+  { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Internal Assessments", description: "Track progress through structured assessments and advance to higher batches.", link: null },
+  { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Detailed Report Card", description: "Receive personalized feedback to identify strengths and areas for growth.", link: null },
+  { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: null },
+  { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: null },
+  { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: null },
+  { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Student Dashboard", description: "A personalized dashboard to track your learning journey, achievements, and upcoming classes at a glance.", link: null },
+  { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Learning Management System", description: "Access structured lessons, assignments, and resources in one seamless platform designed for effective learning.", link: null },
+];
 // Universal achievements and testimonials
+export const coaches = [
+  { name: 'GM Sayantan Das', role: 'Guest Coach & Opening Expert', image: '/Team/sayantan.jpg', description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of experience and deep opening knowledge.` },
+  { name: 'GM Saptarshi Roy Chowdhury', role: 'Chief Advisor & Strategy Maker', image: '/Team/saptarshi.jpg', description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is our chief advisor and strategy maker.` },
+  { name: 'IM Somak Palit', role: 'Coach', image: '/Team/somak.jpg', description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy. His mentorship is invaluable.` },
+  { name: 'FM Joydeep Dutta', role: 'Coach', image: '/Team/joydeep.jpg', description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various chess talents.` },
+  { name: 'Arpan Das', role: 'Coach', image: '/Team/arpan.jpg', description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Focuses on youth development.` }
+];
+export const faqs = {
+  aspirechess: [
+    {
+      category: "General",
+      items: [
+        {
+          question: "What is the age requirement to join AspireChess Academy?",
+          answer: "We welcome students of all ages, starting from 4 years old. While we believe there should be no age barrier to learning, younger children may require additional attention. Our courses cater to all skill levels, from beginners to advanced players.",
+        },
+        {
+          question: "Do I need any prior chess experience to enrol?",
+          answer: "No prior experience is necessary. We offer courses for all levels, including complete beginners who are just starting to learn the game.",
+        },
+      ],
+    },
+    {
+      category: "Courses & Classes",
+      items: [
+        {
+          question: "How are classes conducted?",
+          answer: "Our classes are primarily held online for flexibility. However, we also provide in-person sessions at our facility.",
+        },
+        {
+          question: "What is the fee structure?",
+          answer: "Our fees vary depending on the course level and duration. You can check the 'Courses' section on our website or contact us directly for a detailed breakdown of pricing.",
+        },
+        {
+          question: "Do you offer a trial class?",
+          answer: "We don't provide a free trial class. However, we offer a provisional admission with a rigorous entry test, followed by a 7-day, no-questions-asked money-back guarantee. Students are evaluated within the first month, with placement at the appropriate level based on coach assessment & the batch assignment is at coaches discretion.",
+        },
+        {
+          question: "Do you offer customized training?",
+          answer: "Yes, we provide personalized coaching tailored to each student's strengths, weaknesses, and goals. You can find more by contacting us.",
+        },
+        {
+          question: "How can I sign up for the academy’s trial program or provisional admission?",
+          answer: "Interested candidates must complete an entry test except the Beginner level for whom taking the entry test is optional. Based on the results, students may join on a provisional basis, with a 7-day, no-questions-asked money-back guarantee.",
+        },
+      ],
+    },
+    {
+      category: "Tournaments",
+      items: [
+        {
+          question: "How can I stay updated on tournaments organized by the academy?",
+          answer: "You can find all upcoming and past tournaments in the ‘Events’ section on our website. This section is regularly updated with in-person and online events.",
+        },
+        {
+          question: "What types of tournaments do you organize?",
+          answer: "We host regular local and rated tournaments for practical experience. Additionally, we offer online tournaments every two weeks to keep students engaged and improving.",
+        },
+      ],
+    },
+    {
+      category: "Policies & Refunds",
+      items: [
+        {
+          question: "Is there a refund policy?",
+          answer: "Yes, we offer a full refund, no question asked, if you cancel within the first 7 days of payment. We aim for your satisfaction, so if you’re not fully happy with our services within this period, we’ll provide a hassle-free refund.",
+        },
+      ],
+    },
+    {
+      category: "Partnerships & Collaborations",
+      items: [
+        {
+          question: "How do I become a referral partner?",
+          answer: "For those interested in becoming a referral partner, please visit our 'Collaborate with Us' section for further details.",
+        },
+        {
+          question: "How can I partner or collaborate with AspireChess Academy?",
+          answer: "We welcome collaborations and partnerships. Visit our 'Collaborate with Us' section to learn more.",
+        },
+      ],
+    },
+    {
+      category: "Scholarships & Newsletter",
+      items: [
+        {
+          question: "What is your scholarship program?",
+          answer: "We award monthly scholarships across different levels (Beginner, Intermediate, Advanced, Expert). Selection is based on coach recommendations, tournament performance, and active participation.",
+        },
+        {
+          question: "What are the benefits of subscribing to your newsletter?",
+          answer: "Our newsletter provides insightful articles on various chess topics, including strategy, psychology, and training techniques. Subscribers receive exclusive updates on academy events, glimpses into our Pro Members Club, and a first look at new content.",
+        },
+      ],
+    },
+  ],
+};
+export const coursesData = [
+  {
+    title: 'Beginner Course',
+    description: [
+      'Introduction to Chess',
+      'Piece Movement',
+      'Superpowers of Pieces',
+      'Mates with Major Pieces',
+      'Types of Draws',
+      'Candidate Moves',
+      'Tactical Patterns',
+      'Basics of Endgames',
+    ],
+    duration: '12 months',
+    site: 'aspirechess',
+  },
+  {
+    title: 'Intermediate Course',
+    description: [
+      'Forcing Moves',
+      'Openings',
+      'Endgames (Rook, Pawn & Knights)',
+      'Minor Piece Mates',
+      'Learn from World Champions',
+      'Fundamental Strategies (Open File, Outpost, Center, Space & Exchanges)',
+    ],
+    duration: '18 months',
+    site: 'aspirechess',
+  },
+  {
+    title: 'Advanced Course',
+    description: [
+      'Complete Endgames',
+      'Attack & Initiative',
+      'Calculation',
+      'Colour Complex Piece Play',
+    ],
+    duration: '24 months',
+    site: 'aspirechess',
+  },
+  {
+    title: 'Expert Course',
+    description: [
+      'Pawn Play',
+      'Pawn Structures',
+      'Conversions',
+      'Prophylaxis',
+      'Building a Tailored Opening Repertoire',
+    ],
+    duration: 'Ongoing',
+    site: 'aspirechess',
+  },
+  {
+    title: 'Private Classes',
+    description: [
+      'Comprehensive Support on behalf of our Academy:',
+      '1. Structured methodology and curriculum (designed by GM Niaz Murshed)',
+      '2. Expertly curated customized openings (by IMs/GMs)',
+      '3. Bi-monthly Parent-Teacher Meetings (PTMs)',
+      '4. Customized routines and study materials by one of our dedicated coaches.',
+      '5. In-depth classical game analysis with PDF explanations of all World Champions',
+      'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
+    ],
+    duration: 'Flexible',
+    site: 'aspirechess',
+  },
+];
+export const benefits = [
+  "Helps in Problem Solving & Memory Retention",
+  "Assured Positive Impact in Academic Performance",
+  "Enhances Creativity, Analytical and Critical Thinking",
+  "Improves Focus & Time Management",
+  "Stimulates Growth of Neuron Dendrites",
+  "Therapeutic for Anxiety & ADHD", // Shortened for better display
+];
 export const achievementsData = [
   { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
 ];

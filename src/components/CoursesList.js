@@ -1,74 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-
-const coursesData = [
-  {
-    title: 'Beginner Course',
-    description: [
-      'Introduction to Chess',
-      'Piece Movement',
-      'Superpowers of Pieces',
-      'Mates with Major Pieces',
-      'Types of Draws',
-      'Candidate Moves',
-      'Tactical Patterns',
-      'Basics of Endgames',
-    ],
-    duration: '12 months',
-        site: 'aspirechess', // Unified for AspireChess
-  },
-  {
-    title: 'Intermediate Course',
-    description: [
-      'Forcing Moves',
-      'Openings',
-      'Endgames (Rook, Pawn & Knights)',
-      'Minor Piece Mates',
-      'Learn from World Champions',
-      'Fundamental Strategies (Open File, Outpost, Center, Space & Exchanges)',
-    ],
-    duration: '18 months',
-        site: 'aspirechess', // Unified for AspireChess
-  },
-  {
-    title: 'Advanced Course',
-    description: [
-      'Complete Endgames',
-      'Attack & Initiative',
-      'Calculation',
-      'Colour Complex Piece Play',
-    ],
-    duration: '24 months',
-        site: 'aspirechess', // Unified for AspireChess
-  },
-  {
-    title: 'Expert Course',
-    description: [
-      'Pawn Play',
-      'Pawn Structures',
-      'Conversions',
-      'Prophylaxis',
-      'Building a Tailored Opening Repertoire',
-    ],
-    duration: 'Ongoing',
-        site: 'aspirechess', // Unified for AspireChess
-  },
-  {
-    title: 'Private Classes',
-    description: [
-      'Comprehensive Support on behalf of our Academy:',
-      '1. Structured methodology and curriculum (designed by GM Niaz Murshed)',
-      '2. Expertly curated customized openings (by IMs/GMs)',
-      '3. Bi-monthly Parent-Teacher Meetings (PTMs)',
-      '4. Customized routines and study materials by one of our dedicated coaches.',
-      '5. In-depth classical game analysis with PDF explanations of all World Champions',
-      'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
-    ],
-    duration: 'Flexible',
-        site: 'aspirechess', // Unified for AspireChess
-  },
-];
+import { coursesData } from '../data';
 
 // --- THEMED MODAL COMPONENT ---
 const Modal = ({ course, onClose, isAspireChess }) => {

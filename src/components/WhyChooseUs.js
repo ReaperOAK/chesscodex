@@ -1,33 +1,17 @@
+
 import React from 'react';
 import Slider from 'react-slick';
-import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers, FaTrophy } from 'react-icons/fa';
 import { NavLink, useLocation } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-// ...removed unused imports NextArrow, PrevArrow...
+import { highlightedFeatures, features } from '../data';
 
 const WhyChooseUs = () => {
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
-  const highlightedFeatures = [
-    { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Comprehensive Curriculum", description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.", link: isAspireChess ? "/aspirechess/courses" : "/kca/contact" },
-    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: isAspireChess ? "/aspirechess/about#team" : "/kca/about#team" },
-    { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: isAspireChess ? "/aspirechess/about#team" : "/kca/about#team" },
-  ];
-
-  const features = [
-    { icon: <FaTasks className="text-amber-400 text-4xl mb-2" />, title: "Weekly Practice Classes", description: "Interactive sessions to refine your strategies and enhance performance.", link: isAspireChess? "/aspirechess/courses" : "/kca/courses" },
-    { icon: <FaClipboardCheck className="text-amber-400 text-4xl mb-2" />, title: "Regular Homeworks", description: "Engaging assignments and puzzles to keep you challenged and motivated.", link: isAspireChess? "/aspirechess/courses" : "/kca/courses" },
-    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Internal Assessments", description: "Track progress through structured assessments and advance to higher batches.", link: isAspireChess? "/aspirechess/courses" : "/kca/courses" },
-    { icon: <FaFileAlt className="text-amber-400 text-4xl mb-2" />, title: "Detailed Report Card", description: "Receive personalized feedback to identify strengths and areas for growth.", link: isAspireChess? "/aspirechess/courses" : "/kca/courses" },
-    { icon: <FaMedal className="text-amber-400 text-4xl mb-2" />, title: "Achievement Recognition", description: "Celebrate your milestones and achievements with certificates and awards.", link: isAspireChess? "/aspirechess/achievements-testimonials" : "/kca/achievements-testimonials" },
-    { icon: <FaUsers className="text-amber-400 text-4xl mb-2" />, title: "Community Support", description: "Join our community forum to discuss ideas, share experiences, and get support.", link: "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI" },
-    { icon: <FaTrophy className="text-amber-400 text-4xl mb-2" />, title: "Tournament Participation", description: "Participate in local and international tournaments to test your skills and gain experience.", link: isAspireChess? "/aspirechess/events-blogs" : "/kca/events-blogs" },
-    { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Student Dashboard", description: "A personalized dashboard to track your learning journey, achievements, and upcoming classes at a glance.", link: "https://dashboard.kolkatachessacademy.in" },
-    { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Learning Management System", description: "Access structured lessons, assignments, and resources in one seamless platform designed for effective learning.", link: "https://dashboard.kolkatachessacademy.in/" },
-  ];
+  // ...existing code...
 
   const sliderSettings = {
     dots: true,
@@ -67,6 +51,25 @@ const WhyChooseUs = () => {
   const cardTitleClasses = isAspireChess ? "text-lg font-semibold text-white mb-2" : "text-lg font-semibold text-brand-primary mb-2";
   const cardDescriptionClasses = isAspireChess ? "text-gray-300 text-center text-sm" : "text-brand-text text-center text-sm";
 
+  // Set correct links for highlightedFeatures and features based on isAspireChess
+  const highlightedFeaturesWithLinks = highlightedFeatures.map((feature, idx) => {
+    let link = null;
+    if (idx === 0) link = isAspireChess ? "/aspirechess/courses" : "/kca/contact";
+    if (idx === 1) link = isAspireChess ? "/aspirechess/about#team" : "/kca/about#team";
+    if (idx === 2) link = isAspireChess ? "/aspirechess/about#team" : "/kca/about#team";
+    return { ...feature, link };
+  });
+  const featuresWithLinks = features.map((feature, idx) => {
+    let link = null;
+    if (idx === 0 || idx === 1 || idx === 2 || idx === 3) link = isAspireChess ? "/aspirechess/courses" : "/kca/courses";
+    if (idx === 4) link = isAspireChess ? "/aspirechess/achievements-testimonials" : "/kca/achievements-testimonials";
+    if (idx === 5) link = "https://chat.whatsapp.com/ClWJgf6t1v1LPDhs7NqpCI";
+    if (idx === 6) link = isAspireChess ? "/aspirechess/events-blogs" : "/kca/events-blogs";
+    if (idx === 7 || idx === 8) link = "https://dashboard.kolkatachessacademy.in";
+    if (idx === 8) link = "https://dashboard.kolkatachessacademy.in/";
+    return { ...feature, link };
+  });
+
   return (
     <section className={sectionClasses}>
       <div className="max-w-7xl mx-auto px-6 text-center">
@@ -77,7 +80,7 @@ const WhyChooseUs = () => {
 
         {/* Highlighted Features */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {highlightedFeatures.map((feature, index) => (
+          {highlightedFeaturesWithLinks.map((feature, index) => (
             <NavLink key={index} to={feature.link} className={cardClasses}>
               <div className="flex justify-center items-center mb-2">{feature.icon}</div>
               <h2 className={cardTitleClasses}>{feature.title}</h2>
@@ -89,7 +92,7 @@ const WhyChooseUs = () => {
         {/* Slider for Other Features */}
         <div className="relative">
           <Slider {...sliderSettings}>
-            {features.map((feature, index) => (
+            {featuresWithLinks.map((feature, index) => (
               <div key={index} className="px-4 py-6 h-full flex items-stretch">
                 <NavLink to={feature.link} className={cardClasses + " w-full"}>
                   <div className="flex justify-center items-center mb-2">{feature.icon}</div>

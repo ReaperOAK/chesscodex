@@ -3,15 +3,7 @@ import Slider from 'react-slick';
 import { FaStar } from 'react-icons/fa'; // Importing an icon for flair
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-const benefits = [
-  "Helps in Problem Solving & Memory Retention",
-  "Assured Positive Impact in Academic Performance",
-  "Enhances Creativity, Analytical and Critical Thinking",
-  "Improves Focus & Time Management",
-  "Stimulates Growth of Neuron Dendrites",
-  "Therapeutic for Anxiety & ADHD", // Shortened for better display
-];
+import { benefits } from '../data';
 
 const BenefitsSlider = () => {
   const sliderSettings = {

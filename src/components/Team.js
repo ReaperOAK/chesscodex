@@ -3,14 +3,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 
-// Unified coaches data for both brands
-const coaches = [
-  { name: 'GM Sayantan Das', role: 'Guest Coach & Opening Expert', image: '/Team/sayantan.jpg', description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of experience and deep opening knowledge.` },
-  { name: 'GM Saptarshi Roy Chowdhury', role: 'Chief Advisor & Strategy Maker', image: '/Team/saptarshi.jpg', description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is our chief advisor and strategy maker.` },
-  { name: 'IM Somak Palit', role: 'Coach', image: '/Team/somak.jpg', description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy. His mentorship is invaluable.` },
-  { name: 'FM Joydeep Dutta', role: 'Coach', image: '/Team/joydeep.jpg', description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various chess talents.` },
-  { name: 'Arpan Das', role: 'Coach', image: '/Team/arpan.jpg', description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Focuses on youth development.` }
-];
+import { coaches } from '../data';
 
 
 const Team = () => {
