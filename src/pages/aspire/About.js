@@ -59,7 +59,7 @@ const AspireAbout = () => {
                 Forging India's Next Generation of Titled Masters
               </h2>
               <p className={`text-lg leading-relaxed mb-6 ${textClasses}`}>
-                Situated in Dumdum, Aspire Chess Academy was established with a singular, audacious goal: to make India the most title-heavy country in the chess world. We are not just a coaching center; we are an incubator for future champions. Our structured, professional chess education focuses on personalized growth, transforming raw talent into tournament-ready masters.
+                Based out in Kolkata, Aspire Chess Academy was established with a singular, audacious goal: to make India the most title-heavy country in the chess world. We are not just a coaching center; we are an incubator for future champions. Our structured, professional chess education focuses on personalized growth, transforming raw talent into tournament-ready masters.
               </p>
               <p className={`text-lg leading-relaxed ${textClasses}`}>
                 At {siteName}, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.
