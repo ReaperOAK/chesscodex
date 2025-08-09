@@ -88,13 +88,21 @@ function Navbar() {
               Dashboard
             </a>
             {/* Explore Online Courses Prompt for Aspire (desktop) */}
-            {isAspireChess && (
+            {isAspireChess ? (
               <a
                 href="/aspirechess/courses"
                 className="ml-4 bg-yellow-400 text-black font-bold px-5 py-2 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200 text-lg"
                 style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.12)' }}
               >
                 Explore Online Courses
+              </a>
+            ) : (
+              <a
+                href="/kca/courses"
+                className="ml-4 bg-brand-primary text-white font-bold px-5 py-2 rounded-full shadow-lg hover:bg-brand-accent transition-colors duration-200 text-lg border border-white/10"
+                style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.12)' }}
+              >
+                Explore Offline Courses
               </a>
             )}
           </div>
