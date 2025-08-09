@@ -32,10 +32,16 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>About {siteName}</h2>
-            <p className={`${textColor} leading-relaxed`}>
-              <strong>Kolkata Chess Academy (KCA):</strong> Our fully online head, providing all online coaching and dashboard support.<br/>
-              <strong>Aspire Chess Academy:</strong> (A Unit of Kolkata Chess Academy) operates primarily offline, and all its services are under KCA. Online students of Aspire are redirected to Kolkata Chess Academy.
-            </p>
+            {isAspireChess ? (
+              <p className={`${textColor} leading-relaxed`}>
+                Helping all “Aspiring” players with a Grand-Master approached Thinking curated by a team of grandmasters. Aspire Chess Academy is dedicated to build the academy with highest number of titled players.
+              </p>
+            ) : (
+              <p className={`${textColor} leading-relaxed`}>
+                <strong>Kolkata Chess Academy (KCA):</strong> Our fully online head, providing comprehensive online chess coaching, dashboard support, and digital resources for students worldwide.<br/>
+                Aspire Chess Academy is a unit of KCA, focused on offline activities and local engagement.
+              </p>
+            )}
           </div>
 
           {/* Quick Links Section */}
