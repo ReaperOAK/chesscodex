@@ -128,6 +128,7 @@ export const coursesData = [
       'Candidate Moves',
       'Tactical Patterns',
       'Basics of Endgames',
+      'One-time admission fee ₹1500 (includes full Chess Kit)',
     ],
     duration: '12 months',
     site: ['aspirechess', 'kca'],

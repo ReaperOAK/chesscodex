@@ -114,6 +114,9 @@ const CoursesList = () => {
                     {course.description.slice(0, 4).map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
+                    {course.title === 'Beginner Course' && course.description.length > 4 && (
+                      <li className="text-green-600 font-semibold">One-time admission fee ₹1500 & Chess Kit included</li>
+                    )}
                     {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
                   </ul>
                   {course.title === 'Beginner Course' && course.price && (
