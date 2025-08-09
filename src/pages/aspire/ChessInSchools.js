@@ -1,13 +1,9 @@
 
 import SEO from '../../components/SEO';
 import React from 'react';
-
+import { schoolDetails } from '../../data';
 
 const AspireChessInSchools = () => {
-  const schoolDetails = [
-    { title: "Structured Lessons", details: ["Tailored chess lessons designed to improve cognitive skills and problem-solving abilities."] },
-    { title: "Tournaments & Competitions", details: ["Encourage students to showcase their skills and build confidence through competitive events."] },
-  ];
 
   // Aspire theme only
   const sectionClasses = "";

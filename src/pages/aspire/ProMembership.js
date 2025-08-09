@@ -1,47 +1,9 @@
 
 import React from "react";
 import SEO from '../../components/SEO';
+import { proMembershipDetails, pricingPlans } from '../../data';
 
 const AspireProMembership = () => {
-  // AspireChess only
-  const proMembershipDetails = [
-    {
-      title: "Calculation Pack",
-      details: [
-        "Structure: 9 curated puzzles every week, divided in 3 levels prepared by a GM.",
-        "Frequency: 3 days/week.",
-        "Support: You can self-check the positions.",
-      ],
-    },
-    {
-      title: "Game Analysis",
-      details: [
-        "Structure: 8 in-depth game modern and classical analysis, with in-game solvable Diagrams.",
-        "Frequency: 8 games to analyse, learn & study for a month.",
-        "Support: Deep Dive by Titled Players and their personal insights.",
-      ],
-    },
-    {
-      title: "Hot Topic Summarizations",
-      details: [
-        "Structure: Video explanation Course with Positions- 1 Topic every Month of Beginner & 1 Topic of Intermediate or Advance or Expert Level presented by FM Joydeep Dutta & Arpan Das.",
-        "Frequency: 2 Topics every Month.",
-        "Support: Homework of specific Topics Presented to work at Home.",
-      ],
-    },
-    {
-      title: "Additional Benefits",
-      details: [
-        "Access to Exclusive Bonus Content.",
-        "Access to our exclusive Pro Members Community Forum where we discuss daily ideas around chess!",
-      ],
-    },
-  ];
-  const pricingPlans = [
-    { plan: "Monthly", price: "₹999 / $14.99" },
-    { plan: "Half-Yearly", price: "₹4,999 / $74.99" },
-    { plan: "Yearly", price: "₹8,999 / $134.99" },
-  ];
 
   // AspireChess theme only
   const sectionClasses = "";

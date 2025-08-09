@@ -8,16 +8,7 @@ import SEO from '../../components/SEO';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-
-// Universal achievements and testimonials
-const achievementsData = [
-  { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
-];
-
-const testimonials = [
-  { quote: "If you’re serious about improving your chess skills, I wholeheartedly recommend Arpan Sir and Joydeep Sir [Aspire Chess Academy]. None came close to what I’ve gained under Arpan Sir and Joydeep Sir. Before them, I struggled with positional understanding, planning, and other fundamentals. Here, I’m learning these every day along with so much more. What sets them apart is their friendly and approachable teaching style, which bridges the usual gap between a coach and a student, which makes learning enjoyable and breaks the usual coach-student barrier. They also provide practice sessions that have helped me a lot. I’m truly grateful for their guidance.", name: "Dhruv Kar", role: "Chess Enthusiast", avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUPrloGLYTtuRAB7qTnRTnQ35fAmk1NEaxWqTQhbUML5qX5Ovg=w108-h108-p-rp-mo-br100" },
-  { quote: "Players get wonderful exposure here and get a chance to play with quality players who are high rated who also frequently visit the sessions. The sessions are conducted in a friendly environment and constant learning. My experience was wonderful. Highly recommended.", name: "Megha Patra", role: "Chess Enthusiast", avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXGUStEJ5_047_ExA4qYJj3KThVcb6HJ9aSLMdoEFxw6WvUFLI=w108-h108-p-rp-mo-br100" }
-];
+import { achievementsData, testimonials } from '../../data';
 
 
 const Modal = ({ achievement, onClose }) => {

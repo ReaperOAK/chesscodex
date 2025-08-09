@@ -3,23 +3,7 @@ import React, { useState } from 'react';
 import SEO from '../../components/SEO';
 import CoursesList from '../../components/CoursesList';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
-const FAQs = [
-  { question: 'What is the age limit for joining?', answer: 'Students aged 4 years and above can join our courses.' },
-  { question: 'Do I need prior experience in chess?', answer: 'No, beginners are welcome to join our introductory courses.' },
-  { question: 'How do I pay for the course?', answer: 'Payments can be made online through our secure payment gateway.' },
-  {
-    question: 'What are the eligibility criteria?',
-    answer: (
-      <ul className="list-disc pl-5 space-y-1">
-        <li>Age: 6 years and above.</li>
-        <li>No prior chess experience required for beginner courses.</li>
-        <li>Basic chess knowledge is necessary for advanced courses.</li>
-        <li>Commitment to attend classes regularly.</li>
-      </ul>
-    ),
-  },
-];
+import { FAQs } from '../../data';
 
 
 const AspireAdmissionCourses = () => {
