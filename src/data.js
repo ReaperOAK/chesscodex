@@ -182,6 +182,23 @@ export const coursesData = [
     duration: 'Flexible',
     site: 'aspirechess',
   },
+  {
+    title: 'Yuddho Raja-y Raja-y',
+    description: [
+      'Structured, high-quality chess practice sessions with FIDE-rated players and top coaches.',
+      '2-hour sessions, 3 days a week (Mon, Wed, Fri)',
+      'Play with ~2000 elo FIDE-rated players',
+      'Free access to our chess library',
+      'Exclusive opportunity to train with Arpan Das (Jr.) & FM Joydeep Dutta (limited period only)',
+      'Prime location: Only 1 km from Dum Dum Station',
+      'Professional chess sets and clocks',
+      'Just ₹100 per session, 12 sessions/month for ₹1200',
+      'Open to all clubs/academies',
+    ],
+    duration: 'Monthly',
+    site: 'aspirechess',
+    redirect: '/aspirechess/exclusives/yuddho-raja',
+  },
 ];
 export const benefits = [
   "Helps in Problem Solving & Memory Retention",

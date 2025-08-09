@@ -64,27 +64,59 @@ const CoursesList = () => {
       <div className="max-w-6xl mx-auto px-6">
         <h1 className={titleClasses}>Explore Our Chess Courses</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map((course, index) => (
-            <div key={index} className={cardClasses} onClick={() => openModal(course)}>
-              <div>
-                <h2 className={cardTitleClasses}>{course.title}</h2>
-                <p className={`${cardTextClasses} font-medium mb-2`}>Duration: {course.duration}</p>
-                <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
-                  {course.description.slice(0, 4).map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                  {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
-                </ul>
-              </div>
-              <div className="mt-6">
-                <div
-                  className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${buttonClasses}`}
+          {filteredCourses.map((course, index) => {
+            // If AspireChess and course has redirect, render as link
+            if (isAspireChess && course.redirect) {
+              return (
+                <a
+                  key={index}
+                  className={cardClasses + " hover:ring-2 hover:ring-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"}
+                  href={course.redirect}
+                  style={{ textDecoration: 'none' }}
                 >
-                  View Details
+                  <div>
+                    <h2 className={cardTitleClasses}>{course.title}</h2>
+                    <p className={`${cardTextClasses} font-medium mb-2`}>Duration: {course.duration}</p>
+                    <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
+                      {course.description.slice(0, 4).map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                      {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
+                    </ul>
+                  </div>
+                  <div className="mt-6">
+                    <div
+                      className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${buttonClasses}`}
+                    >
+                      Go to Exclusive
+                    </div>
+                  </div>
+                </a>
+              );
+            }
+            // Default: open modal
+            return (
+              <div key={index} className={cardClasses} onClick={() => openModal(course)}>
+                <div>
+                  <h2 className={cardTitleClasses}>{course.title}</h2>
+                  <p className={`${cardTextClasses} font-medium mb-2`}>Duration: {course.duration}</p>
+                  <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
+                    {course.description.slice(0, 4).map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                    {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <div
+                    className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${buttonClasses}`}
+                  >
+                    View Details
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
       {selectedCourse && <Modal course={selectedCourse} onClose={closeModal} isAspireChess={isAspireChess} />}
