@@ -19,7 +19,7 @@ import Events from './pages/kca/Events';
 import Contact from './pages/kca/Contact';
 import AdmissionCourses from './pages/kca/AdmissionCourses';
 import Exclusives from './pages/kca/Exclusives';
-import CollaborateWithUs from './pages/kca/CollaborateWithUs';
+// ...existing code...
 // Aspire imports
 import AspireAbout from './pages/aspire/About';
 import AspireAchievementsTestimonials from './pages/aspire/AchievementsTestimonials';
@@ -28,7 +28,7 @@ import AspireEvents from './pages/aspire/Events';
 import AspireContact from './pages/aspire/Contact';
 import AspireAdmissionCourses from './pages/aspire/AdmissionCourses';
 import AspireExclusives from './pages/aspire/Exclusives';
-import AspireCollaborateWithUs from './pages/aspire/CollaborateWithUs';
+// ...existing code...
 import AspireHome from './pages/aspire/SiteHome';
 
 function AppContent() {
