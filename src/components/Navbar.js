@@ -46,11 +46,20 @@ function Navbar() {
     <nav className={`${navClasses} text-white sticky top-0 shadow-lg z-50 w-full`}>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
-            <Link to={isAspireChess ? '/aspirechess' : '/kca'} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
-              <img src={logoSrc} alt={`${siteName} Logo`} className="h-10 w-auto mr-2" />
-              {siteName}
+          {/* Logo and Site Name side by side, improved alignment */}
+          <div className="flex items-center flex-shrink-0 min-w-[80px]">
+            <Link to={isAspireChess ? '/aspirechess' : '/kca'} className="flex items-center group" aria-label={`${siteName} Home`}>
+              <img src={logoSrc} alt={`${siteName} Logo`} className="h-11 w-auto mr-3 drop-shadow-md group-hover:scale-105 transition-transform duration-200" />
+              <span
+                className="text-base sm:text-lg font-semibold tracking-wide text-white group-hover:text-yellow-300 transition-colors duration-200 whitespace-nowrap"
+                style={{
+                  textShadow: '0 2px 8px rgba(0,0,0,0.18)',
+                  fontFamily: 'Montserrat, Inter, Segoe UI, Arial, sans-serif',
+                  letterSpacing: '0.04em',
+                }}
+              >
+                {siteName}
+              </span>
             </Link>
           </div>
           {/* Desktop Navigation */}
