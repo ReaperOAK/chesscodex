@@ -55,6 +55,17 @@ const AspireReferralProgramme = () => {
             Refer Now
           </a>
         </div>
+        <div className="py-8 px-6 bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl">
+                        <h3 className="text-3xl font-bold mb-4 text-white">Join Hands with Kolkata’s Favourite Chess Academy</h3>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                            <a href="https://kolkatachessacademy.in" target="_blank" rel="noopener noreferrer" className="inline-block font-semibold text-lg py-3 px-8 rounded-lg transition bg-amber-500 text-gray-900 hover:bg-amber-400 transform hover:scale-105">
+                                Visit Our Website
+                            </a>
+                            <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className="inline-block font-semibold text-lg py-3 px-8 rounded-lg transition bg-green-500 text-white hover:bg-green-400 transform hover:scale-105">
+                                WhatsApp Call: +91 98301 49852
+                            </a>
+                        </div>
+                </div>
       </div>
     </section>
     </>

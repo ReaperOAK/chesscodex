@@ -67,16 +67,6 @@ const AspireChessAcademies = () => {
                         </div>
                 </div>
 
-                <div className="py-8 px-6 bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl">
-                        <h3 className="text-3xl font-bold mb-4 text-white">Ready to Join Our Network?</h3>
-                        <p className="text-lg mb-6 text-gray-300">
-                                Contact us today to learn more about our Chess Academies program and how we can collaborate to empower players everywhere.
-                        </p>
-                        <a href="https://wa.me/+919830149852" className="inline-block font-semibold text-lg py-3 px-8 rounded-lg transition bg-amber-500 text-gray-900 hover:bg-amber-400 transform hover:scale-105">
-                                Partner With Us
-                        </a>
-                </div>
-
             </div>
             </section>
         </>
