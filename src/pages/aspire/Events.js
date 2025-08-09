@@ -3,11 +3,48 @@
 // 'aspirechess' glassy aesthetic to all sections, cards, and filters.
 
 
+
 import React, { useState, useEffect } from "react";
 import SEO from '../../components/SEO';
-
 import { eventsData, blogsData } from '../../data';
+import Aspire2025EventCard from './Aspire2025EventCard';
 
+// Theme classes (must be present in both this file and subcomponents if used)
+const heroClasses = "py-24";
+const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
+const titleClasses = "text-amber-400";
+const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-lg overflow-hidden hover:shadow-amber-400/10 transition-all duration-300 group";
+const cardTitleClasses = "text-white";
+const cardTextClasses = "text-gray-300";
+const buttonClasses = "bg-amber-500 hover:bg-amber-400 text-gray-900";
+
+function DefaultEventCard({ event, isLinkExpired }) {
+  return (
+    <div className={cardClasses}>
+      {event.image ? (
+        <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
+      ) : (
+        <div className="w-full h-48 bg-gradient-to-br from-amber-400/30 to-black flex items-center justify-center">
+          <span className="text-3xl text-amber-400 font-bold">Aspire Chess Academy</span>
+        </div>
+      )}
+      <div className="p-6">
+        <h3 className={`text-2xl font-semibold mb-3 ${cardTitleClasses}`}>{event.title}</h3>
+        <p className={`${cardTextClasses} mb-1`}><strong>Date:</strong> {event.date}</p>
+        <p className={`${cardTextClasses} mb-4`}><strong>Mode:</strong> {event.mode}</p>
+        {event.link && !isLinkExpired(event.date) ? (
+          <a href={event.link} className={`block text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonClasses}`} target="_blank" rel="noopener noreferrer">
+            Register Now
+          </a>
+        ) : (
+          <p className={`text-center font-semibold text-gray-500`}>
+            Registration Closed
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const AspireEvents = () => {
   const siteName = 'AspireChess';
@@ -21,18 +58,8 @@ const AspireEvents = () => {
 
   const events = eventsData;
   const blogs = blogsData;
-
   const filteredEvents = events.filter(event => filter === "All" || event.mode === filter);
   const isLinkExpired = (date) => new Date(date) < currentDate;
-
-  // Aspire theme only
-  const heroClasses = "py-24";
-  const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
-  const titleClasses = "text-amber-400";
-  const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-lg overflow-hidden hover:shadow-amber-400/10 transition-all duration-300 group";
-  const cardTitleClasses = "text-white";
-  const cardTextClasses = "text-gray-300";
-  const buttonClasses = "bg-amber-500 hover:bg-amber-400 text-gray-900";
 
   return (
     <div>
@@ -73,25 +100,13 @@ const AspireEvents = () => {
               <p className={`text-center ${cardTextClasses}`}>No events available for the selected mode.</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredEvents.map((event, index) => (
-                  <div key={index} className={cardClasses}>
-                    <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
-                    <div className="p-6">
-                      <h3 className={`text-2xl font-semibold mb-3 ${cardTitleClasses}`}>{event.title}</h3>
-                      <p className={`${cardTextClasses} mb-1`}><strong>Date:</strong> {event.date}</p>
-                      <p className={`${cardTextClasses} mb-4`}><strong>Mode:</strong> {event.mode}</p>
-                      {event.link && !isLinkExpired(event.date) ? (
-                        <a href={event.link} className={`block text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonClasses}`}>
-                          Register Now
-                        </a>
-                      ) : (
-                        <p className={`text-center font-semibold text-gray-500`}>
-                          Registration Closed
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                {filteredEvents.map((event, index) => {
+                  const isAspire2025 = event.title && event.title.includes('GRAND INAUGURATION & INVITATIONAL INTER-CLUB TOURNAMENT 2025');
+                  if (isAspire2025) {
+                    return <Aspire2025EventCard key={index} event={event} isLinkExpired={isLinkExpired} />;
+                  }
+                  return <DefaultEventCard key={index} event={event} isLinkExpired={isLinkExpired} />;
+                })}
               </div>
             )}
           </div>

@@ -102,7 +102,45 @@ export const workspaceDetails = [
 export const eventsData = [
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-10-02", mode: "Offline", link: null, image: "/events/2024-10-02.jpg" },
     { title: "Invitational Inter-Club U-25 Chess Tournament 2024", date: "2024-11-15", mode: "Offline", link: "https://forms.gle/zBsTohCXppUNCWjU6", image: "/events/2024-11-15.jpg" },
-   ];
+    {
+      title: "ASPIRE CHESS ACADEMY Presents GRAND INAUGURATION & INVITATIONAL INTER-CLUB TOURNAMENT 2025",
+      date: "2025-08-17",
+      mode: "Offline",
+      link: "https://forms.gle/RL7tEqVVndVGC1bt9",
+      image: null,
+      details: {
+        message: "https://chat.whatsapp.com/ES9wSKIaTcoE5nQPvvgoMY?mode=ac_t",
+        registration: "https://circlechess.com/registration?id=38458",
+        time: "11:00 am onwards",
+        location: "Parnasree Nababani Sangha, Airport More, Behala, Kolkata - 700060",
+        map: "https://maps.app.goo.gl/dBzYZ2vBUtzfKmUt5?g_st=aw",
+        format: "15+5 | RAPID | 5 Rounds",
+        entryFees: "₹500",
+        prizeFund: "₹12,000",
+        contact: [
+          { name: "Aspire Chess Academy", phone: "9830149852" },
+          { name: "Soumk Dutta", phone: "8335965569" },
+          { name: "Partha Basu", phone: "9903857820" }
+        ],
+        prizes: [
+          { place: 1, prize: "₹2,000 + 🏆" },
+          { place: 2, prize: "₹1,400 + 🏆" },
+          { place: 3, prize: "₹1,000 + 🏆" },
+          { place: 4, prize: "₹800" },
+          { place: 5, prize: "₹700" },
+          { place: 6, prize: "₹600" },
+          { place: 7, prize: "₹500" }
+        ],
+        ageCategories: ["U7", "U9", "U11", "U13"],
+        ageCategoryPrizes: [
+          { place: 1, prize: "🏆" },
+          { place: 2, prize: "🏅" },
+          { place: 3, prize: "🏅" }
+        ],
+        specialCategory: ["Best Woman", "Youngest Participant"]
+      }
+    }
+  ];
 
 // Data for blogs
 export const blogsData = [
