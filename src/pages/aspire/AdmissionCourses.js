@@ -28,8 +28,8 @@ const AspireAdmissionCourses = () => {
     <>
       <SEO
         title={`Admission & Courses - ${siteName}`}
-        description={`Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`}
-        keywords={'AspireChess, admission, chess courses, GM Niaz Murshed, training'}
+        description={`AspireChess offers a complete Grandmaster-designed curriculum with regular assessment and feedback. Our focus is on holistic chess mastery, not just online classes.`}
+        keywords={'AspireChess, admission, chess courses, GM Niaz Murshed, GM curriculum, assessment, training'}
         image={'https://kolkatachessacademy.in/aca.png'}
         url={'https://kolkatachessacademy.in/aspirechess/courses'}
         type="article"
@@ -39,7 +39,7 @@ const AspireAdmissionCourses = () => {
           '@type': 'Course',
           name: `Chess Courses at ${siteName}`,
           url: 'https://kolkatachessacademy.in/aspirechess/courses',
-          description: `Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`
+          description: `AspireChess offers a complete Grandmaster-designed curriculum with regular assessment and feedback. Our focus is on holistic chess mastery, not just online classes.`
         }}
       />
 
@@ -48,10 +48,10 @@ const AspireAdmissionCourses = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:flex-1 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">
-              Elevate Your Game with <span className="text-amber-400">Expert Training</span>
+              Complete GM Curriculum with <span className="text-amber-400">Regular Assessment</span>
             </h1>
             <p className="text-lg leading-relaxed mb-8 text-gray-300">
-              Learn from the best with courses curated by Grandmaster Niaz Murshed, the first Grandmaster in South Asia.
+              At AspireChess, our entire curriculum is meticulously crafted by Grandmaster Niaz Murshed, ensuring every student receives world-class training. We emphasize a structured, in-depth learning journey with regular assessments and personalized feedback—far beyond just online classes. Our mission is to nurture true chess mastery through a proven, Grandmaster-led system.
             </p>
             <a
               href="#courses"

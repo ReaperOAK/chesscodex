@@ -24,8 +24,8 @@ const AspireAbout = () => {
     <div>
       <SEO
         title={`About Us - ${siteName}`}
-        description={`Learn about ${siteName}, our mission, vision, and the expert team behind our chess academy.`}
-        keywords={'AspireChess, about, chess academy, mentors, mission, vision'}
+        description={`AspireChess offers a complete Grandmaster-designed curriculum with regular assessment and feedback. Our focus is on holistic chess mastery, not just online classes.`}
+        keywords={'AspireChess, about, chess academy, GM curriculum, assessment, mentors, mission, vision'}
         image={'https://kolkatachessacademy.in/aca.png'}
         url={'https://kolkatachessacademy.in/aspirechess/about'}
         type="article"
@@ -35,7 +35,7 @@ const AspireAbout = () => {
           '@type': 'AboutPage',
           name: siteName,
           url: 'https://kolkatachessacademy.in/aspirechess/about',
-          description: `Learn about ${siteName}, our mission, vision, and the expert team behind our chess academy.`
+          description: `AspireChess offers a complete Grandmaster-designed curriculum with regular assessment and feedback. Our focus is on holistic chess mastery, not just online classes.`
         }}
       />
 
@@ -56,13 +56,10 @@ const AspireAbout = () => {
             <div className={mainCardClasses}>
               <FaQuoteLeft className={`text-5xl ${titleClasses} opacity-20 mb-6`} />
               <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-6 ${titleClasses}`}>
-                Forging India's Next Generation of Titled Masters
+                Complete GM Curriculum with Regular Assessment
               </h2>
               <p className={`text-lg leading-relaxed mb-6 ${textClasses}`}>
-                Based out in Kolkata, Aspire Chess Academy was established with a singular, audacious goal: to make India the most title-heavy country in the chess world. We are not just a coaching center; we are an incubator for future champions. Our structured, professional chess education focuses on personalized growth, transforming raw talent into tournament-ready masters.
-              </p>
-              <p className={`text-lg leading-relaxed ${textClasses}`}>
-                At {siteName}, we are committed to nurturing the next generation of chess champions. Whether you're just starting out, an intermediate player aiming for the next level, or an advanced player looking to master the game, our panel of expert coaches is here to guide you every step of the way.
+                At AspireChess, our entire curriculum is meticulously crafted by Grandmaster Niaz Murshed, ensuring every student receives world-class training. We emphasize a structured, in-depth learning journey with regular assessments and personalized feedback—far beyond just online classes. Our mission is to nurture true chess mastery through a proven, Grandmaster-led system.
               </p>
             </div>
           </div>
