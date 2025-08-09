@@ -192,7 +192,8 @@ export const benefits = [
   "Therapeutic for Anxiety & ADHD", // Shortened for better display
 ];
 export const achievementsData = [
-  { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589! ...", image: "/Achievements/1.jpg" }
+  { title: "Adreesh Dey's International FIDE Rating", description: "Big Congratulations to Adreesh Dey! We are thrilled to share that our student, Adreesh Dey, has achieved his first international FIDE rating of 1589!", image: "/Achievements/1.jpg" },
+  { title: "Champion's Moment!", description: "Congratulations to Anshuman Dey, crowned Tournament Champion at the Knight's Quest: Invitational Chess Meet.", image: "/Achievements/2.png" }
 ];
 
 export const testimonials = [
