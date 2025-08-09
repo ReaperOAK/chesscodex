@@ -19,6 +19,9 @@ const Modal = ({ course, onClose, isAspireChess }) => {
       <div className={`${modalBgClasses} rounded-lg shadow-2xl p-6 w-11/12 max-w-2xl animate-fadeIn`}>
         <h3 className={`text-2xl font-bold mb-4 ${titleClasses}`}>{course.title}</h3>
         <p className={`${textClasses} mb-2 font-medium`}>Duration: {course.duration}</p>
+        <p className={`${textClasses} mb-2 font-semibold`}>
+          {isAspireChess ? 'Classes held offline at Aspire Chess Academy.' : 'All classes are held online via Kolkata Chess Academy.'}
+        </p>
         <ul className={`list-disc pl-5 space-y-2 ${textClasses}`}>
           {course.description.map((item, idx) => (
             <li key={idx}>{item}</li>
@@ -87,6 +90,9 @@ const CoursesList = () => {
                   <div>
                     <h2 className={cardTitleClasses}>{course.title}</h2>
                     <p className={`${cardTextClasses} font-medium mb-2`}>Duration: {course.duration}</p>
+                    <p className={`${cardTextClasses} mb-2 font-semibold`}>
+                      Classes held offline at Aspire Chess Academy.
+                    </p>
                     <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
                       {course.description.slice(0, 4).map((item, idx) => (
                         <li key={idx}>{item}</li>
@@ -110,6 +116,9 @@ const CoursesList = () => {
                 <div>
                   <h2 className={cardTitleClasses}>{course.title}</h2>
                   <p className={`${cardTextClasses} font-medium mb-2`}>Duration: {course.duration}</p>
+                  <p className={`${cardTextClasses} mb-2 font-semibold`}>
+                    {isAspireChess ? 'Classes held offline at Aspire Chess Academy.' : 'All classes are held online via Kolkata Chess Academy.'}
+                  </p>
                   <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
                     {course.description.slice(0, 4).map((item, idx) => (
                       <li key={idx}>{item}</li>
