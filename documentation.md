@@ -71,8 +71,6 @@ This is a React-based chess academy website called "chess-academy" (version 0.1.
     └── aca.png
     └── index.html
     └── kca.png
-    └── leaflet.css
-    └── leaflet.js
     └── manifest.json
     └── marker-icon.png
     └── rewrite.log
@@ -139,7 +137,6 @@ This is a React-based chess academy website called "chess-academy" (version 0.1.
 - **Swiper**: 11.1.14 (Modern slider component)
 
 ### Maps & Location
-- **Leaflet**: 1.9.4 (Interactive maps)
 - **React Map GL**: 7.1.7 (React wrapper for MapGL)
 
 ### HTTP & API
@@ -244,7 +241,6 @@ The project follows a standard React application structure with additional PHP b
 - **Images**: Academy logos, team photos, achievement images
 - **Gallery**: Organized tournament and facility photos by date/category
 - **PHP Backend**: Server-side scripts for forms and data handling
-- **Static Assets**: Leaflet maps, manifest, robots.txt
 
 ## Application Architecture
 
@@ -479,7 +475,6 @@ The application includes 17 page components providing complete functionality for
 
 #### Contact (`Contact.js`)
 - **Comprehensive Contact Form**: Multi-step form with validation
-- **Interactive Map**: Leaflet.js integration for location display
 - **Role-based Fields**: Dynamic form fields based on user role
 - **Privacy Compliance**: Newsletter consent and privacy policy agreement
 - **Social Integration**: Links to all social media platforms
@@ -597,7 +592,6 @@ The application includes 17 page components providing complete functionality for
 - **Theme Configuration**: Brand colors for PWA experience
 
 ### Maps Integration
-- **Leaflet Assets**: Complete Leaflet.js integration
 - **Custom Markers**: Branded map markers
 - **Interactive Maps**: Location display with contact information
 

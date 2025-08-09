@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import SEO from '../../components/SEO';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import FAQs from "../../components/FAQs";
 import RefundPolicy from "../../components/RefundPolicy";
 
@@ -20,43 +18,10 @@ const Contact = () => {
     agree_privacy_policy: false,
   });
   const [submitted, setSubmitted] = useState(false);
-  const mapRef = useRef(null);
   const siteName = 'Kolkata Chess Academy';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
   const contactAddress = 'Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030';
-
-  useEffect(() => {
-    if (document.getElementById('map') && !mapRef.current) {
-      const map = L.map("map", {
-        center: [22.623208, 88.399405],
-        zoom: 15,
-        scrollWheelZoom: false,
-      });
-      mapRef.current = map;
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
-      const mapDiv = document.getElementById('map');
-      if (mapDiv) {
-        mapDiv.style.border = '';
-        mapDiv.style.boxShadow = '';
-      }
-
-      const customIcon = new L.Icon({
-        iconUrl: "/marker-icon.png",
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-      });
-
-      L.marker([22.623208, 88.399405], { icon: customIcon })
-        .addTo(map)
-        .bindPopup(contactAddress)
-        .openPopup();
-    }
-  }, [contactAddress]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;

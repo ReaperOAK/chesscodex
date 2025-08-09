@@ -104,8 +104,6 @@
     └── aca.png
     └── index.html
     └── kca.png
-    └── leaflet.css
-    └── leaflet.js
     └── manifest.json
     └── marker-icon.png
     └── rewrite.log
