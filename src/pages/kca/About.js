@@ -82,10 +82,10 @@ const About = () => {
               <div className={`flex-1 ${missionVisionCardClasses}`}>
                 <FaChessKing className={`mx-auto text-6xl mb-6 ${iconClasses}`} />
                 <h3 className={`text-2xl font-bold mb-4 ${missionTitleClasses}`}>Our Mission</h3>
-                <p className={textClasses}>
-                  <span className={`font-semibold ${missionHighlightClasses}`}>To make chess a habit!</span>
-                  Cultivate a love for chess through structured programs, fostering critical thinking and creativity in every player.
-                </p>
+                  <p className={textClasses}>
+                    <span className={`font-semibold ${missionHighlightClasses}`}>To spread complete chess support remotely to everyone in need.</span>
+                    Our ever-growing LMS system enables us to deliver high-quality chess education, resources, and mentorship to players everywhere, regardless of location or background.
+                  </p>
               </div>
               {/* Vision */}
               <div className={`flex-1 ${missionVisionCardClasses}`}>
