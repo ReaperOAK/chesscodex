@@ -45,7 +45,17 @@ const CoursesList = () => {
   const openModal = (course) => setSelectedCourse(course);
   const closeModal = () => setSelectedCourse(null);
 
-  const filteredCourses = coursesData; // Simplified for clarity
+  // Filter courses by site (handle both array and string for 'site')
+  const filteredCourses = coursesData.filter(course => {
+    if (Array.isArray(course.site)) {
+      return isAspireChess
+        ? course.site.includes('aspirechess')
+        : course.site.includes('kca');
+    }
+    return isAspireChess
+      ? course.site === 'aspirechess'
+      : course.site === 'kca';
+  });
 
   // --- THEME-AWARE STYLING ---
   const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-dark";

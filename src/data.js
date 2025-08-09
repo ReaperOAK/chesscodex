@@ -130,7 +130,7 @@ export const coursesData = [
       'Basics of Endgames',
     ],
     duration: '12 months',
-    site: 'aspirechess',
+    site: ['aspirechess', 'kca'],
   },
   {
     title: 'Intermediate Course',
@@ -143,7 +143,7 @@ export const coursesData = [
       'Fundamental Strategies (Open File, Outpost, Center, Space & Exchanges)',
     ],
     duration: '18 months',
-    site: 'aspirechess',
+    site: ['aspirechess', 'kca'],
   },
   {
     title: 'Advanced Course',
@@ -154,7 +154,7 @@ export const coursesData = [
       'Colour Complex Piece Play',
     ],
     duration: '24 months',
-    site: 'aspirechess',
+    site: ['aspirechess', 'kca'],
   },
   {
     title: 'Expert Course',
@@ -166,7 +166,7 @@ export const coursesData = [
       'Building a Tailored Opening Repertoire',
     ],
     duration: 'Ongoing',
-    site: 'aspirechess',
+    site: ['aspirechess', 'kca'],
   },
   {
     title: 'Private Classes',
