@@ -3,21 +3,19 @@
 // glassy aesthetic to all sections, cards, and filters.
 
 import React, { useState, useEffect } from 'react';
-import SEO from '../components/SEO';
-import { useLocation } from 'react-router-dom';
+import SEO from '../../components/SEO';
 import Slider from 'react-slick';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { NextArrow, PrevArrow } from '../components/CustomArrows';
+import { NextArrow, PrevArrow } from '../../components/CustomArrows';
 
 const ITEMS_PER_PAGE = 8;
 
 const Gallery = () => {
-    const location = useLocation();
-    const isAspireChess = location.pathname.startsWith('/aspirechess');
-    const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+
+    const siteName = 'Kolkata Chess Academy';
 
     const [index, setIndex] = useState(-1);
     const [filter, setFilter] = useState('all');
@@ -80,45 +78,46 @@ const Gallery = () => {
         }
     };
 
-    // --- Theme-Aware Class Definitions ---
-    const pageClasses = isAspireChess ? "min-h-screen" : "bg-brand-light min-h-screen";
-    const titleClasses = isAspireChess ? "text-5xl font-extrabold text-white" : "text-5xl font-extrabold text-brand-dark";
-    const subtitleClasses = isAspireChess ? "text-lg text-gray-300 mt-4" : "text-lg text-brand-text mt-4";
-    const folderTitleClasses = isAspireChess ? "text-3xl font-bold text-amber-400 mb-6" : "text-3xl font-bold text-brand-dark mb-6";
-    const filterButtonActiveClasses = isAspireChess ? "bg-amber-500 text-gray-900" : "bg-brand-primary text-white";
-    const filterButtonIdleClasses = isAspireChess ? "bg-gray-700/50 text-white hover:bg-gray-600/50" : "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
-    const paginationButtonActiveClasses = isAspireChess ? "bg-amber-500 text-gray-900" : "bg-brand-primary text-white";
-    const paginationButtonIdleClasses = isAspireChess ? "bg-gray-700/50 text-white hover:bg-gray-600/50" : "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
+
+    // KCA Theme Classes
+    const pageClasses = "bg-brand-light min-h-screen";
+    const titleClasses = "text-5xl font-extrabold text-brand-dark";
+    const subtitleClasses = "text-lg text-brand-text mt-4";
+    const folderTitleClasses = "text-3xl font-bold text-brand-dark mb-6";
+    const filterButtonActiveClasses = "bg-brand-primary text-white";
+    const filterButtonIdleClasses = "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
+    const paginationButtonActiveClasses = "bg-brand-primary text-white";
+    const paginationButtonIdleClasses = "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
 
 
     return (
         <>
-            <SEO
-                title={`Gallery - ${siteName}`}
-                description={`Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`}
-                keywords={isAspireChess ? 'AspireChess, gallery, chess events, chess photos, chess videos' : 'Kolkata Chess Academy, gallery, chess events, chess photos, chess videos'}
-                image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-                url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery'}
-                type="gallery"
-                canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery'}
-                structuredData={{
-                  '@context': 'https://schema.org',
-                  '@type': 'ImageGallery',
-                  name: `${siteName} Gallery`,
-                  url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/gallery' : 'https://kolkatachessacademy.in/gallery',
-                  description: `Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`
-                }}
-            />
+                        <SEO
+                                title={`Gallery - ${siteName}`}
+                                description={`Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`}
+                                keywords={'Kolkata Chess Academy, gallery, chess events, chess photos, chess videos'}
+                                image={'https://kolkatachessacademy.in/kca.png'}
+                                url={'https://kolkatachessacademy.in/gallery'}
+                                type="gallery"
+                                canonical={'https://kolkatachessacademy.in/gallery'}
+                                structuredData={{
+                                    '@context': 'https://schema.org',
+                                    '@type': 'ImageGallery',
+                                    name: `${siteName} Gallery`,
+                                    url: 'https://kolkatachessacademy.in/gallery',
+                                    description: `Explore the gallery of ${siteName}: photos and videos from our chess events, tournaments, and training sessions.`
+                                }}
+                        />
             <div className={pageClasses}>
                  {/* Header */}
-                <div className={isAspireChess ? "text-center py-24" : "text-center p-6 md:p-12 mb-12"}>
+                <div className="text-center p-6 md:p-12 mb-12">
                     <h1 className={titleClasses}>Gallery</h1>
                     <p className={subtitleClasses}>
                         Dive into the vibrant moments from our academy's events, tournaments, and training sessions.
                     </p>
                 </div>
 
-                <div className={isAspireChess ? "px-4 md:px-12" : ""}>
+                <div className="">
                     {/* Filter Buttons */}
                     <div className="flex justify-center mb-12 space-x-2 sm:space-x-4">
                         {['all', 'image', 'video', 'youtube'].map((type) => (

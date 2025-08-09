@@ -1,19 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import SEO from '../components/SEO';
-import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import SEO from '../../components/SEO';
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
 import ChessInWorkspaces from './ChessInWorkspaces';
 import ChessAcademies from './ChessAcademies';
 // ...removed duplicate import...
-const CollaborateWithUs = () => {
+
+const AspireCollaborateWithUs = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
-  // ...removed unused navigate...
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,41 +24,28 @@ const CollaborateWithUs = () => {
     };
   }, []);
 
-  // ...removed unused handleDropdownChange...
-
-  // --- Theme-Aware Class Definitions ---
-  const heroClasses = isAspireChess 
-    ? "py-24" 
-    : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
-  
-  const navClasses = isAspireChess
-    ? `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`
-    : `bg-brand-light py-4 shadow-md`;
-  
-  const navLinkActiveClasses = isAspireChess
-    ? "bg-amber-500 text-gray-900"
-    : "bg-brand-dark text-white";
-
-  const navLinkIdleClasses = isAspireChess
-    ? "bg-gray-700/50 text-white hover:bg-gray-600/50"
-    : "bg-brand-secondary text-white hover:bg-brand-dark";
+  // Aspire theme only
+  const heroClasses = "py-24";
+  const navClasses = `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`;
+  const navLinkActiveClasses = "bg-amber-500 text-gray-900";
+  const navLinkIdleClasses = "bg-gray-700/50 text-white hover:bg-gray-600/50";
 
   return (
     <>
       <SEO
-        title={`Collaborate With Us - ${siteName}`}
-        description={`Partner with ${siteName} to promote chess, foster creativity, and make a meaningful impact in your community.`}
-        keywords={isAspireChess ? 'AspireChess, collaborate, partnership, chess, community' : 'Kolkata Chess Academy, collaborate, partnership, chess, community'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us'}
+        title={`Collaborate With Us - AspireChess`}
+        description={`Partner with AspireChess to promote chess, foster creativity, and make a meaningful impact in your community.`}
+        keywords={'AspireChess, collaborate, partnership, chess, community'}
+        image={'https://kolkatachessacademy.in/aca.png'}
+        url={'https://kolkatachessacademy.in/aspirechess/collaborate-with-us'}
         type="website"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us'}
+        canonical={'https://kolkatachessacademy.in/aspirechess/collaborate-with-us'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: `Collaborate With Us - ${siteName}`,
-          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us' : 'https://kolkatachessacademy.in/collaborate-with-us',
-          description: `Partner with ${siteName} to promote chess, foster creativity, and make a meaningful impact in your community.`
+          name: `Collaborate With Us - AspireChess`,
+          url: 'https://kolkatachessacademy.in/aspirechess/collaborate-with-us',
+          description: `Partner with AspireChess to promote chess, foster creativity, and make a meaningful impact in your community.`
         }}
       />
       
@@ -90,7 +74,7 @@ const CollaborateWithUs = () => {
         </div>
       </nav>
 
-      <div className={isAspireChess ? "py-16 sm:py-24" : ""}>
+      <div className="py-16 sm:py-24">
         <Routes>
           <Route path="/" element={<Navigate to="referral-programme" />} />
           <Route path="referral-programme" element={<ReferralProgramme />} />
@@ -103,4 +87,4 @@ const CollaborateWithUs = () => {
   );
 };
 
-export default CollaborateWithUs;
+export default AspireCollaborateWithUs;

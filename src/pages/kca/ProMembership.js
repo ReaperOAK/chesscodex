@@ -1,11 +1,7 @@
 import React from "react";
-import { useLocation } from 'react-router-dom';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 
 const ProMembership = () => {
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-
   const proMembershipDetails = [
     {
       title: "Calculation Pack",
@@ -45,33 +41,30 @@ const ProMembership = () => {
     { plan: "Yearly", price: "₹8,999 / $134.99" },
   ];
 
-  // --- Theme-Aware Class Definitions ---
-  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-light";
-  const cardClasses = isAspireChess 
-    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg"
-    : "bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const ctaCardClasses = isAspireChess
-    ? "bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl"
-    : "bg-brand-dark text-white rounded-lg shadow-md";
+
+  // KCA Theme Classes
+  const sectionClasses = "py-16 bg-brand-light";
+  const cardClasses = "bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow";
+  const titleClasses = "text-brand-dark";
+  const textClasses = "text-brand-text";
+  const ctaCardClasses = "bg-brand-dark text-white rounded-lg shadow-md";
 
   return (
     <>
       <SEO
-        title={isAspireChess ? 'Pro Membership - AspireChess' : 'Pro Membership - Kolkata Chess Academy'}
-        description={isAspireChess ? 'Unlock exclusive chess content, coaching, and community with AspireChess Pro Membership.' : 'Unlock exclusive chess content, coaching, and community with Kolkata Chess Academy Pro Membership.'}
-        keywords={isAspireChess ? 'AspireChess, pro membership, exclusive, chess, coaching, community' : 'Kolkata Chess Academy, pro membership, exclusive, chess, coaching, community'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/pro-membership' : 'https://kolkatachessacademy.in/exclusives/pro-membership'}
+        title={'Pro Membership - Kolkata Chess Academy'}
+        description={'Unlock exclusive chess content, coaching, and community with Kolkata Chess Academy Pro Membership.'}
+        keywords={'Kolkata Chess Academy, pro membership, exclusive, chess, coaching, community'}
+        image={'https://kolkatachessacademy.in/kca.png'}
+        url={'https://kolkatachessacademy.in/exclusives/pro-membership'}
         type="article"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/pro-membership' : 'https://kolkatachessacademy.in/exclusives/pro-membership'}
+        canonical={'https://kolkatachessacademy.in/exclusives/pro-membership'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Offer',
-          name: isAspireChess ? 'AspireChess Pro Membership' : 'Kolkata Chess Academy Pro Membership',
-          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives/pro-membership' : 'https://kolkatachessacademy.in/exclusives/pro-membership',
-          description: isAspireChess ? 'Unlock exclusive chess content, coaching, and community with AspireChess Pro Membership.' : 'Unlock exclusive chess content, coaching, and community with Kolkata Chess Academy Pro Membership.'
+          name: 'Kolkata Chess Academy Pro Membership',
+          url: 'https://kolkatachessacademy.in/exclusives/pro-membership',
+          description: 'Unlock exclusive chess content, coaching, and community with Kolkata Chess Academy Pro Membership.'
         }}
       />
       <section className={sectionClasses}>
@@ -84,7 +77,7 @@ const ProMembership = () => {
           <div className="space-y-8">
             {proMembershipDetails.map((item, idx) => (
               <div key={idx} className={cardClasses}>
-                <h3 className={`text-xl font-bold mb-3 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-brand-dark">{item.title}</h3>
                 <ul className={`text-left list-disc list-inside space-y-1 ${textClasses}`}>
                   {item.details.map((detail, index) => <li key={index}>{detail}</li>)}
                 </ul>
@@ -101,12 +94,12 @@ const ProMembership = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {pricingPlans.map((item, idx) => (
                 <div key={idx} className={cardClasses}>
-                  <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>{item.plan} Plan</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-brand-dark">{item.plan} Plan</h3>
                   <p className={`text-lg ${textClasses}`}>{item.price}</p>
                 </div>
               ))}
             </div>
-            <a href="[https://wa.me/+919830149852](https://wa.me/+919830149852)" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}>
+            <a href="https://wa.me/+919830149852" className="inline-block font-medium py-2 px-6 rounded-lg transition bg-brand-primary text-white hover:bg-brand-secondary">
               Get Started Now
             </a>
           </div>

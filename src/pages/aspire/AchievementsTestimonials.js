@@ -2,11 +2,11 @@
 // ACTION: The entire page has been redesigned to be theme-aware, applying the
 // 'aspirechess' glassy aesthetic to all sections, cards, and the modal.
 
+
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { useLocation } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
 // Universal achievements and testimonials
@@ -19,15 +19,12 @@ const testimonials = [
   { quote: "Players get wonderful exposure here and get a chance to play with quality players who are high rated who also frequently visit the sessions. The sessions are conducted in a friendly environment and constant learning. My experience was wonderful. Highly recommended.", name: "Megha Patra", role: "Chess Enthusiast", avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXGUStEJ5_047_ExA4qYJj3KThVcb6HJ9aSLMdoEFxw6WvUFLI=w108-h108-p-rp-mo-br100" }
 ];
 
-const Modal = ({ achievement, onClose, isAspireChess }) => {
-    const modalBgClasses = isAspireChess
-    ? "bg-gray-900 bg-opacity-70 backdrop-blur-md border border-gray-700"
-    : "bg-white";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-text";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const buttonClasses = isAspireChess
-    ? "bg-amber-500 text-gray-900 hover:bg-amber-400"
-    : "bg-brand-primary text-white hover:bg-brand-secondary";
+
+const Modal = ({ achievement, onClose }) => {
+  const modalBgClasses = "bg-gray-900 bg-opacity-70 backdrop-blur-md border border-gray-700";
+  const titleClasses = "text-amber-400";
+  const textClasses = "text-gray-300";
+  const buttonClasses = "bg-amber-500 text-gray-900 hover:bg-amber-400";
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -45,40 +42,36 @@ const Modal = ({ achievement, onClose, isAspireChess }) => {
   );
 };
 
-const AchievementsTestimonials = () => {
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+
+const AspireAchievementsTestimonials = () => {
+  const siteName = 'AspireChess';
 
   const [selectedAchievement, setSelectedAchievement] = useState(null);
 
   const openModal = (achievement) => setSelectedAchievement(achievement);
   const closeModal = () => setSelectedAchievement(null);
 
-  // Use universal data for both variants
   const currentAchievements = achievementsData;
   const currentTestimonials = testimonials;
 
-  // --- Theme-Aware Class Definitions ---
-  const heroClasses = isAspireChess ? "py-20 text-center" : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-20 text-center";
-  const sectionWrapperClasses = isAspireChess ? "py-16 sm:py-24 space-y-20 px-4" : "";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const cardClasses = isAspireChess
-    ? "group bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg hover:shadow-amber-400/10 transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-    : "group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between";
-  const cardTitleClasses = isAspireChess ? "text-white group-hover:text-amber-300" : "text-brand-primary group-hover:text-brand-secondary";
+  // Aspire theme only
+  const heroClasses = "py-20 text-center";
+  const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
+  const titleClasses = "text-amber-400";
+  const textClasses = "text-gray-300";
+  const cardClasses = "group bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg hover:shadow-amber-400/10 transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between";
+  const cardTitleClasses = "text-white group-hover:text-amber-300";
 
   return (
     <div>
       <SEO
         title={`Achievements & Testimonials - ${siteName}`}
         description={`See achievements and testimonials from students and parents at ${siteName}. Success stories and reviews.`}
-        keywords={isAspireChess ? 'AspireChess, achievements, testimonials, chess success stories' : 'Kolkata Chess Academy, achievements, testimonials, chess success stories'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/achievements-testimonials' : 'https://kolkatachessacademy.in/achievements-testimonials'}
+        keywords={'AspireChess, achievements, testimonials, chess success stories'}
+        image={'https://kolkatachessacademy.in/aca.png'}
+        url={'https://kolkatachessacademy.in/aspirechess/achievements-testimonials'}
         type="article"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/achievements-testimonials' : 'https://kolkatachessacademy.in/achievements-testimonials'}
+        canonical={'https://kolkatachessacademy.in/aspirechess/achievements-testimonials'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Review',
@@ -102,7 +95,7 @@ const AchievementsTestimonials = () => {
 
       <div className={sectionWrapperClasses}>
         {/* Achievements Section */}
-        <section className={isAspireChess ? "" : "py-16 bg-brand-light"}>
+        <section>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <h2 className={`text-4xl font-bold text-center mb-12 ${titleClasses}`}>
               Celebrating Notable Achievements
@@ -118,7 +111,7 @@ const AchievementsTestimonials = () => {
                     </p>
                   </div>
                   <div className="mt-4">
-                    <button className={`font-medium ${isAspireChess ? 'text-amber-400 hover:underline' : 'text-brand-secondary hover:underline'}`}>
+                    <button className="font-medium text-amber-400 hover:underline">
                       Read More
                     </button>
                   </div>
@@ -129,7 +122,7 @@ const AchievementsTestimonials = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className={isAspireChess ? "" : "bg-gradient-to-r from-brand-light via-brand-accent to-brand-light py-16"}>
+        <section>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <h2 className={`text-4xl font-bold text-center mb-12 ${titleClasses}`}>
               What Our Students Say
@@ -141,7 +134,7 @@ const AchievementsTestimonials = () => {
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               pagination={{ clickable: true }}
               breakpoints={{ 1024: { slidesPerView: 2 }, 1440: { slidesPerView: 3 } }}
-              className="pb-12" // Add padding for pagination bullets
+              className="pb-12"
             >
               {currentTestimonials.map((testimonial, index) => (
                 <SwiperSlide key={index}>
@@ -149,8 +142,8 @@ const AchievementsTestimonials = () => {
                     <div className="flex items-center mb-4">
                       <img className="w-16 h-16 rounded-full mr-4 border-2 border-amber-400/50" src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} />
                       <div>
-                        <h4 className={`text-xl font-bold ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>{testimonial.name}</h4>
-                        <p className={isAspireChess ? 'text-amber-300' : 'text-brand-primary'}>{testimonial.role}</p>
+                        <h4 className="text-xl font-bold text-white">{testimonial.name}</h4>
+                        <p className="text-amber-300">{testimonial.role}</p>
                       </div>
                     </div>
                     <p className={textClasses}>"{testimonial.quote}"</p>
@@ -162,9 +155,9 @@ const AchievementsTestimonials = () => {
         </section>
       </div>
 
-      {selectedAchievement && <Modal achievement={selectedAchievement} onClose={closeModal} isAspireChess={isAspireChess} />}
+      {selectedAchievement && <Modal achievement={selectedAchievement} onClose={closeModal} />}
     </div>
   );
 };
 
-export default AchievementsTestimonials;
+export default AspireAchievementsTestimonials;

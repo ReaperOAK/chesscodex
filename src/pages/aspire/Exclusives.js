@@ -1,18 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import SEO from '../components/SEO';
-import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import SEO from '../../components/SEO';
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
 
-const Exclusives = () => {
+
+const AspireExclusives = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
-  // ...removed unused navigate...
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,41 +23,28 @@ const Exclusives = () => {
     };
   }, []);
 
-  // ...removed unused handleDropdownChange...
-
-  // --- Theme-Aware Class Definitions ---
-  const heroClasses = isAspireChess 
-    ? "py-24" 
-    : "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
-  
-  const navClasses = isAspireChess
-    ? `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`
-    : `bg-brand-light py-4 shadow-md`;
-  
-  const navLinkActiveClasses = isAspireChess
-    ? "bg-amber-500 text-gray-900"
-    : "bg-brand-dark text-white";
-
-  const navLinkIdleClasses = isAspireChess
-    ? "bg-gray-700/50 text-white hover:bg-gray-600/50"
-    : "bg-brand-secondary text-white hover:bg-brand-dark";
+  // Aspire theme only
+  const heroClasses = "py-24";
+  const navClasses = `bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg`;
+  const navLinkActiveClasses = "bg-amber-500 text-gray-900";
+  const navLinkIdleClasses = "bg-gray-700/50 text-white hover:bg-gray-600/50";
 
   return (
     <div>
       <SEO
-        title={`Exclusives - ${siteName}`}
-        description={`Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`}
-        keywords={isAspireChess ? 'AspireChess, exclusives, pro membership, game analysis, scholarships' : 'Kolkata Chess Academy, exclusives, pro membership, game analysis, scholarships'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives'}
+        title={`Exclusives - AspireChess`}
+        description={`Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at AspireChess.`}
+        keywords={'AspireChess, exclusives, pro membership, game analysis, scholarships'}
+        image={'https://kolkatachessacademy.in/aca.png'}
+        url={'https://kolkatachessacademy.in/aspirechess/exclusives'}
         type="website"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives'}
+        canonical={'https://kolkatachessacademy.in/aspirechess/exclusives'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: `${siteName} Exclusives`,
-          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/exclusives' : 'https://kolkatachessacademy.in/exclusives',
-          description: `Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`
+          name: `AspireChess Exclusives`,
+          url: 'https://kolkatachessacademy.in/aspirechess/exclusives',
+          description: `Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at AspireChess.`
         }}
       />
       
@@ -88,7 +72,7 @@ const Exclusives = () => {
         </div>
       </nav>
 
-      <div className={isAspireChess ? "py-16 sm:py-24" : ""}>
+      <div className="py-16 sm:py-24">
         <Routes>
           <Route path="/" element={<Navigate to="pro-membership" />} />
           <Route path="pro-membership" element={<ProMembership />} />
@@ -100,4 +84,4 @@ const Exclusives = () => {
   );
 };
 
-export default Exclusives;
+export default AspireExclusives;

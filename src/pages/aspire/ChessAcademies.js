@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 import React from 'react';
 
 const collaborationModels = [
@@ -82,66 +82,67 @@ const PricingCard = ({ title, price, details }) => (
 );
 
 
-const ChessAcademies = () => {
-  return (
-    <>
-      <SEO
-        title="Chess Academies - Kolkata Chess Academy"
-        description="Discover Kolkata Chess Academy's network and approach to chess education. Find the best chess academies for your growth."
-        keywords="chess, chess academies, Kolkata Chess Academy, education, training"
-        image="https://kolkatachessacademy.in/kca.png"
-        url="https://kolkatachessacademy.in/chess-academies"
-        type="article"
-        canonical="https://kolkatachessacademy.in/chess-academies"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'EducationalOrganization',
-          name: 'Kolkata Chess Academy',
-          url: 'https://kolkatachessacademy.in/chess-academies',
-          description: 'Discover Kolkata Chess Academy\'s network and approach to chess education. Find the best chess academies for your growth.'
-        }}
-      />
-      <section>
-      <div className="max-w-7xl mx-auto px-6 text-center space-y-20">
+
+const AspireChessAcademies = () => {
+    return (
+        <>
+            <SEO
+                title="Chess Academies - AspireChess"
+                description="Discover AspireChess's network and approach to chess education. Find the best chess academies for your growth."
+                keywords="chess, chess academies, AspireChess, education, training"
+                image="https://kolkatachessacademy.in/aca.png"
+                url="https://kolkatachessacademy.in/aspirechess/chess-academies"
+                type="article"
+                canonical="https://kolkatachessacademy.in/aspirechess/chess-academies"
+                structuredData={{
+                    '@context': 'https://schema.org',
+                    '@type': 'EducationalOrganization',
+                    name: 'AspireChess',
+                    url: 'https://kolkatachessacademy.in/aspirechess/chess-academies',
+                    description: 'Discover AspireChess\'s network and approach to chess education. Find the best chess academies for your growth.'
+                }}
+            />
+            <section>
+            <div className="max-w-7xl mx-auto px-6 text-center space-y-20">
         
-        <div>
-            <h2 className="text-4xl font-bold mb-4 text-amber-400">Collaboration Opportunities</h2>
-            <p className="text-lg mb-12 text-gray-300 max-w-4xl mx-auto">
-                We are dedicated to enhancing the quality of chess coaching worldwide. By collaborating with academies globally, we aim to promote the game and provide high-quality training for players of all levels. Join us in our mission to set new standards in chess coaching!
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-                {collaborationModels.map(model => <InfoCard key={model.title} {...model} />)}
+                <div>
+                        <h2 className="text-4xl font-bold mb-4 text-amber-400">Collaboration Opportunities</h2>
+                        <p className="text-lg mb-12 text-gray-300 max-w-4xl mx-auto">
+                                We are dedicated to enhancing the quality of chess coaching worldwide. By collaborating with academies globally, we aim to promote the game and provide high-quality training for players of all levels. Join us in our mission to set new standards in chess coaching!
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-8">
+                                {collaborationModels.map(model => <InfoCard key={model.title} {...model} />)}
+                        </div>
+                </div>
+
+                <div>
+                        <h2 className="text-4xl font-bold mb-12 text-amber-400">Our Services & Curriculum</h2>
+                        <div className="grid md:grid-cols-2 gap-8">
+                                {services.map(service => <InfoCard key={service.title} {...service} />)}
+                        </div>
+                </div>
+
+                <div>
+                        <h2 className="text-4xl font-bold mb-12 text-amber-400">Pricing & Terms</h2>
+                        <div className="grid md:grid-cols-3 gap-8">
+                                {pricing.map(p => <PricingCard key={p.title} {...p} />)}
+                        </div>
+                </div>
+
+                <div className="py-8 px-6 bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl">
+                        <h3 className="text-3xl font-bold mb-4 text-white">Ready to Join Our Network?</h3>
+                        <p className="text-lg mb-6 text-gray-300">
+                                Contact us today to learn more about our Chess Academies program and how we can collaborate to empower players everywhere.
+                        </p>
+                        <a href="https://wa.me/+919830149852" className="inline-block font-semibold text-lg py-3 px-8 rounded-lg transition bg-amber-500 text-gray-900 hover:bg-amber-400 transform hover:scale-105">
+                                Partner With Us
+                        </a>
+                </div>
+
             </div>
-        </div>
-
-        <div>
-            <h2 className="text-4xl font-bold mb-12 text-amber-400">Our Services & Curriculum</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-                {services.map(service => <InfoCard key={service.title} {...service} />)}
-            </div>
-        </div>
-
-        <div>
-            <h2 className="text-4xl font-bold mb-12 text-amber-400">Pricing & Terms</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-                {pricing.map(p => <PricingCard key={p.title} {...p} />)}
-            </div>
-        </div>
-
-        <div className="py-8 px-6 bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl">
-            <h3 className="text-3xl font-bold mb-4 text-white">Ready to Join Our Network?</h3>
-            <p className="text-lg mb-6 text-gray-300">
-                Contact us today to learn more about our Chess Academies program and how we can collaborate to empower players everywhere.
-            </p>
-            <a href="https://wa.me/+919830149852" className="inline-block font-semibold text-lg py-3 px-8 rounded-lg transition bg-amber-500 text-gray-900 hover:bg-amber-400 transform hover:scale-105">
-                Partner With Us
-            </a>
-        </div>
-
-      </div>
-      </section>
-    </>
-  );
+            </section>
+        </>
+    );
 };
 
-export default ChessAcademies;
+export default AspireChessAcademies;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 
 const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-brand-subtle text-brand-text">
       <SEO
-        title="404 - Page Not Found"
-        description="The page you are looking for does not exist. Return to the homepage."
+        title="404 - Page Not Found | Kolkata Chess Academy"
+        description="The page you are looking for does not exist. Return to the Kolkata Chess Academy homepage."
         url="https://kolkatachessacademy.in/404"
         type="webpage"
         canonical="https://kolkatachessacademy.in/404"

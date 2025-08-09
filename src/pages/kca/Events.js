@@ -3,8 +3,7 @@
 // 'aspirechess' glassy aesthetic to all sections, cards, and filters.
 
 import React, { useState, useEffect } from "react";
-import SEO from '../components/SEO';
-import { useLocation } from 'react-router-dom';
+import SEO from '../../components/SEO';
 
 // Data for events
 const eventsData = [
@@ -25,11 +24,7 @@ const blogsData = [
 ];
 
 const Events = () => {
-  const location = useLocation();
-  // Theme detection only for style, not for data
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
-
+  const siteName = 'Kolkata Chess Academy';
   const [filter] = useState("All");
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -38,39 +33,36 @@ const Events = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Universal data usage
   const events = eventsData;
   const blogs = blogsData;
 
   const filteredEvents = events.filter(event => filter === "All" || event.mode === filter);
   const isLinkExpired = (date) => new Date(date) < currentDate;
 
-  // --- Theme-Aware Class Definitions ---
-  const heroClasses = isAspireChess ? "py-24" : "relative bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-24";
-  const sectionWrapperClasses = isAspireChess ? "py-16 sm:py-24 space-y-20 px-4" : "";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-text";
-  const cardClasses = isAspireChess
-    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-lg overflow-hidden hover:shadow-amber-400/10 transition-all duration-300 group"
-    : "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200";
-  const cardTitleClasses = isAspireChess ? "text-white" : "text-brand-secondary";
-  const cardTextClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const buttonClasses = isAspireChess ? "bg-amber-500 hover:bg-amber-400 text-gray-900" : "bg-brand-secondary hover:bg-brand-primary text-white";
+  // KCA Theme Classes
+  const heroClasses = "relative bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-24";
+  const sectionWrapperClasses = "";
+  const titleClasses = "text-brand-text";
+  const cardClasses = "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200";
+  const cardTitleClasses = "text-brand-secondary";
+  const cardTextClasses = "text-brand-text";
+  const buttonClasses = "bg-brand-secondary hover:bg-brand-primary text-white";
 
   return (
     <div>
       <SEO
         title={`Upcoming Events & Blogs - ${siteName}`}
         description={`See upcoming chess events, tournaments, and latest blogs from ${siteName}. Register and stay updated!`}
-        keywords={isAspireChess ? 'AspireChess, events, chess tournaments, chess blogs' : 'Kolkata Chess Academy, events, chess tournaments, chess blogs'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events'}
+        keywords={'Kolkata Chess Academy, events, chess tournaments, chess blogs'}
+        image={'https://kolkatachessacademy.in/kca.png'}
+        url={'https://kolkatachessacademy.in/events'}
         type="event"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events'}
+        canonical={'https://kolkatachessacademy.in/events'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Event',
           name: `${siteName} Events`,
-          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/events-blogs' : 'https://kolkatachessacademy.in/events',
+          url: 'https://kolkatachessacademy.in/events',
           description: `See upcoming chess events, tournaments, and latest blogs from ${siteName}. Register and stay updated!`
         }}
       />
@@ -87,7 +79,7 @@ const Events = () => {
 
       <div className={sectionWrapperClasses}>
         {/* Events Section */}
-        <section className={isAspireChess ? "" : "py-16 bg-brand-light"}>
+        <section className="py-16 bg-brand-light">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className={`text-4xl font-bold text-center mb-10 ${titleClasses}`}>Event Schedule</h2>
             {/* Filter UI can be added here if needed */}
@@ -107,7 +99,7 @@ const Events = () => {
                           Register Now
                         </a>
                       ) : (
-                        <p className={`text-center font-semibold ${isAspireChess ? 'text-gray-500' : 'text-brand-text'}`}>
+                        <p className={`text-center font-semibold text-brand-text`}>
                           Registration Closed
                         </p>
                       )}
@@ -120,7 +112,7 @@ const Events = () => {
         </section>
 
         {/* Blogs Section */}
-        <section className={isAspireChess ? "" : "py-16 bg-brand-light"}>
+        <section className="py-16 bg-brand-light">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className={`text-4xl font-bold text-center mb-10 ${titleClasses}`}>Latest Blogs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,21 +1,14 @@
 import React from "react";
-import { useLocation } from 'react-router-dom';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
+
 
 const GameAnalysis = () => {
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-
-  // --- Theme-Aware Class Definitions ---
-  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-light";
-  const cardClasses = isAspireChess 
-    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg"
-    : "bg-white rounded-lg shadow-md p-6";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const ctaCardClasses = isAspireChess
-    ? "bg-black bg-opacity-25 backdrop-blur-md rounded-lg shadow-xl"
-    : "bg-brand-dark text-white rounded-lg shadow-md";
+  // KCA Theme Classes
+  const sectionClasses = "py-16 bg-brand-light";
+  const cardClasses = "bg-white rounded-lg shadow-md p-6";
+  const titleClasses = "text-brand-dark";
+  const textClasses = "text-brand-text";
+  const ctaCardClasses = "bg-brand-dark text-white rounded-lg shadow-md";
 
   return (
     <section className={sectionClasses}>
@@ -41,14 +34,14 @@ const GameAnalysis = () => {
           }}
         />
         <div className={cardClasses}>
-          <h3 className={`text-2xl font-bold mb-4 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Service Includes:</h3>
+          <h3 className="text-2xl font-bold mb-4 text-brand-dark">Service Includes:</h3>
           <ul className={`list-disc list-inside text-left space-y-2 ${textClasses}`}>
             <li>In-depth analysis with an overview of each game.</li>
             <li>Assessment of your playing style and areas for improvement.</li>
             <li>Suggestions on specific areas needing immediate attention.</li>
             <li>Personalized book and resource recommendations.</li>
           </ul>
-          <h3 className={`text-2xl font-bold mt-6 mb-4 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>Time Frame:</h3>
+          <h3 className="text-2xl font-bold mt-6 mb-4 text-brand-dark">Time Frame:</h3>
           <p className={`text-left ${textClasses}`}>Approximately one week per batch of games.</p>
         </div>
 
@@ -61,15 +54,15 @@ const GameAnalysis = () => {
           <h3 className="text-2xl font-bold mb-6 text-white">Pricing</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className={cardClasses}>
-              <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>5 Games</h3>
+              <h3 className="text-2xl font-bold mb-2 text-brand-dark">5 Games</h3>
               <p className={`text-lg ${textClasses}`}>₹1000</p>
             </div>
             <div className={cardClasses}>
-              <h3 className={`text-2xl font-bold mb-2 ${isAspireChess ? 'text-white' : 'text-brand-dark'}`}>10 Games</h3>
+              <h3 className="text-2xl font-bold mb-2 text-brand-dark">10 Games</h3>
               <p className={`text-lg ${textClasses}`}>₹1800</p>
             </div>
           </div>
-          <a href="https://forms.gle/6Tb4CTK7sRLW7n1E6" target="_blank" rel="noopener noreferrer" className={`inline-block font-medium py-2 px-6 rounded-lg transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-brand-primary text-white hover:bg-brand-secondary'}`}>
+          <a href="https://forms.gle/6Tb4CTK7sRLW7n1E6" target="_blank" rel="noopener noreferrer" className="inline-block font-medium py-2 px-6 rounded-lg transition bg-brand-primary text-white hover:bg-brand-secondary">
             Register Now
           </a>
         </div>

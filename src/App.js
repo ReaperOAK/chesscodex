@@ -1,25 +1,34 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import About from './pages/About';
-import AchievementsTestimonials from './pages/AchievementsTestimonials';
-import Gallery from './pages/Gallery';
-import Events from './pages/Events';
-import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import Maintenance from './pages/Maintenance';
-import AdmissionCourses from './pages/AdmissionCourses';
 import WelcomePage from './pages/WelcomePage';
+import NotFound from './pages/kca/NotFound';
 import Newsletter from './components/Newsletter';
 import BenefitsSlider from './components/BenefitsSlider';
-import Exclusives from './pages/Exclusives';
-import CollaborateWithUs from './pages/CollaborateWithUs';
 import WhatsAppButton from './components/WhatsAppButton';
 import CTA from './components/CTA';
-import NotFound from './pages/NotFound';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from './components/ScrollToTop';
-import SiteHome from './pages/SiteHome';
+// KCA imports
+import About from './pages/kca/About';
+import AchievementsTestimonials from './pages/kca/AchievementsTestimonials';
+import Gallery from './pages/kca/Gallery';
+import Events from './pages/kca/Events';
+import Contact from './pages/kca/Contact';
+import AdmissionCourses from './pages/kca/AdmissionCourses';
+import Exclusives from './pages/kca/Exclusives';
+import CollaborateWithUs from './pages/kca/CollaborateWithUs';
+// Aspire imports
+import AspireAbout from './pages/aspire/About';
+import AspireAchievementsTestimonials from './pages/aspire/AchievementsTestimonials';
+import AspireGallery from './pages/aspire/Gallery';
+import AspireEvents from './pages/aspire/Events';
+import AspireContact from './pages/aspire/Contact';
+import AspireAdmissionCourses from './pages/aspire/AdmissionCourses';
+import AspireExclusives from './pages/aspire/Exclusives';
+import AspireCollaborateWithUs from './pages/aspire/CollaborateWithUs';
+import AspireHome from './pages/aspire/SiteHome';
 
 function AppContent() {
   const location = useLocation();
@@ -46,30 +55,33 @@ function AppContent() {
         <Newsletter position="left" theme={isAspireChess ? 'aspirechess' : 'default'} />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/exclusives/*" element={<Exclusives />} />
-          <Route path="/collaborate-with-us/*" element={<CollaborateWithUs />} />
-          {/* AspireChess and Kolkata Chess Academy are now the only brands. */}
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<AdmissionCourses />} />
+              <Route path="/admission" element={<AdmissionCourses />} />
+              <Route path="/achievements-testimonials" element={<AchievementsTestimonials />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/events-blogs" element={<Events />} />
+              <Route path="/faqs" element={<Contact />} />
+              <Route path="/refund-policy" element={<Navigate to="/contact#refund-policy" />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
+                <Route path="/exclusives/*" element={<Exclusives />} />
+                <Route path="/collaborate-with-us/*" element={<CollaborateWithUs />} />
           {isAspireChess && (
             <>
-              <Route path="/aspirechess" element={<SiteHome />} />
-              <Route path="/aspirechess/about" element={<About />} />
-              <Route path="/aspirechess/courses" element={<AdmissionCourses />} />
-              <Route path="/aspirechess/admission" element={<AdmissionCourses />} />
-              <Route path="/aspirechess/achievements-testimonials" element={<AchievementsTestimonials />} />
-              <Route path="/aspirechess/gallery" element={<Gallery />} />
-              <Route path="/aspirechess/events-blogs" element={<Events />} />
-              <Route path="/aspirechess/faqs" element={<Contact />} />
+              <Route path="/aspirechess" element={<AspireHome />} />
+              <Route path="/aspirechess/about" element={<AspireAbout />} />
+              <Route path="/aspirechess/courses" element={<AspireAdmissionCourses />} />
+              <Route path="/aspirechess/admission" element={<AspireAdmissionCourses />} />
+              <Route path="/aspirechess/achievements-testimonials" element={<AspireAchievementsTestimonials />} />
+              <Route path="/aspirechess/gallery" element={<AspireGallery />} />
+              <Route path="/aspirechess/events-blogs" element={<AspireEvents />} />
+              <Route path="/aspirechess/faqs" element={<AspireContact />} />
               <Route path="/aspirechess/refund-policy" element={<Navigate to="/aspirechess/contact#refund-policy" />} />
-              <Route path="/aspirechess/contact" element={<Contact />} />
+              <Route path="/aspirechess/contact" element={<AspireContact />} />
               <Route path="/aspirechess/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
-              <Route path="/aspirechess/exclusives/*" element={<Exclusives />} />
-              <Route path="/aspirechess/collaborate-with-us/*" element={<CollaborateWithUs />} />
+                <Route path="/aspirechess/exclusives/*" element={<AspireExclusives />} />
+                <Route path="/aspirechess/collaborate-with-us/*" element={<AspireCollaborateWithUs />} />
             </>
           )}
           <Route path="*" element={<NotFound />} />

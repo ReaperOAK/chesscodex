@@ -1,13 +1,14 @@
+
 import React, { useState, useEffect, useRef } from "react";
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import FAQs from "../components/FAQs";
-import RefundPolicy from "../components/RefundPolicy";
-import { useLocation } from 'react-router-dom';
+import FAQs from '../../components/FAQs';
+import RefundPolicy from '../../components/RefundPolicy';
 
-const Contact = () => {
+
+const AspireContact = () => {
   const [formData, setFormData] = useState({
     role: "",
     name: "",
@@ -21,12 +22,11 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const mapRef = useRef(null);
-  const location = useLocation();
-  const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteName = 'AspireChess';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
   const contactAddress = 'Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030';
+
 
   useEffect(() => {
     if (document.getElementById('map') && !mapRef.current) {
@@ -37,11 +37,8 @@ const Contact = () => {
       });
       mapRef.current = map;
 
-      // Use a golden-themed map for AspireChess, fallback to default for KCA
-      const tileLayerUrl = isAspireChess
-        ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
-        : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-      
+      // Golden-themed map for AspireChess
+      const tileLayerUrl = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
       L.tileLayer(tileLayerUrl, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       }).addTo(map);
@@ -64,7 +61,7 @@ const Contact = () => {
         .bindPopup(contactAddress)
         .openPopup();
     }
-  }, [isAspireChess, contactAddress]);
+  }, [contactAddress]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -77,32 +74,34 @@ const Contact = () => {
     setSubmitted(true);
   };
 
-  // --- Theme-Aware Class Definitions ---
-  const heroClasses = isAspireChess ? "py-24" : "relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent text-white py-20";
-  const sectionWrapperClasses = isAspireChess ? "py-16 sm:py-24 space-y-20 px-4" : "bg-codex-bg-light";
-  const cardClasses = isAspireChess ? "bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl" : "bg-white p-8 rounded-lg shadow-lg";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const inputClasses = isAspireChess ? "bg-gray-900 bg-opacity-50 border-gray-700 text-white placeholder-gray-400 focus:ring-amber-400 rounded-md shadow-sm p-3 w-full" : "w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary";
-  const buttonClasses = isAspireChess ? "bg-amber-500 text-gray-900 hover:bg-amber-400" : "bg-brand-secondary text-white hover:bg-brand-primary";
-  const labelClasses = isAspireChess ? "block font-medium mb-2 text-gray-300" : "block font-medium mb-2 text-brand-text";
-  const iconClasses = isAspireChess ? "text-amber-400" : "text-brand-primary";
+
+  // Aspire theme only
+  const heroClasses = "py-24";
+  const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
+  const cardClasses = "bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl";
+  const titleClasses = "text-amber-400";
+  const textClasses = "text-gray-300";
+  const inputClasses = "bg-gray-900 bg-opacity-50 border-gray-700 text-white placeholder-gray-400 focus:ring-amber-400 rounded-md shadow-sm p-3 w-full";
+  const buttonClasses = "bg-amber-500 text-gray-900 hover:bg-amber-400";
+  const labelClasses = "block font-medium mb-2 text-gray-300";
+  const iconClasses = "text-amber-400";
 
   return (
     <div>
+
       <SEO
         title={`Contact Us - ${siteName}`}
         description={`Contact ${siteName} for chess coaching, queries, and support. Reach us by phone, email, or visit our academy.`}
-        keywords={isAspireChess ? 'AspireChess, contact, chess academy, chess coaching, support' : 'Kolkata Chess Academy, contact, chess academy, chess coaching, support'}
-        image={isAspireChess ? 'https://kolkatachessacademy.in/aca.png' : 'https://kolkatachessacademy.in/kca.png'}
-        url={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact'}
+        keywords={'AspireChess, contact, chess academy, chess coaching, support'}
+        image={'https://kolkatachessacademy.in/aca.png'}
+        url={'https://kolkatachessacademy.in/aspirechess/contact'}
         type="contact"
-        canonical={isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact'}
+        canonical={'https://kolkatachessacademy.in/aspirechess/contact'}
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'ContactPage',
           name: siteName,
-          url: isAspireChess ? 'https://kolkatachessacademy.in/aspirechess/contact' : 'https://kolkatachessacademy.in/contact',
+          url: 'https://kolkatachessacademy.in/aspirechess/contact',
           contactPoint: [{
             '@type': 'ContactPoint',
             telephone: contactPhone,
@@ -116,13 +115,13 @@ const Contact = () => {
       <section className={heroClasses}>
         <div className="text-center px-6">
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-white">Get In Touch</h1>
-          <p className={`text-lg max-w-4xl mx-auto ${isAspireChess ? 'text-gray-300' : 'text-white'}`}>
+          <p className="text-lg max-w-4xl mx-auto text-gray-300">
             We're here to assist you with grace and expertise. Feel free to connect with us. Your curiosity and interest are highly valued.
           </p>
         </div>
       </section>
 
-      <div className={sectionWrapperClasses}>
+  <div className={sectionWrapperClasses}>
         <section>
           <div className="max-w-6xl mx-auto px-6">
             <div className={cardClasses}>
@@ -131,7 +130,7 @@ const Contact = () => {
                 <div>
                   <h2 className={`text-4xl font-bold mb-8 ${titleClasses}`}>Drop Us a Message</h2>
                   {submitted ? (
-                    <p className={`text-center text-xl font-medium ${isAspireChess ? 'text-green-400' : 'text-brand-primary'}`}>
+                    <p className="text-center text-xl font-medium text-green-400">
                       Thank you! Your message has been received.
                     </p>
                   ) : (
@@ -181,7 +180,7 @@ const Contact = () => {
                         </label>
                         <label className="inline-flex items-center">
                           <input type="checkbox" name="agree_privacy_policy" checked={formData.agree_privacy_policy} onChange={handleChange} required className="form-checkbox h-5 w-5 rounded bg-gray-700 border-gray-600 text-amber-500 focus:ring-amber-500" />
-                          <span className={`ml-2 ${textClasses}`}>I agree to the <a href="/privacy-policy" className={`${isAspireChess ? 'text-amber-400' : 'text-brand-secondary'} underline`}>privacy policy</a></span>
+                          <span className={`ml-2 ${textClasses}`}>I agree to the <a href="/privacy-policy" className="text-amber-400 underline">privacy policy</a></span>
                         </label>
                       </div>
                       <button type="submit" className={`w-full py-3 font-semibold rounded-lg shadow-lg transition duration-300 ${buttonClasses}`}>Send Message</button>
@@ -230,4 +229,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default AspireContact;

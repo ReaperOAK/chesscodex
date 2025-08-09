@@ -1,4 +1,4 @@
-import SEO from '../components/SEO';
+import SEO from './SEO';
 import React, { useEffect, useState, useMemo } from 'react';
 
 const Maintenance = () => {
@@ -33,7 +33,7 @@ const Maintenance = () => {
     <>
       <SEO
         title="Site Under Maintenance - Kolkata Chess Academy"
-        description="Our site is currently undergoing maintenance. We'll be back soon! Contact info@chessacademy.com for urgent queries."
+        description="Our site is currently undergoing maintenance. We'll be back soon! Contact info@kolkatachessacademy.in for urgent queries."
         keywords="maintenance, site down, Kolkata Chess Academy, chess, contact"
         image="https://kolkatachessacademy.in/kca.png"
         url="https://kolkatachessacademy.in/maintenance"
@@ -44,7 +44,7 @@ const Maintenance = () => {
           '@type': 'WebPage',
           name: 'Site Under Maintenance',
           url: 'https://kolkatachessacademy.in/maintenance',
-          description: 'Our site is currently undergoing maintenance. We\'ll be back soon! Contact info@chessacademy.com for urgent queries.'
+          description: 'Our site is currently undergoing maintenance. We\'ll be back soon! Contact info@kolkatachessacademy.in for urgent queries.'
         }}
       />
       <div className="flex flex-col items-center justify-center min-h-screen bg-brand-subtle text-center px-4">
@@ -72,7 +72,7 @@ const Maintenance = () => {
       </div>
       <p className="text-brand-text mt-8">
         Thank you for your patience! If you have any questions, please contact us at 
-        <a href="mailto:info@chessacademy.com" className="text-brand-primary underline ml-1">info@chessacademy.com</a>.
+        <a href="mailto:info@kolkatachessacademy.in" className="text-brand-primary underline ml-1">info@kolkatachessacademy.in</a>.
       </p>
       </div>
     </>
