@@ -7,7 +7,7 @@ const Footer = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  const siteName = isAspireChess ? 'Aspire Chess Academy' : 'Kolkata Chess Academy';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
 
@@ -33,8 +33,8 @@ const Footer = () => {
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>About {siteName}</h2>
             <p className={`${textColor} leading-relaxed`}>
-              <strong>Striving to Help All Players Achieve and Improve Their Chess Rating.</strong><br />
-              {siteName} is dedicated to building a community packed with rated players through its structured methodology and constant guidance.
+              <strong>Kolkata Chess Academy (KCA):</strong> Our fully online head, providing all online coaching and dashboard support.<br/>
+              <strong>Aspire Chess Academy:</strong> (A Unit of Kolkata Chess Academy) operates primarily offline, and all its services are under KCA. Online students of Aspire are redirected to Kolkata Chess Academy.
             </p>
           </div>
 

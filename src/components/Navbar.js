@@ -10,7 +10,8 @@ function Navbar() {
   const location = useLocation();
   // Determine brand by route
   const isAspireChess = location.pathname.startsWith('/aspirechess');
-  const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
+  // Branding clarification
+  const siteName = isAspireChess ? 'Aspire Chess Academy' : 'Kolkata Chess Academy';
   const logoSrc = isAspireChess ? '/aca.png' : '/kca.png';
 
   const toggleMenu = () => setIsOpen(!isOpen);
