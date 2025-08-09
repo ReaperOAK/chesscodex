@@ -25,43 +25,55 @@ const AspireContact = () => {
   const siteName = 'AspireChess';
   const contactEmail = 'info@kolkatachessacademy.in';
   const contactPhone = '+91 98301 49852';
-  const contactAddress = 'Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030';
+  const branches = React.useMemo(() => ([
+    {
+      name: 'Dumdum Branch',
+      address: 'Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030',
+      mapCenter: [22.623208, 88.399405],
+      mapType: 'leaflet',
+      mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Dumdum Cross Road, 178/3, Purba Sinthi Rd, Jhilbagan, Dumdum, Kolkata, West Bengal 700030')}`
+    },
+    {
+      name: 'Parnasree Branch',
+      address: 'Parnasree Nababani Sangha, Airport More, Behala, Kolkata - 700060',
+      mapCenter: [22.5129781, 88.3021747],
+      mapType: 'iframe',
+      mapUrl: 'https://maps.app.goo.gl/dBzYZ2vBUtzfKmUt5?g_st=aw',
+      iframe: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.7655452333593!2d88.3021747!3d22.512978099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027bd571b2cc83%3A0xae3b75f83e0ed1e6!2sAspire%20Chess%20Academy%20(A%20Unit%20of%20Kolkata%20Chess%20Academy)!5e0!3m2!1sen!2sin!4v1754725362116!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+    }
+  ]), []);
 
 
   useEffect(() => {
-    if (document.getElementById('map') && !mapRef.current) {
-      const map = L.map("map", {
-        center: [22.623208, 88.399405],
+    // Only render map for Dumdum branch (Leaflet)
+    const dumdum = branches[0];
+    if (document.getElementById('map-dumdum') && !mapRef.current) {
+      const map = L.map('map-dumdum', {
+        center: dumdum.mapCenter,
         zoom: 15,
         scrollWheelZoom: false,
       });
       mapRef.current = map;
-
-      // Golden-themed map for AspireChess
       const tileLayerUrl = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
       L.tileLayer(tileLayerUrl, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       }).addTo(map);
-
-      // Add golden border and glow to map container
-      const mapDiv = document.getElementById('map');
+      const mapDiv = document.getElementById('map-dumdum');
       if (mapDiv) {
         mapDiv.style.border = '4px solid #FFD700';
         mapDiv.style.boxShadow = '0 0 24px 4px #FFD70088';
       }
-
       const customIcon = new L.Icon({
         iconUrl: "/marker-icon.png",
         iconSize: [25, 41],
         iconAnchor: [12, 41],
       });
-
-      L.marker([22.623208, 88.399405], { icon: customIcon })
+      L.marker(dumdum.mapCenter, { icon: customIcon })
         .addTo(map)
-        .bindPopup(contactAddress)
+        .bindPopup(dumdum.address)
         .openPopup();
     }
-  }, [contactAddress]);
+  }, [branches]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -108,7 +120,7 @@ const AspireContact = () => {
             contactType: 'customer support',
             email: contactEmail
           }],
-          address: contactAddress
+          address: branches[0].address
         }}
       />
 
@@ -194,7 +206,14 @@ const AspireContact = () => {
                     <ul className={`space-y-4 ${textClasses}`}>
                       <li className="flex items-center space-x-3"><FaPhoneAlt className={iconClasses} /><a href={`tel:${contactPhone}`} className="hover:underline">{contactPhone}</a></li>
                       <li className="flex items-center space-x-3"><FaEnvelope className={iconClasses} /><a href={`mailto:${contactEmail}`} className="hover:underline">{contactEmail}</a></li>
-                      <li className="flex items-start space-x-3"><FaMapMarkerAlt className={`${iconClasses} mt-1`} /><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{contactAddress}</a></li>
+                      {branches.map((branch, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <FaMapMarkerAlt className={`${iconClasses} mt-1`} />
+                          <span>
+                            <span className="font-semibold text-amber-400">{branch.name}:</span> <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">{branch.address}</a>
+                          </span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div>
@@ -208,8 +227,17 @@ const AspireContact = () => {
                     </div>
                   </div>
                   <div>
-                    <h2 className={`text-4xl font-bold mb-4 ${titleClasses}`}>Visit Us</h2>
-                    <div id="map" className="w-full h-72 rounded-lg shadow-lg relative z-0"></div>
+                    <h2 className={`text-4xl font-bold mb-4 ${titleClasses}`}>Visit Our Branches</h2>
+                    {/* Dumdum Branch Map */}
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold text-white mb-2">Dumdum Branch</h3>
+                      <div id="map-dumdum" className="w-full h-72 rounded-lg shadow-lg relative z-0"></div>
+                    </div>
+                    {/* Parnasree Branch Map (iframe) */}
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Parnasree Branch</h3>
+                      <div className="w-full h-72 rounded-lg shadow-lg relative z-0" style={{overflow:'hidden'}} dangerouslySetInnerHTML={{__html: branches[1].iframe}}></div>
+                    </div>
                   </div>
                 </div>
               </div>

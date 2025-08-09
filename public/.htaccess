@@ -19,6 +19,9 @@
     Header set Cross-Origin-Opener-Policy "same-origin"
     Header set Cross-Origin-Embedder-Policy "cross-origin"
     Header set Cross-Origin-Resource-Policy "cross-origin"
+
+    # Content Security Policy for external scripts, fonts, images, and iframes (Google Maps, Google Tag Manager, Google Ads)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.googletagmanager.com https://pagead2.googlesyndication.com; img-src 'self' data: https://kolkatachessacademy.in https://www.google.com https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src 'self' https://www.google.com https://www.youtube.com;"
 </IfModule>
 
 # Handle 404 errors
