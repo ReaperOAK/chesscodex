@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Popup from './components/Popup';
 import Footer from './components/Footer';
 import NotFound from './pages/kca/NotFound';
 import Newsletter from './components/Newsletter';
@@ -46,6 +47,7 @@ function AppContent() {
 
   return (
     <div>
+  <Popup />
       <Helmet>
         <title>{isAspireChess ? 'AspireChess - Elevate Your Chess Skills' : 'Chess Academy - Elevate Your Chess Skills'}</title>
         <meta name="description" content={isAspireChess ? 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.' : 'Join our Chess Academy to elevate your chess skills with expert training and comprehensive courses.'} />

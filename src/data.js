@@ -299,7 +299,7 @@ export const eventsData = [
       date: "2025-08-17",
       mode: "Offline",
       link: "https://forms.gle/RL7tEqVVndVGC1bt9",
-      image: null,
+      image: '/events/2025-08-17.png',
       details: {
         message: "https://chat.whatsapp.com/ES9wSKIaTcoE5nQPvvgoMY?mode=ac_t",
         registration: "https://circlechess.com/registration?id=38458",
