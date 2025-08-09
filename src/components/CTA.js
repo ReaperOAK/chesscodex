@@ -30,14 +30,14 @@ const CTA = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <a
-            href={isAspireChess ? "/aspirechess/admission" : "/admission"}
+            href={isAspireChess ? "/aspirechess/admission" : "/kca/admission"}
             aria-label="Enroll Now"
             className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
           >
             <span>🎓 Enroll Now</span>
           </a>
           <a
-            href={isAspireChess ? "/aspirechess/contact" : "/contact"}
+            href={isAspireChess ? "/aspirechess/contact" : "/kca/contact"}
             aria-label="Contact Us"
             className="inline-flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
           >

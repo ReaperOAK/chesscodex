@@ -29,14 +29,14 @@ function Navbar() {
         { to: '/aspirechess/contact', label: 'Contact & FAQs' },
       ]
     : [
-        { to: '/about', label: 'About' },
-        { to: '/courses', label: 'Admission & Courses' },
-        { to: '/exclusives', label: 'Exclusives' },
-        { to: '/events-blogs', label: 'Events & Blogs' },
-        { to: '/achievements-testimonials', label: 'Achievements & Testimonials' },
-        { to: '/collaborate-with-us', label: 'Collaboration' },
-        { to: '/gallery', label: 'Gallery' },
-        { to: '/contact', label: 'Contact & FAQs' },
+        { to: '/kca/about', label: 'About' },
+        { to: '/kca/courses', label: 'Admission & Courses' },
+        { to: '/kca/exclusives', label: 'Exclusives' },
+        { to: '/kca/events-blogs', label: 'Events & Blogs' },
+        { to: '/kca/achievements-testimonials', label: 'Achievements & Testimonials' },
+        { to: '/kca/collaborate-with-us', label: 'Collaboration' },
+        { to: '/kca/gallery', label: 'Gallery' },
+        { to: '/kca/contact', label: 'Contact & FAQs' },
       ];
 
   // Navbar classes for each brand
@@ -50,7 +50,7 @@ function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <Link to={isAspireChess ? '/aspirechess' : '/'} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
+            <Link to={isAspireChess ? '/aspirechess' : '/kca'} className="flex items-center text-2xl font-bold" aria-label={`${siteName} Home`}>
               <img src={logoSrc} alt={`${siteName} Logo`} className="h-10 w-auto mr-2" />
               {siteName}
             </Link>
@@ -80,6 +80,16 @@ function Navbar() {
             >
               Dashboard
             </a>
+            {/* Explore Online Courses Prompt for Aspire (desktop) */}
+            {isAspireChess && (
+              <a
+                href="/aspirechess/courses"
+                className="ml-4 bg-yellow-400 text-black font-bold px-5 py-2 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200 text-lg"
+                style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.12)' }}
+              >
+                Explore Online Courses
+              </a>
+            )}
           </div>
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -121,6 +131,19 @@ function Navbar() {
                 Dashboard
               </a>
             </li>
+            {/* Explore Online Courses Prompt for Aspire (mobile) */}
+            {isAspireChess && (
+              <li className="w-full">
+                <a
+                  href="/aspirechess/courses"
+                  className="block bg-yellow-400 text-black font-bold px-5 py-2 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200 text-lg text-center mt-2"
+                  style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.12)' }}
+                  onClick={toggleMenu}
+                >
+                  Explore Online Courses
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       )}

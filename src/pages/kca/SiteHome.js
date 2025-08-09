@@ -1,8 +1,8 @@
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const WelcomePage = () => {
+const KCAHome = () => {
   return (
     <>
       <SEO
@@ -44,4 +44,4 @@ const WelcomePage = () => {
   );
 };
 
-export default WelcomePage;
+export default KCAHome;

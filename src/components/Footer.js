@@ -42,7 +42,7 @@ const Footer = () => {
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>Quick Links</h2>
             <ul className={`space-y-2 ${textColor}`}>
-              <li><a href={isAspireChess ? "/aspirechess/exclusives" : "/exclusives"} className={linkHoverClass}>Pro Members</a></li>
+              <li><a href={isAspireChess ? "/aspirechess/exclusives" : "/kca/exclusives"} className={linkHoverClass}>Pro Members</a></li>
               <li><a href="[https://theweekinchess.com/twic](https://theweekinchess.com/twic)" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>Latest Games</a></li>
               <li><a href="[https://ratings.fide.com/](https://ratings.fide.com/)" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>FIDE Ratings</a></li>
               <li><a href="[https://lichess.org/](https://lichess.org/)" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>Play Online</a></li>
@@ -62,7 +62,7 @@ const Footer = () => {
                 )}
               </li>
               <li><Link to="/aspirechess" className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
-              <li><Link to="/" className={`${highlightClass} hover:underline`}>Home</Link></li>
+              <li><Link to="/kca" className={`${highlightClass} hover:underline`}>Kolkata Chess Academy</Link></li>
             </ul>
           </div>
 
@@ -79,7 +79,7 @@ const Footer = () => {
                 <a href={`tel:${contactPhone}`} className="hover:underline">{contactPhone}</a>
               </li>
             </ul>
-            <a href={isAspireChess ? "/aspirechess/contact#refund-policy" : "/contact#refund-policy"} className={`inline-block mt-4 ${highlightClass} hover:underline`}>
+            <a href={isAspireChess ? "/aspirechess/contact#refund-policy" : "/kca/contact#refund-policy"} className={`inline-block mt-4 ${highlightClass} hover:underline`}>
               Refund Policy
             </a>
           </div>

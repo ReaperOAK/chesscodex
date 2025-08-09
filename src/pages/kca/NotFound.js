@@ -14,7 +14,7 @@ const NotFound = () => {
       />
       <h1 className="text-6xl font-bold mb-4 text-brand-dark">404</h1>
       <p className="text-xl mb-8">Oops! The page you are looking for does not exist.</p>
-      <Link to="/" className="bg-brand-secondary text-white py-3 px-6 rounded-lg shadow-lg hover:bg-brand-primary transition duration-300">
+      <Link to="/kca" className="bg-brand-secondary text-white py-3 px-6 rounded-lg shadow-lg hover:bg-brand-primary transition duration-300">
         Go Back Home
       </Link>
     </div>
