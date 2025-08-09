@@ -71,7 +71,7 @@ function AppContent() {
           <Route path="/kca/contact" element={<Contact />} />
           <Route path="/kca/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
           <Route path="/kca/exclusives/*" element={<Exclusives />} />
-          <Route path="/kca/collaborate-with-us/*" element={<CollaborateWithUs />} />
+          <Route path="/kca/collaborate-with-us/*" element={<Navigate to="/kca/exclusives/collaboration" replace />} />
           {/* Aspire routes */}
           <Route path="/aspirechess" element={<AspireHome />} />
           <Route path="/aspirechess/about" element={<AspireAbout />} />
@@ -85,7 +85,7 @@ function AppContent() {
           <Route path="/aspirechess/contact" element={<AspireContact />} />
           <Route path="/aspirechess/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
           <Route path="/aspirechess/exclusives/*" element={<AspireExclusives />} />
-          <Route path="/aspirechess/collaborate-with-us/*" element={<AspireCollaborateWithUs />} />
+          <Route path="/aspirechess/collaborate-with-us/*" element={<Navigate to="/aspirechess/exclusives/collaboration" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
