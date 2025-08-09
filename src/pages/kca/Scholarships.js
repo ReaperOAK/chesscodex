@@ -1,43 +1,8 @@
 import SEO from '../../components/SEO';
 import React from "react";
+import { scholarshipDetails } from '../../data';
 
 const Scholarships = () => {
-  const scholarshipDetails = [
-    {
-      category: "For our Young FIDE rated & USCF 1200+ rated Stars:",
-      benefits: [
-        "One-month free subscription to our “Pro Membership”",
-      ],
-    },
-    {
-      category: "For our State Age Group category winners:",
-      benefits: [
-        "1st & 2nd Rank Holders: Six (6) months free subscription to “Pro Membership”",
-        "Exclusive 1st Rank Holder: 5 Game Analysis",
-        "3rd Rank: 2 Months free “Pro Membership”",
-        "4th Rank: 1 Month free “Pro Membership”",
-      ],
-    },
-    {
-      category: "For our National Age Group category winners:",
-      benefits: [
-        "1st & 2nd Rank Holders: 1 year free subscription to “Pro Membership”",
-        "Exclusive 1st Rank Holder: Quarterly 5 Game Analysis",
-        "Exclusive 2nd Rank Holder: 1 time 5 Game Analysis",
-        "3rd Rank: 6 Months free “Pro Membership” & 1 time 5 Game Analysis",
-        "4th Rank: 4 Months free “Pro Membership”",
-        "5th Rank: 2 Months free “Pro Membership”",
-      ],
-    },
-    {
-      category: "Additional Incentives to all Categories:",
-      benefits: [
-        "Achievement Highlight on all our Social Media Platforms",
-        "Personalized Merchandize Gifts",
-        "Selected One Kolkata Chess free Registration",
-      ],
-    },
-  ];
 
 
   // KCA Theme Classes

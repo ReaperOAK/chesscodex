@@ -1,12 +1,8 @@
 import SEO from '../../components/SEO';
 import React from 'react';
+import { workspaceDetails } from '../../data';
 
 const ChessInWorkspaces = () => {
-  const workspaceDetails = [
-    { title: "Workshops & Training", details: ["Interactive sessions to hone cognitive and analytical skills."] },
-    { title: "Team Building", details: ["Encourage collaboration and camaraderie through chess."] },
-    { title: "Corporate Tournaments", details: ["Host engaging tournaments for your organization."] },
-  ];
 
   // KCA Theme Classes
   const sectionClasses = "py-16 bg-brand-subtle";

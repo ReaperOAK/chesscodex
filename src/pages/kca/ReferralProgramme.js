@@ -1,12 +1,8 @@
 import SEO from '../../components/SEO';
 import React from 'react';
+import { referralDetails } from '../../data';
 
 const ReferralProgramme = () => {
-  const referralDetails = [
-    { title: "Earn Discounts", details: ["Receive exclusive discounts for every successful referral."] },
-    { title: "Share the Benefits", details: ["Introduce others to the joy of learning chess with us."] },
-    { title: "Simple Process", details: ["Refer, enroll, and get rewarded!"] },
-  ];
 
 
   // KCA Theme Classes
