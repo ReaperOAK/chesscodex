@@ -5,12 +5,50 @@ import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
 import YuddhoRaja from './YuddhoRaja';
+import ReferralProgramme from './ReferralProgramme';
+import ChessInSchools from './ChessInSchools';
+import ChessInWorkspaces from './ChessInWorkspaces';
+import ChessAcademies from './ChessAcademies';
+
+const TABS = [
+  {
+    key: 'exclusives',
+    label: 'Exclusives',
+    nav: [
+      { to: 'pro-membership', label: 'Pro Membership' },
+      { to: 'game-analysis', label: 'Game Analysis' },
+      { to: 'scholarships', label: 'Scholarships' },
+      { to: 'yuddho-raja', label: 'Yuddho Raja-y Raja-y' },
+    ],
+    default: 'pro-membership',
+    hero: {
+      title: 'Exclusives',
+      desc: 'Unlock premium benefits with our Pro Membership, Game Analysis, and Scholarship programs.'
+    },
+  },
+  {
+    key: 'collaboration',
+    label: 'Collaboration',
+    nav: [
+      { to: 'referral-programme', label: 'Referral Programme' },
+      { to: 'chess-in-schools', label: 'Chess in Schools' },
+      { to: 'chess-in-workspaces', label: 'Chess in Workspaces' },
+      { to: 'chess-academies', label: 'Chess Academies' },
+    ],
+    default: 'referral-programme',
+    hero: {
+      title: 'Collaboration',
+      desc: 'Partner with us to promote chess, foster creativity, and make a meaningful impact in your community.'
+    },
+  },
+];
 
 
 const Exclusives = () => {
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
   const sentinelRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('exclusives');
   const siteName = 'Kolkata Chess Academy';
 
   useEffect(() => {
@@ -25,18 +63,28 @@ const Exclusives = () => {
     };
   }, []);
 
-  // KCA Theme Classes
+  // Theme
   const heroClasses = "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
   const navClasses = "bg-brand-light py-4 shadow-md";
   const navLinkActiveClasses = "bg-brand-dark text-white";
   const navLinkIdleClasses = "bg-brand-secondary text-white hover:bg-brand-dark";
 
+  // Find current tab config
+  const tab = TABS.find(t => t.key === activeTab);
+
+  // Dynamic SEO title/desc
+  const seoTitle = `${tab.hero.title} - ${siteName}`;
+  const seoDesc = tab.hero.desc;
+
+  // Mobile nav open/close
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   return (
-    <div>
+    <>
       <SEO
-        title={`Exclusives - ${siteName}`}
-        description={`Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`}
-        keywords={'Kolkata Chess Academy, exclusives, pro membership, game analysis, scholarships'}
+        title={seoTitle}
+        description={seoDesc}
+        keywords={'Kolkata Chess Academy, exclusives, collaboration, pro membership, game analysis, scholarships, partnership'}
         image={'https://kolkatachessacademy.in/kca.png'}
         url={'https://kolkatachessacademy.in/exclusives'}
         type="website"
@@ -44,46 +92,97 @@ const Exclusives = () => {
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: `${siteName} Exclusives`,
+          name: seoTitle,
           url: 'https://kolkatachessacademy.in/exclusives',
-          description: `Unlock premium benefits with Pro Membership, Game Analysis, and Scholarship programs at ${siteName}.`
+          description: seoDesc
         }}
       />
       {/* Hero Section */}
       <section className={heroClasses}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Exclusives</h1>
-          <p className="text-lg text-gray-300">
-            Unlock premium benefits with our Pro Membership, Game Analysis, and Scholarship programs.
-          </p>
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white">{tab.hero.title}</h1>
+          <p className="text-lg text-gray-300">{tab.hero.desc}</p>
         </div>
       </section>
 
       {/* Sentinel Element for sticky nav */}
       <div ref={sentinelRef}></div>
 
-      {/* Navigation Links */}
-      <nav ref={menuRef} className={`${navClasses} ${isSticky ? 'sticky top-16 z-40' : ''}`}>
+      {/* Tabs for Exclusives & Collaboration */}
+      <div className="flex justify-center mt-4 gap-4">
+        {TABS.map(t => (
+          <button
+            key={t.key}
+            className={`px-6 py-2 rounded-t-lg font-bold focus:outline-none transition-colors duration-200 ${activeTab === t.key ? 'bg-brand-dark text-white' : 'bg-brand-secondary text-white hover:bg-brand-dark'}`}
+            onClick={() => { setActiveTab(t.key); setMobileNavOpen(false); }}
+            aria-current={activeTab === t.key ? 'page' : undefined}
+            aria-label={t.label}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Navigation Links for each tab (desktop) */}
+      <nav ref={menuRef} className={`${navClasses} ${isSticky ? 'sticky top-16 z-40' : ''}`}>  
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="hidden md:flex flex-wrap justify-center gap-4">
-            <NavLink to="pro-membership" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Pro Membership</NavLink>
-            <NavLink to="game-analysis" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Game Analysis</NavLink>
-            <NavLink to="scholarships" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Scholarships</NavLink>
-            <NavLink to="yuddho-raja" className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}>Yuddho Raja-y Raja-y</NavLink>
+            {tab.nav.map(link => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) => `px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}
+                aria-label={link.label}
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
+          {/* Mobile nav toggle */}
+          <div className="md:hidden flex justify-center mt-2">
+            <button
+              className="px-4 py-2 bg-brand-dark text-white rounded-lg font-semibold shadow-md focus:outline-none"
+              onClick={() => setMobileNavOpen(o => !o)}
+              aria-label="Toggle section navigation"
+              aria-expanded={mobileNavOpen}
+            >
+              {mobileNavOpen ? 'Close Sections' : 'Sections'}
+            </button>
+          </div>
+          {/* Mobile nav links */}
+          {mobileNavOpen && (
+            <div className="flex flex-col items-center gap-2 mt-2 md:hidden">
+              {tab.nav.map(link => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) => `w-full px-4 py-2 font-semibold rounded-lg shadow-md transition duration-300 text-center ${isActive ? navLinkActiveClasses : navLinkIdleClasses}`}
+                  aria-label={link.label}
+                  onClick={() => setMobileNavOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </div>
+          )}
         </div>
       </nav>
 
-      <div>
-        <Routes>
-          <Route path="/" element={<Navigate to="pro-membership" />} />
-          <Route path="pro-membership" element={<ProMembership />} />
-          <Route path="game-analysis" element={<GameAnalysis />} />
-          <Route path="scholarships" element={<Scholarships />} />
-          <Route path="yuddho-raja" element={<YuddhoRaja />} />
-        </Routes>
-      </div>
-    </div>
+      {/* Section content */}
+      <Routes>
+        {/* Exclusives routes */}
+        <Route path="/" element={<Navigate to={tab.default} />} />
+        <Route path="pro-membership" element={<ProMembership />} />
+        <Route path="game-analysis" element={<GameAnalysis />} />
+        <Route path="scholarships" element={<Scholarships />} />
+        <Route path="yuddho-raja" element={<YuddhoRaja />} />
+        {/* Collaboration routes */}
+        <Route path="referral-programme" element={<ReferralProgramme />} />
+        <Route path="chess-in-schools" element={<ChessInSchools />} />
+        <Route path="chess-in-workspaces" element={<ChessInWorkspaces />} />
+        <Route path="chess-academies" element={<ChessAcademies />} />
+      </Routes>
+    </>
   );
 };
 

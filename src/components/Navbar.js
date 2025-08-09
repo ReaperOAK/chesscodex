@@ -21,20 +21,18 @@ function Navbar() {
     ? [
         { to: '/aspirechess/about', label: 'About' },
         { to: '/aspirechess/courses', label: 'Admission & Courses' },
-        { to: '/aspirechess/exclusives', label: 'Exclusives' },
+        { to: '/aspirechess/exclusives', label: 'Exclusives & Collaboration' },
         { to: '/aspirechess/events-blogs', label: 'Events & Blogs' },
         { to: '/aspirechess/achievements-testimonials', label: 'Achievements & Testimonials' },
-        { to: '/aspirechess/collaborate-with-us', label: 'Collaboration' },
         { to: '/aspirechess/gallery', label: 'Gallery' },
         { to: '/aspirechess/contact', label: 'Contact & FAQs' },
       ]
     : [
         { to: '/kca/about', label: 'About' },
         { to: '/kca/courses', label: 'Admission & Courses' },
-        { to: '/kca/exclusives', label: 'Exclusives' },
+        { to: '/kca/exclusives', label: 'Exclusives & Collaboration' },
         { to: '/kca/events-blogs', label: 'Events & Blogs' },
         { to: '/kca/achievements-testimonials', label: 'Achievements & Testimonials' },
-        { to: '/kca/collaborate-with-us', label: 'Collaboration' },
         { to: '/kca/gallery', label: 'Gallery' },
         { to: '/kca/contact', label: 'Contact & FAQs' },
       ];
