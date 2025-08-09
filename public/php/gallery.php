@@ -29,17 +29,28 @@ foreach ($folders as $folder) {
     }
 }
 
-// Add YouTube video
-$gallery[] = array(
-    'folder' => 'YouTube Videos',
-    'files' => array(
-        array(
-            'src' => 'https://www.youtube.com/embed/0Khob6ZL0sU',
-            'type' => 'youtube',
-            'alt' => 'Power of Passed Pawns- Dhruv Kar vs Soumalya Mondal | Inter Club Invitational (Nov 24)'
-        )
-    )
-);
+// Add YouTube videos from galleryYTvideos.txt
+$ytFile = __DIR__ . '/../galleryYTvideos.txt';
+$ytVideos = array();
+if (file_exists($ytFile)) {
+    $lines = file($ytFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        // Extract src and title from iframe
+        if (preg_match('/src="([^"]+)".*title="([^"]+)"/i', $line, $matches)) {
+            $ytVideos[] = array(
+                'src' => $matches[1],
+                'type' => 'youtube',
+                'alt' => htmlspecialchars($matches[2], ENT_QUOTES, 'UTF-8')
+            );
+        }
+    }
+    if (!empty($ytVideos)) {
+        $gallery[] = array(
+            'folder' => 'YouTube Videos',
+            'files' => $ytVideos
+        );
+    }
+}
 
 echo json_encode($gallery);
 ?>
