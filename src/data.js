@@ -131,6 +131,7 @@ export const coursesData = [
     ],
     duration: '12 months',
     site: ['aspirechess', 'kca'],
+    price: '1.5 hours / 2 weekly classes — ₹1200/month',
   },
   {
     title: 'Intermediate Course',

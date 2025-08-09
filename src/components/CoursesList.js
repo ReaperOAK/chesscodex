@@ -116,6 +116,13 @@ const CoursesList = () => {
                     ))}
                     {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
                   </ul>
+                  {course.title === 'Beginner Course' && course.price && (
+                    <div
+                      className={`mt-2 font-semibold text-sm ${isAspireChess ? 'text-amber-400' : 'text-blue-600'}`}
+                    >
+                      Price: {course.price}
+                    </div>
+                  )}
                 </div>
                 <div className="mt-6">
                   <div
