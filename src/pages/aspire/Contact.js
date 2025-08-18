@@ -187,11 +187,11 @@ const AspireContact = () => {
                   <div>
                     <h2 className={`text-4xl font-bold mb-4 ${titleClasses}`}>Connect With Us</h2>
                     <div className="flex space-x-4">
-                      <a href="https://www.facebook.com/profile.php?id=61576362964556" className="text-gray-400 hover:text-white"><FaFacebook size={32} /></a>
-                      <a href="https://www.instagram.com/kolkatachessacademy/" className="text-gray-400 hover:text-white"><FaInstagram size={32} /></a>
+                      <a href="https://www.facebook.com/aspirechessacademy/" className="text-gray-400 hover:text-white"><FaFacebook size={32} /></a>
+                      <a href="https://www.instagram.com/aspirechessacademy/profilecard/?igsh=MWxhbDM4MjlkdHNibA==" className="text-gray-400 hover:text-white"><FaInstagram size={32} /></a>
                       <a href="https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true" className="text-gray-400 hover:text-white"><FaLinkedin size={32} /></a>
                       <a href="https://wa.me/+919830149852" className="text-gray-400 hover:text-white"><FaWhatsapp size={32} /></a>
-                      <a href="https://www.youtube.com/@kolkatachessacademy" className="text-gray-400 hover:text-white"><FaYoutube size={32} /></a>
+                      <a href="https://youtube.com/@aspirechessacademy?si=7kTKA604EeKoy3_j" className="text-gray-400 hover:text-white"><FaYoutube size={32} /></a>
                     </div>
                   </div>
                   <div>

@@ -13,6 +13,13 @@ const Footer = () => {
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
+  // Social URLs (switch for Aspire site)
+  const facebookUrl = isAspireChess ? 'https://www.facebook.com/aspirechessacademy/' : 'https://www.facebook.com/profile.php?id=61576362964556';
+  const instagramUrl = isAspireChess ? 'https://www.instagram.com/aspirechessacademy/profilecard/?igsh=MWxhbDM4MjlkdHNibA==' : 'https://www.instagram.com/kolkatachessacademy/';
+  const youtubeUrl = isAspireChess ? 'https://youtube.com/@aspirechessacademy?si=7kTKA604EeKoy3_j' : 'https://www.youtube.com/@kolkatachessacademy';
+  const linkedinUrl = 'https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true';
+  const whatsappUrl = 'https://wa.me/+919830149852';
+
   // Define theme-based classes
   const footerClasses = isAspireChess
     ? "bg-black bg-opacity-40 backdrop-blur-md border-t border-gray-700/50"
@@ -94,11 +101,11 @@ const Footer = () => {
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>Follow Us</h2>
             <div className="flex space-x-4 mb-6">
-              <a href="https://www.facebook.com/profile.php?id=61576362964556" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaFacebook /></a>
-              <a href="https://www.instagram.com/kolkatachessacademy/" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaInstagram /></a>
-              <a href="https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaLinkedin /></a>
-              <a href="https://wa.me/+919830149852" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaWhatsapp /></a>
-              <a href="https://www.youtube.com/@kolkatachessacademy" target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaYoutube /></a>
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaFacebook /></a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaInstagram /></a>
+              <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaLinkedin /></a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaWhatsapp /></a>
+              <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaYoutube /></a>
             </div>
             <Newsletter position="footer" />
           </div>
