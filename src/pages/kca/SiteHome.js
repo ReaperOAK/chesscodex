@@ -1,8 +1,18 @@
 import SEO from '../../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { testimonials } from '../../data';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 
 const KCAHome = () => {
+  // Theme / utility classes reused from AchievementsTestimonials
+  const titleClasses = "text-brand-dark";
+  const textClasses = "text-brand-text";
+  const cardClasses = "group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between";
+  const currentTestimonials = testimonials;
+
   return (
     <>
       <SEO
@@ -40,6 +50,39 @@ const KCAHome = () => {
           </div>
         </div>
       </section>
+
+        {/* Testimonials Section */}
+        <section className="bg-gradient-to-r from-brand-light via-brand-accent to-brand-light py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className={`text-4xl font-bold text-center mb-12 ${titleClasses}`}>
+              What Our Students Say
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              breakpoints={{ 1024: { slidesPerView: 2 }, 1440: { slidesPerView: 3 } }}
+              className="pb-12"
+            >
+              {currentTestimonials.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <div className={`${cardClasses} min-h-[220px]`}>
+                    <div className="flex items-center mb-4">
+                      <img className="w-16 h-16 rounded-full mr-4 border-2 border-amber-400/50" src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} />
+                      <div>
+                        <h4 className="text-xl font-bold text-brand-dark">{testimonial.name}</h4>
+                        <p className="text-brand-primary">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <p className={textClasses}>"{testimonial.quote}"</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
     </>
   );
 };

@@ -1,6 +1,10 @@
 import React from 'react';
 import SEO from '../../components/SEO';
 import WhyChooseUs from '../../components/WhyChooseUs';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+import { testimonials } from '../../data';
 
 const AspireHome = () => {
   // AspireChess only
@@ -9,8 +13,11 @@ const AspireHome = () => {
   const siteKeywords = 'AspireChess, chess training, chess courses, chess coaching, chess academy';
 
   const sectionClass = "bg-black bg-opacity-20 backdrop-blur-sm rounded-xl";
-  const testimonialSectionClass = "py-20";
-  const testimonialCardClass = "italic text-gray-200 bg-black bg-opacity-30 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300";
+  // Reused theme classes for testimonials (match KCA styling)
+  const titleClasses = "text-white";
+  const textClasses = "text-gray-200";
+  const cardClasses = "group bg-black bg-opacity-30 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col justify-between";
+  const currentTestimonials = testimonials;
 
   return (
     <div className="space-y-16 py-16 px-4">
@@ -72,22 +79,37 @@ const AspireHome = () => {
       ))}
 
       {/* Testimonials Section */}
-      <section className={testimonialSectionClass}>
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12 text-amber-400">What Our Students Say</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              `"AspireChess made learning chess accessible and enjoyable. Highly recommended!" - Sarah K.`,
-              `"The online sessions are engaging, and the tutors are exceptional!" - David L.`,
-              `"AspireChess helped me master chess without leaving my home!" - Emily R.`,
-            ].map((testimonial, index) => (
-              <blockquote key={index} className={testimonialCardClass}>
-                {testimonial}
-              </blockquote>
-            ))}
+        <section>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className={`text-4xl font-bold text-center mb-12 ${titleClasses}`}>
+              What Our Students Say
+            </h2>
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              breakpoints={{ 1024: { slidesPerView: 2 }, 1440: { slidesPerView: 3 } }}
+              className="pb-12"
+            >
+              {currentTestimonials.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <div className={`${cardClasses} min-h-[220px]`}>
+                    <div className="flex items-center mb-4">
+                      <img className="w-16 h-16 rounded-full mr-4 border-2 border-amber-400/50" src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} />
+                      <div>
+                        <h4 className="text-xl font-bold text-white">{testimonial.name}</h4>
+                        <p className="text-amber-300">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <p className={textClasses}>"{testimonial.quote}"</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-        </div>
-      </section>
+        </section>
     </div>
   );
 };
