@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa'; // Importing an icon for flair
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { benefits } from '../data';
+import RecognitionBanner from './RecognitionBanner';
 
 const BenefitsSlider = () => {
   const sliderSettings = {
@@ -38,6 +39,8 @@ const BenefitsSlider = () => {
           </div>
         ))}
       </Slider>
+  {/* Recognition banner placed under the benefits slider so it shows on every page */}
+  <RecognitionBanner />
     </div>
   );
 };
