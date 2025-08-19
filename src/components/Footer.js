@@ -77,6 +77,16 @@ const Footer = () => {
               </li>
               <li><Link to="/aspirechess" className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
               <li><Link to="/kca" className={`${highlightClass} hover:underline`}>Kolkata Chess Academy</Link></li>
+              {isAspireChess && (
+                <li>
+                  <Link
+                    to="/aspirechess/exclusives/yuddho-raja"
+                    className={linkHoverClass}
+                  >
+                    Yuddho Rajay Rajay
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
