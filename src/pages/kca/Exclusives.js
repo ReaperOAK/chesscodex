@@ -4,7 +4,6 @@ import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import ProMembership from './ProMembership';
 import Scholarships from './Scholarships';
 import GameAnalysis from './GameAnalysis';
-import YuddhoRaja from './YuddhoRaja';
 import ReferralProgramme from './ReferralProgramme';
 import ChessInSchools from './ChessInSchools';
 import ChessInWorkspaces from './ChessInWorkspaces';
@@ -15,10 +14,9 @@ const TABS = [
     key: 'exclusives',
     label: 'Exclusives',
     nav: [
-      { to: 'pro-membership', label: 'Pro Membership' },
-      { to: 'game-analysis', label: 'Game Analysis' },
-      { to: 'scholarships', label: 'Scholarships' },
-      { to: 'yuddho-raja', label: 'Yuddho Raja-y Raja-y' },
+  { to: 'pro-membership', label: 'Pro Membership' },
+  { to: 'game-analysis', label: 'Game Analysis' },
+  { to: 'scholarships', label: 'Scholarships' },
     ],
     default: 'pro-membership',
     hero: {
@@ -174,8 +172,7 @@ const Exclusives = () => {
         <Route path="/" element={<Navigate to={tab.default} />} />
         <Route path="pro-membership" element={<ProMembership />} />
         <Route path="game-analysis" element={<GameAnalysis />} />
-        <Route path="scholarships" element={<Scholarships />} />
-        <Route path="yuddho-raja" element={<YuddhoRaja />} />
+  <Route path="scholarships" element={<Scholarships />} />
         {/* Collaboration routes */}
         <Route path="referral-programme" element={<ReferralProgramme />} />
         <Route path="chess-in-schools" element={<ChessInSchools />} />
