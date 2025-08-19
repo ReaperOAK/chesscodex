@@ -16,12 +16,12 @@ const TABS = [
     key: 'exclusives',
     label: 'Exclusives',
     nav: [
-      { to: 'pro-membership', label: 'Pro Membership' },
-      { to: 'game-analysis', label: 'Game Analysis' },
-      { to: 'scholarships', label: 'Scholarships' },
       { to: 'yuddho-raja', label: 'Yuddho Raja-y Raja-y' },
+      { to: 'game-analysis', label: 'Game Analysis' },
+      { to: 'pro-membership', label: 'Pro Membership' },
+      { to: 'scholarships', label: 'Scholarships' },
     ],
-    default: 'pro-membership',
+    default: 'yuddho-raja',
     hero: {
       title: 'Exclusives',
       desc: 'Unlock premium benefits with our Pro Membership, Game Analysis, and Scholarship programs.'

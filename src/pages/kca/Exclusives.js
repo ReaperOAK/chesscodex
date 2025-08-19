@@ -14,11 +14,11 @@ const TABS = [
     key: 'exclusives',
     label: 'Exclusives',
     nav: [
-  { to: 'pro-membership', label: 'Pro Membership' },
   { to: 'game-analysis', label: 'Game Analysis' },
+  { to: 'pro-membership', label: 'Pro Membership' },
   { to: 'scholarships', label: 'Scholarships' },
     ],
-    default: 'pro-membership',
+    default: 'game-analysis',
     hero: {
       title: 'Exclusives',
       desc: 'Unlock premium benefits with our Pro Membership, Game Analysis, and Scholarship programs.'
