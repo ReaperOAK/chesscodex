@@ -26,7 +26,7 @@ const KCAHome = () => {
           <h1 className="text-5xl font-bold mb-10 text-brand-dark">Welcome to Our Chess Academies</h1>
           <p className="text-lg text-brand-text mb-12">
             <strong>Kolkata Chess Academy</strong> is our fully online head, providing all online coaching and dashboard support.<br/>
-            <strong>Aspire Chess Academy</strong> (A Unit of Kolkata Chess Academy) operates primarily offline, and all its services are under KCA. Online students of Aspire are redirected to Kolkata Chess Academy.
+            <strong>Aspire Chess Academy</strong> (A Unit of Kolkata Chess Academy) operates primarily offline, and all its services are under KCA. 
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
             <Link to="/" className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">

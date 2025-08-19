@@ -3,7 +3,7 @@
 
 **Kolkata Chess Academy (KCA)** is our fully online head, providing all online coaching and dashboard support.
 
-**Aspire Chess Academy** (A Unit of Kolkata Chess Academy) is used for SEO, operates primarily offline, and all its services are under KCA. Online students of Aspire are redirected to Kolkata Chess Academy.
+**Aspire Chess Academy** (A Unit of Kolkata Chess Academy) is used for SEO, operates primarily offline, and all its services are under KCA. 
 
 # AspireChess - Premier Chess Academy Platform
 

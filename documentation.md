@@ -3,7 +3,7 @@
 
 **Kolkata Chess Academy (KCA)** is our fully online head, providing all online coaching and dashboard support.
 
-**Aspire Chess Academy** (A Unit of Kolkata Chess Academy) is used for SEO, operates primarily offline, and all its services are under KCA. Online students of Aspire are redirected to Kolkata Chess Academy.
+**Aspire Chess Academy** (A Unit of Kolkata Chess Academy) is used for SEO, operates primarily offline, and all its services are under KCA. 
 
 ## Project Overview
 This is a React-based chess academy website called "chess-academy" (version 0.1.0). The project is built using React 18.3.1 with modern web development tools and libraries.
