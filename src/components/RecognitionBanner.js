@@ -42,7 +42,7 @@ const RecognitionBanner = ({ leftLogo = '/kca.png', rightLogo = '/aca.png', clas
             <span className="sr-only">Affiliation:</span>
             <span className="text-sm font-bold truncate">
               <span className="text-xs font-semibold opacity-90 mr-2 align-middle">Affiliated to</span>
-              <span className="align-middle">Kolkata District Chess Association</span>
+              <span className="align-middle">North 24 Parganas District Chess Association</span>
             </span>
           </div>
         </div>

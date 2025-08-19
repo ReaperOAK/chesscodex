@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhoneAlt, FaYoutube, FaGoogle } from 'react-icons/fa';
 import { useLocation, Link } from 'react-router-dom';
 import Newsletter from './Newsletter';
 
@@ -19,6 +19,7 @@ const Footer = () => {
   const youtubeUrl = isAspireChess ? 'https://youtube.com/@aspirechessacademy?si=7kTKA604EeKoy3_j' : 'https://www.youtube.com/@kolkatachessacademy';
   const linkedinUrl = 'https://www.linkedin.com/company/kolkatachessacademy/?viewAsMember=true';
   const whatsappUrl = 'https://wa.me/+919830149852';
+  const googleUrl = 'https://share.google/caKRBeVDezA42konI';
 
   // Define theme-based classes
   const footerClasses = isAspireChess
@@ -104,6 +105,7 @@ const Footer = () => {
               <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaFacebook /></a>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaInstagram /></a>
               <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaLinkedin /></a>
+              <a href={googleUrl} target="_blank" rel="noopener noreferrer" aria-label="Google Profile" title="Google Profile" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaGoogle /></a>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaWhatsapp /></a>
               <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${iconHoverClass} text-2xl`}><FaYoutube /></a>
             </div>
