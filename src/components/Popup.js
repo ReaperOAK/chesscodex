@@ -12,11 +12,30 @@ const PopupInaugTournament = () => {
     }
   }, []);
 
+  // Close on Escape key for better accessibility
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setShow(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-black/80 via-brand-primary/80 to-black/70 backdrop-blur-sm animate-fadeIn">
-      <div className="relative bg-white/95 rounded-3xl shadow-2xl border-2 border-brand-primary/30 max-w-2xl w-full p-0 overflow-hidden animate-popupScale">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-black/80 via-brand-primary/80 to-black/70 backdrop-blur-sm animate-fadeIn"
+      onClick={() => setShow(false)}
+      role="presentation"
+    >
+      <div
+        className="relative bg-white/95 rounded-3xl shadow-2xl border-2 border-brand-primary/30 max-w-2xl w-full p-0 overflow-hidden animate-popupScale"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Announcement: Grand Inauguration & Tournament"
+        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside the modal
+      >
         <button
           className="absolute top-5 right-5 w-11 h-11 flex items-center justify-center rounded-full bg-white/80 border border-gray-200 shadow hover:bg-red-500 hover:text-white text-gray-700 text-3xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
           onClick={() => setShow(false)}
