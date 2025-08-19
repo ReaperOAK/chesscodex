@@ -181,8 +181,8 @@ export const coursesData = [
       '5. In-depth classical game analysis with PDF explanations of all World Champions',
       'Contact us: as that would be tailored to your needs. The pricing and timings will vary according to your needs and wants.',
     ],
-    duration: 'Flexible',
-    site: 'aspirechess',
+  duration: 'Flexible',
+  site: ['aspirechess', 'kca'],
   },
   {
     title: 'Yuddho Raja-y Raja-y',

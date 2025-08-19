@@ -120,7 +120,14 @@ const CoursesList = () => {
                     {isAspireChess ? 'Classes held offline at Aspire Chess Academy.' : 'All classes are held online via Kolkata Chess Academy.'}
                   </p>
                   <ul className={`list-disc pl-4 ${cardTextClasses} space-y-1 text-sm`}>
-                    {course.description.slice(0, 4).map((item, idx) => (
+                    {(
+                      // For KCA (isAspireChess === false) strip out any lines that look like pricing/admission notes
+                      isAspireChess
+                        ? course.description.slice(0, 4)
+                        : course.description
+                            .filter(line => !/₹|Rs\b|price:|admission|per hour|per month/i.test(line))
+                            .slice(0, 4)
+                    ).map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
                     {course.title === 'Beginner Course' && course.description.length > 4 && (
@@ -128,7 +135,7 @@ const CoursesList = () => {
                     )}
                     {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
                   </ul>
-                  {course.title === 'Beginner Course' && course.price && (
+                  {isAspireChess && course.title === 'Beginner Course' && course.price && (
                     <div
                       className={`mt-2 font-semibold text-sm ${isAspireChess ? 'text-amber-400' : 'text-blue-600'}`}
                     >
