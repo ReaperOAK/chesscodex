@@ -27,6 +27,7 @@ const BenefitsSlider = () => {
 
   return (
     <div className={sliderClasses}>
+      <RecognitionBanner />
       <Slider {...sliderSettings}>
         {benefits.map((benefit, index) => (
           <div key={index} className="text-center px-4">
@@ -39,8 +40,6 @@ const BenefitsSlider = () => {
           </div>
         ))}
       </Slider>
-  {/* Recognition banner placed under the benefits slider so it shows on every page */}
-  <RecognitionBanner />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const RecognitionBanner = ({ leftLogo = '/kca.png', rightLogo = '/aca.png', className = '' }) => {
+const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp', className = '' }) => {
   const [theme, setTheme] = useState('');
 
   useEffect(() => {
