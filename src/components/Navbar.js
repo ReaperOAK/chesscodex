@@ -40,7 +40,11 @@ function Navbar() {
   // Navbar classes for each brand
   const navClasses = isAspireChess
     ? 'bg-black bg-opacity-20 backdrop-blur-md border-b border-gray-700/50'
-    : 'bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent';
+    : 'bg-black bg-opacity-20 backdrop-blur-sm border-b border-gray-700/40';
+
+  const navLinkActiveClass = isAspireChess ? 'text-yellow-300 font-semibold' : 'text-cyan-300 font-semibold';
+  const navLinkIdleClass = isAspireChess ? 'text-white hover:text-yellow-300 transition-colors duration-300' : 'text-white hover:text-cyan-300 transition-colors duration-300';
+  const dashboardHoverClass = isAspireChess ? 'text-white hover:text-amber-300 transition-colors duration-300 mx-2' : 'text-white hover:text-cyan-300 transition-colors duration-300 mx-2';
 
   return (
     <nav className={`${navClasses} text-white sticky top-0 shadow-lg z-50 w-full`}>
@@ -68,11 +72,7 @@ function Navbar() {
               <NavLink
                 key={link.to}
                 to={link.to}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'text-yellow-300 font-semibold'
-                    : 'text-white hover:text-yellow-300 transition-colors duration-300'
-                }
+                className={({ isActive }) => (isActive ? navLinkActiveClass : navLinkIdleClass)}
                 aria-label={link.label}
               >
                 {link.label}
@@ -82,7 +82,7 @@ function Navbar() {
               href="https://dashboard.kolkatachessacademy.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-amber-300 transition-colors duration-300 mx-2"
+              className={dashboardHoverClass}
               aria-label="Dashboard"
             >
               Dashboard
@@ -99,7 +99,7 @@ function Navbar() {
             ) : (
               <a
                 href="/kca/courses"
-                className="ml-4 bg-brand-primary text-white font-bold px-5 py-2 rounded-full shadow-lg hover:bg-brand-accent transition-colors duration-200 text-lg border border-white/10"
+                className="ml-4 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold px-5 py-2 rounded-full shadow-lg hover:opacity-95 transition-colors duration-200 text-lg border border-white/10"
                 style={{ boxShadow: '0 2px 12px 0 rgba(0,0,0,0.12)' }}
               >
                 Explore Offline Courses
@@ -116,7 +116,7 @@ function Navbar() {
       </div>
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className={isAspireChess ? 'lg:hidden bg-black bg-opacity-80 backdrop-blur-lg absolute top-16 left-0 w-full z-50' : 'lg:hidden bg-brand-dark absolute top-16 left-0 w-full z-50'}>
+        <div className={'lg:hidden bg-black bg-opacity-80 backdrop-blur-lg absolute top-16 left-0 w-full z-50'}>
           <ul className="flex flex-col items-center space-y-4 px-4 py-6">
             {navLinks.map((link) => (
               <li key={link.to} className="w-full">

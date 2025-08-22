@@ -61,11 +61,11 @@ const Exclusives = () => {
     };
   }, []);
 
-  // Theme
-  const heroClasses = "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-16";
-  const navClasses = "bg-brand-light py-4 shadow-md";
-  const navLinkActiveClasses = "bg-brand-dark text-white";
-  const navLinkIdleClasses = "bg-brand-secondary text-white hover:bg-brand-dark";
+  // KCA Synthwave glassy theme
+  const heroClasses = "py-24";
+  const navClasses = "bg-black bg-opacity-20 backdrop-blur-md border-y border-gray-700/50 py-4 shadow-lg";
+  const navLinkActiveClasses = "bg-cyan-500 text-gray-900";
+  const navLinkIdleClasses = "bg-gray-700/50 text-white hover:bg-gray-600/50";
 
   // Find current tab config
   const tab = TABS.find(t => t.key === activeTab);
@@ -111,7 +111,7 @@ const Exclusives = () => {
         {TABS.map(t => (
           <button
             key={t.key}
-            className={`px-6 py-2 rounded-t-lg font-bold focus:outline-none transition-colors duration-200 ${activeTab === t.key ? 'bg-brand-dark text-white' : 'bg-brand-secondary text-white hover:bg-brand-dark'}`}
+            className={`px-6 py-2 rounded-t-lg font-bold focus:outline-none transition-colors duration-200 ${activeTab === t.key ? 'bg-cyan-500 text-gray-900' : 'bg-gray-700/50 text-white hover:bg-gray-600/50'}`}
             onClick={() => { setActiveTab(t.key); setMobileNavOpen(false); }}
             aria-current={activeTab === t.key ? 'page' : undefined}
             aria-label={t.label}

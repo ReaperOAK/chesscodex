@@ -26,21 +26,22 @@ const Newsletter = ({ position }) => {
   // --- THEME-AWARE STYLING ---
   const positionClasses = position === 'footer' ? 'w-full mx-auto my-6' : 'fixed bottom-4 left-4 w-[320px] md:w-[350px]';
   
+  // Frosted container for both brands; KCA uses Synthwave accents
   const containerClasses = isAspireChess
     ? 'bg-black bg-opacity-20 backdrop-blur-md border border-gray-700/50'
-    : 'bg-white';
-  
-  const titleColor = isAspireChess ? 'text-white' : 'text-brand-text';
-  const textColor = isAspireChess ? 'text-gray-300' : 'text-brand-text';
-  const closeButtonColor = isAspireChess ? 'text-gray-400 hover:text-white' : 'text-brand-text hover:text-brand-dark';
+    : 'bg-black bg-opacity-18 backdrop-blur-sm border border-gray-700/40';
+
+  const titleColor = isAspireChess ? 'text-white' : 'text-cyan-300';
+  const textColor = isAspireChess ? 'text-gray-300' : 'text-gray-200';
+  const closeButtonColor = isAspireChess ? 'text-gray-400 hover:text-white' : 'text-cyan-300 hover:text-white';
 
   const inputClasses = isAspireChess
     ? 'bg-gray-800 bg-opacity-50 border-gray-600 text-white placeholder-gray-400 focus:ring-amber-400'
-    : 'border-brand-light text-brand-text placeholder-brand-text focus:ring-brand-secondary';
+    : 'bg-black bg-opacity-10 border-gray-600 text-white placeholder-cyan-400 focus:ring-cyan-400';
 
   const buttonClasses = isAspireChess
     ? 'bg-amber-500 text-gray-900 hover:bg-amber-400'
-    : 'bg-brand-highlight text-white hover:bg-brand-highlight/80';
+    : 'bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:opacity-95';
 
   return (
     <div

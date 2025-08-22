@@ -42,14 +42,15 @@ const WhyChooseUs = () => {
   };
 
   // Define classes based on the theme
-  const sectionClasses = isAspireChess ? "py-20" : "py-20 bg-gradient-to-r from-brand-light via-white to-brand-light";
-  const titleClasses = isAspireChess ? "text-4xl font-extrabold mb-6 text-amber-400" : "text-4xl font-extrabold mb-6 text-brand-primary";
-  const descriptionClasses = isAspireChess ? "text-lg mb-12 text-gray-300" : "text-lg mb-12 text-brand-text";
-  const cardClasses = isAspireChess 
-    ? "flex flex-col items-center justify-start bg-black bg-opacity-30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]"
-    : "flex flex-col items-center justify-start bg-white p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]";
-  const cardTitleClasses = isAspireChess ? "text-lg font-semibold text-white mb-2" : "text-lg font-semibold text-brand-primary mb-2";
-  const cardDescriptionClasses = isAspireChess ? "text-gray-300 text-center text-sm" : "text-brand-text text-center text-sm";
+  // Keep section neutral so background shows; cards are frosted for both brands
+  const sectionClasses = 'py-20';
+  const titleClasses = isAspireChess ? 'text-4xl font-extrabold mb-6 text-amber-400' : 'text-4xl font-extrabold mb-6 text-cyan-300';
+  const descriptionClasses = isAspireChess ? 'text-lg mb-12 text-gray-300' : 'text-lg mb-12 text-gray-200';
+  const cardClasses = isAspireChess
+    ? 'flex flex-col items-center justify-start bg-black bg-opacity-30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]'
+    : 'flex flex-col items-center justify-start bg-black bg-opacity-18 backdrop-blur-sm border border-gray-700/40 p-6 rounded-lg shadow-md transform hover:scale-105 hover:shadow-xl transition-all duration-300 h-full min-h-[200px]';
+  const cardTitleClasses = isAspireChess ? 'text-lg font-semibold text-white mb-2' : 'text-lg font-semibold text-cyan-300 mb-2';
+  const cardDescriptionClasses = isAspireChess ? 'text-gray-300 text-center text-sm' : 'text-gray-200 text-center text-sm';
 
   // Set correct links for highlightedFeatures and features based on isAspireChess
   const highlightedFeaturesWithLinks = highlightedFeatures.map((feature, idx) => {

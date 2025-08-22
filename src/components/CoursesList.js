@@ -7,12 +7,12 @@ import { coursesData } from '../data';
 const Modal = ({ course, onClose, isAspireChess }) => {
   const modalBgClasses = isAspireChess
     ? "bg-gray-900 bg-opacity-70 backdrop-blur-md border border-gray-700"
-    : "bg-white";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-text";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
+    : "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50";
+  const titleClasses = isAspireChess ? "text-amber-400" : "text-cyan-300";
+  const textClasses = isAspireChess ? "text-gray-300" : "text-gray-300";
   const buttonClasses = isAspireChess
     ? "bg-amber-500 text-gray-900 hover:bg-amber-400"
-    : "bg-brand-highlight text-white hover:bg-brand-highlight/80";
+    : "bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:opacity-95";
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -61,16 +61,16 @@ const CoursesList = () => {
   });
 
   // --- THEME-AWARE STYLING ---
-  const sectionClasses = isAspireChess ? "" : "py-16 bg-brand-dark";
-  const titleClasses = isAspireChess ? "text-4xl font-extrabold text-amber-400 text-center mb-10" : "text-4xl font-extrabold text-white text-center mb-10";
+  const sectionClasses = isAspireChess ? "" : "py-16 bg-transparent";
+  const titleClasses = isAspireChess ? "text-4xl font-extrabold text-amber-400 text-center mb-10" : "text-4xl font-extrabold text-cyan-300 text-center mb-10";
   const cardClasses = isAspireChess
     ? "group bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg hover:shadow-amber-400/10 transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-    : "group bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between";
-  const cardTitleClasses = isAspireChess ? "text-2xl font-semibold text-white mb-4" : "text-2xl font-semibold text-brand-primary mb-4";
-  const cardTextClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const buttonClasses = isAspireChess
+    : "group bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col justify-between";
+  const cardTitleClasses = isAspireChess ? "text-2xl font-semibold text-white mb-4" : "text-2xl font-semibold text-cyan-300 mb-4";
+  const cardTextClasses = isAspireChess ? "text-gray-300" : "text-gray-300";
+  const actionButtonClasses = isAspireChess
     ? "bg-amber-500 hover:bg-amber-400 text-gray-900"
-    : "bg-brand-secondary hover:bg-brand-accent text-white";
+    : "bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:opacity-95";
 
   return (
     <section id="courses" className={sectionClasses}>
@@ -97,12 +97,12 @@ const CoursesList = () => {
                       {course.description.slice(0, 4).map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
-                      {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-brand-accent'} italic`}>...and more</li>}
+                      {course.description.length > 4 && <li className={`${isAspireChess ? 'text-amber-400' : 'text-cyan-300'} italic`}>...and more</li>}
                     </ul>
                   </div>
                   <div className="mt-6">
                     <div
-                      className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${buttonClasses}`}
+                      className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${actionButtonClasses}`}
                     >
                       Go to Exclusive
                     </div>
@@ -145,7 +145,7 @@ const CoursesList = () => {
                 </div>
                 <div className="mt-6">
                   <div
-                    className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${buttonClasses}`}
+                    className={`block text-center font-semibold py-2 px-4 rounded transition duration-300 ${actionButtonClasses}`}
                   >
                     View Details
                   </div>

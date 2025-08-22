@@ -4,9 +4,11 @@ import { useLocation } from 'react-router-dom';
 import { faqs } from '../data';
 
 const FAQItem = ({ question, answer, isOpen, toggle, isAspireChess }) => {
-    const itemClasses = isAspireChess ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg" : "border-b border-codex-gray-light py-4";
-    const questionClasses = isAspireChess ? "text-lg font-medium text-white" : "text-lg font-medium text-brand-primary";
-    const answerClasses = isAspireChess ? "pt-4 text-gray-300" : "mt-4 text-brand-text";
+    const itemClasses = isAspireChess
+        ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg"
+        : "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg";
+    const questionClasses = isAspireChess ? "text-lg font-medium text-amber-400" : "text-lg font-medium text-cyan-300";
+    const answerClasses = isAspireChess ? "pt-4 text-gray-300" : "pt-4 text-gray-300";
 
     return (
         <div className={itemClasses}>
@@ -26,7 +28,7 @@ const FAQItem = ({ question, answer, isOpen, toggle, isAspireChess }) => {
 const FAQs = () => {
     const location = useLocation();
     const isAspireChess = location.pathname.startsWith('/aspirechess');
-    const siteFAQs = faqs.aspirechess;
+    const siteFAQs = isAspireChess ? (faqs.aspirechess || []) : (faqs.kca || []);
 
     const [activeCategory, setActiveCategory] = useState("General");
     const [openIndices, setOpenIndices] = useState({});
@@ -36,10 +38,10 @@ const FAQs = () => {
     };
 
     // --- Theme-Aware Class Definitions ---
-    const sectionClasses = isAspireChess ? "" : "py-12 bg-codex-bg-light";
-    const titleClasses = isAspireChess ? "text-4xl font-bold text-center text-amber-400 mb-12" : "text-4xl font-bold text-center text-brand-primary mb-12";
-    const categoryButtonActive = isAspireChess ? "bg-amber-500 text-gray-900" : "bg-brand-primary text-white";
-    const categoryButtonIdle = isAspireChess ? "bg-gray-700/50 text-white hover:bg-gray-600/50" : "bg-white text-brand-text hover:bg-brand-secondary";
+    const sectionClasses = isAspireChess ? "" : "py-12 bg-transparent";
+    const titleClasses = isAspireChess ? "text-4xl font-bold text-center text-amber-400 mb-12" : "text-4xl font-bold text-center text-cyan-300 mb-12";
+    const categoryButtonActive = isAspireChess ? "bg-amber-500 text-gray-900" : "bg-gradient-to-r from-cyan-500 to-pink-500 text-white";
+    const categoryButtonIdle = isAspireChess ? "bg-gray-700/50 text-white hover:bg-gray-600/50" : "bg-black bg-opacity-20 text-gray-300 hover:bg-black/30";
 
     return (
         <section className={sectionClasses}>
@@ -62,7 +64,7 @@ const FAQs = () => {
                 </div>
                 {/* FAQ List */}
                 <div className="space-y-4">
-                    {siteFAQs.find(s => s.category === activeCategory)?.items.map((faq, index) => (
+                    {(siteFAQs.find(s => s.category === activeCategory)?.items || []).map((faq, index) => (
                         <FAQItem
                             key={index}
                             question={faq.question}

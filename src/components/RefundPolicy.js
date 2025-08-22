@@ -8,14 +8,15 @@ const RefundPolicy = () => {
   const contactEmail = 'hello@kolkatachessacademy.in';
 
   // --- Theme-Aware Class Definitions ---
-  const sectionClasses = isAspireChess ? "" : "flex items-center justify-center min-h-screen bg-gradient-to-r from-brand-subtle to-brand-subtle p-6";
+  // Keep page wrapper transparent for KCA so background shows; Aspire retains its layout
+  const sectionClasses = isAspireChess ? '' : 'flex items-center justify-center min-h-screen p-6';
   const cardClasses = isAspireChess
-    ? "bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl max-w-5xl w-full"
-    : "bg-white max-w-5xl w-full p-8 rounded-2xl shadow-2xl relative animate-fadeIn";
-  const titleClasses = isAspireChess ? "text-amber-400" : "text-brand-dark";
-  const textClasses = isAspireChess ? "text-gray-300" : "text-brand-text";
-  const iconClasses = isAspireChess ? "text-amber-400" : "text-brand-primary";
-  const highlightClasses = isAspireChess ? "text-white" : "text-brand-dark";
+    ? 'bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl max-w-5xl w-full'
+    : 'bg-black bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 sm:p-12 border border-gray-700/40 shadow-2xl max-w-5xl w-full animate-fadeIn';
+  const titleClasses = isAspireChess ? 'text-amber-400' : 'text-cyan-300';
+  const textClasses = isAspireChess ? 'text-gray-300' : 'text-gray-200';
+  const iconClasses = isAspireChess ? 'text-amber-400' : 'text-cyan-300';
+  const highlightClasses = isAspireChess ? 'text-white' : 'text-white';
 
   return (
     <div className={sectionClasses}>
@@ -26,7 +27,7 @@ const RefundPolicy = () => {
         </div>
         <div className={`space-y-6 leading-relaxed ${textClasses}`}>
           <div className="flex items-start">
-            <FaInfoCircle className={`${isAspireChess ? 'text-gray-500' : 'text-brand-secondary'} mt-1 mr-3`} />
+            <FaInfoCircle className={`${isAspireChess ? 'text-gray-500' : 'text-cyan-400'} mt-1 mr-3`} />
             <p>
               If you cancel our service within the first <strong className={highlightClasses}>7 days</strong> of payment, we will issue you a <strong className={iconClasses}>full refund</strong>. No questions asked.
             </p>
@@ -49,7 +50,7 @@ const RefundPolicy = () => {
             </p>
             <div className="mt-2 flex items-center">
               <FaEnvelope className={`${iconClasses} mr-2`} />
-              <a href={`mailto:${contactEmail}`} className={`font-semibold underline transition-colors ${isAspireChess ? 'text-amber-300 hover:text-white' : 'text-brand-secondary hover:text-brand-primary'}`}>
+              <a href={`mailto:${contactEmail}`} className={`font-semibold underline transition-colors ${isAspireChess ? 'text-amber-300 hover:text-white' : 'text-cyan-300 hover:text-white'}`}>
                 {contactEmail}
               </a>
             </div>

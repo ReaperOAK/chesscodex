@@ -52,9 +52,11 @@ function AppContent() {
         <title>{isAspireChess ? 'AspireChess - Elevate Your Chess Skills' : 'Chess Academy - Elevate Your Chess Skills'}</title>
         <meta name="description" content={isAspireChess ? 'Join AspireChess to elevate your chess skills with expert training and comprehensive courses.' : 'Join our Chess Academy to elevate your chess skills with expert training and comprehensive courses.'} />
       </Helmet>
-      <Navbar />
-      <BenefitsSlider />
-      <div className={`relative ${isAspireChess ? 'bg-transparent' : 'bg-brand-light'} text-brand-text`}>
+    <Navbar />
+    <BenefitsSlider />
+    {/* Make main wrapper transparent so themed backgrounds show through for both sites.
+      Individual pages/components should provide their own translucent cards as needed. */}
+    <div className={`relative bg-transparent text-brand-text`}>
         <Newsletter position="left" theme={isAspireChess ? 'aspirechess' : 'default'} />
         <Routes>
           {/* Redirect root to Aspire homepage */}

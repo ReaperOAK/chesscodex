@@ -22,8 +22,8 @@ const BenefitsSlider = () => {
 
   // --- NEW STYLING ---
   // A richer, more defined look to make it stand out.
-  const sliderClasses = "bg-black bg-opacity-10 py-2 border-b-2 border-amber-300/20 shadow-lg";
-  const textClasses = "text-sm sm:text-base text-amber-300 font-semibold tracking-wider uppercase";
+  const sliderClasses = "bg-black bg-opacity-10 py-2 border-b-2 border-cyan-400/20 shadow-lg";
+  const textClasses = "text-sm sm:text-base text-cyan-300 font-semibold tracking-wider uppercase";
 
   return (
     <div className={sliderClasses}>
@@ -32,9 +32,9 @@ const BenefitsSlider = () => {
           <div key={index} className="text-center px-4">
             {/* Flex container to align icon and text */}
             <div className="flex items-center justify-center gap-4">
-              <FaStar className="text-amber-500 text-lg" />
+              <FaStar className="text-cyan-400 text-lg" />
               <p className={textClasses}>{benefit}</p>
-              <FaStar className="text-amber-500 text-lg" />
+              <FaStar className="text-cyan-400 text-lg" />
             </div>
           </div>
         ))}

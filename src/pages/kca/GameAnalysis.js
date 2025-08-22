@@ -3,12 +3,12 @@ import SEO from '../../components/SEO';
 
 
 const GameAnalysis = () => {
-  // KCA Theme Classes
-  const sectionClasses = "py-16 bg-brand-light";
-  const cardClasses = "bg-white rounded-lg shadow-md p-6";
-  const titleClasses = "text-brand-dark";
-  const textClasses = "text-brand-text";
-  const ctaCardClasses = "bg-brand-dark text-white rounded-lg shadow-md";
+  // KCA Synthwave glassy theme
+  const sectionClasses = "py-16 bg-transparent";
+  const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg";
+  const titleClasses = "text-cyan-300";
+  const textClasses = "text-gray-300";
+  const ctaCardClasses = "mt-12 py-8 px-6 bg-black bg-opacity-18 backdrop-blur-sm rounded-lg shadow-xl border border-gray-700/40";
 
   return (
     <section className={sectionClasses}>
@@ -54,15 +54,15 @@ const GameAnalysis = () => {
           <h3 className="text-2xl font-bold mb-6 text-white">Pricing</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className={cardClasses}>
-              <h3 className="text-2xl font-bold mb-2 text-brand-dark">5 Games</h3>
+              <h3 className={`text-2xl font-bold mb-2 ${titleClasses}`}>5 Games</h3>
               <p className={`text-lg ${textClasses}`}>₹1000</p>
             </div>
             <div className={cardClasses}>
-              <h3 className="text-2xl font-bold mb-2 text-brand-dark">10 Games</h3>
+              <h3 className={`text-2xl font-bold mb-2 ${titleClasses}`}>10 Games</h3>
               <p className={`text-lg ${textClasses}`}>₹1800</p>
             </div>
           </div>
-          <a href="https://forms.gle/6Tb4CTK7sRLW7n1E6" target="_blank" rel="noopener noreferrer" className="inline-block font-medium py-2 px-6 rounded-lg transition bg-brand-primary text-white hover:bg-brand-secondary">
+          <a href="https://forms.gle/6Tb4CTK7sRLW7n1E6" target="_blank" rel="noopener noreferrer" className="inline-block font-medium py-3 px-7 rounded-lg transition transform hover:scale-105 bg-gradient-to-r from-cyan-500 to-pink-500 text-white">
             Register Now
           </a>
         </div>

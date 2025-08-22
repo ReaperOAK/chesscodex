@@ -21,7 +21,7 @@ const Team = () => {
     if (match) {
       return (
         <>
-          <span className={isAspireChess ? "text-amber-400" : "text-brand-primary"}>{match[0]}</span> {name.replace(titleRegex, '').trim()}
+          <span className={isAspireChess ? "text-amber-400" : "text-cyan-300"}>{match[0]}</span> {name.replace(titleRegex, '').trim()}
         </>
       );
     }
@@ -29,11 +29,11 @@ const Team = () => {
   };
 
   const cardClasses = isAspireChess
-    ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-amber-400/10 transition-all duration-300 group"
-    : "bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2";
+  ? "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-amber-400/10 transition-all duration-300 group"
+  : "bg-black bg-opacity-18 backdrop-blur-sm border border-gray-700/40 rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-400/10 transition-all duration-300 group transform hover:-translate-y-1";
 
-  const textClasses = isAspireChess ? "text-gray-300 text-sm leading-relaxed" : "text-brand-text text-sm leading-relaxed mb-4";
-  const buttonClasses = isAspireChess ? "text-amber-400 hover:text-white font-medium" : "text-brand-primary hover:underline font-medium";
+  const textClasses = isAspireChess ? "text-gray-300 text-sm leading-relaxed" : "text-gray-200 text-sm leading-relaxed mb-4";
+  const buttonClasses = isAspireChess ? "text-amber-400 hover:text-white font-medium" : "text-cyan-300 hover:text-white font-medium";
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

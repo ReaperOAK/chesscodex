@@ -34,16 +34,16 @@ const Contact = () => {
     setSubmitted(true);
   };
 
-  // KCA Theme Classes
-  const heroClasses = "relative bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent text-white py-20";
-  const sectionWrapperClasses = "bg-codex-bg-light";
-  const cardClasses = "bg-white p-8 rounded-lg shadow-lg";
-  const titleClasses = "text-brand-dark";
-  const textClasses = "text-brand-text";
-  const inputClasses = "w-full border border-brand-light rounded-md shadow-sm p-3 focus:ring focus:ring-brand-secondary";
-  const buttonClasses = "bg-brand-secondary text-white hover:bg-brand-primary";
-  const labelClasses = "block font-medium mb-2 text-brand-text";
-  const iconClasses = "text-brand-primary";
+  // KCA Synthwave glassy theme
+  const heroClasses = "py-24";
+  const sectionWrapperClasses = "bg-transparent";
+  const cardClasses = "bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl";
+  const titleClasses = "text-cyan-300";
+  const textClasses = "text-gray-300";
+  const inputClasses = "bg-black bg-opacity-30 border border-gray-600 text-white placeholder-gray-400 focus:ring-cyan-400 rounded-md shadow-sm p-3 w-full";
+  const buttonClasses = "bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:from-cyan-400 hover:to-pink-400";
+  const labelClasses = "block font-medium mb-2 text-gray-300";
+  const iconClasses = "text-cyan-300";
 
   return (
     <div>

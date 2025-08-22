@@ -5,12 +5,12 @@ import { scholarshipDetails } from '../../data';
 const Scholarships = () => {
 
 
-  // KCA Theme Classes
-  const sectionClasses = "py-16 bg-brand-subtle";
-  const cardClasses = "bg-white rounded-lg shadow-md p-6";
-  const titleClasses = "text-brand-dark";
-  const textClasses = "text-brand-text";
-  const categoryTitleClasses = "text-xl font-semibold text-brand-dark mb-2";
+  // KCA Synthwave glassy theme
+  const sectionClasses = "py-16 bg-transparent";
+  const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg";
+  const titleClasses = "text-cyan-300";
+  const textClasses = "text-gray-300";
+  const categoryTitleClasses = "text-xl font-semibold text-white mb-2";
 
   return (
     <>
@@ -34,7 +34,7 @@ const Scholarships = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className={`text-3xl font-bold mb-8 ${titleClasses}`}>Scholarships</h2>
           <div className={cardClasses}>
-            <h3 className="text-2xl font-bold mb-6 text-brand-dark">Scholarship Categories</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Scholarship Categories</h3>
             <div className="text-left space-y-6">
               {scholarshipDetails.map((item, idx) => (
                 <div key={idx}>

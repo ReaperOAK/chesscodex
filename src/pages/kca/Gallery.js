@@ -79,15 +79,15 @@ const Gallery = () => {
     };
 
 
-    // KCA Theme Classes
-    const pageClasses = "bg-brand-light min-h-screen";
-    const titleClasses = "text-5xl font-extrabold text-brand-dark";
-    const subtitleClasses = "text-lg text-brand-text mt-4";
-    const folderTitleClasses = "text-3xl font-bold text-brand-dark mb-6";
-    const filterButtonActiveClasses = "bg-brand-primary text-white";
-    const filterButtonIdleClasses = "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
-    const paginationButtonActiveClasses = "bg-brand-primary text-white";
-    const paginationButtonIdleClasses = "bg-brand-light text-brand-text hover:bg-brand-secondary hover:text-white";
+    // KCA Synthwave glassy theme
+    const pageClasses = "min-h-screen bg-transparent";
+    const titleClasses = "text-5xl font-extrabold text-white";
+    const subtitleClasses = "text-lg text-gray-300 mt-4";
+    const folderTitleClasses = "text-3xl font-bold text-cyan-300 mb-6";
+    const filterButtonActiveClasses = "bg-cyan-500 text-white";
+    const filterButtonIdleClasses = "bg-gray-700/50 text-white hover:bg-gray-600/50";
+    const paginationButtonActiveClasses = "bg-cyan-500 text-white";
+    const paginationButtonIdleClasses = "bg-gray-700/50 text-white hover:bg-gray-600/50";
 
 
     return (

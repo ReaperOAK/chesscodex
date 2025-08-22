@@ -4,12 +4,12 @@ import { workspaceDetails } from '../../data';
 
 const ChessInWorkspaces = () => {
 
-  // KCA Theme Classes
-  const sectionClasses = "py-16 bg-brand-subtle";
-  const cardClasses = "bg-white text-brand-text rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow";
-  const titleClasses = "text-brand-dark";
-  const textClasses = "text-brand-text";
-  const ctaCardClasses = "bg-brand-dark text-white rounded-lg shadow-md";
+  // KCA Synthwave glassy theme
+  const sectionClasses = "py-16 bg-transparent";
+  const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 p-6 rounded-lg shadow-lg text-left transition hover:scale-102";
+  const titleClasses = "text-cyan-300";
+  const textClasses = "text-gray-300";
+  const ctaCardClasses = "py-8 px-6 bg-black bg-opacity-18 backdrop-blur-sm rounded-lg shadow-xl border border-gray-700/40";
 
   return (
     <>
@@ -44,14 +44,14 @@ const ChessInWorkspaces = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {workspaceDetails.map((item, idx) => (
                 <div key={idx} className={cardClasses}>
-                  <h3 className="text-2xl font-bold mb-2 text-brand-dark">{item.title}</h3>
+                  <h3 className={`text-2xl font-bold mb-2 ${titleClasses}`}>{item.title}</h3>
                   <ul className={`text-left list-disc list-inside space-y-1 ${textClasses}`}>
                     {item.details.map((detail, index) => <li key={index}>{detail}</li>)}
                   </ul>
                 </div>
               ))}
             </div>
-            <a href="https://wa.me/+919830149852" className="inline-block font-medium py-2 px-6 rounded-lg transition bg-brand-primary text-white hover:bg-brand-secondary">
+            <a href="https://wa.me/+919830149852" className="inline-block font-medium py-3 px-7 rounded-lg transition transform hover:scale-105 bg-gradient-to-r from-cyan-500 to-pink-500 text-white">
               Enquire Now
             </a>
           </div>

@@ -24,14 +24,14 @@ const Footer = () => {
   // Define theme-based classes
   const footerClasses = isAspireChess
     ? "bg-black bg-opacity-40 backdrop-blur-md border-t border-gray-700/50"
-    : "bg-brand-dark";
-  const textColor = isAspireChess ? "text-gray-300" : "text-white";
-  const headingColor = isAspireChess ? "text-white" : "text-white";
-  const linkHoverClass = isAspireChess ? "hover:text-amber-300" : "hover:text-yellow-300";
-  const iconHoverClass = isAspireChess ? "hover:text-amber-300" : "hover:text-brand-accent";
-  const highlightClass = isAspireChess ? "text-amber-400" : "text-brand-highlight";
-  const dropdownBg = isAspireChess ? "bg-gray-900 bg-opacity-80 backdrop-blur-md" : "bg-brand-primary";
-  const dropdownHoverBg = isAspireChess ? "hover:bg-gray-700" : "hover:bg-brand-secondary";
+    : "bg-black bg-opacity-20 backdrop-blur-sm border-t border-gray-700/40";
+  const textColor = isAspireChess ? "text-gray-300" : "text-gray-300";
+  const headingColor = isAspireChess ? "text-white" : "text-cyan-300";
+  const linkHoverClass = isAspireChess ? "hover:text-amber-300" : "hover:text-cyan-300";
+  const iconHoverClass = isAspireChess ? "hover:text-amber-300" : "hover:text-cyan-300";
+  const highlightClass = isAspireChess ? "text-amber-400" : "text-cyan-300";
+  const dropdownBg = isAspireChess ? "bg-gray-900 bg-opacity-80 backdrop-blur-md" : "bg-black bg-opacity-20 backdrop-blur-sm";
+  const dropdownHoverBg = isAspireChess ? "hover:bg-gray-700" : "hover:bg-black/30";
 
   return (
     <footer className={`${footerClasses} text-white py-12`}>

@@ -116,6 +116,8 @@ export const faqs = {
     },
   ],
 };
+// Provide a KCA alias (use same content for now) so components can access faqs.kca
+faqs.kca = faqs.aspirechess;
 export const coursesData = [
   {
     title: 'Beginner Course',

@@ -7,15 +7,15 @@ const CTA = () => {
   const siteName = isAspireChess ? 'AspireChess' : 'Kolkata Chess Academy';
 
   // Visually distinct background for CTA section
- const sectionClasses = isAspireChess
-    ? "py-16 sm:py-20 px-relative py-16 sm:py-20 px-6 flex justify-center items-center"
-    : "bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent text-white py-16 sm:py-20 px-6";
+  const sectionClasses = isAspireChess
+    ? "py-16 sm:py-20 px-6 flex justify-center items-center"
+    : "py-16 sm:py-20 px-6";
 
   const containerClasses =
     "max-w-4xl mx-auto text-center " +
     (isAspireChess
       ? " bg-white bg-opacity-5 backdrop-blur-sm rounded-xl border-2 border-amber-400 rounded-2xl p-10 shadow-xl"
-      : "");
+      : " bg-black bg-opacity-20 backdrop-blur-sm rounded-xl border border-gray-700/50 p-10 shadow-xl");
 
   return (
     <section className={sectionClasses}>
@@ -32,14 +32,20 @@ const CTA = () => {
           <a
             href={isAspireChess ? "/aspirechess/admission" : "/kca/admission"}
             aria-label="Enroll Now"
-            className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+            className={isAspireChess
+              ? "inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+              : "inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:opacity-95 transition-transform transform hover:scale-105 duration-300"
+            }
           >
             <span>🎓 Enroll Now</span>
           </a>
           <a
             href={isAspireChess ? "/aspirechess/contact" : "/kca/contact"}
             aria-label="Contact Us"
-            className="inline-flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+            className={isAspireChess
+              ? "inline-flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+              : "inline-flex items-center justify-center gap-2 bg-black bg-opacity-25 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+            }
           >
             <span>📞 Contact Us</span>
           </a>

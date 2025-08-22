@@ -19,16 +19,20 @@ const RecognitionBanner = ({ leftLogo = '/kca.png', rightLogo = '/aca.png', clas
 
   const wrapperClasses =
     theme === 'kca'
-  ? 'bg-amber-50 text-amber-900 border-amber-200'
+  ? 'bg-black bg-opacity-20 text-cyan-300 border border-cyan-400/8'
   : theme === 'aspire'
   ? 'bg-transparent text-slate-100 border-transparent'
   : 'bg-gray-50 text-gray-800 border-gray-200 dark:bg-slate-900 dark:text-gray-100 dark:border-slate-700';
 
   const innerClasses = theme === 'aspire'
     ? 'backdrop-blur-sm bg-slate-900/45 border border-slate-700/30 rounded-md px-3 py-1'
+    : theme === 'kca'
+    ? 'backdrop-blur-sm bg-black/30 border border-cyan-400/10 rounded-md px-3 py-1'
     : '';
 
-  const logoBg = theme === 'aspire' ? 'bg-white/8' : 'bg-white/70 dark:bg-slate-800/60';
+  const logoBg = theme === 'aspire' ? 'bg-white/8' : theme === 'kca' ? 'bg-black/30 ring-1 ring-cyan-400/8' : 'bg-white/70 dark:bg-slate-800/60';
+
+  const dividerClass = theme === 'kca' ? 'mx-4 h-6 w-px bg-cyan-400/20 dark:bg-cyan-500/10' : 'mx-4 h-6 w-px bg-amber-200/60 dark:bg-slate-600/40';
 
   return (
     <section
@@ -47,7 +51,7 @@ const RecognitionBanner = ({ leftLogo = '/kca.png', rightLogo = '/aca.png', clas
           </div>
         </div>
 
-        <div className="mx-4 h-6 w-px bg-amber-200/60 dark:bg-slate-600/40 flex-shrink-0" aria-hidden="true" />
+  <div className={`${dividerClass} flex-shrink-0`} aria-hidden="true" />
 
         <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
           <img src={rightLogo} alt="Sara Bangla Daba Sangstha logo" className={`h-9 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />

@@ -5,20 +5,18 @@ import { FaChessKing, FaTrophy, FaQuoteLeft } from 'react-icons/fa';
 import WhyChooseUs from '../../components/WhyChooseUs';
 import Team from '../../components/Team';
 
-
 const About = () => {
   const siteName = 'Kolkata Chess Academy';
 
-  // --- KCA Theme Classes ---
-  const heroSectionClasses = "bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-24";
-  const sectionWrapperClasses = "";
-  const mainCardClasses = "bg-white p-8 rounded-lg shadow-md";
-  const missionVisionCardClasses = "bg-brand-light p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300";
-  const titleClasses = "text-brand-dark";
-  const textClasses = "text-brand-text";
-  const iconClasses = "text-brand-primary";
-  const missionTitleClasses = "text-brand-dark";
-  const missionHighlightClasses = "text-brand-primary";
+  const heroSectionClasses = 'py-28';
+  const sectionWrapperClasses = 'py-16 sm:py-24 space-y-20 px-4';
+  const mainCardClasses = 'bg-black bg-opacity-25 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/60 shadow-2xl';
+  const missionVisionCardClasses = 'bg-black bg-opacity-20 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/10';
+  const titleClasses = "text-cyan-400";
+  const textClasses = "text-slate-200";
+  const iconClasses = "text-pink-500";
+  const missionTitleClasses = "text-cyan-400";
+  const missionHighlightClasses = "text-pink-500";
 
   return (
     <div>
@@ -39,19 +37,17 @@ const About = () => {
         }}
       />
 
-      {/* Hero Section */}
       <section className={heroSectionClasses}>
         <div className="max-w-5xl mx-auto text-center px-4">
           <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white" style={{textShadow: '0 2px 10px rgba(0,0,0,0.5)'}}>About {siteName}</h1>
-          <p className="text-lg font-medium text-brand-accent">
+          <p className="text-lg font-medium text-pink-400">
             Striving for 100% Rated Players
           </p>
         </div>
       </section>
 
-      <div className={sectionWrapperClasses}>
-        {/* About Section */}
-        <section className="py-16 bg-brand-subtle">
+      <div>
+        <section className={sectionWrapperClasses}>
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className={mainCardClasses}>
               <FaQuoteLeft className={`text-5xl ${titleClasses} opacity-20 mb-6`} />
@@ -68,8 +64,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission & Vision Section */}
-        <section className="py-16 bg-white">
+        <section className={sectionWrapperClasses}>
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-bold mb-4 ${titleClasses}`}>Our Philosophy</h2>
@@ -78,7 +73,6 @@ const About = () => {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Mission */}
               <div className={`flex-1 ${missionVisionCardClasses}`}>
                 <FaChessKing className={`mx-auto text-6xl mb-6 ${iconClasses}`} />
                 <h3 className={`text-2xl font-bold mb-4 ${missionTitleClasses}`}>Our Mission</h3>
@@ -87,7 +81,6 @@ const About = () => {
                     Our ever-growing LMS system enables us to deliver high-quality chess education, resources, and mentorship to players everywhere, regardless of location or background.
                   </p>
               </div>
-              {/* Vision */}
               <div className={`flex-1 ${missionVisionCardClasses}`}>
                 <FaTrophy className={`mx-auto text-6xl mb-6 ${iconClasses}`} />
                 <h3 className={`text-2xl font-bold mb-4 ${missionTitleClasses}`}>Our Vision</h3>
@@ -102,16 +95,14 @@ const About = () => {
           </div>
         </section>
 
-        {/* Meet the Team */}
-        <section className="py-16 bg-brand-subtle">
-          <div className="max-w-7xl mx-auto px-6" id="team">
+        <section className={sectionWrapperClasses} id="team">
+          <div className="max-w-7xl mx-auto px-6">
             <h2 className={`text-4xl font-bold text-center mb-12 ${titleClasses}`}>Meet Our Mentors</h2>
             <Team />
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="py-16 bg-white">
+        <section className={sectionWrapperClasses}>
           <div className="max-w-7xl mx-auto px-6">
             <WhyChooseUs />
           </div>

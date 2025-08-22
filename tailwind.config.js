@@ -13,21 +13,21 @@ module.exports = {
           highlight: 'var(--brand-highlight)',
           text: 'var(--brand-text)',
         },        // Main KCA Website - Royal Heritage & Elegance
+        // NEW KCA "Synthwave" Theme
         kca: {
-          primary: '#1A365D',      // Deep Royal Blue
-          secondary: '#C53030',    // Rich Burgundy Red
-          accent: '#D69E2E',       // Royal Gold
-          'bg-dark': '#0A1929',    // Midnight Navy
-          'bg-light': '#FBF8F3',   // Warm Cream
+          primary: '#00D1FF',      // Vibrant Cyan
+          secondary: '#E01E84',    // Electric Magenta
+          accent: '#FFD700',       // Gold Accent
+          'bg-dark': '#0A1929',    // Midnight Navy (Fallback)
+          'bg-light': '#1F2937',   // Transparent Card BG
           highlight: '#E53E3E',    // Vibrant Crimson
-          'text-dark': '#2D3748',  // Charcoal Gray
-          'text-light': '#F7FAFC', // Soft White
+          'text-dark': '#E5E7EB',  // Light Gray Text
+          'text-light': '#F9FAFB', // Off-White Text
           'text-neutral': '#FFFFFF', // Pure White
-          'gray-light': '#E2E8F0', // Light Silver
-          'gray-dark': '#4A5568',  // Steel Gray
-          'accent-light': '#FAF089', // Champagne Gold
-          'secondary-light': '#FED7D7', // Rose Blush
-        },// AspireChess - Marble & Stone Theme with Better Contrast
+          'gray-light': '#4B5563', // Medium Gray
+          'gray-dark': '#111827',  // Deep Gray
+        },
+        // AspireChess - Marble & Stone Theme with Better Contrast
         aspire: {
           primary: '#374151',      // Dark Stone Gray
           secondary: '#6B7280',    // Medium Stone

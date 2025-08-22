@@ -23,14 +23,14 @@ const Events = () => {
   const filteredEvents = events.filter(event => filter === "All" || event.mode === filter);
   const isLinkExpired = (date) => new Date(date) < currentDate;
 
-  // KCA Theme Classes
-  const heroClasses = "relative bg-gradient-to-r from-brand-dark via-brand-secondary to-brand-primary text-white py-24";
-  const sectionWrapperClasses = "";
-  const titleClasses = "text-brand-text";
-  const cardClasses = "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200";
-  const cardTitleClasses = "text-brand-secondary";
-  const cardTextClasses = "text-brand-text";
-  const buttonClasses = "bg-brand-secondary hover:bg-brand-primary text-white";
+  // KCA Synthwave glassy theme
+  const heroClasses = "py-24";
+  const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
+  const titleClasses = "text-cyan-300";
+  const cardClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300";
+  const cardTitleClasses = "text-white";
+  const cardTextClasses = "text-gray-300";
+  const buttonClasses = "bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:from-cyan-400 hover:to-pink-400";
 
   return (
     <div>
@@ -62,8 +62,8 @@ const Events = () => {
       </section>
 
       <div className={sectionWrapperClasses}>
-        {/* Events Section */}
-        <section className="py-16 bg-brand-light">
+  {/* Events Section */}
+  <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className={`text-4xl font-bold text-center mb-10 ${titleClasses}`}>Event Schedule</h2>
             {/* Filter UI can be added here if needed */}
@@ -95,8 +95,8 @@ const Events = () => {
           </div>
         </section>
 
-        {/* Blogs Section */}
-        <section className="py-16 bg-brand-light">
+  {/* Blogs Section */}
+  <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className={`text-4xl font-bold text-center mb-10 ${titleClasses}`}>Latest Blogs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

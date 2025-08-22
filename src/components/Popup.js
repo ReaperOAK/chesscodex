@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const END_DATE = new Date('2025-08-15T23:59:59');
+// Keep this event visible during testing; set to a future date
+const END_DATE = new Date('2025-12-31T23:59:59');
 
 const PopupInaugTournament = () => {
   const [show, setShow] = useState(false);
+  const location = useLocation();
+  const isAspireChess = location.pathname.startsWith('/aspirechess');
 
   useEffect(() => {
     const now = new Date();
@@ -25,19 +29,19 @@ const PopupInaugTournament = () => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-black/80 via-brand-primary/80 to-black/70 backdrop-blur-sm animate-fadeIn"
+      className={`fixed inset-0 z-50 flex items-center justify-center ${isAspireChess ? 'bg-gradient-to-br from-black/80 via-brand-primary/80 to-black/70' : 'bg-gradient-to-br from-black/75 via-cyan-700/60 to-pink-800/70'} backdrop-blur-sm animate-fadeIn`}
       onClick={() => setShow(false)}
       role="presentation"
     >
       <div
-        className="relative bg-white/95 rounded-3xl shadow-2xl border-2 border-brand-primary/30 max-w-2xl w-full p-0 overflow-hidden animate-popupScale"
+        className={`relative max-w-2xl w-full p-0 overflow-hidden animate-popupScale rounded-3xl shadow-2xl ${isAspireChess ? 'bg-white/95 border-2 border-brand-primary/30' : 'bg-black bg-opacity-20 border-2 border-cyan-400/20'}`}
         role="dialog"
         aria-modal="true"
         aria-label="Announcement: Grand Inauguration & Tournament"
         onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside the modal
       >
         <button
-          className="absolute top-5 right-5 w-11 h-11 flex items-center justify-center rounded-full bg-white/80 border border-gray-200 shadow hover:bg-red-500 hover:text-white text-gray-700 text-3xl font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+          className={`absolute top-5 right-5 w-11 h-11 flex items-center justify-center rounded-full ${isAspireChess ? 'bg-white/80 border border-gray-200 text-gray-700 hover:bg-red-500 hover:text-white' : 'bg-white/10 border border-cyan-300 text-cyan-200 hover:bg-cyan-500 hover:text-white'} shadow transition-all duration-200 focus:outline-none focus:ring-2 ${isAspireChess ? 'focus:ring-brand-primary' : 'focus:ring-cyan-400'}`}
           onClick={() => setShow(false)}
           aria-label="Close announcement"
         >
@@ -47,16 +51,16 @@ const PopupInaugTournament = () => {
           </svg>
         </button>
         <img
-          src='/popup/aca_inaug-parnasree.png'
+          src="/popup/aca_inaug-parnasree.png"
           alt="Grand Inauguration & Tournament Poster"
-          className="w-full h-[480px] sm:h-[600px] object-contain bg-white rounded-3xl"
+          className={`w-full h-[480px] sm:h-[600px] object-contain ${isAspireChess ? 'bg-white rounded-3xl' : 'bg-transparent'}`}
         />
         <div className="text-center px-4 py-2">
-          <p className="font-semibold text-base sm:text-lg text-brand-primary mb-1">Grand Inauguration & Tournament</p>
-          <p className="text-xs sm:text-sm text-gray-700">Registration closes 15th August 2025.</p>
+          <p className={`font-semibold text-base sm:text-lg mb-1 ${isAspireChess ? 'text-brand-primary' : 'text-cyan-300'}`}>Grand Inauguration & Tournament</p>
+          <p className="text-xs sm:text-sm text-gray-200">Registration closes 15th August 2025.</p>
           <a
-            href="/aspirechess/events-blogs"
-            className="inline-block mt-2 px-6 py-2 rounded-full bg-brand-primary text-white font-medium text-sm shadow hover:bg-brand-primary/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+            href={isAspireChess ? '/aspirechess/events-blogs' : '/kca/events-blogs'}
+            className={`inline-block mt-2 px-6 py-2 rounded-full font-medium text-sm shadow transition-all duration-200 focus:outline-none focus:ring-2 ${isAspireChess ? 'bg-brand-primary text-white hover:bg-brand-primary/90 focus:ring-brand-primary' : 'bg-gradient-to-r from-cyan-500 to-pink-500 text-white hover:opacity-95 focus:ring-cyan-400'}`}
           >
             Register Now
           </a>

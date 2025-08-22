@@ -5,7 +5,7 @@ export const NextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} custom-arrow custom-arrow-next bg-brand-primary hover:bg-brand-secondary transition-colors duration-200`}
+      className={`${className} custom-arrow custom-arrow-next bg-gradient-to-r from-cyan-500 to-pink-500 hover:opacity-95 transition-all duration-200`}
       style={{ 
         ...style, 
         display: 'flex', 
@@ -29,7 +29,7 @@ export const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} custom-arrow custom-arrow-prev bg-brand-primary hover:bg-brand-secondary transition-colors duration-200`}
+      className={`${className} custom-arrow custom-arrow-prev bg-gradient-to-r from-cyan-500 to-pink-500 hover:opacity-95 transition-all duration-200`}
       style={{ 
         ...style, 
         display: 'flex', 

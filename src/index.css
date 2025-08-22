@@ -218,3 +218,25 @@ body.theme-aspirechess::before {
   /* This ensures it stays behind your actual website content */
   z-index: -1; 
 }
+
+/* KCA Synthwave theme background */
+body.theme-kca {
+  background-color: #0A1929; /* fallback color */
+}
+
+body.theme-kca::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/public/backgrounds/kca_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(10,25,41,0.6);
+  background-blend-mode: overlay;
+  z-index: -1;
+}

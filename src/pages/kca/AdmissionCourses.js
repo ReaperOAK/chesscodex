@@ -4,7 +4,6 @@ import CoursesList from '../../components/CoursesList';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { FAQs } from '../../data';
 
-
 const AdmissionCourses = () => {
   const siteName = 'Kolkata Chess Academy';
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -13,48 +12,39 @@ const AdmissionCourses = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  // KCA Theme Classes
-  const heroSectionClasses = "relative bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-20";
-  const sectionWrapperClasses = "";
-  const gmCardClasses = "relative bg-white text-brand-text p-6 rounded-lg shadow-lg";
-  const sectionCardClasses = "bg-white p-8 rounded-lg shadow-md";
-  const faqItemClasses = "p-4 bg-brand-light rounded-lg shadow-md cursor-pointer hover:bg-brand-accent transition";
-  const faqQuestionClasses = "text-lg font-semibold text-brand-dark";
-  const faqAnswerClasses = "mt-2 text-brand-text";
-  const titleClasses = "text-brand-dark";
+  // Use the same transparent/backdrop pattern used by the ACA pages
+  const heroSectionClasses = "py-24";
+  const sectionWrapperClasses = "py-16 sm:py-24 space-y-20 px-4";
+  const gmCardClasses = "relative bg-black bg-opacity-25 backdrop-blur-md p-6 rounded-lg shadow-lg border border-gray-700/50 text-slate-200";
+  const sectionCardClasses = "bg-black bg-opacity-20 backdrop-blur-sm rounded-xl p-8 sm:p-10 border border-gray-700/50";
+  const faqItemClasses = "bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 rounded-lg cursor-pointer hover:border-cyan-400/50 transition";
+  const faqQuestionClasses = "text-lg font-semibold text-white";
+  const faqAnswerClasses = "pt-4 text-slate-300 text-left";
+  const titleClasses = "text-cyan-400";
 
   return (
     <>
       <SEO
         title={`Admission & Courses - ${siteName}`}
         description={`Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`}
-        keywords={'Kolkata Chess Academy, admission, chess courses, GM Niaz Murshed, training'}
-        image={'https://kolkatachessacademy.in/kca.png'}
+  keywords={'Kolkata Chess Academy, admission, chess courses, GM Niaz Murshed, training'}
+  image={'https://kolkatachessacademy.in/kca.png'}
         url={'https://kolkatachessacademy.in/admission-courses'}
         type="article"
-        canonical={'https://kolkatachessacademy.in/admission-courses'}
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'Course',
-          name: `Chess Courses at ${siteName}`,
-          url: 'https://kolkatachessacademy.in/admission-courses',
-          description: `Explore chess courses and admission details at ${siteName}. Learn from Grandmaster Niaz Murshed and top coaches.`
-        }}
       />
 
-      {/* Hero Section */}
       <section id="hero" className={heroSectionClasses}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:flex-1 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">
-              Elevate Your Game with <span className="text-brand-primary">Expert Training</span>
+              Elevate Your Game with <span className="text-cyan-400">Expert Training</span>
             </h1>
             <p className="text-lg leading-relaxed mb-8 text-gray-300">
               Learn from the best with courses curated by Grandmaster Niaz Murshed, the first Grandmaster in South Asia.
             </p>
             <a
               href="#courses"
-              className="inline-block py-3 px-8 rounded-lg font-semibold transition bg-brand-primary text-white hover:bg-brand-secondary"
+              className="inline-block py-3 px-8 rounded-lg font-semibold transition bg-cyan-500 text-white hover:bg-cyan-400"
             >
               Explore Courses
             </a>
@@ -64,11 +54,11 @@ const AdmissionCourses = () => {
               <img
                 src="/Team/niaz.jpg"
                 alt="GM Niaz Murshed"
-                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-brand-primary"
+                className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-cyan-500"
               />
-              <h3 className="text-2xl font-semibold text-center text-brand-dark">GM Niaz Murshed</h3>
-              <p className="text-center mb-4 text-brand-text">Chess Mentor & Grandmaster</p>
-              <p className="text-center text-brand-text">
+              <h3 className="text-2xl font-semibold text-center text-white">GM Niaz Murshed</h3>
+              <p className="text-center mb-4 text-cyan-400">Chess Mentor & Grandmaster</p>
+              <p className="text-center text-slate-300">
                 Guiding chess enthusiasts with unparalleled expertise and passion for the game.
               </p>
             </div>
@@ -76,25 +66,23 @@ const AdmissionCourses = () => {
         </div>
       </section>
 
-      <div className={sectionWrapperClasses}>
-        {/* Courses Section */}
-        <section id="courses" className="py-16 bg-brand-light">
+      <div>
+        <section id="courses" className={`${sectionWrapperClasses} bg-black/20`}>
           <CoursesList />
         </section>
 
-        {/* Application Form Section */}
-        <section className="py-16 bg-brand-light">
-          <div className="max-w-4xl mx-auto px-4" id='application-form'>
+        <section className={sectionWrapperClasses} id='application-form'>
+          <div className="max-w-4xl mx-auto px-4">
             <div className={`${sectionCardClasses} text-center`}>
               <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${titleClasses}`}>Application Form</h2>
-              <p className="text-lg mb-6 text-brand-text">
+              <p className="text-lg mb-6 text-slate-200">
                 Ready to join? Click the button below to fill out our application form.
               </p>
               <a
                 href="https://forms.gle/4CaSH9r9sWJ2BZpy8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 bg-brand-primary text-white hover:bg-brand-secondary"
+                className="inline-block font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 bg-pink-500 text-white hover:bg-pink-600"
               >
                 Go to Application Form
               </a>
@@ -102,8 +90,7 @@ const AdmissionCourses = () => {
           </div>
         </section>
 
-        {/* FAQs Section */}
-        <section id="admission" className="py-16 bg-white">
+        <section id="admission" className={`${sectionWrapperClasses} bg-black/20`}>
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className={`text-4xl font-bold mb-12 ${titleClasses}`}>Frequently Asked Questions</h2>
             <div className="space-y-4">
@@ -111,14 +98,14 @@ const AdmissionCourses = () => {
                 <div key={index} className={faqItemClasses} onClick={() => toggleFAQ(index)}>
                   <div className="flex justify-between items-center p-4">
                     <h3 className={faqQuestionClasses}>{faq.question}</h3>
-                    <span className="text-brand-text">
+                    <span className="text-cyan-400">
                       {expandedIndex === index ? <FaChevronUp /> : <FaChevronDown />}
                     </span>
                   </div>
                   <div
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedIndex === index ? 'max-h-96' : 'max-h-0'}`}
                   >
-                    <div className="p-4 border-t border-gray-200">
+                    <div className="p-4 border-t border-cyan-500/20">
                       <div className={faqAnswerClasses}>{faq.answer}</div>
                     </div>
                   </div>
