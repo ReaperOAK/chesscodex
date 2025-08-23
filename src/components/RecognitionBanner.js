@@ -39,30 +39,54 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
       aria-label="Site recognition banner"
       className={`py-2 border-t border-b ${wrapperClasses} ${className}`}
     >
-    <div className={`max-w-7xl mx-auto px-4 ${innerClasses} flex flex-row items-center justify-between gap-6 flex-nowrap overflow-hidden whitespace-nowrap`}>
-        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
-      <img src={leftLogo} alt="Kolkata District Chess Association logo" className={`h-9 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
-          <div className="leading-tight min-w-0 whitespace-nowrap">
+    <div className={`max-w-7xl mx-auto px-2 sm:px-4 ${innerClasses}`}>
+      {/* Mobile View - Stacked Layout */}
+      <div className="sm:hidden flex flex-col gap-2">
+        <div className="flex items-center justify-center gap-2">
+          <img src={leftLogo} alt="Kolkata District Chess Association logo" className={`h-7 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
+          <div className="text-center">
+            <div className="text-xs font-semibold opacity-90">Affiliated to</div>
+            <div className="text-xs font-bold leading-tight">North 24 Parganas District Chess Association</div>
+          </div>
+        </div>
+        
+        <div className={`${dividerClass.replace('h-6 w-px', 'h-px w-full')} my-1`} aria-hidden="true" />
+        
+        <div className="flex items-center justify-center gap-2">
+          <img src={rightLogo} alt="Sara Bangla Daba Sangstha logo" className={`h-7 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
+          <div className="text-center">
+            <div className="text-xs font-semibold opacity-90">Recognized by</div>
+            <div className="text-xs font-bold leading-tight">Sara Bangla Daba Sangstha</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop View - Horizontal Layout */}
+      <div className="hidden sm:flex flex-row items-center justify-between gap-4 lg:gap-6 overflow-hidden">
+        <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 min-w-0">
+          <img src={leftLogo} alt="Kolkata District Chess Association logo" className={`h-8 lg:h-9 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
+          <div className="leading-tight min-w-0">
             <span className="sr-only">Affiliation:</span>
-            <span className="text-sm font-bold truncate">
-              <span className="text-xs font-semibold opacity-90 mr-2 align-middle">Affiliated to</span>
-              <span className="align-middle">North 24 Parganas District Chess Association</span>
-            </span>
+            <div className="text-xs lg:text-sm font-bold">
+              <span className="text-xs font-semibold opacity-90 mr-1 lg:mr-2 block sm:inline">Affiliated to</span>
+              <span className="block sm:inline">North 24 Parganas District Chess Association</span>
+            </div>
           </div>
         </div>
 
-  <div className={`${dividerClass} flex-shrink-0`} aria-hidden="true" />
+        <div className={`${dividerClass} flex-shrink-0 hidden md:block`} aria-hidden="true" />
 
-        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
-          <img src={rightLogo} alt="Sara Bangla Daba Sangstha logo" className={`h-9 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
-          <div className="leading-tight min-w-0 text-right whitespace-nowrap">
+        <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 min-w-0">
+          <img src={rightLogo} alt="Sara Bangla Daba Sangstha logo" className={`h-8 lg:h-9 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
+          <div className="leading-tight min-w-0 text-right">
             <span className="sr-only">Recognition:</span>
-            <span className="text-sm font-bold truncate">
-              <span className="text-xs font-semibold opacity-90 mr-2 align-middle">Recognized by</span>
-              <span className="align-middle">Sara Bangla Daba Sangstha</span>
-            </span>
+            <div className="text-xs lg:text-sm font-bold">
+              <span className="text-xs font-semibold opacity-90 mr-1 lg:mr-2 block sm:inline">Recognized by</span>
+              <span className="block sm:inline">Sara Bangla Daba Sangstha</span>
+            </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
