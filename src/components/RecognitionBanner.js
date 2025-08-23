@@ -34,6 +34,40 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
 
   const dividerClass = theme === 'kca' ? 'mx-4 h-6 w-px bg-cyan-400/20 dark:bg-cyan-500/10' : 'mx-4 h-6 w-px bg-amber-200/60 dark:bg-slate-600/40';
 
+  // Make text more prominent while staying theme-aware
+  const labelClass = theme === 'kca'
+    ? 'text-sm font-semibold opacity-95 text-cyan-100'
+    : theme === 'aspire'
+    ? 'text-sm font-semibold opacity-95 text-amber-200'
+    : 'text-sm font-semibold opacity-95';
+
+  const titleClass = theme === 'kca'
+    ? 'text-base lg:text-lg font-extrabold leading-tight tracking-tight text-cyan-50'
+    : theme === 'aspire'
+    ? 'text-base lg:text-lg font-extrabold leading-tight tracking-tight text-amber-100'
+    : 'text-base lg:text-lg font-extrabold leading-tight';
+
+  // Neon glow styles per theme (inline styles to ensure consistent rendering)
+  const titleStyle =
+    theme === 'kca'
+      ? {
+          textShadow: '0 2px 10px rgba(34,211,238,0.9), 0 0 24px rgba(34,211,238,0.25)',
+          filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.45))',
+        }
+      : theme === 'aspire'
+      ? {
+          textShadow: '0 2px 10px rgba(251,191,36,0.95), 0 0 22px rgba(251,191,36,0.28)',
+          filter: 'drop-shadow(0 0 8px rgba(251,191,36,0.38))',
+        }
+      : {};
+
+  const labelStyle =
+    theme === 'kca'
+      ? { textShadow: '0 1px 6px rgba(34,211,238,0.55)', filter: 'drop-shadow(0 0 4px rgba(34,211,238,0.25))' }
+      : theme === 'aspire'
+      ? { textShadow: '0 1px 6px rgba(251,191,36,0.6)', filter: 'drop-shadow(0 0 4px rgba(251,191,36,0.2))' }
+      : {};
+
   return (
     <section
       aria-label="Site recognition banner"
@@ -45,8 +79,8 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
         <div className="flex items-center justify-center gap-2">
           <img src={leftLogo} alt="Kolkata District Chess Association logo" className={`h-7 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
           <div className="text-center">
-            <div className="text-xs font-semibold opacity-90">Affiliated to</div>
-            <div className="text-xs font-bold leading-tight">North 24 Parganas District Chess Association</div>
+            <div className={labelClass} style={labelStyle}>Affiliated to</div>
+            <div className={titleClass} style={titleStyle}>North 24 Parganas District Chess Association</div>
           </div>
         </div>
         
@@ -55,8 +89,8 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
         <div className="flex items-center justify-center gap-2">
           <img src={rightLogo} alt="Sara Bangla Daba Sangstha logo" className={`h-7 w-auto object-contain rounded-sm shadow-sm ${logoBg} p-0.5`} />
           <div className="text-center">
-            <div className="text-xs font-semibold opacity-90">Recognized by</div>
-            <div className="text-xs font-bold leading-tight">Sara Bangla Daba Sangstha</div>
+            <div className={labelClass} style={labelStyle}>Recognized by</div>
+            <div className={titleClass} style={titleStyle}>Sara Bangla Daba Sangstha</div>
           </div>
         </div>
       </div>
@@ -68,8 +102,8 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
           <div className="leading-tight min-w-0">
             <span className="sr-only">Affiliation:</span>
             <div className="text-xs lg:text-sm font-bold">
-              <span className="text-xs font-semibold opacity-90 mr-1 lg:mr-2 block sm:inline">Affiliated to</span>
-              <span className="block sm:inline">North 24 Parganas District Chess Association</span>
+              <span className={`${labelClass} mr-1 lg:mr-2 block sm:inline`} style={labelStyle}>Affiliated to</span>
+              <span className={`${titleClass} block sm:inline`} style={titleStyle}>North 24 Parganas District Chess Association</span>
             </div>
           </div>
         </div>
@@ -81,8 +115,8 @@ const RecognitionBanner = ({ leftLogo = '/N24PDCA.webp', rightLogo = '/sbds.webp
           <div className="leading-tight min-w-0 text-right">
             <span className="sr-only">Recognition:</span>
             <div className="text-xs lg:text-sm font-bold">
-              <span className="text-xs font-semibold opacity-90 mr-1 lg:mr-2 block sm:inline">Recognized by</span>
-              <span className="block sm:inline">Sara Bangla Daba Sangstha</span>
+              <span className={`${labelClass} mr-1 lg:mr-2 block sm:inline`} style={labelStyle}>Recognized by</span>
+              <span className={`${titleClass} block sm:inline`} style={titleStyle}>Sara Bangla Daba Sangstha</span>
             </div>
           </div>
         </div>
