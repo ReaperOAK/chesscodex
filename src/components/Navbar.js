@@ -20,7 +20,7 @@ function Navbar() {
   const navLinks = isAspireChess
     ? [
         { to: '/aspirechess/about', label: 'About' },
-        { to: '/aspirechess/courses', label: 'Admission & Courses' },
+        { to: '/aspirechess/courses', label: 'Courses' },
         { to: '/aspirechess/exclusives', label: 'Exclusives & Collaboration' },
         { to: '/aspirechess/events-blogs', label: 'Events & Blogs' },
         { to: '/aspirechess/achievements-testimonials', label: 'Achievements & Testimonials' },
@@ -29,7 +29,7 @@ function Navbar() {
       ]
     : [
         { to: '/kca/about', label: 'About' },
-        { to: '/kca/courses', label: 'Admission & Courses' },
+        { to: '/kca/courses', label: '  Courses' },
         { to: '/kca/exclusives', label: 'Exclusives & Collaboration' },
         { to: '/kca/events-blogs', label: 'Events & Blogs' },
         { to: '/kca/achievements-testimonials', label: 'Achievements & Testimonials' },
@@ -54,16 +54,6 @@ function Navbar() {
           <div className="flex items-center flex-shrink-0 min-w-[80px]">
             <Link to={isAspireChess ? '/aspirechess' : '/kca'} className="flex items-center group" aria-label={`${siteName} Home`}>
               <img src={logoSrc} alt={`${siteName} Logo`} className="h-11 w-auto mr-3 drop-shadow-md group-hover:scale-105 transition-transform duration-200" />
-              <span
-                className="text-base sm:text-lg font-semibold tracking-wide text-white group-hover:text-yellow-300 transition-colors duration-200 whitespace-nowrap"
-                style={{
-                  textShadow: '0 2px 8px rgba(0,0,0,0.18)',
-                  fontFamily: 'Montserrat, Inter, Segoe UI, Arial, sans-serif',
-                  letterSpacing: '0.04em',
-                }}
-              >
-                {siteName}
-              </span>
             </Link>
           </div>
           {/* Desktop Navigation */}
