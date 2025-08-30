@@ -25,7 +25,7 @@ function Navbar() {
         { to: '/aspirechess/events-blogs', label: 'Events & Blogs' },
         { to: '/aspirechess/achievements-testimonials', label: 'Achievements & Testimonials' },
         { to: '/aspirechess/gallery', label: 'Gallery' },
-        { to: '/aspirechess/contact', label: 'Contact & FAQs' },
+        { to: '/aspirechess/contact', label: 'Contact Us' },
       ]
     : [
         { to: '/kca/about', label: 'About' },
@@ -34,7 +34,7 @@ function Navbar() {
         { to: '/kca/events-blogs', label: 'Events & Blogs' },
         { to: '/kca/achievements-testimonials', label: 'Achievements & Testimonials' },
         { to: '/kca/gallery', label: 'Gallery' },
-        { to: '/kca/contact', label: 'Contact & FAQs' },
+        { to: '/kca/contact', label: 'Contact Us' },
       ];
 
   // Navbar classes for each brand
