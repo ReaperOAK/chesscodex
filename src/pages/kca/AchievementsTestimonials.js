@@ -3,7 +3,7 @@ import SEO from '../../components/SEO';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import { achievementsData, testimonials } from '../../data';
+import { achievementsData, testimonials, coaches, mentorLinks } from '../../data';
 
 const Modal = ({ achievement, onClose }) => {
   const modalBgClasses = "bg-black bg-opacity-70 backdrop-blur-md border border-gray-700";
@@ -88,6 +88,40 @@ const AchievementsTestimonials = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mentors Section */}
+        <section>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className={`text-4xl font-bold text-center mb-8 ${titleClasses}`}>
+              Meet Our Mentors
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-6">
+              {coaches.map((coach, idx) => (
+                <div key={idx} className={`${cardClasses} p-4`}>
+                  <div className="flex items-start gap-4">
+                    <img src={coach.image} alt={coach.name} className="w-20 h-20 rounded-md object-cover border" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{coach.name}</h3>
+                      <p className="text-cyan-300 text-sm">{coach.role}</p>
+                      <p className={`${textClasses} mt-2 text-sm`}>{coach.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-xl font-semibold text-white mb-4">Mentor Media & Articles</h3>
+              <ul className="space-y-2">
+                {mentorLinks.map((m, i) => (
+                  <li key={i}>
+                    <a className="text-cyan-300 hover:underline" href={m.url} target="_blank" rel="noopener noreferrer">{m.title}</a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

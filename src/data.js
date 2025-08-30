@@ -26,6 +26,11 @@ export const coaches = [
   { name: 'FM Joydeep Dutta', role: 'Mentor', image: '/Team/joydeep.jpg', description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various chess talents.` },
   { name: 'Arpan Das', role: 'Mentor', image: '/Team/arpan.jpg', description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Focuses on youth development.` }
 ];
+// Links to press coverage / videos featuring our mentors
+export const mentorLinks = [
+  { title: 'Sayantan Das - Facebook Video', url: 'https://www.facebook.com/share/v/1RZqtPwrP7/' },
+  { title: 'Sayantan Das wins CTCA International Open 2025 - ChessBase India', url: 'https://chessbase.in/news/Sayantan-Das-clear-first-at-CTCA-International-Open-2025?fbclid=IwY2xjawMYj_JleHRuA2FlbQIxMABicmlkETFGV3RmRGswYXk2S3pRVXc2AR5ixpK2wsT2K0AvYjSnN1qq5lz8nViv0K7z7TriFCA19SxGe95iWG-5cgBtTQ_aem_k5o9KmiJMB8-r4pv5LavVg' }
+];
 export const faqs = {
   aspirechess: [
     {
