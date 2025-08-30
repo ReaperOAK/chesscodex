@@ -32,6 +32,7 @@ const Footer = () => {
   const highlightClass = isAspireChess ? "text-amber-400" : "text-cyan-300";
   const dropdownBg = isAspireChess ? "bg-gray-900 bg-opacity-80 backdrop-blur-md" : "bg-black bg-opacity-20 backdrop-blur-sm";
   const dropdownHoverBg = isAspireChess ? "hover:bg-gray-700" : "hover:bg-black/30";
+  const yrrClass = "text-rose-400 font-semibold";
 
   return (
     <footer className={`${footerClasses} text-white py-12`}>
@@ -75,17 +76,20 @@ const Footer = () => {
                   </ul>
                 )}
               </li>
-              <li><Link to="/aspirechess" className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
-              <li><Link to="/kca" className={`${highlightClass} hover:underline`}>Kolkata Chess Academy</Link></li>
               {isAspireChess && (
                 <li>
                   <Link
                     to="/aspirechess/exclusives/yuddho-raja"
-                    className={linkHoverClass}
+                    className={`${yrrClass} hover:underline`}
                   >
                     Yuddho Rajay Rajay
                   </Link>
                 </li>
+              )}
+              {isAspireChess ? (
+                <li><Link to="/kca" className={`${highlightClass} hover:underline`}>Kolkata Chess Academy</Link></li>
+              ) : (
+                <li><Link to="/aspirechess" className={`${highlightClass} hover:underline`}>AspireChess</Link></li>
               )}
             </ul>
           </div>
