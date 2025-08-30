@@ -44,7 +44,6 @@ function Navbar() {
 
   const navLinkActiveClass = isAspireChess ? 'text-yellow-300 font-semibold' : 'text-cyan-300 font-semibold';
   const navLinkIdleClass = isAspireChess ? 'text-white hover:text-yellow-300 transition-colors duration-300' : 'text-white hover:text-cyan-300 transition-colors duration-300';
-  const dashboardHoverClass = isAspireChess ? 'text-white hover:text-amber-300 transition-colors duration-300 mx-2' : 'text-white hover:text-cyan-300 transition-colors duration-300 mx-2';
 
   return (
     <nav className={`${navClasses} text-white sticky top-0 shadow-lg z-50 w-full`}>
@@ -68,15 +67,7 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <a
-              href="https://dashboard.kolkatachessacademy.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={dashboardHoverClass}
-              aria-label="Dashboard"
-            >
-              Dashboard
-            </a>
+            {/* Dashboard link moved to Footer Quick Links */}
             {/* Explore Online Courses Prompt for Aspire (desktop) */}
             {isAspireChess ? (
               <a
@@ -124,18 +115,7 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li className="w-full">
-              <a
-                href="https://dashboard.kolkatachessacademy.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-white hover:text-yellow-300 text-center"
-                onClick={toggleMenu}
-                aria-label="Dashboard"
-              >
-                Dashboard
-              </a>
-            </li>
+            {/* Dashboard link moved to Footer Quick Links */}
             {/* Explore Online Courses Prompt for Aspire (mobile) */}
             {isAspireChess && (
               <li className="w-full">
