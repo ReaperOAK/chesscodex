@@ -59,6 +59,9 @@ const AspireAdmissionCourses = () => {
             >
               Explore Courses
             </a>
+            <a href="/aspirechess/courses" className="inline-block ml-4 py-3 px-6 rounded-lg font-semibold border border-amber-400 text-amber-300 hover:bg-amber-900/10 transition">
+              Explore Offline Courses
+            </a>
           </div>
           <div className="lg:flex-1 flex justify-center w-full max-w-sm">
             <div className={gmCardClasses}>

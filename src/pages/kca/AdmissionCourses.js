@@ -42,12 +42,17 @@ const AdmissionCourses = () => {
             <p className="text-lg leading-relaxed mb-8 text-gray-300">
               Learn from the best with courses curated by Grandmaster Niaz Murshed, the first Grandmaster in South Asia.
             </p>
-            <a
-              href="#courses"
-              className="inline-block py-3 px-8 rounded-lg font-semibold transition bg-cyan-500 text-white hover:bg-cyan-400"
-            >
-              Explore Courses
-            </a>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <a
+                href="#courses"
+                className="inline-block py-3 px-8 rounded-lg font-semibold transition bg-cyan-500 text-white hover:bg-cyan-400"
+              >
+                Explore Courses
+              </a>
+              <a href="/kca/courses" className="inline-block py-3 px-6 rounded-lg font-semibold border border-cyan-500 text-cyan-300 hover:bg-cyan-900/20 transition">
+                Explore Online Courses
+              </a>
+            </div>
           </div>
           <div className="lg:flex-1 flex justify-center w-full max-w-sm">
             <div className={gmCardClasses}>

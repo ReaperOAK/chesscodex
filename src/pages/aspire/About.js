@@ -46,6 +46,11 @@ const AspireAbout = () => {
           <p className="text-lg font-medium text-amber-300">
             Aspiring for 100% Titled Players
           </p>
+          <div className="mt-6">
+            <a href="/aspirechess/courses" className="inline-block py-3 px-6 rounded-lg font-semibold bg-amber-500 text-gray-900 hover:bg-amber-400 transition">
+              Explore Offline Courses
+            </a>
+          </div>
         </div>
       </section>
 

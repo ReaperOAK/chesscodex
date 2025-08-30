@@ -43,6 +43,11 @@ const About = () => {
           <p className="text-lg font-medium text-pink-400">
             Striving for 100% Rated Players
           </p>
+          <div className="mt-6">
+            <a href="/kca/courses" className="inline-block py-3 px-6 rounded-lg font-semibold bg-cyan-500 text-white hover:bg-cyan-400 transition">
+              Explore Online Courses
+            </a>
+          </div>
         </div>
       </section>
 

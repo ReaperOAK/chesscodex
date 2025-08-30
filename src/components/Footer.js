@@ -56,6 +56,15 @@ const Footer = () => {
           {/* Quick Links Section */}
           <div>
             <h2 className={`text-2xl font-bold mb-4 ${headingColor}`}>Quick Links</h2>
+            {/* CTA added to top of Quick Links */}
+            <div className="mb-4">
+              <Link
+                to={isAspireChess ? "/aspirechess/courses" : "/kca/courses"}
+                className={`inline-block font-semibold py-2 px-4 rounded-lg shadow-sm transition ${isAspireChess ? 'bg-amber-500 text-gray-900 hover:bg-amber-400' : 'bg-cyan-500 text-white hover:bg-cyan-400'}`}
+              >
+                {isAspireChess ? 'Explore Offline Courses' : 'Explore Online Courses'}
+              </Link>
+            </div>
             <ul className={`space-y-2 ${textColor}`}>
               <li><a href={isAspireChess ? "/aspirechess/exclusives" : "/kca/exclusives"} className={linkHoverClass}>Pro Members</a></li>
               <li><a href="[https://theweekinchess.com/twic](https://theweekinchess.com/twic)" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>Latest Games</a></li>
