@@ -32,7 +32,7 @@ const YuddhoRaja = () => {
             <li>Play with around 2000 elo FIDE-rated players to elevate your game.</li>
             <li>2-hour sessions, 3 days a week (Mon, Wed, Fri)</li>
             <li>Free access to our chess library, packed with resources for all levels.</li>
-            <li>Exclusive opportunity to train with Arpan Das (Jr.) & FM Joydeep Dutta (limited period only).</li>
+            {/* <li>Exclusive opportunity to train with Arpan Das (Jr.) & FM Joydeep Dutta (limited period only).</li> */}
           </ul>
         </div>
         <div className="mb-8">

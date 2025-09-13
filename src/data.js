@@ -1,10 +1,10 @@
 // Features for WhyChooseUs (shared for both sites unless split later)
-import { FaBook, FaCrown, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers, FaTrophy } from 'react-icons/fa';
+import { FaBook, FaChalkboardTeacher, FaTasks, FaClipboardCheck, FaFileAlt, FaMedal, FaUsers, FaTrophy } from 'react-icons/fa';
 
 export const highlightedFeatures = [
   { icon: <FaBook className="text-amber-400 text-4xl mb-2" />, title: "Comprehensive Curriculum", description: "Syllabus designed by GM Niaz Murshed to provide a holistic chess education.", link: null },
-  { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: null },
-  { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: null },
+  // { icon: <FaChalkboardTeacher className="text-amber-400 text-4xl mb-2" />, title: "Top Tier Guidance", description: "Insights and techniques from GM Saptarshi Roychowdhury and GM Sayantan Das.", link: null },
+  // { icon: <FaCrown className="text-amber-400 text-4xl mb-2" />, title: "Expert Coaching Panel", description: "Led by IM Somak Palit, FM Joydeep Dutta, and IM-elect Arpan Das for personalized mentorship.", link: null },
 ];
 
 export const features = [
@@ -20,16 +20,16 @@ export const features = [
 ];
 // Universal achievements and testimonials
 export const coaches = [
-  { name: 'GM Sayantan Das', role: 'Guest Coach & Opening Expert', image: '/Team/sayantan.jpg', description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of experience and deep opening knowledge.` },
-  { name: 'GM Saptarshi Roy Chowdhury', role: 'Chief Advisor & Strategy Maker', image: '/Team/saptarshi.jpg', description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is our chief advisor and strategy maker.` },
-  { name: 'IM Somak Palit', role: 'Mentor', image: '/Team/somak.jpg', description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy. His mentorship is invaluable.` },
-  { name: 'FM Joydeep Dutta', role: 'Mentor', image: '/Team/joydeep.jpg', description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various chess talents.` },
-  { name: 'Arpan Das', role: 'Mentor', image: '/Team/arpan.jpg', description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Focuses on youth development.` }
+  // { name: 'GM Sayantan Das', role: 'Guest Coach & Opening Expert', image: '/Team/sayantan.jpg', description: `India's 81st GM, is an invaluable part of our coaching team, bringing over two decades of experience and deep opening knowledge.` },
+  // { name: 'GM Saptarshi Roy Chowdhury', role: 'Chief Advisor & Strategy Maker', image: '/Team/saptarshi.jpg', description: `Grandmaster Saptarshi Roy Chowdhury, with over 15 years of coaching experience, is our chief advisor and strategy maker.` },
+  // { name: 'IM Somak Palit', role: 'Mentor', image: '/Team/somak.jpg', description: `A prominent member of the Indian Railway Chess Team, brings a unique and simplified approach to our academy. His mentorship is invaluable.` },
+  // { name: 'FM Joydeep Dutta', role: 'Mentor', image: '/Team/joydeep.jpg', description: `FM Dutta, with a peak Elo of 2355, has claimed numerous national titles, bringing his prowess to develop various chess talents.` },
+  // { name: 'Arpan Das', role: 'Mentor', image: '/Team/arpan.jpg', description: `A passionate chess player with 13 years of experience, a peak Elo rating of 2423, and two International Master norms. Focuses on youth development.` }
 ];
 // Links to press coverage / videos featuring our mentors
 export const mentorLinks = [
-  { title: 'Sayantan Das - Facebook Video', url: 'https://www.facebook.com/share/v/1RZqtPwrP7/' },
-  { title: 'Sayantan Das wins CTCA International Open 2025 - ChessBase India', url: 'https://chessbase.in/news/Sayantan-Das-clear-first-at-CTCA-International-Open-2025?fbclid=IwY2xjawMYj_JleHRuA2FlbQIxMABicmlkETFGV3RmRGswYXk2S3pRVXc2AR5ixpK2wsT2K0AvYjSnN1qq5lz8nViv0K7z7TriFCA19SxGe95iWG-5cgBtTQ_aem_k5o9KmiJMB8-r4pv5LavVg' }
+  // { title: 'Sayantan Das - Facebook Video', url: 'https://www.facebook.com/share/v/1RZqtPwrP7/' },
+  // { title: 'Sayantan Das wins CTCA International Open 2025 - ChessBase India', url: 'https://chessbase.in/news/Sayantan-Das-clear-first-at-CTCA-International-Open-2025?fbclid=IwY2xjawMYj_JleHRuA2FlbQIxMABicmlkETFGV3RmRGswYXk2S3pRVXc2AR5ixpK2wsT2K0AvYjSnN1qq5lz8nViv0K7z7TriFCA19SxGe95iWG-5cgBtTQ_aem_k5o9KmiJMB8-r4pv5LavVg' }
 ];
 export const faqs = {
   aspirechess: [
@@ -198,7 +198,7 @@ export const coursesData = [
       '2-hour sessions, 3 days a week (Mon, Wed, Fri)',
       'Play with ~2000 elo FIDE-rated players',
       'Free access to our chess library',
-      'Exclusive opportunity to train with Arpan Das (Jr.) & FM Joydeep Dutta (limited period only)',
+      // 'Exclusive opportunity to train with Arpan Das (Jr.) & FM Joydeep Dutta (limited period only)',
       'Prime location: Only 1 km from Dum Dum Station',
       'Professional chess sets and clocks',
       'Just ₹100 per session, 12 sessions/month for ₹1200',
@@ -223,7 +223,7 @@ export const achievementsData = [
 ];
 
 export const testimonials = [
-  { quote: "If you’re serious about improving your chess skills, I wholeheartedly recommend Arpan Sir and Joydeep Sir [Aspire Chess Academy]. None came close to what I’ve gained under Arpan Sir and Joydeep Sir. Before them, I struggled with positional understanding, planning, and other fundamentals. Here, I’m learning these every day along with so much more. What sets them apart is their friendly and approachable teaching style, which bridges the usual gap between a coach and a student, which makes learning enjoyable and breaks the usual coach-student barrier. They also provide practice sessions that have helped me a lot. I’m truly grateful for their guidance.", name: "Dhruv Kar", role: "Chess Enthusiast", avatar: "/testimonials/dhruv.png" },
+  // { quote: "If you’re serious about improving your chess skills, I wholeheartedly recommend Arpan Sir and Joydeep Sir [Aspire Chess Academy]. None came close to what I’ve gained under Arpan Sir and Joydeep Sir. Before them, I struggled with positional understanding, planning, and other fundamentals. Here, I’m learning these every day along with so much more. What sets them apart is their friendly and approachable teaching style, which bridges the usual gap between a coach and a student, which makes learning enjoyable and breaks the usual coach-student barrier. They also provide practice sessions that have helped me a lot. I’m truly grateful for their guidance.", name: "Dhruv Kar", role: "Chess Enthusiast", avatar: "/testimonials/dhruv.png" },
   { quote: "Players get wonderful exposure here and get a chance to play with quality players who are high rated who also frequently visit the sessions. The sessions are conducted in a friendly environment and constant learning. My experience was wonderful. Highly recommended.", name: "Megha Patra", role: "Chess Enthusiast", avatar: "/testimonials/megha.png" }
 ];
 
@@ -270,8 +270,8 @@ export const services = [
         title: "Group Class Services",
         points: [
             "Coach Profile: Led by an experienced coach with a minimum peak rating of 1800.",
-            "Curriculum: Topic Summarization prepared by GM Saptarshi Roy Chowdhury.",
-            "Assignments: Homework after each topic provided by our mentors IM Somak Palit & FM Joydeep Dutta.",
+            // "Curriculum: Topic Summarization prepared by GM Saptarshi Roy Chowdhury.",
+            // "Assignments: Homework after each topic provided by our mentors IM Somak Palit & FM Joydeep Dutta.",
             "Evaluation: Quarterly physical mark sheets sent to your academy HQ.",
             "Feedback: Bi-monthly student progress reports and PTM with coaches and titled players.",
             "Perks: 10% discount on KCA camps/tournaments and events."
@@ -283,7 +283,7 @@ export const services = [
             "Coach Profile: Class led by an experienced coach based on the student's level.",
             "Personalized Coaching: Customized material and opening preparation for each player.",
             "Study Material: Detailed topics on our website with PDFs and Lichess links.",
-            "Advanced Study: Classical Game Study curated by our Mentors FM Joydeep Dutta and Arpan Das.",
+            // "Advanced Study: Classical Game Study curated by our Mentors FM Joydeep Dutta and Arpan Das.",
             "Guidance: Routine and Book Recommendations prepared by titled players."
         ]
     }
@@ -393,7 +393,7 @@ export const proMembershipDetails = [
     {
       title: "Hot Topic Summarizations",
       details: [
-        "Structure: Video explanation Course with Positions- 1 Topic every Month of Beginner & 1 Topic of Intermediate or Advance or Expert Level presented by FM Joydeep Dutta & Arpan Das.",
+        // "Structure: Video explanation Course with Positions- 1 Topic every Month of Beginner & 1 Topic of Intermediate or Advance or Expert Level presented by FM Joydeep Dutta & Arpan Das.",
         "Frequency: 2 Topics every Month.",
         "Support: Homework of specific Topics Presented to work at Home.",
       ],
