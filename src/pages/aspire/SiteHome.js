@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../../components/SEO';
 import WhyChooseUs from '../../components/WhyChooseUs';
+import AspireHero from '../../components/AspireHero';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
@@ -45,17 +46,8 @@ const AspireHome = () => {
         }}
       />
 
-      {/* Hero Section */}
-      <section>
-        <div className={"max-w-6xl mx-auto text-center p-10 " + sectionClass}>
-          <h1 className="text-5xl font-bold mb-6 text-white">Welcome to {siteName}</h1>
-          <p className="text-lg mb-4 text-amber-300">Aspiring for 100% Titled Players</p>
-          <p className="text-md mb-6 max-w-3xl mx-auto text-gray-200">
-            AspireChess aims to create a community of rated players, enhancing their skills through world-class coaching and resources.
-          </p>
-          <span>AspireChess: Modern Chess Education</span>
-        </div>
-      </section>
+      {/* Hero Section - extracted component */}
+      <AspireHero siteName={siteName} sectionClass={sectionClass} />
       <WhyChooseUs />
 
       {/* Scholarship, Collaboration, and Pro Members Sections */}
