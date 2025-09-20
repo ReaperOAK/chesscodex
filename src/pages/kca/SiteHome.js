@@ -47,6 +47,10 @@ const KCAHome = () => {
               <h2 className="text-3xl font-bold text-cyan-300 mb-4">Aspire Chess Academy</h2>
               <p className="text-lg text-gray-300">Primarily offline operations. All online students and services are redirected to Kolkata Chess Academy.</p>
             </Link>
+            <Link to="/kca/achievements-testimonials" className="p-8 rounded-lg bg-black bg-opacity-20 backdrop-blur-sm border border-gray-700/50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <h2 className="text-3xl font-bold text-cyan-300 mb-4">Aspiring Stars</h2>
+              <p className="text-lg text-gray-300">See our students' achievements and parent testimonials. Celebrate success and get inspired.</p>
+            </Link>
           </div>
         </div>
       </section>

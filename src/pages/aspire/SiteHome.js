@@ -54,7 +54,8 @@ const AspireHome = () => {
       {[
         { title: "Scholarship Programs", description: "Recognizing talent and hard work, we offer scholarships to support dedicated students with exceptional potential in chess.", link: "/aspirechess/exclusives/scholarships", cta: "Learn More" },
         { title: "Collaborate with Us", description: `Partner with AspireChess to promote chess and create a meaningful impact in the community.`, link: "/aspirechess/collaborate-with-us", cta: "Learn More" },
-        { title: "Pro Members", description: "Unlock premium benefits such as exclusive content, personalized coaching, and advanced resources by becoming a Pro Member.", link: "/aspirechess/exclusives/pro-membership", cta: "Join Pro Membership" }
+        { title: "Pro Members", description: "Unlock premium benefits such as exclusive content, personalized coaching, and advanced resources by becoming a Pro Member.", link: "/aspirechess/exclusives/pro-membership", cta: "Join Pro Membership" },
+        { title: "Aspiring Stars", description: "See our students' achievements and hear from parents — success stories that inspire our aspiring stars.", link: "/aspirechess/achievements-testimonials", cta: "View Achievements" }
       ].map((item, index) => (
         <section key={index}>
           <div className={"max-w-6xl mx-auto text-center p-10 " + sectionClass}>
