@@ -240,3 +240,26 @@ body.theme-kca::before {
   background-blend-mode: overlay;
   z-index: -1;
 }
+
+/* Ensure a mouse pointer is visible site-wide. This overrides any rule that hides the cursor. */
+html, body, * {
+  cursor: auto !important;
+}
+
+/* Custom decorative cursor */
+/* Use SVG cursor with hotspot near tip (x y). Provide PNG fallback and system fallbacks. */
+@media (pointer:fine) {
+  html, body, * {
+    cursor: url('./assets/cursors/custom-cursor.svg') 12 6, auto !important;
+  }
+
+  /* Ensure clickable elements use pointer hand for clarity */
+  a, button, [role="button"], input[type="button"], input[type="submit"], .btn, .btn-brand {
+    cursor: url('./assets/cursors/custom-cursor.svg') 12 6, pointer !important;
+  }
+}
+
+/* Touch devices should not load custom cursor; use default behavior */
+@media (pointer:coarse) {
+  html, body, * { cursor: auto !important; }
+}
