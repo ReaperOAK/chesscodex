@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import keywordsJson from '../seo/keywords.json';
 
 /**
  * Centralized SEO component for all pages.
@@ -54,7 +55,8 @@ function SEO(props) {
     ? {
         title: 'Aspire Chess Academy',
         description: 'Aspire Chess Academy — expert chess coaching and online courses.',
-        keywords: 'chess, online chess courses, aspire chess, coaching',
+        // Prefer global + service keywords for Aspire
+        keywords: (keywordsJson.global || []).slice(0, 12).join(', '),
         image: 'https://kolkatachessacademy.in/aca.png',
         url: 'https://aspirechess.in/',
         canonical: props.canonical || 'https://aspirechess.in/',
@@ -65,7 +67,8 @@ function SEO(props) {
     : {
         title: 'Kolkata Chess Academy',
         description: 'Elevate your chess skills with expert training and comprehensive courses at Kolkata Chess Academy.',
-        keywords: 'chess, chess academy, chess training, chess courses, chess coaching',
+        // Prefer local Kolkata keywords for KCA
+        keywords: (keywordsJson.local_kolkata || []).slice(0, 12).join(', '),
         image: 'https://kolkatachessacademy.in/kca.png',
         url: 'https://kolkatachessacademy.in/',
         canonical: props.canonical || 'https://kolkatachessacademy.in/',

@@ -30,6 +30,8 @@ import AspireAdmissionCourses from './pages/aspire/AdmissionCourses';
 import AspireExclusives from './pages/aspire/Exclusives';
 // ...existing code...
 import AspireHome from './pages/aspire/SiteHome';
+import DumDum from './pages/aspire/branches/DumDum';
+import ParnasreeBehala from './pages/aspire/branches/ParnasreeBehala';
 
 function AppContent() {
   const location = useLocation();
@@ -85,6 +87,8 @@ function AppContent() {
           <Route path="/aspirechess/faqs" element={<AspireContact />} />
           <Route path="/aspirechess/refund-policy" element={<Navigate to="/aspirechess/contact#refund-policy" />} />
           <Route path="/aspirechess/contact" element={<AspireContact />} />
+          <Route path="/aspirechess/dum-dum" element={<DumDum />} />
+          <Route path="/aspirechess/parnasree-behala" element={<ParnasreeBehala />} />
           <Route path="/aspirechess/dashboard" element={<Navigate to="https://dashboard.kolkatachessacademy.in" replace />} />
           <Route path="/aspirechess/exclusives/*" element={<AspireExclusives />} />
           <Route path="/aspirechess/collaborate-with-us/*" element={<Navigate to="/aspirechess/exclusives/collaboration" replace />} />

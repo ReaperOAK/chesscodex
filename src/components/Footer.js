@@ -66,6 +66,12 @@ const Footer = () => {
               </Link>
             </div>
             <ul className={`space-y-2 ${textColor}`}>
+              {isAspireChess && (
+                <>
+                  <li><Link to="/aspirechess/dum-dum" className={linkHoverClass}>Dum Dum Branch</Link></li>
+                  <li><Link to="/aspirechess/parnasree-behala" className={linkHoverClass}>Parnasree Behala Branch</Link></li>
+                </>
+              )}
               <li><a href={isAspireChess ? "/aspirechess/exclusives" : "/kca/exclusives"} className={linkHoverClass}>Pro Members</a></li>
               <li><a href="https://dashboard.kolkatachessacademy.in" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>Dashboard</a></li>
               <li><a href="[https://theweekinchess.com/twic](https://theweekinchess.com/twic)" target="_blank" rel="noopener noreferrer" className={linkHoverClass}>Latest Games</a></li>
